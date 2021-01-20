@@ -6,9 +6,6 @@
           <img src="../assets/logo.svg" alt="" />
         </router-link>
       </div>
-      <div class="mobileMenu flex items-center md:hidden" @click="mobileClick = !mobileClick">
-        <i class="pay-menu"></i>
-      </div>
       <div
         class="nav md:flex fixed bg-white h-full md:h-auto md:relative duration-200 top-0 pt-5 px-5 md:p-0 shadow-xl md:shadow-none"
         :class="{ mobileNavActive: mobileClick }"
@@ -28,7 +25,10 @@
             <router-link :to="item.link" class="no-underline">{{ item.name }}</router-link>
           </li>
         </ul>
-        <ul
+        <div class="mobileMenu flex items-center" @click="mobileClick = !mobileClick">
+          <i class="pay-menu"></i>
+        </div>
+        <!-- <ul
           class="dashboardMenu md:flex items-center md:border-l pl-0 list-none border-t pt-3 mt-3 md:border-t-0 md:pt-0 md:mt-0"
         >
           <li
@@ -39,7 +39,7 @@
             <div v-html="item.icon" class="mr-3 duration-200 "></div>
             <router-link :to="item.link" class="no-underline">{{ item.name }}</router-link>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </div>
   </div>
@@ -50,36 +50,36 @@
     name: 'topmenu',
     data() {
       return {
-        mainPage: [
-          {
-            link: '/',
-            name: '優惠活動'
-          },
-          {
-            link: '/',
-            name: '飲料故事'
-          },
-          {
-            link: '/',
-            name: '魔法秘訣'
-          },
-          {
-            link: '/',
-            name: '立即體驗'
-          }
-        ],
-        dashboard: [
-          {
-            link: '/',
-            icon: '<i class="pay-shop"></i>',
-            name: '我是店長'
-          },
-          {
-            link: '/login',
-            icon: '<i class="pay-member"></i>',
-            name: '立即訂餐'
-          }
-        ],
+        // mainPage: [
+        //   {
+        //     link: '/',
+        //     name: '優惠活動'
+        //   },
+        //   {
+        //     link: '/',
+        //     name: '飲料故事'
+        //   },
+        //   {
+        //     link: '/',
+        //     name: '魔法秘訣'
+        //   },
+        //   {
+        //     link: '/',
+        //     name: '立即體驗'
+        //   }
+        // ],
+        // dashboard: [
+        //   {
+        //     link: '/',
+        //     icon: '<i class="pay-shop"></i>',
+        //     name: '我是店長'
+        //   },
+        //   {
+        //     link: '/login',
+        //     icon: '<i class="pay-member"></i>',
+        //     name: '立即訂餐'
+        //   }
+        // ],
         mobileClick: false
       }
     }

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import index from '../views/index.vue';
 
 Vue.use(VueRouter);
 
@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/',
     // name: 'Home',
-    component: Home,
+    component: index,
   },
   // {
   //   path: '/about',
@@ -18,38 +18,10 @@ const routes = [
   // which is lazy-loaded when the route is visited.
   //   component: () => import('../views/about.vue'),
   // },
-  {
-    path: '/content',
-    component: () => import('../views/content.vue'),
-  },
-  {
-    path: '/login',
-    component: () => import('../views/login.vue'),
-  },
-  {
-    path: '/newaccount',
-    component: () => import('../views/newAccount.vue'),
-  },
-  {
-    path: '/verification',
-    component: () => import('../views/verification.vue'),
-  },
-  {
-    path: '/forgetPassword',
-    component: () => import('../views/forgetPassword.vue'),
-  },
-  {
-    path: '/resetPassword',
-    component: () => import('../views/resetPassword.vue'),
-  },
-  {
-    path: '/terms',
-    component: () => import('../views/terms.vue'),
-  },
-  {
-    path: '/privacy',
-    component: () => import('../views/privacy.vue'),
-  },
+  // {
+  //   path: '/content',
+  //   component: () => import('../views/content.vue'),
+  // },
 ];
 
 const router = new VueRouter({

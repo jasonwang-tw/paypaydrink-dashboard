@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'paypaydrink';
   src:
-    url('fonts/paypaydrink.ttf?efb90u') format('truetype'),
-    url('fonts/paypaydrink.woff?efb90u') format('woff'),
-    url('fonts/paypaydrink.svg?efb90u#paypaydrink') format('svg');
+    url('fonts/paypaydrink.ttf?80i8ug') format('truetype'),
+    url('fonts/paypaydrink.woff?80i8ug') format('woff'),
+    url('fonts/paypaydrink.svg?80i8ug#paypaydrink') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,96 +24,153 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.pay-pin:before {
-  content: "\e91c";
+.pay-select:before {
+  content: "\e92f";
 }
-.pay-tel:before {
-  content: "\e91d";
-}
-.pay-creditcard:before {
+.pay-add:before {
   content: "\e900";
 }
-.pay-qrcode:before {
+.pay-note:before {
   content: "\e901";
 }
-.pay-happy:before {
+.pay-upload:before {
   content: "\e902";
 }
-.pay-mobile:before {
+.pay-list:before {
   content: "\e903";
 }
-.pay-Cheers:before {
+.pay-problem:before {
   content: "\e904";
 }
-.pay-list:before {
+.pay-qr:before {
   content: "\e905";
 }
-.pay-clock:before {
+.pay-copy:before {
   content: "\e906";
 }
-.pay-love:before {
+.pay-share:before {
   content: "\e907";
 }
-.pay-click:before {
+.pay-toggle:before {
   content: "\e908";
 }
-.pay-drink:before {
+.pay-Group-257:before {
   content: "\e909";
 }
-.pay-users:before {
+.pay-good:before {
   content: "\e90a";
 }
-.pay-member:before {
+.pay-smile:before {
   content: "\e90b";
 }
-.pay-shop:before {
+.pay-search:before {
   content: "\e90c";
 }
-.pay-start:before {
+.pay-like:before {
   content: "\e90d";
 }
-.pay-Vector-google:before {
+.pay-group:before {
+  content: "\e90e";
+}
+.pay-new:before {
+  content: "\e90f";
+}
+.pay-click_2:before {
+  content: "\e910";
+}
+.pay-Vector-15:before {
+  content: "\e911";
+}
+.pay-creditcard:before {
+  content: "\e930";
+}
+.pay-qrcode:before {
+  content: "\e912";
+}
+.pay-happy:before {
+  content: "\e913";
+}
+.pay-mobile:before {
+  content: "\e914";
+}
+.pay-notice:before {
+  content: "\e915";
+}
+.pay-list_click:before {
+  content: "\e916";
+}
+.pay-date:before {
+  content: "\e917";
+}
+.pay-love:before {
+  content: "\e918";
+}
+.pay-click:before {
+  content: "\e919";
+}
+.pay-drink:before {
+  content: "\e91a";
+}
+.pay-users:before {
+  content: "\e91b";
+}
+.pay-member:before {
+  content: "\e91c";
+}
+.pay-shop:before {
+  content: "\e91d";
+}
+.pay-start:before {
   content: "\e91e";
 }
 .pay-fb:before {
-  content: "\e90e";
+  content: "\e91f";
 }
 .pay-ig:before {
-  content: "\e90f";
+  content: "\e920";
 }
 .pay-yt:before {
-  content: "\e910";
+  content: "\e921";
 }
 .pay-mail:before {
-  content: "\e911";
+  content: "\e922";
 }
 .pay-logout:before {
-  content: "\e912";
+  content: "\e931";
 }
 .pay-arrow_up:before {
-  content: "\e913";
+  content: "\e923";
 }
 .pay-arrow_right:before {
-  content: "\e914";
+  content: "\e924";
 }
 .pay-arrow_left:before {
-  content: "\e915";
+  content: "\e925";
 }
 .pay-arrow_down:before {
-  content: "\e916";
+  content: "\e926";
 }
 .pay-exit:before {
-  content: "\e917";
+  content: "\e927";
 }
 .pay-user:before {
-  content: "\e918";
+  content: "\e928";
 }
 .pay-close-outline:before {
-  content: "\e919";
+  content: "\e929";
 }
 .pay-close1:before {
-  content: "\e91a";
+  content: "\e92a";
 }
 .pay-menu:before {
-  content: "\e91b";
+  content: "\e92b";
+}
+.pay-pin:before {
+  content: "\e92c";
+}
+.pay-tel:before {
+  content: "\e92d";
+}
+.pay-google:before {
+  content: "\e92e";
 }
