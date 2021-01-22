@@ -20,15 +20,49 @@
         <div class="nav-right-items notice border-l border-r border-sup2-500">
           <i class="pay-notice text-xl"></i>
         </div>
-        <div class="nav-right-items menuBtn" @click="mobileClick = !mobileClick">
+        <div class="nav-right-items menuBtn" @click="switchBtn">
           <i class="pay-menu"></i>
         </div>
       </div>
       <div
-        class="sidebar-nav h-full fixed bg-red-100 right-0 top-0 duration-200"
-        :class="{ mobileNavActive: mobileClick }"
+        class="fixed top-0 left-0 w-full h-full bg-gray-900 opacity-50 duration-200"
+        :class="{ mask: maskOff }"
+      ></div>
+      <div
+        class="sidebarNav h-full fixed bg-white shadow-lg right-0 top-0 duration-200 flex justify-center pt-10"
+        :class="{ mobileNav: mobileStatus }"
       >
-        <h1>54584</h1>
+        <div class="flex flex-wrap justify-center content-between">
+          <div class="sidebarNavTop">
+            <div class="close" @click="switchBtn">
+              <i class="pay-close-outline"></i>
+            </div>
+            <div class="account flex">
+              <div class="userImg overflow-hidden rounded-full">
+                <img src="../../src/assets/drink1.png" alt="" />
+              </div>
+              <div class="userInfo">
+                <div class="userName">Jasowang</div>
+                <router-link to="/"><small>帳戶資訊</small></router-link>
+              </div>
+            </div>
+            <div class="payCoin">
+              <small>PayPayPoint</small><br />
+              <span>999,999</span>
+            </div>
+            <ul class="list-none pl-0">
+              <li v-for="(item,index) in mainPage">
+                <router-link :to="item.link" class="no-underline">{{item.name}}</router-link>
+              </li>
+            </ul>
+          </div>
+          <div class="sidebarNavBottom">
+            <p>立即下載 配配飲</p>
+            <span>客製屬於您的飲品</span>
+            <img src="../../src/assets/appDown-col.png" alt="" />
+            <img src="../../src/assets/downhand.svg" alt="" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -37,58 +71,69 @@
 <script>
   export default {
     name: 'topmenu',
+    methods: {
+      switchBtn: function() {
+        this.mobileStatus = !this.mobileStatus
+        this.maskOff = !this.maskOff
+      }
+    },
     data() {
       return {
         mainPage: [
           {
             link: '/',
-            name: '優惠活動'
+            name: '自由配'
           },
           {
             link: '/',
-            name: '飲料故事'
+            name: '附近的店鋪'
           },
           {
             link: '/',
-            name: '魔法秘訣'
+            name: '使用條款'
           },
           {
             link: '/',
-            name: '立即體驗'
+            name: '幫助中心'
+          },
+          {
+            link: '/',
+            name: '登出'
           }
         ],
-        // dashboard: [
-        //   {
-        //     link: '/',
-        //     icon: '<i class="pay-shop"></i>',
-        //     name: '我是店長'
-        //   },
-        //   {
-        //     link: '/login',
-        //     icon: '<i class="pay-member"></i>',
-        //     name: '立即訂餐'
-        //   }
-        // ],
-        mobileClick: false
+        mobileStatus: true,
+        maskOff: true
       }
     }
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   [class^='pay-'] {
     color: var(--color-main-100);
+  }
+  .userImg {
+    width: 50px;
+    height: 50px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   .nav-right-items {
     margin: 0 0.5rem;
     padding: 0 1.25rem;
   }
-  .sidebar-nav {
+  .sidebarNav {
     width: 250px;
     right: -250px;
   }
-  .mobileNavActive {
+  .mobileNav {
     right: 0;
+  }
+  .mask {
+    opacity: 0;
+    visibility: hidden;
   }
 </style>
