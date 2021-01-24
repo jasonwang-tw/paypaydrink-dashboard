@@ -9,7 +9,7 @@
         </div>
         <div class="searchBar flex items-center">
           <i class="pay-search text-xl mr-5"></i>
-          <input class="" type="text" />
+          <input class="" type="text" placeholder="今天想喝什麼呢?" />
         </div>
       </div>
       <div class="nav-right flex items-center">

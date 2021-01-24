@@ -40,7 +40,7 @@
         options: {
           // rewind: true,
           width: 1300,
-          gap: '3.5rem',
+          gap: '3rem',
           perPage: 3,
           perMove: 1,
           type: 'loop',
@@ -48,6 +48,8 @@
           pauseOnHover: false,
           resetProgress: false,
           focus: 'center',
+          // autoWidth: true,
+          fixedWidth: '400px',
           // arrows      : 'slider',
           breakpoints: {
             '1440': {
@@ -74,7 +76,7 @@
         },
         slideCard: [
           {
-            imgSrc: require('../assets/drinkCup.png')
+            imgSrc: require('../assets/active1.jpg')
           },
           {
             imgSrc: require('../assets/active1.jpg')
@@ -86,10 +88,10 @@
             imgSrc: require('../assets/active3.jpg')
           },
           {
-            imgSrc: require('../assets/logo.png')
+            imgSrc: require('../assets/active2.jpg')
           },
           {
-            imgSrc: require('../assets/logo.png')
+            imgSrc: require('../assets/active3.jpg')
           }
         ]
       }
