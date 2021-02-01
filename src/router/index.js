@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    // name: 'Home',
+    // name: 'home',
     component: index,
   },
   // {
@@ -18,10 +18,11 @@ const routes = [
   // which is lazy-loaded when the route is visited.
   //   component: () => import('../views/about.vue'),
   // },
-  // {
-  //   path: '/content',
-  //   component: () => import('../views/content.vue'),
-  // },
+  {
+    path: '/profile',
+    // name: 'profile',
+    component: () => import('../views/profile.vue'),
+  },
 ];
 
 const router = new VueRouter({

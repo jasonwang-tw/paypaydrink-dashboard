@@ -4,13 +4,13 @@
       <splide-slide v-for="(item, index) in drinkTop">
         <div class="indexNumber absolute text-white">{{ index + 1 }}</div>
         <div class="p-5">
-          <a href="/" class="no-underline border border-sup2-500 block rounded-lg overflow-hidden">
+          <a href="/" class="no-underline border border-sup2-500 block rounded-lg overflow-hidden drinkHover">
             <div class="drinkImg -mt-1">
               <img :src="item.imgSrc" alt="" />
             </div>
             <div class="drinkInfo text-left p-5">
               <div class="drinkName text-xl font-normal">{{ item.name }}</div>
-              <div class="drinkPrice text-sub-500 my-2">{{ item.price }}</div>
+              <div class="drinkPrice text-xl text-sub-500 my-2">{{ item.price }}</div>
               <div class="flex justify-between">
                 <div class="rating text-sub-500"><i class="pay-start mr-2"></i>{{ item.rating }}</div>
                 <div class="sold">{{ item.sold }}</div>
@@ -38,7 +38,7 @@
         options: {
           rewind: true,
           width: 1300,
-          gap: '3rem',
+          // gap: '3rem',
           perPage: 4,
           perMove: 1,
           // type: 'loop',
@@ -46,7 +46,7 @@
           pauseOnHover: false,
           resetProgress: false,
           // focus: 'center',
-          fixedWidth: '290px',
+          fixedWidth: '325px',
           // arrows      : 'slider',
           breakpoints: {
             '1440': {
@@ -119,12 +119,16 @@
 </script>
 <style lang="scss" scoped>
   .drinkImg {
-    height: 250px;
+    height: 290px;
     img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
+  }
+  .drinkHover:hover{
+    // margin-top: -1rem;
+    transform: translateY(-1rem);
   }
   .drinkPrice:before {
     content: '$';

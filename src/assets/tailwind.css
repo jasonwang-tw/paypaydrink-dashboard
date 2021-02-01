@@ -130,6 +130,9 @@
     white-space: nowrap;
     overflow: hidden;
   }
+  .router-link-exact-active{
+    color: var(--color-sup1-500);
+  }
 }
 
 html,
