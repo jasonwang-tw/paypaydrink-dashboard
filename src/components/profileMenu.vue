@@ -2,7 +2,12 @@
   <div id="profileMenu">
     <ul class="pl-0 list-none">
       <li v-for="(i, key, index) in userMenu" class="my-5">
-        <router-link :to="i.link" class="no-underline text-main-500 duration-200 hover:text-sup1-100" :class="!active">{{ i.name }}</router-link>
+        <router-link
+          :to="i.link"
+          class="no-underline text-main-500 duration-200 hover:text-sup1-100"
+          :class="!active"
+          >{{ i.name }}</router-link
+        >
       </li>
     </ul>
   </div>
@@ -21,7 +26,7 @@
           },
           {
             name: '收藏清單',
-            link: '/'
+            link: '/favorites'
           },
           {
             name: '寄杯',
@@ -45,11 +50,20 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   #profileMenu {
     .userImg {
       width: 80px;
       height: 80px;
+    }
+  }
+  .router-link-exact-active {
+    color: var(--color-sup1-500);
+    &:before{
+      font-family: 'paypaydrink' !important;
+      content: '\e924';
+      position: absolute;
+      transform: translateX(-1.5rem);
     }
   }
 </style>

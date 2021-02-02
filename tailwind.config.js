@@ -32,6 +32,7 @@ module.exports = {
         500: 'var(--color-sup2)',
       },
       sup3: {
+        300: 'var(--color-sup3-linght-bg)',
         400: 'var(--color-sup3-placeholder)',
         500: 'var(--color-sup3)',
       },

@@ -20,8 +20,11 @@ const routes = [
   // },
   {
     path: '/profile',
-    // name: 'profile',
     component: () => import('../views/profile.vue'),
+  },
+  {
+    path: '/favorites',
+    component: () => import('../views/favorites.vue'),
   },
 ];
 
