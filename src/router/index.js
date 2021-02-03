@@ -26,6 +26,10 @@ const routes = [
     path: '/favorites',
     component: () => import('../views/favorites.vue'),
   },
+  {
+    path: '/stock',
+    component: () => import('../views/stock.vue'),
+  },
 ];
 
 const router = new VueRouter({

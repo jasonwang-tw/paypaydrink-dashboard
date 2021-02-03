@@ -2,13 +2,14 @@
   <div id="home">
     <topmenu />
     <div class="profileContainer grid grid-cols-12 gap-10 mx-auto my-20">
-      <div class="profileMenu col-span-3 px-10">
+      <div class="profileMenu col-span-4 px-10">
         <profileMenu />
       </div>
-      <div class="mainInfo col-span-9">
+      <div class="mainInfo col-span-8">
         <h3 class="text-main-500">個人資料</h3>
-        <div class="profileImg flex items-center no-underline ml-20 my-10">
-          <div class="userImg overflow-hidden rounded-full bg-white mr-5 flex-shrink-0">
+        <hr>
+        <div class="profileImg flex items-center no-underline my-10">
+          <div class="userImg overflow-hidden rounded-full bg-white mr-10 flex-shrink-0">
             <img src="../../src/assets/how.jpg" alt="" />
           </div>
           <div>

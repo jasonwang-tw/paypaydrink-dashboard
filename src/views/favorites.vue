@@ -2,11 +2,12 @@
   <div id="favorites">
     <topmenu />
     <div class="customContainer grid grid-cols-12 gap-10 mx-auto my-20">
-      <div class="profileMenu col-span-3 px-10">
+      <div class="profileMenu col-span-4 px-10">
         <profileMenu />
       </div>
-      <div class="mainInfo col-span-9">
+      <div class="mainInfo col-span-8">
         <h3 class="text-main-500">收藏清單</h3>
+        <hr>
         <ul class="list-none pl-0">
           <li class="border-b mb-5 pb-5 border-sup3-400">
             <div class="flex items-center">
