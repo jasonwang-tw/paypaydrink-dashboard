@@ -30,6 +30,18 @@ const routes = [
     path: '/stock',
     component: () => import('../views/stock.vue'),
   },
+  {
+    path: '/order',
+    component: () => import('../views/order.vue'),
+  },
+  {
+    path: '/bank_creditCard',
+    component: () => import('../views/bank_creditCard.vue'),
+  },
+  {
+    path: '/notice',
+    component: () => import('../views/notice.vue'),
+  },
 ];
 
 const router = new VueRouter({

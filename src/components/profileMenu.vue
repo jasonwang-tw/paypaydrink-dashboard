@@ -34,15 +34,15 @@
           },
           {
             name: '訂單',
-            link: '/'
+            link: '/order'
           },
           {
             name: '銀行帳號/信用卡',
-            link: '/'
+            link: '/bank_creditCard'
           },
           {
             name: '通知總覽',
-            link: '/'
+            link: '/notice'
           }
         ]
       }
