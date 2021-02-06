@@ -8,7 +8,7 @@
   --color-sup1-500: #06a2d1;
   --color-sup1-900: #336699;
   --color-sup2: #d9e9fe;
-  --color-sup3-linght-bg: #F3F8FF;
+  --color-sup3-linght-bg: #f3f8ff;
   --color-sup3: #afc8e9;
   --color-sup3-placeholder: #afc8e96e;
   --color-focus: #57c4e540;
@@ -96,8 +96,17 @@
   .btn-dark-blue {
     @apply text-white bg-main-500 hover:bg-main-100 py-2 px-4 rounded-lg no-underline cursor-pointer duration-200;
   }
+  .btn-dark-blue-sm {
+    @apply text-white bg-main-500 hover:bg-main-100 py-1 px-2.5 rounded-lg no-underline cursor-pointer duration-200;
+  }
+  .btn-dark-blue-sm-nohover {
+    @apply text-white bg-main-500 py-1 px-2.5 rounded-lg no-underline duration-200;
+  }
   .btn {
-    @apply duration-200 py-2 px-4 rounded-lg w-full;
+    @apply duration-200 py-2 px-4 rounded-lg;
+  }
+  .btn-sm {
+    @apply duration-200 py-1 px-2.5 rounded-lg;
   }
   .line {
     @apply border-sup2-500;
@@ -154,4 +163,10 @@ select {
   background-repeat: no-repeat;
   background-size: 12px auto;
   background-position: calc(100% - 15px) center;
+}
+strong {
+  font-weight: bold;
+}
+big {
+  font-size: 1.5rem;
 }

@@ -52,6 +52,8 @@
 
 <style lang="scss">
   #profileMenu {
+    position: sticky;
+    top: 100px;
     .userImg {
       width: 80px;
       height: 80px;

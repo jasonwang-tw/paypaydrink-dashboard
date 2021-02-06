@@ -7,7 +7,7 @@
       </div>
       <div class="mainInfo col-span-8">
         <h3 class="text-main-500">收藏清單</h3>
-        <hr>
+        <hr />
         <ul class="list-none pl-0">
           <li class="border-b mb-5 pb-5 border-sup3-400">
             <div class="flex items-center">
@@ -23,7 +23,7 @@
                 >
               </div>
             </div>
-            <ul class="list-none pl-0 rounded-xl overflow-hidden mt-5">
+            <ul class="list-none pl-0 rounded-xl overflow-hidden mt-5" v-for="(i,index) in 5">
               <li class="bg-sup3-300 p-5">
                 <div class="flex items-center justify-between">
                   <div class="flex items-center">
@@ -37,17 +37,25 @@
                   </div>
                   <div class="btnGroup flex">
                     <div class="buyAgain mr-5">
-                      <a href="/" class="text-sup1-100 no-underline duration-200 hover:text-sup1-500">
+                      <a
+                        href="/"
+                        class="text-sup1-100 no-underline duration-200 hover:text-sup1-500"
+                      >
                         再次訂購
                       </a>
                     </div>
-                    <div class="delfavorit text-red-500 cursor-pointer duration-200 hover:text-red-700">刪除</div>
+                    <div
+                      class="delfavorit text-red-500 cursor-pointer duration-200 hover:text-red-700"
+                    >
+                      刪除
+                    </div>
                   </div>
                 </div>
               </li>
             </ul>
           </li>
         </ul>
+        <pageNav />
       </div>
     </div>
     <footerBar />
@@ -58,13 +66,15 @@
   import topmenu from '@/components/topmenu.vue'
   import footerBar from '@/components/footerBar.vue'
   import profileMenu from '@/components/profileMenu.vue'
+  import pageNav from '@/components/pageNav.vue'
 
   export default {
     name: 'favorites',
     components: {
       topmenu,
       footerBar,
-      profileMenu
+      profileMenu,
+      pageNav
     },
     data() {
       return {
