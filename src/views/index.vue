@@ -40,11 +40,11 @@
         <h2 class="text-4xl">熱銷排行TOP10</h2>
         <span class="mb-10 block text-sub-500">銷售排行看這邊</span>
         <div class="flex justify-center">
-          <drink />
+          <drink :indexClass="['indexNumber']"/>
         </div>
       </div>
       <div class="text-center mb-20">
-        <router-link to="/" class="btn-light-blue">查看更多飲品</router-link>
+        <router-link to="/drink-category" class="btn-light-blue">查看更多飲品</router-link>
       </div>
     </div>
     <footerBar />

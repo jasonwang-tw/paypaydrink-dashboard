@@ -1,5 +1,5 @@
 <template>
-  <div id="favorites">
+  <div id="order">
     <topmenu />
     <div class="customContainer grid grid-cols-12 gap-10 mx-auto my-20">
       <div class="profileMenu col-span-4 px-10">
@@ -216,7 +216,7 @@
   import shopPosition from '@/components/shopPosition.vue'
 
   export default {
-    name: 'favorites',
+    name: '',
     components: {
       topmenu,
       footerBar,

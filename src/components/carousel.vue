@@ -39,7 +39,8 @@
       return {
         options: {
           // rewind: true,
-          width: 1300,
+          width: 1900,
+          // autoWidth: true,
           gap: '3rem',
           perPage: 3,
           perMove: 1,
@@ -48,7 +49,6 @@
           pauseOnHover: false,
           resetProgress: false,
           focus: 'center',
-          // autoWidth: true,
           fixedWidth: '400px',
           // arrows      : 'slider',
           breakpoints: {

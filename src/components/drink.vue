@@ -2,21 +2,26 @@
   <div id="slideshow">
     <splide :options="options">
       <splide-slide v-for="(item, index) in drinkTop">
-        <div class="indexNumber absolute text-white">{{ index + 1 }}</div>
+        <div class="absolute text-white text-center" :class="indexClass">{{ index + 1 }}</div>
         <div class="p-5">
-          <a href="/" class="no-underline border border-sup2-500 block rounded-lg overflow-hidden drinkHover">
+          <router-link
+            :to="{ name: 'drink-page' }"
+            class="no-underline border border-sup2-500 block rounded-lg overflow-hidden drinkHover"
+          >
             <div class="drinkImg -mt-1">
               <img :src="item.imgSrc" alt="" />
             </div>
             <div class="drinkInfo text-left p-5">
-              <div class="drinkName text-xl font-normal">{{ item.name }}</div>
+              <div class="drinkName text-xl font-normal text-main-500">{{ item.name }}</div>
               <div class="drinkPrice text-xl text-sub-500 my-2">{{ item.price }}</div>
               <div class="flex justify-between">
-                <div class="rating text-sub-500"><i class="pay-start mr-2"></i>{{ item.rating }}</div>
+                <div class="rating text-sub-500">
+                  <i class="pay-start mr-2"></i>{{ item.rating }}
+                </div>
                 <div class="sold">{{ item.sold }}</div>
               </div>
             </div>
-          </a>
+          </router-link>
         </div>
       </splide-slide>
     </splide>
@@ -32,6 +37,9 @@
     components: {
       Splide,
       SplideSlide
+    },
+    props: {
+      indexClass: String
     },
     data() {
       return {
@@ -126,14 +134,14 @@
       object-fit: contain;
     }
   }
-  .drinkHover:hover{
+  .drinkHover:hover {
     // margin-top: -1rem;
     transform: translateY(-1rem);
   }
   .drinkPrice:before {
     content: '$';
   }
-  .sold:before{
+  .sold:before {
     margin-right: 10px;
     color: var(--color-sub);
     content: '已售出';

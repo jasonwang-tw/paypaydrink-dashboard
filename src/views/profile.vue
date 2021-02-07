@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div id="profile">
     <topmenu />
     <div class="profileContainer grid grid-cols-12 gap-10 mx-auto my-20">
       <div class="profileMenu col-span-4 px-10">
@@ -74,7 +74,7 @@
   import profileMenu from '@/components/profileMenu.vue'
 
   export default {
-    name: 'home',
+    name: '',
     components: {
       topmenu,
       footerBar,

@@ -23,7 +23,7 @@
                 >
               </div>
             </div>
-            <ul class="list-none pl-0 rounded-xl overflow-hidden mt-5" v-for="(i,index) in 5">
+            <ul class="list-none pl-0 rounded-xl overflow-hidden mt-3" v-for="(i,index) in 5">
               <li class="bg-sup3-300 p-5">
                 <div class="flex items-center justify-between">
                   <div class="flex items-center">

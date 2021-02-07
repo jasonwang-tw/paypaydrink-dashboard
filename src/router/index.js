@@ -42,6 +42,25 @@ const routes = [
     path: '/notice',
     component: () => import('../views/notice.vue'),
   },
+  {
+    path: '/drink-category',
+    component: () => import('../views/drinkCategory.vue'),
+    // children: [
+    //   {
+    //     path: 'drink-page',
+    //     name: 'drink-page',
+    //     component: () => import('../views/drinkPage.vue'),
+    //   },
+    // ],
+  },
+  {
+    path: '/drink-page',
+    component: () => import('../views/drinkPage.vue'),
+  },
+  {
+    path: '/notice',
+    component: () => import('../views/notice.vue'),
+  },
 ];
 
 const router = new VueRouter({
