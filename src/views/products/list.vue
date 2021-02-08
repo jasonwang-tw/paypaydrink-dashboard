@@ -1,5 +1,5 @@
 <template>
-  <div id="drinkCategory">
+  <div id="drinkList">
     <topmenu />
     <div class="my-20">
       <div class="flex justify-center mb-10">
@@ -21,7 +21,6 @@
         </div>
       </div>
     </div>
-    
     <footerBar />
   </div>
 </template>
@@ -32,24 +31,24 @@
   import drink from '@/components/drink.vue'
 
   export default {
-    name: '',
+    name: 'drinkList',
     components: {
       topmenu,
       footerBar,
       drink
     },
     data() {
-      return {
-        mainDrink: [
-          {
-            link: '/',
-            name: '紅茶',
-            bg: require('../assets/drinkBg/1.jpg')
-          }
-        ]
-      }
+      return {}
     }
   }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  .customContainer {
+    max-width: 960px;
+  }
+  .userimg {
+    width: 60px;
+    height: 60px;
+  }
+</style>

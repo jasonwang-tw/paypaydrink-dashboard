@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="text-center mb-20">
-        <router-link to="/drink-category" class="btn-light-blue">查看更多飲品</router-link>
+        <router-link to="/products" class="btn-light-blue">查看更多飲品</router-link>
       </div>
     </div>
     <footerBar />

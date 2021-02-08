@@ -5,4 +5,7 @@ module.exports = {
     rules: {
         "global-require": 0,
     },
+    parserOptions: {
+        "parser": "babel-eslint"
+    }
 }

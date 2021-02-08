@@ -7,17 +7,8 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    // name: 'home',
     component: index,
   },
-  // {
-  //   path: '/about',
-  // name: 'About',
-  // route level code-splitting
-  // this generates a separate chunk (about.[hash].js) for this route
-  // which is lazy-loaded when the route is visited.
-  //   component: () => import('../views/about.vue'),
-  // },
   {
     path: '/profile',
     component: () => import('../views/profile.vue'),
@@ -43,19 +34,19 @@ const routes = [
     component: () => import('../views/notice.vue'),
   },
   {
-    path: '/drink-category',
-    component: () => import('../views/drinkCategory.vue'),
-    // children: [
-    //   {
-    //     path: 'drink-page',
-    //     name: 'drink-page',
-    //     component: () => import('../views/drinkPage.vue'),
-    //   },
-    // ],
-  },
-  {
-    path: '/drink-page',
-    component: () => import('../views/drinkPage.vue'),
+    path: '/products',
+    component: () => import('../views/products.vue'),
+    redirect: '/products/list',
+    children: [
+      {
+        path: 'list',
+        component: () => import('../views/products/list.vue'),
+      },
+      {
+        path: 'page',
+        component: () => import('../views/products/page.vue'),
+      },
+    ],
   },
   {
     path: '/notice',
@@ -64,7 +55,6 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  // mode: 'history',  //開發
   mode: 'hash',  //gh-page
   routes,
 });

@@ -5,7 +5,7 @@
         <div class="absolute text-white text-center" :class="indexClass">{{ index + 1 }}</div>
         <div class="p-5">
           <router-link
-            :to="{ name: 'drink-page' }"
+            to="/products/page"
             class="no-underline border border-sup2-500 block rounded-lg overflow-hidden drinkHover"
           >
             <div class="drinkImg -mt-1">
