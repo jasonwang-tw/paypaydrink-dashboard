@@ -87,6 +87,9 @@
   .btn-border-light-blue-sm {
     @apply hover:text-main-100 hover:border-main-100 duration-200 text-sup1-100 border-sup1-100 border py-1.5 px-3 rounded-lg no-underline cursor-pointer;
   }
+  .btn-border-light-blue-sup3-sm {
+    @apply hover:text-main-100 hover:border-main-100 duration-200 text-sup3-500 border-sup2-500 border py-1.5 px-3 rounded-lg no-underline cursor-pointer;
+  }
   .btn-border-dark-blue {
     @apply hover:text-sup1-100 hover:border-sup1-100 duration-200 text-main-100 border-main-100 border py-2 px-4 rounded-lg no-underline cursor-pointer;
   }

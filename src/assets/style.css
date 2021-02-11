@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'paypaydrink';
   src:
-    url('fonts/paypaydrink.ttf?taeeah') format('truetype'),
-    url('fonts/paypaydrink.woff?taeeah') format('woff'),
-    url('fonts/paypaydrink.svg?taeeah#paypaydrink') format('svg');
+    url('fonts/paypaydrink.ttf?ny4eu9') format('truetype'),
+    url('fonts/paypaydrink.woff?ny4eu9') format('woff'),
+    url('fonts/paypaydrink.svg?ny4eu9#paypaydrink') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,13 +27,13 @@ i {
 .pay-add:before {
   content: "\e900";
 }
-.pay-Note:before {
+.pay-warn:before {
   content: "\e901";
 }
 .pay-upload:before {
   content: "\e902";
 }
-.pay-order:before {
+.pay-list:before {
   content: "\e903";
 }
 .pay-help:before {
@@ -51,6 +51,9 @@ i {
 .pay-toggle:before {
   content: "\e908";
 }
+.pay-love:before {
+  content: "\e909";
+}
 .pay-good:before {
   content: "\e90a";
 }
@@ -60,19 +63,13 @@ i {
 .pay-search:before {
   content: "\e90c";
 }
-.pay-lick:before {
-  content: "\e90d";
-}
-.pay-members:before {
-  content: "\e90e";
-}
-.pay-market:before {
+.pay-news:before {
   content: "\e90f";
 }
-.pay-click-round:before {
+.pay-click_round:before {
   content: "\e910";
 }
-.pay-Vector-15:before {
+.pay-click:before {
   content: "\e911";
 }
 .pay-qrcode:before {
@@ -87,16 +84,13 @@ i {
 .pay-notice:before {
   content: "\e915";
 }
-.pay-checkout:before {
-  content: "\e916";
-}
 .pay-clock:before {
   content: "\e917";
 }
-.pay-love:before {
+.pay-love_outline:before {
   content: "\e918";
 }
-.pay-click:before {
+.pay-click_outline:before {
   content: "\e919";
 }
 .pay-drink:before {
@@ -105,7 +99,7 @@ i {
 .pay-users:before {
   content: "\e91b";
 }
-.pay-member1:before {
+.pay-profile:before {
   content: "\e91c";
 }
 .pay-shop:before {
@@ -126,16 +120,16 @@ i {
 .pay-mail:before {
   content: "\e922";
 }
-.pay-arrow_up:before {
+.pay-up:before {
   content: "\e923";
 }
-.pay-arrow_right:before {
+.pay-right:before {
   content: "\e924";
 }
-.pay-arrow_left:before {
+.pay-left:before {
   content: "\e925";
 }
-.pay-arrow_down:before {
+.pay-down:before {
   content: "\e926";
 }
 .pay-exit:before {
@@ -144,10 +138,10 @@ i {
 .pay-user:before {
   content: "\e928";
 }
-.pay-close-outline:before {
+.pay-close_outline:before {
   content: "\e929";
 }
-.pay-close1:before {
+.pay-close:before {
   content: "\e92a";
 }
 .pay-menu:before {
