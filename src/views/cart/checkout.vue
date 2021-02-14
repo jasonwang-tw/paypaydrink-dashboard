@@ -1,45 +1,60 @@
 <template>
-  <div id="favorites">
+  <div id="checkout">
     <topmenu />
-    <div class="customContainer grid grid-cols-12 gap-10 mx-auto my-20">
-      <div class="profileMenu col-span-4 px-10">
-        <profileMenu />
+    <div class="customContainer xl:mx-auto my-20">
+      訂單飲品
+      數量
+      總價
+      <div class="userImg rounded-full overflow-hidden flex-shrink-0 mr-5">
+        <img src="../../assets/how.jpg" alt="" />
       </div>
-      <div class="mainInfo col-span-8">
-        <h3 class="text-main-500">結帳</h3>
-        <hr />
-        <div class="grid grid-cols-12 text-main-500">
-          <div class="col-span-8">飲品</div>
-          <div class="col-span-2 flex justify-center">剩餘數量</div>
-        </div>
-        <ul class="list-none pl-0 rounded-xl overflow-hidden mt-5">
-          <li class="grid grid-cols-12 mb-10" v-for="(i, index) in 5">
-            <div class="col-span-8">
-              <div class="flex items-center">
-                <div class="userimg rounded-lg overflow-hidden mr-3">
-                  <img src="../../src/assets/product.jpg" alt="" />
-                </div>
-                <div class="drinkinfo">
-                  <div class="userName font-normal text-main-500 mb-2">東方不敗</div>
-                  <div class="text-main-500 text-sm mb-1">
-                    內含配料<span>粉圓、布丁、紅豆</span>
-                  </div>
-                  <div class="text-main-500 text-sm">規格<span>冷飲、中杯、三分糖、微冰</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-span-2 flex items-center justify-center">
-              <div>10</div>
-            </div>
-            <div class="col-span-2 flex items-center justify-end">
-              <div class="btnGroup">
-                <div class="btn-dark-blue">兌換</div>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <pageNav />
+      滴妹好棒棒
+      查看全部配方
+      飲品優惠，低消100折$30
+      <div class="userimg rounded-lg overflow-hidden mr-3">
+        <img src="../../../src/assets/product.jpg" alt="" />
       </div>
+      東方不敗
+      內含配料
+      粉圓、布丁、紅豆
+      規格 冷飲、中杯、三分糖、微冰
+      <select name="" id="">
+        <option value="1">1</option>
+      </select>
+      $60
+      小計(6杯飲品)
+      滴妹好棒棒
+      優惠
+      低消$100折$30
+      $360
+      $330
+      <hr>
+      領取方式
+      直接領取
+      寄杯
+      送禮
+      選擇領取店鋪
+      選擇店鋪
+      配配飲 一號店
+      台北市大安區仁愛路四段345巷6弄78號
+      02-2456-7891
+      24H 全年無休
+      查看位置
+      <hr>
+      付款方式
+      信用卡
+      PayPayPoint
+      選擇信用卡
+      **** 4893
+      增加信用卡
+      請輸入折扣碼
+      PAYPATDRINK
+      使用
+      小計(6杯飲品)
+      折扣碼PAYPATDRINK優惠
+      $330
+      $297
+      付款
     </div>
     <footerBar />
   </div>
@@ -48,27 +63,17 @@
 <script>
   import topmenu from '@/components/topmenu.vue'
   import footerBar from '@/components/footerBar.vue'
-  import profileMenu from '@/components/profileMenu.vue'
   import pageNav from '@/components/pageNav.vue'
 
   export default {
-    name: 'favorites',
+    name: 'checkout',
     components: {
       topmenu,
       footerBar,
-      profileMenu,
       pageNav
     },
     data() {
-      return {
-        mainDrink: [
-          {
-            link: '/',
-            name: '紅茶',
-            bg: require('../assets/drinkBg/1.jpg')
-          }
-        ]
-      }
+      return {}
     }
   }
 </script>

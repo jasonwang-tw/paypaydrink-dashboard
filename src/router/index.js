@@ -49,6 +49,21 @@ const routes = [
     ],
   },
   {
+    path: '/cart',
+    component: () => import('../views/cart.vue'),
+    redirect: '/cart/view',
+    children: [
+      {
+        path: 'view',
+        component: () => import('../views/cart/view.vue'),
+      },
+      {
+        path: 'checkout',
+        component: () => import('../views/cart/checkout.vue'),
+      },
+    ],
+  },
+  {
     path: '/notice',
     component: () => import('../views/notice.vue'),
   },
