@@ -8,7 +8,7 @@
           </router-link>
         </div>
         <div class="searchBar flex items-center">
-          <i class="pay-search text-xl mr-5"></i>
+          <i class="pay-search text-xl mr-5 text-main-100"></i>
           <input class="" type="text" placeholder="今天想喝什麼呢?" />
         </div>
       </div>
@@ -19,7 +19,7 @@
           @mouseenter="miniCartHidden = false"
           @mouseleave="miniCartHidden = true"
         >
-          <i class="pay-cart text-xl"></i>
+          <i class="pay-cart text-xl text-main-100"></i>
           <!-- miniCartList -->
           <div
             class="shopCartList absolute bg-white border border-sup2-500 p-5 mt-2.5 -ml-6 rounded-lg duration-200"
@@ -44,7 +44,7 @@
               </li>
             </ul>
             <p class="text-sup3-500 text-center">還有其他 5 個項目</p>
-            <router-link to="/" class="btn-dark-blue block text-center mt-5"
+            <router-link to="/cart" class="btn-dark-blue block text-center mt-5"
               >查看購物車</router-link
             >
           </div>
@@ -55,7 +55,7 @@
           @mouseenter="miniNoticeHidden = false"
           @mouseleave="miniNoticeHidden = true"
         >
-          <i class="pay-notice text-xl"></i>
+          <i class="pay-notice text-xl text-main-100"></i>
           <!-- noticeList -->
           <div
             class="noticeList absolute bg-white border border-sup2-500 p-5 mt-2.5 -ml-6 rounded-lg duration-200"
@@ -84,7 +84,7 @@
           </div>
         </div>
         <div class="nav-right-items menuBtn cursor-pointer" @click="menuhBtn">
-          <i class="pay-menu"></i>
+          <i class="pay-menu text-main-100"></i>
         </div>
       </div>
       <!-- mask -->
@@ -176,9 +176,7 @@
 </script>
 
 <style scoped lang="scss">
-  [class^='pay-'] {
-    color: var(--color-main-100);
-  }
+  
   .shopCart:before {
     content: '99';
     color: white;

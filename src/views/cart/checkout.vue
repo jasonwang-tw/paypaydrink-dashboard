@@ -1,60 +1,57 @@
 <template>
   <div id="checkout">
     <topmenu />
-    <div class="customContainer xl:mx-auto my-20">
-      訂單飲品
-      數量
-      總價
-      <div class="userImg rounded-full overflow-hidden flex-shrink-0 mr-5">
-        <img src="../../assets/how.jpg" alt="" />
+    <div class="customContainer xl:mx-auto my-20 text-main-500">
+      <buyList />
+      <div class="border rounded-xl p-5 border-sup3-400 my-10">
+        <div class="flex items-center">
+          <h3 class="mb-0">領取方式</h3>
+          <div>直接領取</div>
+          <div>寄杯</div>
+          <div>送禮</div>
+        </div>
+        <hr />
+        <div class="flex">
+          <div>選擇領取店鋪</div>
+          <div>選擇店鋪</div>
+        </div>
+        <div>配配飲一號店</div>
+        <div>
+          台北市大安區仁愛路四段345巷6弄78號
+        </div>
+        <div>02-2456-7891</div>
+        <div>24H</div>
+        <div>全年無休</div>
+        <div>查看位置</div>
       </div>
-      滴妹好棒棒
-      查看全部配方
-      飲品優惠，低消100折$30
-      <div class="userimg rounded-lg overflow-hidden mr-3">
-        <img src="../../../src/assets/product.jpg" alt="" />
+      <div class="border rounded-xl p-5 border-sup3-400">
+        <div class="flex items-center">
+          <h3 class="mb-0">付款方式</h3>
+          <div>信用卡</div>
+          <div>PayPayPoint</div>
+        </div>
+        <hr />
+        <div class="flex">
+          <div>選擇信用卡</div>
+          <div>
+            <div>**** 4893</div>
+            <div>增加信用卡</div>
+          </div>
+        </div>
       </div>
-      東方不敗
-      內含配料
-      粉圓、布丁、紅豆
-      規格 冷飲、中杯、三分糖、微冰
-      <select name="" id="">
-        <option value="1">1</option>
-      </select>
-      $60
-      小計(6杯飲品)
-      滴妹好棒棒
-      優惠
-      低消$100折$30
-      $360
-      $330
-      <hr>
-      領取方式
-      直接領取
-      寄杯
-      送禮
-      選擇領取店鋪
-      選擇店鋪
-      配配飲 一號店
-      台北市大安區仁愛路四段345巷6弄78號
-      02-2456-7891
-      24H 全年無休
-      查看位置
-      <hr>
-      付款方式
-      信用卡
-      PayPayPoint
-      選擇信用卡
-      **** 4893
-      增加信用卡
-      請輸入折扣碼
-      PAYPATDRINK
-      使用
-      小計(6杯飲品)
-      折扣碼PAYPATDRINK優惠
-      $330
-      $297
-      付款
+      <div class="flex justify-between">
+        <div class="flex">
+          <div>請輸入折扣碼</div>
+          <div>PAYPATDRINK</div>
+          <div>使用</div>
+        </div>
+        <div class="text-right">
+          <countResult />
+        </div>
+      </div>
+      <div class="text-right">
+        <div class="btn-dark-blue inline-block w-40 text-center">付款</div>
+      </div>
     </div>
     <footerBar />
   </div>
@@ -63,14 +60,16 @@
 <script>
   import topmenu from '@/components/topmenu.vue'
   import footerBar from '@/components/footerBar.vue'
-  import pageNav from '@/components/pageNav.vue'
+  import buyList from '@/components/buyList.vue'
+  import countResult from '@/components/countResult.vue'
 
   export default {
     name: 'checkout',
     components: {
       topmenu,
       footerBar,
-      pageNav
+      buyList,
+      countResult
     },
     data() {
       return {}
@@ -81,9 +80,5 @@
 <style lang="scss" scoped>
   .customContainer {
     max-width: 960px;
-  }
-  .userimg {
-    width: 60px;
-    height: 60px;
   }
 </style>
