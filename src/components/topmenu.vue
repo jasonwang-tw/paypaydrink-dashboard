@@ -146,7 +146,7 @@
       return {
         mainPage: [
           {
-            link: '/',
+            link: '/free_drink',
             name: '自由配'
           },
           {

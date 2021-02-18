@@ -64,6 +64,17 @@ const routes = [
     ],
   },
   {
+    path: '/free_drink',
+    component: () => import('../views/freeDrink.vue'),
+    redirect: '/free_drink/portal',
+    children: [
+      {
+        path: 'portal',
+        component: () => import('../views/freedrink/portal.vue'),
+      },
+    ],
+  },
+  {
     path: '/notice',
     component: () => import('../views/notice.vue'),
   },

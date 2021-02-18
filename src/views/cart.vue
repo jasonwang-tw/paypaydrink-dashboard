@@ -1,13 +1,21 @@
 <template>
   <div id="cart">
+    <topmenu />
     <router-view />
+    <footerBar />
   </div>
 </template>
 
 <script>
+  import topmenu from '@/components/topmenu.vue'
+  import footerBar from '@/components/footerBar.vue'
+
   export default {
     name: '',
-    components: {},
+    components: {
+      topmenu,
+      footerBar
+    },
     data() {
       return {}
     }

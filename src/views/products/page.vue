@@ -1,6 +1,5 @@
 <template>
   <div id="drinkPage">
-    <topmenu />
     <div class="customContainer mx-auto my-20">
       <div class="grid grid-cols-2 gap-10">
         <div>
@@ -161,21 +160,16 @@
         </div>
       </div>
     </div>
-    <footerBar />
   </div>
 </template>
 
 <script>
-  import topmenu from '@/components/topmenu.vue'
-  import footerBar from '@/components/footerBar.vue'
   import pageNav from '@/components/pageNav.vue'
   import { Splide, SplideSlide } from '@splidejs/vue-splide'
 
   export default {
     name: 'drinkPage',
     components: {
-      topmenu,
-      footerBar,
       pageNav,
       Splide,
       SplideSlide

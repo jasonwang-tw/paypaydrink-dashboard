@@ -1,6 +1,5 @@
 <template>
   <div id="checkout">
-    <topmenu />
     <div class="customContainer xl:mx-auto my-20 text-main-500">
       <buyList />
       <div class="border rounded-xl p-5 border-sup3-400 my-10">
@@ -60,12 +59,8 @@
           <div class="font-normal text-lg mr-5">選擇信用卡</div>
           <div>
             <div class="mb-5">
-              <div>
-                <input type="radio" name="card" id="" /><span>**** 4893</span>
-              </div>
-              <div>
-                <input type="radio" name="card" id="" /><span>**** 4893</span>
-              </div>
+              <div><input type="radio" name="card" id="" /><span>**** 4893</span></div>
+              <div><input type="radio" name="card" id="" /><span>**** 4893</span></div>
             </div>
             <div class="btn-border-light-blue-sm">增加信用卡</div>
           </div>
@@ -75,7 +70,7 @@
         <div>
           <div class="flex items-center my-10">
             <div>請輸入折扣碼</div>
-            <div class="mx-5"><input type="text" name="" id="" value="PAYPATDRINK"></div>
+            <div class="mx-5"><input type="text" name="" id="" value="PAYPATDRINK" /></div>
             <div class="btn-dark-blue">使用</div>
           </div>
         </div>
@@ -87,21 +82,16 @@
         <div class="btn-dark-blue inline-block w-40 text-center">付款</div>
       </div>
     </div>
-    <footerBar />
   </div>
 </template>
 
 <script>
-  import topmenu from '@/components/topmenu.vue'
-  import footerBar from '@/components/footerBar.vue'
   import buyList from '@/components/buyList.vue'
   import countResult from '@/components/countResult.vue'
 
   export default {
     name: 'checkout',
     components: {
-      topmenu,
-      footerBar,
       buyList,
       countResult
     },

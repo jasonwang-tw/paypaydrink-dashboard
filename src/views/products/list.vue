@@ -1,6 +1,5 @@
 <template>
   <div id="drinkList">
-    <topmenu />
     <div class="my-20">
       <div class="flex justify-center mb-10">
         <div class="contentCard">
@@ -21,20 +20,15 @@
         </div>
       </div>
     </div>
-    <footerBar />
   </div>
 </template>
 
 <script>
-  import topmenu from '@/components/topmenu.vue'
-  import footerBar from '@/components/footerBar.vue'
   import drink from '@/components/drink.vue'
 
   export default {
     name: 'drinkList',
     components: {
-      topmenu,
-      footerBar,
       drink
     },
     data() {

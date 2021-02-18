@@ -1,6 +1,5 @@
 <template>
   <div id="cartView">
-    <topmenu />
     <div class="customContainer mx-auto my-20 text-main-500">
       <h2>購物內容</h2>
       <buyList />
@@ -11,21 +10,16 @@
         >
       </div>
     </div>
-    <footerBar />
   </div>
 </template>
 
 <script>
-  import topmenu from '@/components/topmenu.vue'
-  import footerBar from '@/components/footerBar.vue'
   import buyList from '@/components/buyList.vue'
   import countResult from '@/components/countResult.vue'
 
   export default {
     name: 'cartView',
     components: {
-      topmenu,
-      footerBar,
       buyList,
       countResult
     },
