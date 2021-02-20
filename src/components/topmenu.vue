@@ -147,7 +147,7 @@
         mainPage: [
           {
             link: '/free_drink',
-            name: '自由配'
+            name: '飲品自由配'
           },
           {
             link: '/',
@@ -176,7 +176,6 @@
 </script>
 
 <style scoped lang="scss">
-  
   .shopCart:before {
     content: '99';
     color: white;

@@ -1,33 +1,71 @@
 <template>
   <div id="portal">
     <div class="customContainer mx-auto my-20 text-main-500">
-      <h2>自由配</h2>
-      新增配方
-      <div class="userImg rounded-full overflow-hidden mr-5">
-        <img src="../../assets/how.jpg" alt="" />
-      </div>
-      滴妹好棒棒 4.5 關注 3,547 配方 47 售出飲品 4,998杯 配方進帳餘額 NT$204,751 提款
-      <hr />
-      我的配方 已售出 販售金額 操作
       <div class="flex items-center justify-between">
-        <div class="flex items-center">
-          <div class="drinkImg rounded-lg overflow-hidden mr-3 flex-shrink-0">
+        <h2>飲品自由配</h2>
+        <router-link to="/free_drink/edit" class="btn-border-light-blue">新增配方</router-link>
+      </div>
+      <hr>
+      <div class="flex pb-10">
+        <div class="userImg rounded-full overflow-hidden mr-10">
+          <img src="../../assets/how.jpg" alt="" />
+        </div>
+        <div class="flex-grow">
+          <h5 class="mb-0">HowHow</h5>
+          <ul class="masterInfo flex pl-0 list-none py-5">
+            <li>
+              <span><i class="pay-start"></i></span>4.5
+            </li>
+            <li><span>關注</span>3,547</li>
+            <li><span>配方</span>47</li>
+            <li><span>售出飲品</span>4,998杯</li>
+          </ul>
+          <div class="p-5 bg-sup3-300 rounded-xl w-full">
+            <div class="font-normal">配方進帳餘額</div>
+            <div class="flex items-center justify-between">
+              <div class="mr-10 text-2xl font-normal text-sub-500">NT$204,751</div>
+              <div class="flex">
+                <div class="btn-dark-blue mr-2.5">提款</div>
+                <div class="btn-border-light-blue">歷史紀錄</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-between p-5">
+        <h3 class="drinkInfo mb-0">我的配方</h3>
+        <div class="drinkOrder">已售出</div>
+        <div class="drinkOrder">販售金額</div>
+        <div class="drinkOrder">操作</div>
+      </div>
+      <div class="flex items-center justify-between p-5 rounded-xl border border-sup3-400 mb-5" v-for="(i,index) in 5">
+        <div class="drinkInfo flex items-center">
+          <div class="drinkImg rounded-lg overflow-hidden mr-5 flex-shrink-0">
             <img src="../../assets/product.jpg" alt="" />
           </div>
           <div>
             <h5 class="mb-2">東方不敗</h5>
-            <div><span class="drinkBefore text-sup3-500">內含配料 </span>粉圓、布丁、紅豆</div>
-            <div><span class="drinkBefore text-sup3-500">規格 </span>冷飲、中杯、三分糖、微冰</div>
+            <div class="flex">
+              <span class="drinkBefore text-sup3-500 flex-shrink-0">內含配料</span>
+              <span>粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆</span>
+            </div>
+            <div class="flex">
+              <span class="drinkBefore text-sup3-500">規格</span>
+              <span>冷飲、中杯、三分糖、微冰</span>
+            </div>
           </div>
         </div>
-        <div class="flex items-center">
-          <div>2</div>
-          <div class="price text-sub-500 font-normal">$60</div>
-          <div class="text-red-500 hover:text-red-700 cursor-pointer duration-200">編輯</div>
-          <div class="text-red-500 hover:text-red-700 cursor-pointer duration-200">上架</div>
+        <div class="drinkOrder font-normal">2</div>
+        <div class="price text-sub-500 font-normal drinkOrder">$60</div>
+        <div class="flex items-center drinkOrder justify-center">
+          <div class="text-sup1-100 hover:text-sup1-900 cursor-pointer duration-200 mr-3">上架</div>
+          <router-link to="/free_drink/edit" class="cursor-pointer duration-200 mr-3"
+            >編輯</router-link
+          >
+          <div class="text-red-500 hover:text-red-700 cursor-pointer duration-200">刪除</div>
         </div>
       </div>
-      <pageNav />
+      <pageNav class="pt-5" />
     </div>
   </div>
 </template>
@@ -58,5 +96,29 @@
   .userImg {
     width: 120px;
     height: 120px;
+  }
+  .masterInfo {
+    li {
+      margin-right: 1.5rem;
+      padding-right: 1.5rem;
+      span {
+        color: var(--color-sup1-100);
+        margin-right: 0.5rem;
+      }
+    }
+  }
+  .drinkImg {
+    width: 100px;
+    height: 100px;
+  }
+  .drinkInfo {
+    flex-basis: 55%;
+  }
+  .drinkOrder {
+    text-align: center;
+    flex-basis: 15%;
+  }
+  .drinkBefore {
+    width: 80px;
   }
 </style>

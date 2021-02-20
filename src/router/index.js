@@ -72,6 +72,10 @@ const routes = [
         path: 'portal',
         component: () => import('../views/freedrink/portal.vue'),
       },
+      {
+        path: 'edit',
+        component: () => import('../views/freedrink/edit.vue'),
+      },
     ],
   },
   {
