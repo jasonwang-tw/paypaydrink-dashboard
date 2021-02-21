@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'paypaydrink';
   src:
-    url('fonts/paypaydrink.ttf?ny4eu9') format('truetype'),
-    url('fonts/paypaydrink.woff?ny4eu9') format('woff'),
-    url('fonts/paypaydrink.svg?ny4eu9#paypaydrink') format('svg');
+    url('fonts/paypaydrink.ttf?722j5c') format('truetype'),
+    url('fonts/paypaydrink.woff?722j5c') format('woff'),
+    url('fonts/paypaydrink.svg?722j5c#paypaydrink') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -84,6 +84,9 @@ i {
 .pay-notice:before {
   content: "\e915";
 }
+.pay-list1:before {
+  content: "\e916";
+}
 .pay-clock:before {
   content: "\e917";
 }
@@ -158,6 +161,9 @@ i {
 }
 .pay-select:before {
   content: "\e92f";
+}
+.pay-arrow_top:before {
+  content: "\e90d";
 }
 .pay-creditcard:before {
   content: "\e930";

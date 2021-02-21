@@ -59,7 +59,8 @@
     list-style-type: inherit;
   }
   select,
-  input:not([type='radio']):not([type='checkbox']) {
+  input:not([type='radio']):not([type='checkbox']),
+  textarea {
     @apply border px-4 py-2 border-sup2-500 rounded-lg text-main-500 bg-white duration-200 w-full appearance-none;
   }
   input {
@@ -82,16 +83,16 @@
 }
 @layer utilities {
   .btn-border-light-blue {
-    @apply hover:text-main-100 hover:border-main-100 duration-200 text-sup1-100 border-sup1-100 border py-2 px-4 rounded-lg no-underline cursor-pointer;
+    @apply bg-white hover:text-main-100 hover:border-main-100 duration-200 text-sup1-100 border-sup1-100 border py-2 px-4 rounded-lg no-underline cursor-pointer;
   }
   .btn-border-light-blue-sm {
-    @apply hover:text-main-100 hover:border-main-100 duration-200 text-sup1-100 border-sup1-100 border py-1.5 px-3 rounded-lg no-underline cursor-pointer;
+    @apply bg-white hover:text-main-100 hover:border-main-100 duration-200 text-sup1-100 border-sup1-100 border py-1.5 px-3 rounded-lg no-underline cursor-pointer;
   }
   .btn-border-light-blue-sup3-sm {
-    @apply hover:text-main-100 hover:border-main-100 duration-200 text-sup3-500 border-sup2-500 border py-1.5 px-3 rounded-lg no-underline cursor-pointer;
+    @apply bg-white hover:text-main-100 hover:border-main-100 duration-200 text-sup3-500 border-sup2-500 border py-1.5 px-3 rounded-lg no-underline cursor-pointer;
   }
   .btn-border-dark-blue {
-    @apply hover:text-sup1-100 hover:border-sup1-100 duration-200 text-main-100 border-main-100 border py-2 px-4 rounded-lg no-underline cursor-pointer;
+    @apply bg-white hover:text-sup1-100 hover:border-sup1-100 duration-200 text-main-100 border-main-100 border py-2 px-4 rounded-lg no-underline cursor-pointer;
   }
   .btn-light-blue {
     @apply text-white bg-sup1-100 hover:bg-sup1-500 py-2 px-4 rounded-lg no-underline cursor-pointer duration-200;
@@ -104,6 +105,12 @@
   }
   .btn-dark-blue-sm-nohover {
     @apply text-white bg-main-500 py-1 px-2.5 rounded-lg no-underline duration-200;
+  }
+  .btn-remove {
+    @apply text-white bg-red-500 hover:bg-red-700 py-2 px-4 rounded-lg no-underline cursor-pointer duration-200;
+  }
+  .btn-border-remove {
+    @apply bg-white hover:text-red-700 hover:border-red-700 duration-200 text-red-500 border-red-500 border py-2 px-4 rounded-lg no-underline cursor-pointer;
   }
   .btn {
     @apply duration-200 py-2 px-4 rounded-lg;
@@ -157,7 +164,8 @@ body {
   margin: 0; */
 }
 select:focus,
-input:focus {
+input:focus,
+textarea:focus {
   outline: 0;
   box-shadow: 0 0 1px 0.2rem var(--color-focus);
 }
@@ -172,4 +180,7 @@ strong {
 }
 big {
   font-size: 1.5rem;
+}
+textarea::placeholder {
+  color: var(--color-sup3);
 }
