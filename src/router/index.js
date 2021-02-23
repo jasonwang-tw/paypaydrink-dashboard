@@ -34,6 +34,10 @@ const routes = [
     component: () => import('../views/notice.vue'),
   },
   {
+    path: '/drinkShop',
+    component: () => import('../views/drinkShop.vue'),
+  },
+  {
     path: '/products',
     component: () => import('../views/products.vue'),
     redirect: '/products/list',

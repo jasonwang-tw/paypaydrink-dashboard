@@ -59,14 +59,9 @@
       height: 80px;
     }
   }
-  .router-link-exact-active {
-    background-color: var(--color-sup3-linght-bg);
-    // color: var(--color-sup1-500);
-    // &:before{
-    //   font-family: 'paypaydrink' !important;
-    //   content: '\e924';
-    //   position: absolute;
-    //   transform: translateX(-1.5rem);
-    // }
+  #profileMenu {
+    .router-link-exact-active {
+      background-color: var(--color-sup3-linght-bg);
+    }
   }
 </style>
