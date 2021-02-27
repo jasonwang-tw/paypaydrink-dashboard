@@ -7,7 +7,7 @@
         </div>
         <div>
           <h5 class="mb-2">滴妹好棒棒</h5>
-          <router-link to="/" class="btn-border-light-blue-sm block">查看全部配方</router-link>
+          <router-link to="/drinkShop" class="btn-border-light-blue-sm block">查看全部配方</router-link>
         </div>
       </div>
       <div>飲品優惠，低消100折$30</div>

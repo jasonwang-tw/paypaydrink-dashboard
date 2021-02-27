@@ -71,7 +71,7 @@
       return {
         mainDrink: [
           {
-            link: '/',
+            link: '/search',
             name: '紅茶',
             bg: require('../assets/drinkBg/1.jpg')
           },

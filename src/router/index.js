@@ -38,6 +38,10 @@ const routes = [
     component: () => import('../views/drinkShop.vue'),
   },
   {
+    path: '/search',
+    component: () => import('../views/search.vue'),
+  },
+  {
     path: '/products',
     component: () => import('../views/products.vue'),
     redirect: '/products/list',
