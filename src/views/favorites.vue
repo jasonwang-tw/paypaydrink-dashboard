@@ -8,47 +8,55 @@
       <div class="mainInfo col-span-8">
         <h3 class="">收藏清單</h3>
         <hr />
-        <ul class="list-none pl-0">
-          <li class="border-b mb-5 pb-5 border-sup3-400">
-            <div class="flex items-center">
-              <div class="userimg rounded-full overflow-hidden mr-3">
-                <img src="../../src/assets/how.jpg" alt="" />
+        <ul class="list-none pl-0" v-for="(i, index) in 3">
+          <li class="border-b mb-5 border-sup3-400">
+            <div class="flex items-center mb-5 justify-between">
+              <div class="flex items-center">
+                <div class="userimg rounded-full overflow-hidden mr-3">
+                  <img src="../../src/assets/how.jpg" alt="" />
+                </div>
+                <div class="drinkinfo">
+                  <div class="userName text-xl font-normal mb-2 ">howhow</div>
+                  <router-link
+                    to="/drinkShop"
+                    class="allDrink no-underline btn-border-light-blue-sm text-sm inline-block"
+                    >查看全部配方</router-link
+                  >
+                </div>
               </div>
-              <div class="drinkinfo">
-                <div class="userName text-xl font-normal mb-2 ">howhow</div>
-                <router-link
-                  to="/drinkShop"
-                  class="allDrink no-underline btn-border-light-blue-sm text-sm inline-block"
-                  >查看全部配方</router-link
-                >
+              <div class="text-sup3-500 p-5 text-lg cursor-pointer" @click="listToggleBtn">
+                <i class="pay-toggle"></i>
               </div>
             </div>
-            <ul class="list-none pl-0 rounded-xl overflow-hidden mt-3" v-for="(i, index) in 5">
-              <li class="bg-sup3-300 p-5">
+            <ul class="drinkList list-none pl-0 duration-200 listClose h-full">
+              <li class="bg-sup3-300 p-5 mt-3 rounded-xl overflow-hidden" v-for="(i, index) in 5">
                 <div class="flex items-center justify-between">
-                  <div class="flex items-center">
-                    <div class="userimg rounded-lg overflow-hidden mr-3">
+                  <div class="flex items-center mr-3">
+                    <div class="userimg rounded-lg overflow-hidden mr-3 flex-shrink-0">
                       <img src="../../src/assets/product.jpg" alt="" />
                     </div>
                     <div class="drinkinfo">
-                      <div class="userName font-normal  mb-2">東方不敗</div>
-                      <div class="text-sm">內含配料<span>粉圓、布丁、紅豆</span></div>
+                      <div class="userName font-normal mb-2">東方不敗</div>
+                      <div class="text-sm flex">
+                        <span class="flex-shrink-0">內含配料</span
+                        ><span class="ml-3">粉圓、布丁、紅豆粉圓</span>
+                      </div>
                     </div>
                   </div>
-                  <div class="btnGroup flex">
+                  <div class="btnGroup flex flex-shrink-0">
                     <div class="buyAgain mr-5">
-                      <a
-                        href="/"
+                      <router-link
+                        to="/products/page"
                         class="text-sup1-100 no-underline duration-200 hover:text-sup1-500"
                       >
                         再次訂購
-                      </a>
+                      </router-link>
                     </div>
                     <div
                       class="delfavorit text-red-500 cursor-pointer duration-200 hover:text-red-700"
                       @click="removeBtn"
                     >
-                      刪除
+                      取消收藏
                     </div>
                   </div>
                 </div>
@@ -60,19 +68,7 @@
       </div>
     </div>
     <footerBar />
-    <div
-      class="fixed top-0 left-0 bg-opacity-50 bg-gray-900 h-full w-full z-20 flex items-center justify-center duration-200"
-      :class="{ popup: popupRemove }"
-    >
-      <div id="removeDrink" class="bg-white rounded-3xl text-center p-5 shadow-xl">
-        <h3>刪除收藏?</h3>
-        <div class="mb-5">此操作無法撤消，確定要執行嗎?</div>
-        <div class="functionBtn flex justify-center">
-          <div class="btn btn-remove mr-3" @click="removeBtn">取消</div>
-          <div class="btn btn-dark-blue">確認</div>
-        </div>
-      </div>
-    </div>
+    <popupRemove :class="{ popup: popupRemove }" title="刪除收藏" :remove="removeBtn"/>
   </div>
 </template>
 
@@ -81,6 +77,7 @@
   import footerBar from '@/components/footerBar.vue'
   import profileMenu from '@/components/profileMenu.vue'
   import pageNav from '@/components/pageNav.vue'
+  import popupRemove from '@/components/popupRemove.vue'
 
   export default {
     name: 'favorites',
@@ -88,15 +85,22 @@
       topmenu,
       footerBar,
       profileMenu,
-      pageNav
+      pageNav,
+      popupRemove
     },
     methods: {
+      listToggleBtn: function(e) {
+        let i = e.target.parentNode.parentNode.nextSibling
+        // let n = e.target.parentNode.parentNode.nextSibling.clientHeight
+        i.classList.toggle('listClose')
+      },
       removeBtn: function() {
         this.popupRemove = !this.popupRemove
       }
     },
     data() {
       return {
+        drinkToggle: true,
         popupRemove: true
       }
     }
@@ -114,5 +118,16 @@
   .popup {
     opacity: 0;
     visibility: hidden;
+  }
+  .drinkList {
+    li:last-child {
+      margin-bottom: 1rem;
+    }
+  }
+  .listClose {
+    visibility: hidden;
+    transform: translateY(-5%);
+    opacity: 0;
+    height: 0px;
   }
 </style>

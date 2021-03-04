@@ -2,7 +2,7 @@
   <div id="productgrid" class="text-main-500">
     <h2 class="mb-10">搜尋 "<span>紅茶</span>"</h2>
     <div class="grid grid-cols-5 gap-10">
-      <div v-for="(item, index) in drinkTop">
+      <div v-for="(item, index) in drinkList">
         <router-link
           to="/products/page"
           class="no-underline border border-sup2-500 block rounded-lg overflow-hidden drinkHover"
@@ -30,7 +30,7 @@
     components: {},
     data() {
       return {
-        drinkTop: [
+        drinkList: [
           {
             drinkLink: '/',
             imgSrc: require('../assets/tea1.png'),
