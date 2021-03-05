@@ -24,8 +24,8 @@
                   >
                 </div>
               </div>
-              <div class="text-sup3-500 p-5 text-lg cursor-pointer" @click="listToggleBtn">
-                <i class="pay-toggle"></i>
+              <div class="text-sup3-500 text-lg cursor-pointer" @click="listToggleBtn">
+                <i class="pay-toggle p-5"></i>
               </div>
             </div>
             <ul class="drinkList list-none pl-0 duration-200 listClose h-full">
@@ -68,7 +68,7 @@
       </div>
     </div>
     <footerBar />
-    <popupRemove :class="{ popup: popupRemove }" title="刪除收藏" :remove="removeBtn"/>
+    <popupRemove :class="{ popup: popupRemove }" title="刪除收藏" :remove="removeBtn" />
   </div>
 </template>
 
@@ -91,7 +91,6 @@
     methods: {
       listToggleBtn: function(e) {
         let i = e.target.parentNode.parentNode.nextSibling
-        // let n = e.target.parentNode.parentNode.nextSibling.clientHeight
         i.classList.toggle('listClose')
       },
       removeBtn: function() {
@@ -115,14 +114,15 @@
     width: 60px;
     height: 60px;
   }
-  .popup {
-    opacity: 0;
-    visibility: hidden;
-  }
   .drinkList {
     li:last-child {
       margin-bottom: 1rem;
     }
+  }
+  // status change
+  .popup {
+    opacity: 0;
+    visibility: hidden;
   }
   .listClose {
     visibility: hidden;

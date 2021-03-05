@@ -42,10 +42,10 @@
     <footerBar />
     <div
       id="popupRemove"
-      class=" fixed top-0 left-0 bg-opacity-50 bg-gray-900 h-full w-full z-20 flex items-center justify-center duration-200"
+      class=" fixed top-0 left-0 bg-opacity-50 bg-gray-900 h-full w-full z-20 flex items-center justify-center duration-200 text-main-500"
       :class="{ popup: popupExchange }"
     >
-      <div class="bg-white rounded-3xl text-center p-5 shadow-xl popupContent">
+      <div class="bg-white rounded-3xl p-5 shadow-xl popupContent">
         <!-- select shop -->
         <div :class="{ hidden: shopHidden }">
           <shopPosition />
@@ -55,9 +55,16 @@
           </div>
         </div>
         <!-- QRCODE -->
-        <div :class="{ hidden: qrcodeHidden }">
-          <img src="../../src/assets/qr.png" alt="" />
-          <div class="btn btn-dark-blue" @click="exchangeClose">確認</div>
+        <div :class="{ hidden: qrcodeHidden }" class="text-center">
+          <h2>兌換成功</h2>
+          <div><img src="../../src/assets/qr.png" alt="" class="block mx-auto"/></div>
+          <div class="my-5">
+            <h4 class="orderNumber">訂單編號<span class="font-normal text-sup1-900 ml-5">TOREWQ20201206001</span></h4>
+            <p>請於12小時內至指定店鋪，出示QRCODE掃描領取飲品。<br>祝您用餐愉快</p>
+          </div>
+          <div class="">
+          	<div class="btn btn-dark-blue inline-block mx-auto" @click="exchangeClose">確認</div>
+          </div>
         </div>
       </div>
     </div>
@@ -112,6 +119,9 @@
 </script>
 
 <style lang="scss" scoped>
+  .popupContent {
+    min-width: 500px;
+  }
   .customContainer {
     max-width: 960px;
   }

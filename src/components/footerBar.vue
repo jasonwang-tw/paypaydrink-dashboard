@@ -56,7 +56,7 @@
 
 <script>
   export default {
-    name: 'footer',
+    name: 'footerBar',
     data() {
       return {
         footerMenu: [
@@ -77,5 +77,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped></style>

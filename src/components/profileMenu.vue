@@ -5,7 +5,6 @@
         <router-link
           :to="i.link"
           class="no-underline text-main-500 duration-200 hover:text-sup1-100 my-2.5 py-2.5 px-5 block rounded-lg overflow-hidden"
-          :class="!active"
           >{{ i.name }}</router-link
         >
       </li>
@@ -15,8 +14,7 @@
 
 <script>
   export default {
-    name: '',
-    components: {},
+    name: 'profileMenu',
     data() {
       return {
         userMenu: [
