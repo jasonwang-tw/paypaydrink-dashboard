@@ -21,17 +21,17 @@
           </div>
         </div> -->
     <div class="flex items-center justify-between">
-      <div class="flex items-center">
+      <div class="flex">
         <div class="drinkImg rounded-lg overflow-hidden mr-3 flex-shrink-0">
           <img src="../assets/product.jpg" alt="" />
         </div>
         <div>
           <h5 class="mb-2">東方不敗</h5>
-          <div><span class="drinkBefore text-sup3-500">內含配料 </span>粉圓、布丁、紅豆</div>
+          <div class="flex"><span class="drinkBefore text-sup3-500 flex-shrink-0">內含配料 </span>粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆</div>
           <div><span class="drinkBefore text-sup3-500">規格 </span>冷飲、中杯、三分糖、微冰</div>
         </div>
       </div>
-      <div class="flex items-center">
+      <div class="flex items-center ml-5">
         <div class="qty">
           <select name="" id="" v-model="selected">
             <option :value="s" v-for="(s, index) in 99">{{ s }}</option>
@@ -58,8 +58,8 @@
     height: 60px;
   }
   .drinkImg {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
   .drinkBefore {
     width: 80px;

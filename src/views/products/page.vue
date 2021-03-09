@@ -250,7 +250,7 @@
           },
           {
             name: '冰塊',
-            nameValue: 'lce',
+            nameValue: 'ice',
             text: ['去冰', '微冰', '少冰', '正常'],
             value: ['no ', 'little', 'half', 'all']
           }

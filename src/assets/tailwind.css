@@ -109,8 +109,14 @@
   .btn-remove {
     @apply text-white bg-red-500 hover:bg-red-700 py-2 px-4 rounded-lg no-underline cursor-pointer duration-200;
   }
+  .btn-remove-sm {
+    @apply text-white bg-red-500 hover:bg-red-700 py-1 px-2.5 rounded-lg no-underline cursor-pointer duration-200;
+  }
   .btn-border-remove {
     @apply bg-white hover:text-red-700 hover:border-red-700 duration-200 text-red-500 border-red-500 border py-2 px-4 rounded-lg no-underline cursor-pointer;
+  }
+  .btn-border-remove-sm {
+    @apply bg-white hover:text-red-700 hover:border-red-700 duration-200 text-red-500 border-red-500 border py-1 px-2.5 rounded-lg no-underline cursor-pointer;
   }
   .btn {
     @apply duration-200 py-2 px-4 rounded-lg;
