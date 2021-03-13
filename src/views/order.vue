@@ -10,7 +10,7 @@
         <h3 class="text-main-500">訂單</h3>
         <hr />
         <!-- 訂單列表 -->
-        <div id="orderList">
+        <div id="orderList" :class="{ hidden: orderView }">
           <ul class="pl-0 list-none flex mb-5 statusList">
             <li
               class="btn-border-light-blue orderListBtn order-active"
@@ -61,8 +61,20 @@
                   </div>
                 </div>
                 <div v-if="item.orderStep == '0'">
-                  <div class="text-red-500 cursor-pointer duration-200 hover:text-red-700">
+                  <div
+                    class="bg-white hover:text-red-700 hover:border-red-700 text-red-500 border-red-500 border py-1 px-2.5 rounded-lg no-underline cursor-pointer"
+                  >
                     取消訂單
+                  </div>
+                </div>
+                <div v-else-if="item.orderStep == '1'">
+                  <div class="text-main-500">
+                    已完成
+                  </div>
+                </div>
+                <div v-else-if="item.orderStep == '2'">
+                  <div class="text-red-500">
+                    已取消
                   </div>
                 </div>
               </div>
@@ -117,6 +129,7 @@
                     @click="
                       {
                         detailCurrent = item.orderNumber
+                        detailActive()
                       }
                     "
                   >
@@ -138,12 +151,14 @@
               </div>
             </li>
           </ul>
-          <pageNav />
+          </pageNav>
         </div>
         <!-- 訂單詳細 -->
-        <div id="orderDetails" class="detailhidden">
+        <div id="orderDetails" :class="{ hidden: detailView }">
           <h5>訂單飲品</h5>
-          <div class="mb-5">返回</div>
+          <div class="mb-5 cursor-pointer" @click="detailActive">
+            返回
+          </div>
           <div v-for="(orderItem, index) in viewDetail">
             <div v-if="orderItem.number == detailCurrent">
               <div class="flex items-center mb-5">
@@ -227,6 +242,59 @@
         </div>
       </div>
     </div>
+    <!-- 取消訂單 -->
+    <popup class="hidden">
+      <template v-slot:title>
+        <h4>取消訂單</h4>
+      </template>
+      <template v-slot:content>
+        <p class="mb-5">此操作無法撤消，確定要執行嗎?</p>
+      </template>
+      <template v-slot:btn>
+       <div class="functionBtn flex justify-center">
+        <div class="btn btn-remove mr-3" @click="remove">取消</div>
+        <div class="btn btn-dark-blue">確認</div>
+      </div>
+      </template>
+    </popup>
+    <!-- QRCODE -->
+    <popup class="hidden">
+      <template v-slot:title>
+        <h4>領取碼</h4>
+      </template>
+      <template v-slot:content>
+        <img src="../../src/assets/qr.png" alt="" class="mx-auto block mb-5">
+        <div class="flex items-center justify-center">
+          <h5><i class="pay-list text-sup3-500 mr-2 text-xl"></i><strong>訂單</strong>
+          <span class="ml-2 text-sup1-900">001</span></h5>
+        </div>
+        <p class="mb-5">請12小時內至指定店鋪，出示QRCODE掃描領取飲品。<br>祝您用餐愉快</p>
+      </template>
+      <template v-slot:btn>
+       <div class="functionBtn flex justify-center">
+        <div class="btn btn-dark-blue">確認</div>
+      </div>
+      </template>
+    </popup>
+    <!-- 分享好友 -->
+    <popup>
+      <template v-slot:title>
+        <h4>分享好友</h4>
+      </template>
+      <template v-slot:content>
+        <p>複製以下連結貼給好友，即可完成分享</p>
+        <div class="flex mb-5">
+          <input type="text" value="share url" disabled>
+          <div class="btn cursor-pointer text-sup1-100 hover:text-main-500 flex-shrink-0">複製連結</div>
+        </div>
+      </template>
+      <template v-slot:btn>
+       <div class="functionBtn flex justify-center">
+        <div class="btn btn-remove mr-3" @click="remove">取消</div>
+        <div class="btn btn-dark-blue">確認</div>
+      </div>
+      </template>
+    </popup>
     <footerBar />
   </div>
 </template>
@@ -236,6 +304,7 @@
   import footerBar from '@/components/footerBar.vue'
   import profileMenu from '@/components/profileMenu.vue'
   import pageNav from '@/components/pageNav.vue'
+  import popup from '@/components/popup.vue'
 
   export default {
     name: 'order',
@@ -243,38 +312,15 @@
       topmenu,
       footerBar,
       profileMenu,
-      pageNav
-    },
-    methods: {},
-    computed: {
-      orderStort: function() {
-        return this.order.filter(result => result.orderStep == this.current)
-      },
-      viewDetail: function() {
-        return this.orderDetails.filter(result => result.orderStep == this.current)
-      },
-      cc: function() {
-        for (let od = 0; od < this.orderDetails.length; od++) {
-          const od_element = this.orderDetails[od]
-
-          for (let os = 0; os < od_element.shop.length; os++) {
-            const os_element = od_element.shop[os]
-
-            for (let sd = 0; sd < os_element.drink.length; sd++) {
-              const sd_element = os_element.drink[sd]
-              sd_element.drinkTotal = sd_element.qty * sd_element.price
-
-              let sum = (os_element.shopTotal += sd_element.drinkTotal)
-              os_element.shopTotal = sum - os_element.salePrice
-            }
-          }
-        }
-      }
+      pageNav,
+      popup
     },
     data() {
       return {
         current: 0,
         detailCurrent: '001',
+        detailView: true,
+        orderView: false,
         orderStatus: ['進行中', '已完成', '已取消'],
         order: [
           {
@@ -714,8 +760,38 @@
         ]
       }
     },
+    methods: {
+      orderOperation: function() {
+        for (let od = 0; od < this.orderDetails.length; od++) {
+          const od_element = this.orderDetails[od]
+          for (let os = 0; os < od_element.shop.length; os++) {
+            const os_element = od_element.shop[os]
+            for (let sd = 0; sd < os_element.drink.length; sd++) {
+              const sd_element = os_element.drink[sd]
+              sd_element.drinkTotal = sd_element.qty * sd_element.price
+              let sum = (os_element.shopTotal += sd_element.drinkTotal)
+              os_element.shopTotal = sum - os_element.salePrice
+            }
+          }
+        }
+      },
+      detailActive: function() {
+        this.orderView = !this.orderView
+        this.detailView = !this.detailView
+        window.scrollTo({ top: 0 })
+      }
+    },
+    watch: {},
+    computed: {
+      orderStort: function() {
+        return this.order.filter(result => result.orderStep == this.current)
+      },
+      viewDetail: function() {
+        return this.orderDetails.filter(result => result.orderStep == this.current)
+      }
+    },
     mounted() {
-      // this.cc()
+      this.orderOperation()
     }
   }
 </script>
@@ -744,8 +820,5 @@
     color: white;
     border-color: var(--color-main-500);
     background-color: var(--color-main-500);
-  }
-  .detailhidden {
-    transform: translateY(30px);
   }
 </style>
