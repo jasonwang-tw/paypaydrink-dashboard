@@ -40,7 +40,13 @@
         <h2 class="text-4xl">熱銷排行TOP10</h2>
         <span class="mb-10 block text-sub-500">銷售排行看這邊</span>
         <div class="flex justify-center">
-          <drink :indexClass="['indexNumber']"/>
+          <drink>
+            <template v-slot:topNumber="props">
+              <div class="absolute text-white text-center indexNumber">
+                {{ props.index + 1 }}
+              </div>
+            </template>
+          </drink>
         </div>
       </div>
       <div class="text-center mb-20">
@@ -130,5 +136,13 @@
         background-position: center;
       }
     }
+  }
+  .indexNumber {
+    width: 40px;
+    height: 47px;
+    padding-top: 7px;
+    background-image: url(../assets/indexNumber.png);
+    transform: translate(30px, 0px);
+    z-index: 1000;
   }
 </style>

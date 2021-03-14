@@ -2,15 +2,14 @@
   <div id="slideshow">
     <splide :options="options">
       <splide-slide
-        v-for="item in slideCard"
-        :key="item"
+        v-for="(item, index) in slideCard"
+        :key="index"
         class="flex justify-center items-center rounded-3xl overflow-hidden bg-white shadow-xl mb-10"
       >
-        <a href="#">
+        <router-link to="/">
           <img :src="item.imgSrc" />
-        </a>
+        </router-link>
       </splide-slide>
-
       <!-- <template v-slot:controls>
         <div class="splide__progress">
           <div class="splide__progress__bar">
@@ -98,7 +97,4 @@
     }
   }
 </script>
-<style lang="scss" scoped>
-  // @import "../../node_modules/@splidejs/splide/dist/css/themes/splide-default.min.css";
-  // @import url(https://res.cloudinary.com/jasonwang/raw/upload/v1609946205/CDN/splide-default.min.css);
-</style>
+<style lang="scss" scoped></style>

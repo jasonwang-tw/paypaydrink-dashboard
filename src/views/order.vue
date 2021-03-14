@@ -37,7 +37,7 @@
                       <div class="text-sm btn-dark-blue-sm-nohover mx-5">
                         {{ item_status.name }}
                       </div>
-                      <div class="cursor-pointer">
+                      <div class="cursor-pointer" @click="QRcodeShow = !QRcodeShow">
                         <i class="pay-qr mr-2"></i><strong>領取碼</strong>
                       </div>
                     </div>
@@ -45,7 +45,7 @@
                       <div class="text-sm btn-dark-blue-sm-nohover mx-5">
                         {{ item_status.name }}
                       </div>
-                      <div class="cursor-pointer">
+                      <div class="cursor-pointer" @click="QRcodeShow = !QRcodeShow">
                         <i class="pay-qr mr-2"></i><strong>領取碼</strong>
                       </div>
                     </div>
@@ -54,7 +54,7 @@
                     </div>
                     <div v-else-if="item_status.name == '送禮'" class="flex items-center">
                       <div class="text-sm bg-sub-500 text-white btn-sm mx-5">送禮</div>
-                      <div class="cursor-pointer text-sub-500">
+                      <div class="cursor-pointer text-sub-500" @click="shareLink = !shareLink">
                         <i class="pay-share mr-2"></i><strong>分享好友</strong>
                       </div>
                     </div>
@@ -62,7 +62,8 @@
                 </div>
                 <div v-if="item.orderStep == '0'">
                   <div
-                    class="bg-white hover:text-red-700 hover:border-red-700 text-red-500 border-red-500 border py-1 px-2.5 rounded-lg no-underline cursor-pointer"
+                    class="bg-white hover:text-red-700 hover:border-red-700 text-sm text-red-500 border-red-500 border py-1 px-2.5 rounded-lg no-underline cursor-pointer"
+                    @click="removeOrder = !removeOrder"
                   >
                     取消訂單
                   </div>
@@ -144,8 +145,7 @@
                   <div class="flex items-center justify-end text-sub-500">
                     金額
                     <big class="ml-2"
-                      ><strong>${{ item.cash }}</strong></big
-                    >
+                      ><strong>${{ item.cash }}</strong></big>
                   </div>
                 </div>
               </div>
@@ -243,7 +243,7 @@
       </div>
     </div>
     <!-- 取消訂單 -->
-    <popup class="hidden">
+    <popup :class="{ popupHidden : removeOrder}" class="duration-200">
       <template v-slot:title>
         <h4>取消訂單</h4>
       </template>
@@ -252,13 +252,13 @@
       </template>
       <template v-slot:btn>
        <div class="functionBtn flex justify-center">
-        <div class="btn btn-remove mr-3" @click="remove">取消</div>
+        <div class="btn btn-remove mr-3" @click="removeOrder = !removeOrder">取消</div>
         <div class="btn btn-dark-blue">確認</div>
       </div>
       </template>
     </popup>
     <!-- QRCODE -->
-    <popup class="hidden">
+    <popup :class="{popupHidden: QRcodeShow}" class="duration-200">
       <template v-slot:title>
         <h4>領取碼</h4>
       </template>
@@ -272,26 +272,25 @@
       </template>
       <template v-slot:btn>
        <div class="functionBtn flex justify-center">
-        <div class="btn btn-dark-blue">確認</div>
+        <div class="btn btn-dark-blue" @click="QRcodeShow = !QRcodeShow">確認</div>
       </div>
       </template>
     </popup>
     <!-- 分享好友 -->
-    <popup>
+    <popup :class="{popupHidden : shareLink}" class="duration-200">
       <template v-slot:title>
         <h4>分享好友</h4>
       </template>
       <template v-slot:content>
         <p>複製以下連結貼給好友，即可完成分享</p>
         <div class="flex mb-5">
-          <input type="text" value="share url" disabled>
-          <div class="btn cursor-pointer text-sup1-100 hover:text-main-500 flex-shrink-0">複製連結</div>
+          <input id="shareUrl" type="text" value="share url" disabled>
+          <div @click="copyUrl" class="btn cursor-pointer text-sup1-100 hover:text-main-500 flex-shrink-0">複製連結</div>
         </div>
       </template>
       <template v-slot:btn>
        <div class="functionBtn flex justify-center">
-        <div class="btn btn-remove mr-3" @click="remove">取消</div>
-        <div class="btn btn-dark-blue">確認</div>
+        <div class="btn btn-dark-blue" @click="shareLink = !shareLink">確認</div>
       </div>
       </template>
     </popup>
@@ -321,6 +320,9 @@
         detailCurrent: '001',
         detailView: true,
         orderView: false,
+        removeOrder: true,
+        QRcodeShow: true,
+        shareLink: true,
         orderStatus: ['進行中', '已完成', '已取消'],
         order: [
           {
@@ -779,6 +781,15 @@
         this.orderView = !this.orderView
         this.detailView = !this.detailView
         window.scrollTo({ top: 0 })
+      },
+      copyUrl: function() {
+        const copyText = document.getElementById('shareUrl');
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+        alert("複製成功！")
       }
     },
     watch: {},
@@ -820,5 +831,9 @@
     color: white;
     border-color: var(--color-main-500);
     background-color: var(--color-main-500);
+  }
+  .popupHidden{
+    opacity: 0;
+    visibility: hidden;
   }
 </style>

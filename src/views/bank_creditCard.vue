@@ -1,5 +1,5 @@
 <template>
-  <div id="bankCard">
+  <div id="bankCard" class="text-main-500">
     <topmenu />
     <div class="customContainer grid grid-cols-12 gap-10 mx-auto my-20">
       <div class="profileMenu col-span-4 px-10">
@@ -70,6 +70,61 @@
         </ul>
       </div>
     </div>
+    <!-- 新增信用卡 -->
+    <popup class="hidden">
+      <template v-slot:title>
+        <h4>新增信用卡</h4>
+      </template>
+      <template v-slot:content>
+        <div class="bg-sup3-300 p-3 mb-5 rounded-lg">
+          <span class="text-sup1-900"
+            >當你進行信用卡驗證時，我們會先向發卡銀行授權$1元，<br />並在5天內退還給你</span
+          >
+        </div>
+        <input type="text" name="" id="" placeholder="持有者姓名" class="mb-3" />
+        <input type="text" name="" id="" placeholder="信用卡號碼" class="mb-3" />
+        <div class="flex mb-5">
+          <input type="text" name="" id="" placeholder="有效期限" class="mr-3" />
+          <input type="text" name="" id="" placeholder="CVV" />
+        </div>
+      </template>
+      <template v-slot:btn>
+        <div class="functionBtn flex justify-center">
+          <div class="btn btn-dark-blue">確認</div>
+        </div>
+      </template>
+    </popup>
+    <!-- 新增銀行帳戶 -->
+    <popup>
+      <template v-slot:title>
+        <h4>新增銀行帳戶</h4>
+      </template>
+      <template v-slot:content>
+        <input type="text" name="" id="" placeholder="姓名" />
+        <input type="text" name="" id="" placeholder="身分證字號" />
+        <label for="">生日/公司核准設立日期</label>
+        <input type="date" name="" id="" placeholder="姓名" />
+        <label for="">戶籍地址/公司地址</label>
+        <div class="flex">
+          <select name="city" id="" v-model="selcetCity">
+            <option :value="i.CityName" v-for="(i, index) in taiwan">{{ i.CityName }}</option>
+          </select>
+          <div v-for="(a, index) in fileter" class="flex-shrink-0 w-1/2">
+            <select name="area" id="">
+              <option v-for="(ia, index) in a.AreaList" value="">{{ ia.AreaName }}</option>
+            </select>
+          </div>
+        </div>
+        <input type="text" name="" id="" placeholder="郵遞區號" />
+        <input type="text" name="" id="" placeholder="詳細地址" />
+      </template>
+      <template v-slot:btn>
+        <div class="functionBtn flex justify-center">
+          <div class="btn btn-dark-blue">確認</div>
+        </div>
+      </template>
+    </popup>
+
     <footerBar />
   </div>
 </template>
@@ -78,23 +133,33 @@
   import topmenu from '@/components/topmenu.vue'
   import footerBar from '@/components/footerBar.vue'
   import profileMenu from '@/components/profileMenu.vue'
+  import popup from '@/components/popup.vue'
+  import taiwan from '../../static/resource/CityCountyData'
 
   export default {
-    name: 'favorites',
+    name: 'bank',
     components: {
       topmenu,
       footerBar,
-      profileMenu
+      profileMenu,
+      popup
     },
     data() {
       return {
-        mainDrink: [
-          {
-            link: '/',
-            name: '紅茶',
-            bg: require('../assets/drinkBg/1.jpg')
-          }
-        ]
+        taiwan,
+        selcetCity: '',
+        fileter: ''
+      }
+    },
+    methods: {},
+    watch: {
+      filterArea(e) {
+        this.fileter = e
+      }
+    },
+    computed: {
+      filterArea: function() {
+        return this.taiwan.filter(area => area.CityName == this.selcetCity)
       }
     }
   }

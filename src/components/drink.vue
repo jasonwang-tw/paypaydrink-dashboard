@@ -1,8 +1,8 @@
 <template>
   <div id="slideshow">
     <splide :options="options">
-      <splide-slide v-for="(item, index) in drinkTop">
-        <div class="absolute text-white text-center" :class="indexClass">{{ index + 1 }}</div>
+      <splide-slide v-for="(item, index) in drinkTop" :key="index">
+        <slot name="topNumber" :index="index"></slot>
         <div class="p-5">
           <router-link
             to="/products/page"
@@ -38,9 +38,9 @@
       Splide,
       SplideSlide
     },
-    props: {
-      indexClass: String
-    },
+    // props: {
+    //   indexClass: String
+    // },
     data() {
       return {
         options: {
@@ -145,13 +145,5 @@
     margin-right: 10px;
     color: var(--color-sub);
     content: '已售出';
-  }
-  .indexNumber {
-    width: 40px;
-    height: 47px;
-    padding-top: 7px;
-    background-image: url(../assets/indexNumber.png);
-    transform: translate(30px, 0px);
-    z-index: 1000;
   }
 </style>
