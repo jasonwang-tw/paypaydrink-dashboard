@@ -3,7 +3,7 @@
     <splide :options="options">
       <splide-slide v-for="(item, index) in drinkTop" :key="index">
         <slot name="topNumber" :index="index"></slot>
-        <div class="p-5">
+        <div class="pt-5">
           <router-link
             to="/products/page"
             class="no-underline border border-sup2-500 block rounded-lg overflow-hidden drinkHover"
@@ -45,16 +45,16 @@
       return {
         options: {
           rewind: true,
-          width: 1300,
-          // gap: '3rem',
-          perPage: 4,
+          width: 1440,
+          gap: '2.5rem',
+          perPage: 5,
           perMove: 1,
           // type: 'loop',
           // autoplay: true,
           pauseOnHover: false,
           resetProgress: false,
           // focus: 'center',
-          fixedWidth: 325,
+          // fixedWidth: 325,
           // arrows      : 'slider',
           breakpoints: {
             '1440': {
@@ -100,6 +100,22 @@
             drinkLink: '/',
             imgSrc: require('../assets/tea3.png'),
             name: '致青春',
+            price: '60',
+            rating: '4.7',
+            sold: '145,78'
+          },
+          {
+            drinkLink: '/',
+            imgSrc: require('../assets/active1.jpg'),
+            name: '東方不敗',
+            price: '60',
+            rating: '4.7',
+            sold: '145,78'
+          },
+          {
+            drinkLink: '/',
+            imgSrc: require('../assets/active1.jpg'),
+            name: '東方不敗',
             price: '60',
             rating: '4.7',
             sold: '145,78'

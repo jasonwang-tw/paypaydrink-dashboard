@@ -1,6 +1,5 @@
 <template>
   <div id="productgrid" class="text-main-500">
-    <h2 class="mb-10">搜尋 "<span>紅茶</span>"</h2>
     <div class="grid grid-cols-5 gap-10">
       <div v-for="(item, index) in drinkList">
         <router-link

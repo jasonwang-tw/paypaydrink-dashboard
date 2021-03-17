@@ -193,11 +193,11 @@
       margin-bottom: 1rem;
     }
   }
-  .functionBtn {
-    .btn {
-      width: 150px;
-    }
-  }
+  // .functionBtn {
+  //   .btn {
+  //     width: 150px;
+  //   }
+  // }
   // control
   .popup {
     opacity: 0;

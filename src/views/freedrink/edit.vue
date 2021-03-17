@@ -152,8 +152,8 @@
           <label for="sugar10"></label><span>正常</span>
         </div>
       </div>
-      <div class="btn-dark-blue inline-block w-36 text-center mr-5">儲存配方</div>
-      <div class="btn-remove inline-block w-36 text-center">取消</div>
+      <div class="btn-dark-blue inline-block text-center mr-5">儲存配方</div>
+      <div class="btn-remove inline-block text-center">取消</div>
     </div>
   </div>
 </template>

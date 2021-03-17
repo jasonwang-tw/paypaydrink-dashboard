@@ -96,7 +96,7 @@
                 >
                   關注
                 </div>
-                <router-link to="/" class="btn-border-light-blue-sm">查看全部配方</router-link>
+                <router-link to="/drinkShop" class="btn-border-light-blue-sm">查看全部配方</router-link>
               </div>
             </div>
           </div>

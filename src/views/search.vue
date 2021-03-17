@@ -2,6 +2,7 @@
   <div id="search">
     <topmenu />
     <div class="container mx-auto my-20">
+      <h2 class="mb-10">搜尋 "<span>紅茶</span>"</h2>
       <productGrid />
       <pageNav />
     </div>

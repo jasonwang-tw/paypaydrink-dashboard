@@ -121,10 +121,10 @@
           </div>
           <div class="sidebarNavBottom text-main-500 text-center">
             <div class="text-2xl font-medium mb-2">
-              立即下載 <span class="text-sub-500">配配飲</span>
+              立即加入 <span class="text-sub-500">配配飲</span>
             </div>
             <span class="mb-5 block">客製屬於您的飲品</span>
-            <img class="my-auto inline-block mb-10" src="../../src/assets/appDown-col.png" alt="" />
+            <img class="my-auto inline-block mb-10 w-32" src="../../src/assets/M.png" alt="" />
             <img class="my-auto inline-block w-40" src="../../src/assets/downhand.svg" alt="" />
           </div>
         </div>

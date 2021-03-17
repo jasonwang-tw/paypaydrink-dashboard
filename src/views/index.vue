@@ -142,7 +142,7 @@
     height: 47px;
     padding-top: 7px;
     background-image: url(../assets/indexNumber.png);
-    transform: translate(30px, 0px);
+    transform: translate(20px, 0px);
     z-index: 1000;
   }
 </style>

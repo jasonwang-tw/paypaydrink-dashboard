@@ -8,7 +8,7 @@
       <div class="mainInfo col-span-8">
         <div class="flex justify-between items-center">
           <h3 class="text-main-500 mb-0">信用卡</h3>
-          <div class="btn-border-light-blue flex items-center">
+          <div class="btn-border-light-blue flex items-center" @click="card = !card">
             <i class="pay-add mr-3"></i>
             <div>增加信用卡</div>
           </div>
@@ -31,7 +31,7 @@
         </ul>
         <div class="flex justify-between items-center">
           <h3 class="text-main-500 mb-0">銀行帳號</h3>
-          <div class="btn-border-light-blue flex items-center">
+          <div class="btn-border-light-blue flex items-center" @click="bank = !bank">
             <i class="pay-add mr-3"></i>
             <div>增加銀行帳號</div>
           </div>
@@ -71,7 +71,7 @@
       </div>
     </div>
     <!-- 新增信用卡 -->
-    <popup class="hidden">
+    <popup :class="{ popup: card }">
       <template v-slot:title>
         <h4>新增信用卡</h4>
       </template>
@@ -90,37 +90,37 @@
       </template>
       <template v-slot:btn>
         <div class="functionBtn flex justify-center">
+          <div class="btn btn-remove mr-3" @click="card = !card">取消</div>
           <div class="btn btn-dark-blue">確認</div>
         </div>
       </template>
     </popup>
     <!-- 新增銀行帳戶 -->
-    <popup>
+    <popup :class="{ popup: bank }">
       <template v-slot:title>
         <h4>新增銀行帳戶</h4>
       </template>
       <template v-slot:content>
-        <input type="text" name="" id="" placeholder="姓名" />
-        <input type="text" name="" id="" placeholder="身分證字號" />
-        <label for="">生日/公司核准設立日期</label>
-        <input type="date" name="" id="" placeholder="姓名" />
-        <label for="">戶籍地址/公司地址</label>
-        <div class="flex">
-          <select name="city" id="" v-model="selcetCity">
+        <input type="text" name="" id="" placeholder="姓名" class="mb-3" />
+        <input type="text" name="" id="" placeholder="身分證字號" class="mb-3" />
+        <label for="" class="mb-3 block text-left">生日/公司核准設立日期</label>
+        <input type="date" name="" id="" placeholder="姓名" class="mb-3" />
+        <label for="" class="mb-3 block text-left">戶籍地址/公司地址</label>
+        <div class="flex mb-3">
+          <select name="city" id="" class="mr-3" v-model="selcetCity">
             <option :value="i.CityName" v-for="(i, index) in taiwan">{{ i.CityName }}</option>
           </select>
-          <div v-for="(a, index) in fileter" class="flex-shrink-0 w-1/2">
-            <select name="area" id="">
-              <option v-for="(ia, index) in a.AreaList" value="">{{ ia.AreaName }}</option>
-            </select>
-          </div>
+          <select name="city" id="">
+            <option :value="i.AreaName" v-for="(i, index) in fileterArea">{{ i.AreaName }}</option>
+          </select>
         </div>
-        <input type="text" name="" id="" placeholder="郵遞區號" />
-        <input type="text" name="" id="" placeholder="詳細地址" />
+        <input type="text" name="" id="" placeholder="郵遞區號" class="mb-3" />
+        <input type="text" name="" id="" placeholder="詳細地址" class="mb-5" />
       </template>
       <template v-slot:btn>
         <div class="functionBtn flex justify-center">
-          <div class="btn btn-dark-blue">確認</div>
+          <div class="btn btn-remove mr-3" @click="bank = !bank">取消</div>
+          <div class="btn btn-dark-blue">新增</div>
         </div>
       </template>
     </popup>
@@ -147,20 +147,27 @@
     data() {
       return {
         taiwan,
-        selcetCity: '',
-        fileter: ''
+        selcetCity: '臺北市',
+        fileterArea: '',
+        card: true,
+        bank: true
       }
     },
-    methods: {},
+    methods: {
+      area: function() {
+        this.taiwan.forEach(fd => {
+          if (fd.CityName == this.selcetCity) {
+            this.fileterArea = fd.AreaList
+          }
+        })
+      }
+    },
     watch: {
-      filterArea(e) {
-        this.fileter = e
-      }
+      selcetCity: 'area'
     },
-    computed: {
-      filterArea: function() {
-        return this.taiwan.filter(area => area.CityName == this.selcetCity)
-      }
+    computed: {},
+    mounted() {
+      this.area()
     }
   }
 </script>
@@ -172,5 +179,9 @@
   .userimg {
     width: 60px;
     height: 60px;
+  }
+  .popup {
+    opacity: 0;
+    visibility: hidden;
   }
 </style>
