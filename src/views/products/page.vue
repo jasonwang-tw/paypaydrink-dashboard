@@ -4,7 +4,7 @@
       <div class="grid grid-cols-2 gap-10">
         <div>
           <splide :options="primaryOptions" ref="primary" id="primary">
-            <splide-slide v-for="(item, index) in drinkTop">
+            <splide-slide v-for="(item, index) in drinkTop" :key="index">
               <div class="imgMain w-full h-full">
                 <img :src="item.imgSrc" alt="" />
               </div>
@@ -13,6 +13,7 @@
           <splide :options="secondaryOptions" ref="secondary" id="secondary">
             <splide-slide
               v-for="(item, index) in drinkTop"
+              :key="index"
               class="imgContent overflow-hidden rounded-xl"
             >
               <div class="w-full h-full rounded-xl bg-sup3-300">
@@ -96,7 +97,9 @@
                 >
                   關注
                 </div>
-                <router-link to="/drinkShop" class="btn-border-light-blue-sm">查看全部配方</router-link>
+                <router-link to="/drinkShop" class="btn-border-light-blue-sm"
+                  >查看全部配方</router-link
+                >
               </div>
             </div>
           </div>

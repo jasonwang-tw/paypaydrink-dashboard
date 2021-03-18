@@ -248,7 +248,7 @@
         <h4>取消訂單</h4>
       </template>
       <template v-slot:content>
-        <p class="mb-5">此操作無法撤消，確定要執行嗎?</p>
+        <p class="mb-10">此操作無法撤消，確定要執行嗎?</p>
       </template>
       <template v-slot:btn>
        <div class="functionBtn flex justify-center">
@@ -268,7 +268,7 @@
           <h5><i class="pay-list text-sup3-500 mr-2 text-xl"></i><strong>訂單</strong>
           <span class="ml-2 text-sup1-900">001</span></h5>
         </div>
-        <p class="mb-5">請12小時內至指定店鋪，出示QRCODE掃描領取飲品。<br>祝您用餐愉快</p>
+        <p class="mb-10">請12小時內至指定店鋪，出示QRCODE掃描領取飲品。<br>祝您用餐愉快</p>
       </template>
       <template v-slot:btn>
        <div class="functionBtn flex justify-center">
@@ -283,7 +283,7 @@
       </template>
       <template v-slot:content>
         <p>複製以下連結貼給好友，即可完成分享</p>
-        <div class="flex mb-5">
+        <div class="flex mb-10">
           <input id="shareUrl" type="text" value="share url" disabled>
           <div @click="copyUrl" class="btn cursor-pointer text-sup1-100 hover:text-main-500 flex-shrink-0">複製連結</div>
         </div>

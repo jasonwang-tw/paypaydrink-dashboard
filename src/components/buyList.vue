@@ -38,7 +38,7 @@
           </select>
         </div>
         <div class="price text-sub-500 font-normal">$60</div>
-        <div class="text-red-500 hover:text-red-700 cursor-pointer duration-200">刪除</div>
+        <div class="text-red-500 hover:text-red-700 cursor-pointer duration-200 flex-shrink-0">刪除</div>
       </div>
     </div>
   </div>

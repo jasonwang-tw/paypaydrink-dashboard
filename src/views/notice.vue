@@ -24,13 +24,13 @@
         <pageNav />
       </div>
     </div>
-    <!-- 新增信用卡 -->
+    <!-- 通知詳細-->
     <popup :class="{ popup: notice }">
       <template v-slot:title>
         <h4>付款已確認</h4>
       </template>
       <template v-slot:content>
-        <div class="text-left">
+        <div class="text-left mb-10">
           <p>
             訂單200718NQDUVMMW的付款已確認，店鋪備料中，請依照訂單...店鋪備料中，請依照訂單...店鋪備料中，請依照訂單...店鋪備料中，請依照訂單...請依照訂單...請依照訂單...請依照訂單...請依照訂單...請依照訂單...請依照訂單...請依照訂單...請依照訂單...請依照訂單...請依照訂單...
           </p>

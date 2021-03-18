@@ -115,7 +115,7 @@
           </select>
         </div>
         <input type="text" name="" id="" placeholder="郵遞區號" class="mb-3" />
-        <input type="text" name="" id="" placeholder="詳細地址" class="mb-5" />
+        <input type="text" name="" id="" placeholder="詳細地址" class="mb-10" />
       </template>
       <template v-slot:btn>
         <div class="functionBtn flex justify-center">
