@@ -26,6 +26,10 @@ const routes = [
     component: () => import('../views/order.vue'),
   },
   {
+    path: '/wallet',
+    component: () => import('../views/wallet.vue'),
+  },
+  {
     path: '/bank_creditCard',
     component: () => import('../views/bank_creditCard.vue'),
   },

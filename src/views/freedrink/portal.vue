@@ -2,25 +2,34 @@
   <div id="portal" class="text-main-500">
     <div class="customContainer mx-auto my-20">
       <div class="flex items-center justify-between">
-        <h2>飲品自由配</h2>
-        <router-link to="/free_drink/edit" class="btn-border-light-blue">新增配方</router-link>
+        <h2>飲料鋪</h2>
+        <div class="flex">
+          <div class="btn-border-light-blue mr-3">讀取自配方</div>
+          <div class="btn-border-light-blue mr-3">編輯飲料鋪</div>
+          <router-link to="/free_drink/edit" class="btn-border-light-blue">新增配方</router-link>
+        </div>
       </div>
       <hr />
       <div class="flex pb-10">
         <div class="userImg rounded-full overflow-hidden mr-10">
           <img src="../../assets/how.jpg" alt="" />
         </div>
-        <div class="flex-grow">
-          <h5 class="mb-0">HowHow</h5>
-          <ul class="masterInfo flex pl-0 list-none py-5">
-            <li>
-              <span><i class="pay-start"></i></span>4.5
-            </li>
-            <li><span>關注</span>3,547</li>
-            <li><span>配方</span>47</li>
-            <li><span>售出飲品</span>4,998杯</li>
-          </ul>
-          <div class="p-5 bg-sup3-300 rounded-xl w-full">
+        <div class="flex flex-grow items-center justify-between">
+          <div>
+            <h5 class="mb-0">HowHow</h5>
+            <ul class="masterInfo flex pl-0 list-none p-3">
+              <li>
+                <span><i class="pay-start"></i></span>4.5
+              </li>
+              <li><span>關注</span>3,547</li>
+              <li><span>配方</span>47</li>
+              <li><span>售出飲品</span>4,998杯</li>
+            </ul>
+          </div>
+          <div class="flex">
+            <router-link to="/wallet" class="btn-dark-blue">我的錢包</router-link>
+          </div>
+          <!-- <div class="p-5 bg-sup3-300 rounded-xl w-full">
             <h4 class="font-normal">配方進帳</h4>
             <div>錢包餘額</div>
             <div class="flex items-center justify-between">
@@ -30,7 +39,7 @@
                 <div class="btn-border-light-blue">交易紀錄</div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="flex justify-between p-5">

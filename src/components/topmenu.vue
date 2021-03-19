@@ -147,7 +147,7 @@
         mainPage: [
           {
             link: '/free_drink',
-            name: '飲品自由配'
+            name: '飲料鋪'
           },
           {
             link: '/',

@@ -35,6 +35,10 @@
             link: '/order'
           },
           {
+            name: '我的錢包',
+            link: '/wallet'
+          },
+          {
             name: '銀行帳號/信用卡',
             link: '/bank_creditCard'
           },
