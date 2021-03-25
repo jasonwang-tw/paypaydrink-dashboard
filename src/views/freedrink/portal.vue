@@ -10,7 +10,7 @@
         </div>
       </div>
       <hr />
-      <div class="flex pb-10">
+      <div class="flex">
         <div class="userImg rounded-full overflow-hidden mr-10">
           <img src="../../assets/how.jpg" alt="" />
         </div>
@@ -29,19 +29,9 @@
           <div class="flex">
             <router-link to="/wallet" class="btn-dark-blue">我的錢包</router-link>
           </div>
-          <!-- <div class="p-5 bg-sup3-300 rounded-xl w-full">
-            <h4 class="font-normal">配方進帳</h4>
-            <div>錢包餘額</div>
-            <div class="flex items-center justify-between">
-              <div class="mr-10 text-2xl font-normal text-sub-500">NT$204,751</div>
-              <div class="flex">
-                <div class="btn-dark-blue mr-2.5" @click="getCash = !getCash">提款</div>
-                <div class="btn-border-light-blue">交易紀錄</div>
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
+      <hr />
       <div class="flex justify-between p-5">
         <h3 class="drinkInfo mb-0">我的配方</h3>
         <div class="drinkOrder">已售出</div>
@@ -80,35 +70,6 @@
       </div>
       <pageNav class="pt-5" />
     </div>
-    <!-- 提款 -->
-    <popup :class="{ popupHidden: getCash }">
-      <template v-slot:title>
-        <h4>提款</h4>
-      </template>
-      <template v-slot:content>
-        <div class="text-left mb-10">
-          <div class="flex items-center mb-3">
-            <span class="w-28">錢包餘額</span>
-            <h3 class="text-sub-500 mb-0">NT$204,751</h3>
-          </div>
-          <label for="" class="mb-3 block">選擇撥款銀行</label>
-          <select name="" id="" class="mb-3">
-            <option value="">**** 7878 中國信託商業銀行</option>
-            <option value="">**** 7878 國泰世華商業銀行</option>
-          </select>
-          <input type="text" name="" id="" placeholder="請輸入提款金額" />
-          <div class="flex pt-3">
-            <span class="w-28">提款手續費</span><span class="text-sub-500 font-semibold">$15</span>
-          </div>
-        </div>
-      </template>
-      <template v-slot:btn>
-        <div class="functionBtn flex justify-center">
-          <div class="btn btn-remove mr-3" @click="getCash = !getCash">取消</div>
-          <div class="btn btn-dark-blue">確認提款</div>
-        </div>
-      </template>
-    </popup>
   </div>
 </template>
 
@@ -125,7 +86,6 @@
     data() {
       return {
         selected: '',
-        getCash: true
       }
     }
   }

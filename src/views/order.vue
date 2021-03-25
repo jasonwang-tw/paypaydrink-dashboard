@@ -13,7 +13,7 @@
         <div id="orderList" :class="{ hidden: orderView }">
           <ul class="pl-0 list-none flex mb-5 statusList">
             <li
-              class="btn-border-light-blue orderListBtn order-active"
+              class="btn-border-light-blue orderListBtn"
               v-for="(item, index) in orderStatus"
               @click="current = index"
               :class="{ orderActive: index == current }"

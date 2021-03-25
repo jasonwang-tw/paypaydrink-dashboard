@@ -105,7 +105,7 @@
                 <img src="../../src/assets/how.jpg" alt="" />
               </div>
               <div>
-                <div class="userName text-main-500">howhow</div>
+                <div class="userName text-main-500 -mb-1">howhow</div>
                 <small class="text-sub-500">帳戶資訊</small>
               </div>
             </router-link>
