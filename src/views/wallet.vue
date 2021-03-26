@@ -23,7 +23,7 @@
           <li
             class="btn-border-light-blue orderListBtn mr-4"
             v-for="(item, index) in walletStatus"
-            @click="current = index"
+            @click=";[(current = index)], [(currentStatus = item)]"
             :class="{ walleActive: index == current }"
           >
             {{ item }}
@@ -32,7 +32,7 @@
         <ul class="list-none pl-0">
           <li
             class="bg-sup3-300 p-5 rounded-xl mb-5 flex justify-between items-center"
-            v-for="(item, index) in wallet"
+            v-for="(item, index) in walletFilter"
           >
             <div>{{ item.date }}<br />{{ item.time }}</div>
             <div>
@@ -95,6 +95,7 @@
     data() {
       return {
         walletStatus: ['全部', '配方收入', '提領中', '已提款'],
+        currentStatus: '',
         current: 0,
         getCash: true,
         wallet: [
@@ -126,8 +127,18 @@
       }
     },
     methods: {},
-    watch: {},
-    computed: {},
+    watch: {
+      currentStatus() {
+        if (this.currentStatus === '全部') {
+          this.currentStatus = ''
+        }
+      }
+    },
+    computed: {
+      walletFilter() {
+        return this.wallet.filter(res => res.status.match(this.currentStatus))
+      }
+    },
     mounted() {}
   }
 </script>
