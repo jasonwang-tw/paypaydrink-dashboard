@@ -17,7 +17,7 @@
             <div class="col-span-8">
               <div class="flex items-center">
                 <div class="userimg rounded-lg overflow-hidden mr-3">
-                  <img src="../../src/assets/product.jpg" alt="" />
+                  <img src="../../src/assets/images/product.jpg" alt="" />
                 </div>
                 <div class="drinkinfo">
                   <div class="userName font-normal text-main-500 mb-2">東方不敗</div>
@@ -65,7 +65,7 @@
           {
             link: '/',
             name: '紅茶',
-            bg: require('../assets/drinkBg/1.jpg')
+            bg: require('../assets/images/drinkBg/1.jpg')
           }
         ]
       }

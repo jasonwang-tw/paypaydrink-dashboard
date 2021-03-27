@@ -4,7 +4,7 @@
       <div class="nav-left flex items-center">
         <div class="logo mr-5">
           <router-link to="/">
-            <img src="../assets/logo.svg" alt="" />
+            <img src="../assets/images/logo.svg" alt="" />
           </router-link>
         </div>
         <div class="searchBar flex items-center">
@@ -29,7 +29,7 @@
               <li v-for="i in 4" class="">
                 <router-link to="/" class="flex mb-5 no-underline">
                   <div class="productImg bg-white rounded-lg overflow-hidden mr-5 flex-shrink-0">
-                    <img src="../../src/assets/product.jpg" alt="" />
+                    <img src="../../src/assets/images/product.jpg" alt="" />
                   </div>
                   <div class="productInfo flex justify-between">
                     <div class="overflow-hidden">
@@ -102,7 +102,7 @@
           <div class="sidebarNavTop">
             <router-link to="/profile" class="account flex items-center no-underline">
               <div class="userImg overflow-hidden rounded-full bg-white mr-5">
-                <img src="../../src/assets/how.jpg" alt="" />
+                <img src="../../src/assets/images/how.jpg" alt="" />
               </div>
               <div>
                 <div class="userName text-main-500 -mb-1">howhow</div>
@@ -124,8 +124,16 @@
               立即加入 <span class="text-sub-500">配配飲</span>
             </div>
             <span class="mb-5 block">客製屬於您的飲品</span>
-            <img class="my-auto inline-block mb-10 w-32" src="../../src/assets/M.png" alt="" />
-            <img class="my-auto inline-block w-40" src="../../src/assets/downhand.svg" alt="" />
+            <img
+              class="my-auto inline-block mb-10 w-32"
+              src="../../src/assets/images/M.png"
+              alt=""
+            />
+            <img
+              class="my-auto inline-block w-40"
+              src="../../src/assets/images/downhand.svg"
+              alt=""
+            />
           </div>
         </div>
       </div>

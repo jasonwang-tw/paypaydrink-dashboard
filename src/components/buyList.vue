@@ -3,11 +3,13 @@
     <div class="flex items-center justify-between">
       <div class="flex items-center">
         <div class="userImg rounded-full overflow-hidden mr-5">
-          <img src="../assets/how.jpg" alt="" />
+          <img src="../assets/images/how.jpg" alt="" />
         </div>
         <div>
           <h5 class="mb-2">滴妹好棒棒</h5>
-          <router-link to="/drinkShop" class="btn-border-light-blue-sm block">查看全部配方</router-link>
+          <router-link to="/drinkShop" class="btn-border-light-blue-sm block"
+            >查看全部配方</router-link
+          >
         </div>
       </div>
       <div>飲品優惠，低消100折$30</div>
@@ -23,11 +25,14 @@
     <div class="flex items-center justify-between">
       <div class="flex">
         <div class="drinkImg rounded-lg overflow-hidden mr-3 flex-shrink-0">
-          <img src="../assets/product.jpg" alt="" />
+          <img src="../assets/images/product.jpg" alt="" />
         </div>
         <div>
           <h5 class="mb-2">東方不敗</h5>
-          <div class="flex"><span class="drinkBefore text-sup3-500 flex-shrink-0">內含配料 </span>粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆</div>
+          <div class="flex">
+            <span class="drinkBefore text-sup3-500 flex-shrink-0">內含配料 </span
+            >粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆
+          </div>
           <div><span class="drinkBefore text-sup3-500">規格 </span>冷飲、中杯、三分糖、微冰</div>
         </div>
       </div>
@@ -38,7 +43,9 @@
           </select>
         </div>
         <div class="price text-sub-500 font-normal">$60</div>
-        <div class="text-red-500 hover:text-red-700 cursor-pointer duration-200 flex-shrink-0">刪除</div>
+        <div class="text-red-500 hover:text-red-700 cursor-pointer duration-200 flex-shrink-0">
+          刪除
+        </div>
       </div>
     </div>
   </div>

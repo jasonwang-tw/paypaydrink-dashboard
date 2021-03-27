@@ -17,7 +17,7 @@
             <div class="col-span-8">
               <div class="flex items-center">
                 <div class="userimg rounded-lg overflow-hidden mr-3">
-                  <img src="../../src/assets/product.jpg" alt="" />
+                  <img src="../../src/assets/images/product.jpg" alt="" />
                 </div>
                 <div class="drinkinfo">
                   <div class="userName font-normal  mb-2">東方不敗</div>
@@ -57,13 +57,15 @@
         <!-- QRCODE -->
         <div :class="{ hidden: qrcodeHidden }" class="text-center">
           <h2>兌換成功</h2>
-          <div><img src="../../src/assets/qr.png" alt="" class="block mx-auto"/></div>
+          <div><img src="../../src/assets/images/qr.png" alt="" class="block mx-auto" /></div>
           <div class="my-5">
-            <h4 class="orderNumber">訂單編號<span class="font-normal text-sup1-900 ml-5">TOREWQ20201206001</span></h4>
-            <p>請於12小時內至指定店鋪，出示QRCODE掃描領取飲品。<br>祝您用餐愉快</p>
+            <h4 class="orderNumber">
+              訂單編號<span class="font-normal text-sup1-900 ml-5">TOREWQ20201206001</span>
+            </h4>
+            <p>請於12小時內至指定店鋪，出示QRCODE掃描領取飲品。<br />祝您用餐愉快</p>
           </div>
           <div class="">
-          	<div class="btn btn-dark-blue inline-block mx-auto" @click="exchangeClose">確認</div>
+            <div class="btn btn-dark-blue inline-block mx-auto" @click="exchangeClose">確認</div>
           </div>
         </div>
       </div>
@@ -107,7 +109,7 @@
           {
             link: '/',
             name: '紅茶',
-            bg: require('../assets/drinkBg/1.jpg')
+            bg: require('../assets/images/drinkBg/1.jpg')
           }
         ],
         popupExchange: true,

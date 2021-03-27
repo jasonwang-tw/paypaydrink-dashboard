@@ -1,7 +1,7 @@
 <template>
   <div id="footerBar" class="border-t border-sup3-400">
     <div class="max-w-3xl m-auto py-10 text-center text-main-500">
-      <img src="../assets/footer_logo.svg" alt="" class="block m-auto" />
+      <img src="../assets/images/footer_logo.svg" alt="" class="block m-auto" />
       <div class="pt-5">
         <router-link
           v-for="(item, index) in footerMenu"

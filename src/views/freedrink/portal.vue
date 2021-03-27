@@ -12,7 +12,7 @@
       <hr />
       <div class="flex">
         <div class="userImg rounded-full overflow-hidden mr-10">
-          <img src="../../assets/how.jpg" alt="" />
+          <img src="../../assets/images/how.jpg" alt="" />
         </div>
         <div class="flex flex-grow items-center justify-between">
           <div>
@@ -44,7 +44,7 @@
       >
         <div class="drinkInfo flex items-center">
           <div class="drinkImg rounded-lg overflow-hidden mr-5 flex-shrink-0">
-            <img src="../../assets/product.jpg" alt="" />
+            <img src="../../assets/images/product.jpg" alt="" />
           </div>
           <div>
             <h5 class="mb-2">東方不敗</h5>
@@ -85,7 +85,7 @@
     },
     data() {
       return {
-        selected: '',
+        selected: ''
       }
     }
   }

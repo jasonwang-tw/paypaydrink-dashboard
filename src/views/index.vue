@@ -5,7 +5,7 @@
       <div class="mainArea py-10">
         <div class="flex items-center justify-center my-10">
           <div class="waiter mr-5">
-            <img src="../../src/assets/waiter.png" alt="" />
+            <img src="../../src/assets/images/waiter.png" alt="" />
           </div>
           <div class="hello text-4xl font-bold text-main-500">
             您好 HowHow <br />請問今天想喝點什麼?
@@ -79,32 +79,32 @@
           {
             link: '/search',
             name: '紅茶',
-            bg: require('../assets/drinkBg/1.jpg')
+            bg: require('../assets/images/drinkBg/1.jpg')
           },
           {
             link: '/',
             name: '珍珠奶茶',
-            bg: require('../assets/drinkBg/2.jpg')
+            bg: require('../assets/images/drinkBg/2.jpg')
           },
           {
             link: '/',
             name: '水果茶',
-            bg: require('../assets/drinkBg/3.jpg')
+            bg: require('../assets/images/drinkBg/3.jpg')
           },
           {
             link: '/',
             name: '鮮奶茶',
-            bg: require('../assets/drinkBg/4.jpg')
+            bg: require('../assets/images/drinkBg/4.jpg')
           },
           {
             link: '/',
             name: '抹茶',
-            bg: require('../assets/drinkBg/5.jpg')
+            bg: require('../assets/images/drinkBg/5.jpg')
           },
           {
             link: '/',
             name: '綠茶',
-            bg: require('../assets/drinkBg/6.jpg')
+            bg: require('../assets/images/drinkBg/6.jpg')
           }
         ]
       }
@@ -117,7 +117,7 @@
     line-height: 3rem;
   }
   .mainArea {
-    background-image: url(../assets/mainBg.png);
+    background-image: url(../assets/images/mainBg.png);
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: calc(50% + 120px) center;
@@ -130,7 +130,7 @@
       }
       a {
         height: 150px;
-        // background-image: url(../assets/drinkBg/1.jpg);
+        // background-image: url(../assets/images/drinkBg/1.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -141,7 +141,7 @@
     width: 40px;
     height: 47px;
     padding-top: 7px;
-    background-image: url(../assets/indexNumber.png);
+    background-image: url(../assets/images/indexNumber.png);
     transform: translate(20px, 0px);
     z-index: 1000;
   }

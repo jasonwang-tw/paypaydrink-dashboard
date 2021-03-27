@@ -32,7 +32,7 @@
         drinkList: [
           {
             drinkLink: '/',
-            imgSrc: require('../assets/tea1.png'),
+            imgSrc: require('../assets/images/tea1.png'),
             name: '古道茶鄉',
             price: '60',
             rating: '4.7',
@@ -40,7 +40,7 @@
           },
           {
             drinkLink: '/',
-            imgSrc: require('../assets/tea2.png'),
+            imgSrc: require('../assets/images/tea2.png'),
             name: '初戀的滋味',
             price: '60',
             rating: '4.7',
@@ -48,7 +48,7 @@
           },
           {
             drinkLink: '/',
-            imgSrc: require('../assets/tea3.png'),
+            imgSrc: require('../assets/images/tea3.png'),
             name: '致青春',
             price: '60',
             rating: '4.7',
@@ -56,7 +56,7 @@
           },
           {
             drinkLink: '/',
-            imgSrc: require('../assets/active1.jpg'),
+            imgSrc: require('../assets/images/active1.jpg'),
             name: '東方不敗',
             price: '60',
             rating: '4.7',
@@ -64,7 +64,7 @@
           },
           {
             drinkLink: '/',
-            imgSrc: require('../assets/active1.jpg'),
+            imgSrc: require('../assets/images/active1.jpg'),
             name: '東方不敗',
             price: '60',
             rating: '4.7',

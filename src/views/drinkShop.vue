@@ -4,7 +4,7 @@
     <div class="container mx-auto my-20">
       <div class="customContainer flex pb-5 mx-auto">
         <div class="userImg rounded-full overflow-hidden mr-10 flex-shrink-0">
-          <img src="../../src/assets/how.jpg" alt="" />
+          <img src="../../src/assets/images/how.jpg" alt="" />
         </div>
         <div class="flex-grow">
           <h4 class="mb-0">HowHow</h4>
@@ -51,7 +51,7 @@
       <div class="mt-10">
         <h3>全部配方</h3>
         <productGrid />
-        <productGrid class="mt-10"/>
+        <productGrid class="mt-10" />
       </div>
       <pageNav class="pt-5" />
     </div>

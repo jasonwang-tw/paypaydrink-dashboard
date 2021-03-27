@@ -10,7 +10,7 @@
         <hr />
         <div class="profileImg flex items-center no-underline my-10">
           <div class="userImg overflow-hidden rounded-full bg-white mr-10 flex-shrink-0">
-            <img src="../../src/assets/how.jpg" alt="" />
+            <img src="../../src/assets/images/how.jpg" alt="" />
           </div>
           <div>
             <div class="btn-border-light-blue relative w-40">

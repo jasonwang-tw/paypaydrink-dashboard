@@ -23,5 +23,16 @@
 <style lang="scss" scoped>
   .popupContent {
     width: 500px;
+    max-height: 80%;
+    overflow-y: auto;
+    // &::-webkit-scrollbar {
+    //   border-radius: 0 99px 99px 0;
+    //   overflow: hidden;
+    //   background-color: red;
+    //   width: 5px;
+    // }
+    // &::-webkit-scrollbar-thumb {
+    //   background-color: blue;
+    // }
   }
 </style>

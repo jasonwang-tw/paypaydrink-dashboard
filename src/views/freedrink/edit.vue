@@ -18,15 +18,15 @@
         <div class="flex justify-between">
           <div class="text-center">
             <div class="font-normal text-lg mb-2">0ml</div>
-            <img src="../../assets/drinkCup0.svg" alt="" srcset="" class="inline-block" />
+            <img src="../../assets/images/drinkCup0.svg" alt="" srcset="" class="inline-block" />
           </div>
           <div class="text-center">
             <div class="font-normal text-lg mb-2">250ml</div>
-            <img src="../../assets/drinkCup50.svg" alt="" srcset="" class="inline-block" />
+            <img src="../../assets/images/drinkCup50.svg" alt="" srcset="" class="inline-block" />
           </div>
           <div class="text-center">
             <div class="font-normal text-lg mb-2">500ml</div>
-            <img src="../../assets/drinkCup100.svg" alt="" srcset="" class="inline-block" />
+            <img src="../../assets/images/drinkCup100.svg" alt="" srcset="" class="inline-block" />
           </div>
         </div>
         <div class="progress bg-sup3-400 w-full block h-2.5 rounded-xl mt-5">
@@ -231,7 +231,7 @@
     input {
       display: none;
       &:checked + label {
-        background-image: url(../../assets/click.svg);
+        background-image: url(../../assets/images/click.svg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 70% 70%;
@@ -254,7 +254,7 @@
       margin-right: 2rem;
     }
   }
-  .titleType{
+  .titleType {
     width: 600px;
     margin-right: 9rem;
   }

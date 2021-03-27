@@ -15,15 +15,29 @@
         </div>
         <hr />
         <ul class="pl-0 list-none grid gap-3 grid-cols-2 mb-10 text-main-500">
-          <li class="bg-sup3-300 p-5 rounded-xl" v-for="(i, index) in 5">
-            <div class="flex justify-between mb-16">
-              <div class="btn-dark-blue-sm-nohover">預設</div>
-              <img src="../../src/assets/visa.svg" alt="" />
+          <li class="bg-sup3-300 p-5 rounded-xl relative" v-for="(c, index) in cardInfo">
+            <div class="h-24">
+              <div v-if="c.default === true">
+                <div class="inline-block btn-dark-blue-sm-nohover text-sm">預設</div>
+              </div>
+              <div class="absolute top-0 right-0 p-5">
+                <div v-if="c.type === 'visa'">
+                  <img src="../../src/assets/images/visa.svg" alt="" />
+                </div>
+                <div v-else-if="c.type === 'jcb'">
+                  <img src="../../src/assets/images/jcb.svg" alt="" />
+                </div>
+                <div v-else-if="c.type === 'master'">
+                  <img src="../../src/assets/images/master.svg" alt="" />
+                </div>
+              </div>
             </div>
-            <div class="flex justify-between">
-              <div class="text-xl font-medium">**** 4986</div>
+            <div class="flex justify-between items-center">
+              <div class="text-xl font-medium">**** {{ c.lastNumber }}</div>
               <div class="flex">
-                <div class="duration-200 cursor-pointer hover:text-sup1-500 mr-3">設定為預設</div>
+                <div v-if="c.default === false">
+                  <div class="duration-200 cursor-pointer hover:text-sup1-500 mr-3">設定為預設</div>
+                </div>
                 <div class="duration-200 cursor-pointer text-red-500 hover:text-red-700">刪除</div>
               </div>
             </div>
@@ -40,30 +54,39 @@
         <ul class="list-none pl-0 text-main-500">
           <li
             class="flex items-center justify-between mb-5 bg-sup3-300 p-5 rounded-xl"
-            v-for="(i, index) in 5"
+            v-for="(b, index) in bankAccount"
           >
             <div class="">
-              <div class="flex items-center mb-5">
+              <div class="flex items-start mb-5">
                 <div>
-                  <div class="text-xl font-medium mb-2">台北富邦商業銀行</div>
-                  <div class="text-xl font-medium">**** 7848</div>
+                  <div class="font-medium mb-2">{{ b.bankName }}</div>
+                  <div class="text-xl font-medium">**** {{ b.lastNumber }}</div>
                 </div>
-                <div class="text-sub-500 mx-3">已驗證</div>
-                <div class="btn-dark-blue-sm-nohover">預設</div>
+                <div v-if="b.verification === true">
+                  <div class="text-sup1-100 mx-3">已審核</div>
+                </div>
+                <div v-else-if="b.verification === false">
+                  <div class="text-sub-500 mx-3">審核中</div>
+                </div>
+                <div v-if="b.default === true">
+                  <div class="btn-dark-blue-sm-nohover text-sm">預設</div>
+                </div>
               </div>
               <div class="flex">
                 <div class="mr-5">
-                  <span class="text-sup1-900 mr-3">戶名</span>
-                  <strong>周*倫</strong>
+                  <small class="text-sup1-900 mr-3">戶名</small>
+                  <b>{{ b.accountName }}</b>
                 </div>
                 <div>
-                  <span class="text-sup1-900 mr-3">所屬</span>
-                  <strong>台北市 / 城中分行</strong>
+                  <small class="text-sup1-900 mr-3">所屬</small>
+                  <b>{{ b.city }} / {{ b.branch }}</b>
                 </div>
               </div>
             </div>
             <div class="flex">
-              <div class="duration-200 cursor-pointer hover:text-sup1-500 mr-3">設定為預設</div>
+              <div v-if="b.default === false">
+                <div class="duration-200 cursor-pointer hover:text-sup1-500 mr-3">設定為預設</div>
+              </div>
               <div class="duration-200 cursor-pointer text-red-500 hover:text-red-700">刪除</div>
             </div>
           </li>
@@ -115,16 +138,36 @@
           </select>
         </div>
         <input type="text" name="" id="" placeholder="郵遞區號" class="mb-3" />
-        <input type="text" name="" id="" placeholder="詳細地址" class="mb-10" />
+        <input type="text" name="" id="" placeholder="詳細地址" class="" />
+        <h4 class="my-3">輸入帳戶資訊</h4>
+        <label for="" class="mb-3 block text-left">選擇銀行</label>
+        <select class="mb-3" name="" id="">
+          <option value="" v-for="(bank, index) in bankList" :value="bank">{{ bank }}</option>
+        </select>
+        <div class="flex mb-3">
+          <div class="w-full mr-3">
+            <label for="" class="mb-3 block text-left">選擇銀行縣市</label>
+            <select name="" id="">
+              <option :value="t.CityName" v-for="(t, index) in taiwan">{{ t.CityName }}</option>
+            </select>
+          </div>
+          <div class="w-full">
+            <label for="" class="mb-3 block text-left">選擇分行</label>
+            <select name="" id="">
+              <option value="" v-for="(b, index) in bankBranch" :value="b">{{ b }}</option>
+            </select>
+          </div>
+        </div>
+        <input class="mb-3" type="text" name="" id="" placeholder="請輸入帳戶名" />
+        <input type="text" name="" id="" placeholder="請輸入帳戶" />
       </template>
       <template v-slot:btn>
-        <div class="functionBtn flex justify-center">
+        <div class="functionBtn flex justify-center mt-10">
           <div class="btn btn-remove mr-3" @click="bank = !bank">取消</div>
-          <div class="btn btn-dark-blue">新增</div>
+          <div class="btn btn-dark-blue">送出</div>
         </div>
       </template>
     </popup>
-
     <footerBar />
   </div>
 </template>
@@ -150,7 +193,55 @@
         selcetCity: '臺北市',
         fileterArea: '',
         card: true,
-        bank: true
+        bank: true,
+        bankList: ['台北富邦商業銀行', '國泰世華商業銀行', '中國信託商業銀行'],
+        bankBranch: ['城中分行', '小港分行', '一中分行'],
+        cardInfo: [
+          {
+            default: true,
+            type: 'visa',
+            lastNumber: 7789
+          },
+          {
+            default: false,
+            type: 'jcb',
+            lastNumber: 4867
+          },
+          {
+            default: false,
+            type: 'master',
+            lastNumber: 7048
+          }
+        ],
+        bankAccount: [
+          {
+            bankName: '台北富邦商業銀行',
+            city: '台北市',
+            branch: '城中分行',
+            lastNumber: 7789,
+            default: true,
+            verification: true,
+            accountName: '周截倫'
+          },
+          {
+            bankName: '國泰世華商業銀行',
+            city: '高雄市',
+            branch: '小港分行',
+            lastNumber: 7789,
+            default: false,
+            verification: true,
+            accountName: '周截倫'
+          },
+          {
+            bankName: '中國信託商業銀行',
+            city: '台中市',
+            branch: '一中分行',
+            lastNumber: 7789,
+            default: false,
+            verification: false,
+            accountName: '周截倫'
+          }
+        ]
       }
     },
     methods: {

@@ -7,9 +7,11 @@
             <img :src="item.imgSrc" alt="" />
           </div>
           <div class="starInfo text-left">
-            <h5 class="starName mb-0">{{item.name}}</h5>
-            <div class="starSpeak my-2">{{item.speak}}</div>
-            <a class="starPush btn-border-light-blue inline-block" :href="item.pushLink">名人推薦</a>
+            <h5 class="starName mb-0">{{ item.name }}</h5>
+            <div class="starSpeak my-2">{{ item.speak }}</div>
+            <a class="starPush btn-border-light-blue inline-block" :href="item.pushLink"
+              >名人推薦</a
+            >
           </div>
         </div>
       </splide-slide>
@@ -67,39 +69,39 @@
         },
         star: [
           {
-            imgSrc: require('../assets/active1.jpg'),
+            imgSrc: require('../assets/images/active1.jpg'),
             name: 'Jomen',
             speak: '透過品牌專屬APP，消費者可以隨時下單，隨處購買',
             pushLink: '/'
           },
           {
-            imgSrc: require('../assets/active1.jpg'),
+            imgSrc: require('../assets/images/active1.jpg'),
             name: '滴妹',
             speak: '透過品牌專屬APP，消費者可以隨時下單，隨處購買',
             pushLink: '/'
           },
           {
-            imgSrc: require('../assets/active1.jpg'),
+            imgSrc: require('../assets/images/active1.jpg'),
             name: 'HowHow',
             speak: '透過品牌專屬APP，消費者可以隨時下單，隨處購買',
             pushLink: '/'
           },
           {
-            imgSrc: require('../assets/active1.jpg'),
+            imgSrc: require('../assets/images/active1.jpg'),
             name: 'Jomen',
             speak: '透過品牌專屬APP，消費者可以隨時下單，隨處購買',
             pushLink: '/'
-          },
+          }
         ]
       }
     }
   }
 </script>
 <style lang="scss" scoped>
-  .starImg{
+  .starImg {
     width: 100px;
     height: 100px;
-    img{
+    img {
       width: 100%;
       height: 100%;
       object-fit: contain;

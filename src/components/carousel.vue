@@ -75,22 +75,22 @@
         },
         slideCard: [
           {
-            imgSrc: require('../assets/active1.jpg')
+            imgSrc: require('../assets/images/active1.jpg')
           },
           {
-            imgSrc: require('../assets/active1.jpg')
+            imgSrc: require('../assets/images/active1.jpg')
           },
           {
-            imgSrc: require('../assets/active2.jpg')
+            imgSrc: require('../assets/images/active2.jpg')
           },
           {
-            imgSrc: require('../assets/active3.jpg')
+            imgSrc: require('../assets/images/active3.jpg')
           },
           {
-            imgSrc: require('../assets/active2.jpg')
+            imgSrc: require('../assets/images/active2.jpg')
           },
           {
-            imgSrc: require('../assets/active3.jpg')
+            imgSrc: require('../assets/images/active3.jpg')
           }
         ]
       }

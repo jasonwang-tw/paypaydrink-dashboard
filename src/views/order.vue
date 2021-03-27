@@ -69,7 +69,7 @@
                   </div>
                 </div>
                 <div v-else-if="item.orderStep == '1'">
-                  <div class="text-main-500">
+                  <div class="text-sup1-100">
                     已完成
                   </div>
                 </div>
@@ -173,7 +173,7 @@
                 <div class="flex items-center justify-between">
                   <div class="flex items-center">
                     <div class="userImg rounded-full overflow-hidden mr-5">
-                      <img src="../assets/how.jpg" alt="" />
+                      <img src="../assets/images/how.jpg" alt="" />
                     </div>
                     <div>
                       <h5 class="mb-2">{{ shopItem.shopName }}</h5>
@@ -193,7 +193,7 @@
                 >
                   <div class="flex w-full">
                     <div class="drinkImg rounded-lg overflow-hidden mr-3 flex-shrink-0">
-                      <img src="../assets/product.jpg" alt="" />
+                      <img src="../assets/images/product.jpg" alt="" />
                     </div>
                     <div class="w-full">
                       <div class="flex items-center mb-2 justify-between">
@@ -263,7 +263,7 @@
         <h4>領取碼</h4>
       </template>
       <template v-slot:content>
-        <img src="../../src/assets/qr.png" alt="" class="mx-auto block mb-5">
+        <img src="../../src/assets/images/qr.png" alt="" class="mx-auto block mb-5">
         <div class="flex items-center justify-center">
           <h5><i class="pay-list text-sup3-500 mr-2 text-xl"></i><strong>訂單</strong>
           <span class="ml-2 text-sup1-900">001</span></h5>
@@ -304,6 +304,9 @@
   import profileMenu from '@/components/profileMenu.vue'
   import pageNav from '@/components/pageNav.vue'
   import popup from '@/components/popup.vue'
+  import order from '../../static/resource/order'
+  import orderDetails from '../../static/resource/orderDetails'
+
 
   export default {
     name: 'order',
@@ -324,442 +327,8 @@
         QRcodeShow: true,
         shareLink: true,
         orderStatus: ['進行中', '已完成', '已取消'],
-        order: [
-          {
-            orderStep: 0,
-            orderNumber: '001',
-            status: [
-              {
-                name: '直接領取',
-                qrcode: '',
-                shareLink: ''
-              }
-            ],
-            orderTime: '2020-12-06',
-            pay: '信用卡',
-            cash: '297',
-            shop: [
-              {
-                name: '配配飲 一號店',
-                address: '台北市大安區仁愛路四段345巷6弄78號',
-                tel: '02-2456-7891',
-                time: '24H 全年無休',
-                map: '/'
-              }
-            ]
-          },
-          {
-            orderStep: 0,
-            orderNumber: '002',
-            status: [
-              {
-                name: '寄杯兌換',
-                qrcode: '',
-                shareLink: ''
-              }
-            ],
-            orderTime: '2020-12-06',
-            pay: '信用卡',
-            cash: '0',
-            shop: [
-              {
-                name: '配配飲 一號店',
-                address: '台北市大安區仁愛路四段345巷6弄78號',
-                tel: '02-2456-7891',
-                time: '24H 全年無休',
-                map: '/'
-              }
-            ]
-          },
-          {
-            orderStep: 0,
-            orderNumber: '003',
-            status: [
-              {
-                name: '寄杯',
-                qrcode: '',
-                shareLink: ''
-              }
-            ],
-            orderTime: '2020-12-06',
-            pay: '信用卡',
-            cash: '0',
-            shop: [
-              {
-                name: '',
-                address: '',
-                tel: '',
-                time: '',
-                map: ''
-              }
-            ]
-          },
-          {
-            orderStep: 0,
-            orderNumber: '004',
-            status: [
-              {
-                name: '送禮',
-                qrcode: '',
-                shareLink: '/'
-              }
-            ],
-            orderTime: '2020-12-06',
-            pay: '信用卡',
-            cash: '0',
-            shop: [
-              {
-                name: '',
-                address: '',
-                tel: '',
-                time: '',
-                map: ''
-              }
-            ]
-          },
-          {
-            orderStep: 1,
-            orderNumber: '005',
-            status: [
-              {
-                name: '送禮',
-                qrcode: '',
-                shareLink: '/'
-              }
-            ],
-            orderTime: '2020-12-06',
-            pay: '信用卡',
-            cash: '123',
-            shop: [
-              {
-                name: '',
-                address: '',
-                tel: '',
-                time: '',
-                map: ''
-              }
-            ]
-          },
-          {
-            orderStep: 2,
-            orderNumber: '006',
-            status: [
-              {
-                name: '送禮',
-                qrcode: '',
-                shareLink: '/'
-              }
-            ],
-            orderTime: '2020-12-06',
-            pay: '信用卡',
-            cash: '7575',
-            shop: [
-              {
-                name: '',
-                address: '',
-                tel: '',
-                time: '',
-                map: ''
-              }
-            ]
-          }
-        ],
-        orderDetails: [
-          {
-            orderStep: 0,
-            number: '001',
-            shop: [
-              {
-                shopName: '滴妹好棒棒',
-                shopLink: '/drinkShop',
-                saleText: '飲品優惠，低消100折$30',
-                drink: [
-                  {
-                    name: '東方不敗',
-                    photo: '',
-                    content: [
-                      '粉圓',
-                      '布丁',
-                      '紅豆',
-                      '粉圓',
-                      '布丁',
-                      '紅豆',
-                      '粉圓',
-                      '布丁',
-                      '紅豆'
-                    ],
-                    detail: [
-                      {
-                        temp: '冷飲',
-                        size: '中杯',
-                        sugar: '三分糖',
-                        ice: '微冰'
-                      }
-                    ],
-                    qty: 99,
-                    price: 60,
-                    drinkTotal: 0
-                  },
-                  {
-                    name: '東方不敗',
-                    photo: '',
-                    content: ['粉圓', '布丁', '紅豆', '粉圓'],
-                    detail: [
-                      {
-                        temp: '冷飲',
-                        size: '中杯',
-                        sugar: '三分糖',
-                        ice: '微冰'
-                      }
-                    ],
-                    qty: 59,
-                    price: 70,
-                    drinkTotal: 0
-                  }
-                ],
-                salePrice: '345',
-                shopTotal: 0
-              }
-            ],
-            total: 0
-          },
-          {
-            orderStep: 0,
-            number: '002',
-            shop: [
-              {
-                shopName: '滴妹好棒棒',
-                shopLink: '/drinkShop',
-                saleText: '飲品優惠，低消100折$30',
-                drink: [
-                  {
-                    name: '東方不敗',
-                    photo: '',
-                    content: [
-                      '粉圓',
-                      '布丁',
-                      '紅豆',
-                      '粉圓',
-                      '布丁',
-                      '紅豆',
-                      '粉圓',
-                      '布丁',
-                      '紅豆'
-                    ],
-                    detail: [
-                      {
-                        temp: '冷飲',
-                        size: '中杯',
-                        sugar: '三分糖',
-                        ice: '微冰'
-                      }
-                    ],
-                    qty: '9',
-                    price: '60',
-                    drinkTotal: 0
-                  },
-                  {
-                    name: '東方不敗',
-                    photo: '',
-                    content: [
-                      '粉圓',
-                      '布丁',
-                      '紅豆',
-                      '粉圓',
-                      '布丁',
-                      '紅豆',
-                      '粉圓',
-                      '布丁',
-                      '紅豆'
-                    ],
-                    detail: [
-                      {
-                        temp: '冷飲',
-                        size: '中杯',
-                        sugar: '三分糖',
-                        ice: '微冰'
-                      }
-                    ],
-                    qty: 9,
-                    price: 60,
-                    drinkTotal: 0
-                  }
-                ],
-                salePrice: '345',
-                shopTotal: 0
-              }
-            ],
-            total: 0
-          },
-          {
-            orderStep: 0,
-            number: '003',
-            shop: [
-              {
-                shopName: '滴妹好棒棒',
-                shopLink: '/drinkShop',
-                saleText: '飲品優惠，低消100折$30',
-                drink: [
-                  {
-                    name: '東方不敗',
-                    photo: '',
-                    content: [
-                      '粉圓',
-                      '布丁',
-                      '紅豆',
-                      '粉圓',
-                      '布丁',
-                      '紅豆',
-                      '粉圓',
-                      '布丁',
-                      '紅豆'
-                    ],
-                    detail: [
-                      {
-                        temp: '冷飲',
-                        size: '中杯',
-                        sugar: '三分糖',
-                        ice: '微冰'
-                      }
-                    ],
-                    qty: 69,
-                    price: 60,
-                    drinkTotal: 0
-                  }
-                ],
-                salePrice: '345',
-                shopTotal: 0
-              }
-            ],
-            total: 0
-          },
-          {
-            orderStep: 0,
-            number: '004',
-            shop: [
-              {
-                shopName: '滴妹好棒棒',
-                shopLink: '/drinkShop',
-                saleText: '飲品優惠，低消100折$30',
-                drink: [
-                  {
-                    name: '東方不敗',
-                    photo: '',
-                    content: [
-                      '粉圓',
-                      '布丁',
-                      '紅豆',
-                      '粉圓',
-                      '布丁',
-                      '紅豆',
-                      '粉圓',
-                      '布丁',
-                      '紅豆'
-                    ],
-                    detail: [
-                      {
-                        temp: '冷飲',
-                        size: '中杯',
-                        sugar: '三分糖',
-                        ice: '微冰'
-                      }
-                    ],
-                    qty: 10,
-                    price: 60,
-                    drinkTotal: 0
-                  }
-                ],
-                salePrice: '345',
-                shopTotal: 0
-              }
-            ],
-            total: 0
-          },
-          {
-            orderStep: 1,
-            number: '005',
-            shop: [
-              {
-                shopName: '滴妹好棒棒',
-                shopLink: '/drinkShop',
-                saleText: '飲品優惠，低消100折$30',
-                drink: [
-                  {
-                    name: '東方不敗',
-                    photo: '',
-                    content: [
-                      '粉圓',
-                      '布丁',
-                      '紅豆',
-                      '粉圓',
-                      '布丁',
-                      '紅豆',
-                      '粉圓',
-                      '布丁',
-                      '紅豆'
-                    ],
-                    detail: [
-                      {
-                        temp: '冷飲',
-                        size: '中杯',
-                        sugar: '三分糖',
-                        ice: '微冰'
-                      }
-                    ],
-                    qty: 39,
-                    price: 60,
-                    drinkTotal: 0
-                  }
-                ],
-                salePrice: '345',
-                shopTotal: 0
-              }
-            ],
-            total: 0
-          },
-          {
-            orderStep: 2,
-            number: '006',
-            shop: [
-              {
-                shopName: '滴妹好棒棒',
-                shopLink: '/drinkShop',
-                saleText: '飲品優惠，低消100折$30',
-                drink: [
-                  {
-                    name: '東方不敗',
-                    photo: '',
-                    content: [
-                      '粉圓',
-                      '布丁',
-                      '紅豆',
-                      '粉圓',
-                      '布丁',
-                      '紅豆',
-                      '粉圓',
-                      '布丁',
-                      '紅豆'
-                    ],
-                    detail: [
-                      {
-                        temp: '冷飲',
-                        size: '中杯',
-                        sugar: '三分糖',
-                        ice: '微冰'
-                      }
-                    ],
-                    qty: 79,
-                    price: 60,
-                    drinkTotal: 0
-                  }
-                ],
-                salePrice: '345',
-                shopTotal: 0
-              }
-            ],
-            total: 0
-          }
-        ]
+        order,
+        orderDetails,
       }
     },
     methods: {

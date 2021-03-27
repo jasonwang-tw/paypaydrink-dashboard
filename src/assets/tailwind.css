@@ -176,7 +176,7 @@ textarea:focus {
   box-shadow: 0 0 1px 0.2rem var(--color-focus);
 }
 select {
-  background-image: url(../assets/selectDownArrow.svg);
+  background-image: url(../assets/images/selectDownArrow.svg);
   background-repeat: no-repeat;
   background-size: 12px auto;
   background-position: calc(100% - 15px) center;

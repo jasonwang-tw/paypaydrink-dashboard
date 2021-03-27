@@ -13,7 +13,7 @@
             <div class="flex items-center mb-5 justify-between">
               <div class="flex items-center">
                 <div class="userimg rounded-full overflow-hidden mr-3">
-                  <img src="../../src/assets/how.jpg" alt="" />
+                  <img src="../../src/assets/images/how.jpg" alt="" />
                 </div>
                 <div class="drinkinfo">
                   <div class="userName text-xl font-normal mb-2 ">howhow</div>
@@ -33,7 +33,7 @@
                 <div class="flex items-center justify-between">
                   <div class="flex items-center mr-3">
                     <div class="userimg rounded-lg overflow-hidden mr-3 flex-shrink-0">
-                      <img src="../../src/assets/product.jpg" alt="" />
+                      <img src="../../src/assets/images/product.jpg" alt="" />
                     </div>
                     <div class="drinkinfo">
                       <div class="userName font-normal mb-2">東方不敗</div>

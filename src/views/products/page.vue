@@ -79,7 +79,7 @@
         <div class="col-span-4">
           <div class="masterStore flex text-main-500">
             <div class="userImg rounded-full overflow-hidden flex-shrink-0 mr-5">
-              <img src="../../assets/how.jpg" alt="" />
+              <img src="../../assets/images/how.jpg" alt="" />
             </div>
             <div>
               <div class="text-xl font-normal mb-5">HowHow</div>
@@ -144,7 +144,7 @@
           <ul class="comment pl-0 list-none">
             <li class="flex border rounded-xl p-5 border-sup2-500 mb-5" v-for="(c, index) in 5">
               <div class="userImg rounded-full overflow-hidden flex-shrink-0 mr-3">
-                <img src="../../assets/how.jpg" alt="" />
+                <img src="../../assets/images/how.jpg" alt="" />
               </div>
               <div>
                 <div class="username font-normal">Howhow</div>
@@ -216,19 +216,19 @@
         },
         drinkTop: [
           {
-            imgSrc: require('../../assets/tea1.png')
+            imgSrc: require('../../assets/images/tea1.png')
           },
           {
-            imgSrc: require('../../assets/tea2.png')
+            imgSrc: require('../../assets/images/tea2.png')
           },
           {
-            imgSrc: require('../../assets/tea3.png')
+            imgSrc: require('../../assets/images/tea3.png')
           },
           {
-            imgSrc: require('../../assets/active1.jpg')
+            imgSrc: require('../../assets/images/active1.jpg')
           },
           {
-            imgSrc: require('../../assets/active1.jpg')
+            imgSrc: require('../../assets/images/active1.jpg')
           }
         ],
         test: true,
