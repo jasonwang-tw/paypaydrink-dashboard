@@ -243,7 +243,7 @@
       </div>
     </div>
     <!-- 取消訂單 -->
-    <popup :class="{ popupHidden : removeOrder}" class="duration-200">
+    <popup :class="{ popupHidden : removeOrder}">
       <template v-slot:title>
         <h4>取消訂單</h4>
       </template>
@@ -258,7 +258,7 @@
       </template>
     </popup>
     <!-- QRCODE -->
-    <popup :class="{popupHidden: QRcodeShow}" class="duration-200">
+    <popup :class="{popupHidden: QRcodeShow}">
       <template v-slot:title>
         <h4>領取碼</h4>
       </template>
@@ -277,7 +277,7 @@
       </template>
     </popup>
     <!-- 分享好友 -->
-    <popup :class="{popupHidden : shareLink}" class="duration-200">
+    <popup :class="{popupHidden : shareLink}">
       <template v-slot:title>
         <h4>分享好友</h4>
       </template>

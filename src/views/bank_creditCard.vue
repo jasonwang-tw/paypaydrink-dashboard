@@ -36,9 +36,19 @@
               <div class="text-xl font-medium">**** {{ c.lastNumber }}</div>
               <div class="flex">
                 <div v-if="c.default === false">
-                  <div class="duration-200 cursor-pointer hover:text-sup1-500 mr-3">設定為預設</div>
+                  <div
+                    class="duration-200 cursor-pointer hover:text-sup1-500 mr-3"
+                    @click="cahngeDefaultCI(), [(c.default = true)]"
+                  >
+                    設定為預設
+                  </div>
                 </div>
-                <div class="duration-200 cursor-pointer text-red-500 hover:text-red-700">刪除</div>
+                <div
+                  class="duration-200 cursor-pointer text-red-500 hover:text-red-700"
+                  @click=";[(del = !del)], [(delTitle = '信用卡')]"
+                >
+                  刪除
+                </div>
               </div>
             </div>
           </li>
@@ -84,10 +94,20 @@
               </div>
             </div>
             <div class="flex">
-              <div v-if="b.default === false">
-                <div class="duration-200 cursor-pointer hover:text-sup1-500 mr-3">設定為預設</div>
+              <div v-if="b.default === false && b.verification === true">
+                <div
+                  class="duration-200 cursor-pointer hover:text-sup1-500 mr-3"
+                  @click="cahngeDefaultBA(), [(b.default = true)]"
+                >
+                  設定為預設
+                </div>
               </div>
-              <div class="duration-200 cursor-pointer text-red-500 hover:text-red-700">刪除</div>
+              <div
+                class="duration-200 cursor-pointer text-red-500 hover:text-red-700"
+                @click=";[(del = !del)], [(delTitle = '帳戶')]"
+              >
+                刪除
+              </div>
             </div>
           </li>
         </ul>
@@ -168,6 +188,21 @@
         </div>
       </template>
     </popup>
+    <!-- 刪除信用卡 -->
+    <popup :class="{ popup: del }">
+      <template v-slot:title>
+        <h4>刪除{{ delTitle }}</h4>
+      </template>
+      <template v-slot:content>
+        <p class="mb-10">此操作無法撤消，確定要執行嗎?</p>
+      </template>
+      <template v-slot:btn>
+        <div class="functionBtn flex justify-center">
+          <div class="btn btn-remove mr-3" @click="del = !del">取消</div>
+          <div class="btn btn-dark-blue">確認</div>
+        </div>
+      </template>
+    </popup>
     <footerBar />
   </div>
 </template>
@@ -194,6 +229,8 @@
         fileterArea: '',
         card: true,
         bank: true,
+        del: true,
+        delTitle: '',
         bankList: ['台北富邦商業銀行', '國泰世華商業銀行', '中國信託商業銀行'],
         bankBranch: ['城中分行', '小港分行', '一中分行'],
         cardInfo: [
@@ -233,6 +270,15 @@
             accountName: '周截倫'
           },
           {
+            bankName: '國泰世華商業銀行',
+            city: '台中',
+            branch: '中港分行',
+            lastNumber: 7789,
+            default: false,
+            verification: true,
+            accountName: '周截倫'
+          },
+          {
             bankName: '中國信託商業銀行',
             city: '台中市',
             branch: '一中分行',
@@ -250,6 +296,16 @@
           if (fd.CityName == this.selcetCity) {
             this.fileterArea = fd.AreaList
           }
+        })
+      },
+      cahngeDefaultBA() {
+        this.bankAccount.forEach(ba => {
+          ba.default = false
+        })
+      },
+      cahngeDefaultCI() {
+        this.cardInfo.forEach(ci => {
+          ci.default = false
         })
       }
     },
