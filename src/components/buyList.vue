@@ -1,5 +1,5 @@
 <template>
-  <div id="buyList" class="border rounded-xl p-5 border-sup3-400">
+  <div id="buyList" class="border rounded-3xl p-5 border-sup3-400">
     <div class="flex items-center justify-between">
       <div class="flex items-center">
         <div class="userImg rounded-full overflow-hidden mr-5">

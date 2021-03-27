@@ -179,7 +179,7 @@
           </div>
         </div>
         <input class="mb-3" type="text" name="" id="" placeholder="請輸入帳戶名" />
-        <input type="text" name="" id="" placeholder="請輸入帳戶" />
+        <input type="text" name="" id="" placeholder="請輸入帳戶號碼" />
       </template>
       <template v-slot:btn>
         <div class="functionBtn flex justify-center mt-10">

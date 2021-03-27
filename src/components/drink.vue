@@ -6,7 +6,7 @@
         <div class="pt-5">
           <router-link
             to="/products/page"
-            class="no-underline border border-sup2-500 block rounded-lg overflow-hidden drinkHover"
+            class="no-underline border border-sup2-500 block rounded-3xl overflow-hidden drinkHover"
           >
             <div class="drinkImg -mt-1">
               <img :src="item.imgSrc" alt="" />
@@ -143,7 +143,7 @@
 </script>
 <style lang="scss" scoped>
   .drinkImg {
-    height: 290px;
+    height: 255px;
     img {
       width: 100%;
       height: 100%;

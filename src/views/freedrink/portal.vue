@@ -5,7 +5,7 @@
         <h2>飲料鋪</h2>
         <div class="flex">
           <div class="btn-border-light-blue mr-3">讀取自配方</div>
-          <div class="btn-border-light-blue mr-3">編輯飲料鋪</div>
+          <router-link to="/free_drink/shop_edit" class="btn-border-light-blue mr-3">編輯飲料鋪</router-link>
           <router-link to="/free_drink/edit" class="btn-border-light-blue">新增配方</router-link>
         </div>
       </div>
@@ -27,6 +27,7 @@
             </ul>
           </div>
           <div class="flex">
+            <router-link to="/drinkShop" class="btn-light-blue mr-3">前往飲料鋪</router-link>
             <router-link to="/wallet" class="btn-dark-blue">我的錢包</router-link>
           </div>
         </div>
@@ -104,7 +105,7 @@
       margin-right: 1.5rem;
       padding-right: 1.5rem;
       span {
-        color: var(--color-sup1-100);
+        color: var(--color-sub);
         margin-right: 0.5rem;
       }
     }

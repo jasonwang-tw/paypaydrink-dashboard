@@ -88,6 +88,10 @@ const routes = [
         path: 'edit',
         component: () => import('../views/freedrink/edit.vue'),
       },
+      {
+        path: 'shop_edit',
+        component: () => import('../views/freedrink/shopEdit.vue'),
+      },
     ],
   },
   {

@@ -4,7 +4,7 @@
       <div v-for="(item, index) in drinkList">
         <router-link
           to="/products/page"
-          class="no-underline border border-sup2-500 block rounded-lg overflow-hidden drinkHover"
+          class="no-underline border border-sup2-500 block rounded-3xl overflow-hidden drinkHover"
         >
           <div class="drinkImg -mt-1">
             <img :src="item.imgSrc" alt="" />
