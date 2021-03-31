@@ -320,9 +320,6 @@
 </script>
 
 <style lang="scss" scoped>
-  .customContainer {
-    max-width: 960px;
-  }
   .userimg {
     width: 60px;
     height: 60px;

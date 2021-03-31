@@ -278,9 +278,6 @@
   }
   #secondary {
   }
-  .customContainer {
-    max-width: 960px;
-  }
   .buySelect {
     width: 100px;
   }

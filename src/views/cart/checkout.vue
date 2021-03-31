@@ -102,9 +102,6 @@
 </script>
 
 <style lang="scss" scoped>
-  .customContainer {
-    max-width: 960px;
-  }
   .shopPosition {
     i {
       margin-right: 0.5rem;

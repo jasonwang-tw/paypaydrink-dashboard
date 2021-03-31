@@ -52,7 +52,7 @@
   import pageNav from '@/components/pageNav.vue'
 
   export default {
-    name: '',
+    name: 'drinkMaster',
     components: {
       topmenu,
       footerBar,
@@ -74,9 +74,6 @@
 </script>
 
 <style lang="scss" scoped>
-  .customContainer {
-    max-width: 960px;
-  }
   .userimg {
     width: 60px;
     height: 60px;

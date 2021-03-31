@@ -128,7 +128,7 @@
   import profileMenu from '@/components/profileMenu.vue'
 
   export default {
-    name: '',
+    name: 'profile',
     components: {
       topmenu,
       footerBar,

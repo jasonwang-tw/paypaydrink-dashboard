@@ -81,7 +81,7 @@
   import shopPosition from '@/components/shopPosition.vue'
 
   export default {
-    name: '',
+    name: 'stock',
     components: {
       topmenu,
       footerBar,
@@ -124,9 +124,7 @@
   .popupContent {
     min-width: 500px;
   }
-  .customContainer {
-    max-width: 960px;
-  }
+
   .userimg {
     width: 60px;
     height: 60px;

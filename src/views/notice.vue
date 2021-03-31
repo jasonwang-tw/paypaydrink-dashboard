@@ -55,7 +55,7 @@
   import popup from '@/components/popup.vue'
 
   export default {
-    name: '',
+    name: 'notice',
     components: {
       topmenu,
       footerBar,
@@ -72,9 +72,6 @@
 </script>
 
 <style lang="scss" scoped>
-  .customContainer {
-    max-width: 960px;
-  }
   .noticeText {
     width: 100%;
     overflow: hidden;

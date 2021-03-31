@@ -2,14 +2,14 @@
   <div id="portal" class="text-main-500">
     <topmenu />
     <div class="shopBg bg-sup3-300 h-60"></div>
-    <div class="container mx-auto mb-20 -mt-24">
-      <div class="customContainer flex pb-5 mx-auto items-center bg-white p-10 rounded-3xl">
-        <div class="userImg rounded-full overflow-hidden mr-10 flex-shrink-0">
+    <div class="container mx-auto mb-20 -mt-16">
+      <div class="customContainer mx-auto text-center">
+        <div class="userImg rounded-full overflow-hidden mx-auto flex-shrink-0">
           <img src="../../src/assets/images/how.jpg" alt="" />
         </div>
-        <div class="flex-grow">
+        <div class="flex-grow mt-3">
           <h4 class="mb-0">HowHow</h4>
-          <div class="flex items-center justify-between">
+          <div class="flex items-center justify-center mt-3">
             <ul class="masterInfo flex pl-0 list-none">
               <li>
                 <span><i class="pay-start"></i></span>4.5
@@ -22,7 +22,7 @@
           </div>
         </div>
       </div>
-      <div class="customContainer mx-auto px-10 my-5">
+      <div class="customContainer mx-auto px-10 mt-5 mb-10">
         <h5>關於飲料鋪</h5>
         <hr />
         <div>
@@ -80,16 +80,13 @@
     // },
     data() {
       return {
-        selected: ''
+        // selected: ''
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  .customContainer {
-    max-width: 960px;
-  }
   .userImg {
     width: 120px;
     height: 120px;

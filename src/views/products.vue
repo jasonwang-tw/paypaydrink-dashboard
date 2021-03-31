@@ -11,7 +11,7 @@
   import footerBar from '@/components/footerBar.vue'
 
   export default {
-    name: '',
+    name: 'products',
     components: {
       topmenu,
       footerBar

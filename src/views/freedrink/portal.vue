@@ -5,7 +5,9 @@
         <h2>飲料鋪</h2>
         <div class="flex">
           <div class="btn-border-light-blue mr-3">讀取自配方</div>
-          <router-link to="/free_drink/shop_edit" class="btn-border-light-blue mr-3">編輯飲料鋪</router-link>
+          <router-link to="/free_drink/shop_edit" class="btn-border-light-blue mr-3"
+            >編輯飲料鋪</router-link
+          >
           <router-link to="/free_drink/edit" class="btn-border-light-blue">新增配方</router-link>
         </div>
       </div>
@@ -27,7 +29,9 @@
             </ul>
           </div>
           <div class="flex">
-            <router-link to="/drinkShop" class="btn-light-blue mr-3">前往飲料鋪</router-link>
+            <router-link to="/drinkShop" target="_blank" class="btn-light-blue mr-3"
+              >預覽頁面</router-link
+            >
             <router-link to="/wallet" class="btn-dark-blue">我的錢包</router-link>
           </div>
         </div>
@@ -86,16 +90,13 @@
     },
     data() {
       return {
-        selected: ''
+        // selected: ''
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  .customContainer {
-    max-width: 960px;
-  }
   .userImg {
     width: 120px;
     height: 120px;

@@ -115,41 +115,55 @@
         <h4>客製選項</h4>
         <div class="flex items-center drinkSet">
           <div class="mr-5 font-normal">溫度</div>
-          <input type="checkbox" name="heat" id="cool" />
-          <label for="cool"></label><span>冰</span>
-          <input type="checkbox" name="heat" id="warm" />
-          <label for="warm"></label><span>溫</span>
-          <input type="checkbox" name="heat" id="hot" />
-          <label for="hot"></label><span>熱</span>
+          <div v-for="(h, index) in heat" :key="index" class="flex items-center">
+            <input
+              type="checkbox"
+              name="heat"
+              :id="h.value"
+              :value="h.value"
+              v-model="drinkSeting.heat"
+            />
+            <label :for="h.value"></label><span>{{ h.name }}</span>
+          </div>
         </div>
         <div class="flex items-center drinkSet">
           <div class="mr-5 font-normal">容量</div>
-          <input type="checkbox" name="cup" id="big" />
-          <label for="big"></label><span>大杯</span>
-          <input type="checkbox" name="cup" id="normal" />
-          <label for="normal"></label><span>中杯</span>
+          <div v-for="(c, index) in cup" :key="index" class="flex items-center">
+            <input
+              type="checkbox"
+              name="cup"
+              :id="c.value"
+              :value="c.value"
+              v-model="drinkSeting.cup"
+            />
+            <label :for="c.value"></label><span>{{ c.name }}</span>
+          </div>
         </div>
         <div class="flex items-center drinkSet">
           <div class="mr-5 font-normal">冰塊</div>
-          <input type="checkbox" name="ice" id="ice_no" />
-          <label for="ice_no"></label><span>去冰</span>
-          <input type="checkbox" name="ice" id="ice3" />
-          <label for="ice3"></label><span>微冰</span>
-          <input type="checkbox" name="ice" id="ice5" />
-          <label for="ice5"></label><span>少冰</span>
-          <input type="checkbox" name="ice" id="ice10" />
-          <label for="ice10"></label><span>正常</span>
+          <div v-for="(i, index) in ice" :key="index" class="flex items-center">
+            <input
+              type="checkbox"
+              name="cup"
+              :id="i.value"
+              :value="i.value"
+              v-model="drinkSeting.ice"
+            />
+            <label :for="i.value"></label><span>{{ i.name }}</span>
+          </div>
         </div>
         <div class="flex items-center drinkSet">
           <div class="mr-5 font-normal">甜度</div>
-          <input type="checkbox" name="sugar" id="sugar_no" />
-          <label for="sugar_no"></label><span>無糖</span>
-          <input type="checkbox" name="sugar" id="sugar3" />
-          <label for="sugar3"></label><span>微糖</span>
-          <input type="checkbox" name="sugar" id="sugar5" />
-          <label for="sugar5"></label><span>半糖</span>
-          <input type="checkbox" name="sugar" id="sugar10" />
-          <label for="sugar10"></label><span>正常</span>
+          <div v-for="(s, index) in sugar" :key="index" class="flex items-center">
+            <input
+              type="checkbox"
+              name="cup"
+              :id="s.value"
+              :value="s.value"
+              v-model="drinkSeting.sugar"
+            />
+            <label :for="s.value"></label><span>{{ s.name }}</span>
+          </div>
         </div>
       </div>
       <div class="btn-dark-blue inline-block text-center mr-5">儲存配方</div>
@@ -161,23 +175,81 @@
 <script>
   export default {
     name: 'portal',
-    components: {},
-    // props: {
-    //   select: selected
-    // },
     computed: {},
     data() {
       return {
-        selected: ''
+        heat: [
+          {
+            name: '冰',
+            value: 'cool'
+          },
+          {
+            name: '溫',
+            value: 'warm'
+          },
+          {
+            name: '熱',
+            value: 'hot'
+          }
+        ],
+        cup: [
+          {
+            name: '大杯',
+            value: 'large'
+          },
+          {
+            name: '中杯',
+            value: 'normal'
+          }
+        ],
+        ice: [
+          {
+            name: '去冰',
+            value: 'ice_no'
+          },
+          {
+            name: '微冰',
+            value: 'ice3'
+          },
+          {
+            name: '少冰',
+            value: 'ice5'
+          },
+          {
+            name: '正常',
+            value: 'ice10'
+          }
+        ],
+        sugar: [
+          {
+            name: '無糖',
+            value: 'sugar_no'
+          },
+          {
+            name: '微糖',
+            value: 'sugar3'
+          },
+          {
+            name: '半糖',
+            value: 'sugar5'
+          },
+          {
+            name: '正常',
+            value: 'sugar10'
+          }
+        ],
+        drinkSeting: {
+          heat: [],
+          cup: [],
+          ice: [],
+          sugar: []
+        }
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  .customContainer {
-    max-width: 960px;
-  }
   .userImg {
     width: 120px;
     height: 120px;

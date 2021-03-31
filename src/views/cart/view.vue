@@ -28,14 +28,10 @@
     // },
     data() {
       return {
-        selected: ''
+        // selected: ''
       }
     }
   }
 </script>
 
-<style lang="scss" scoped>
-  .customContainer {
-    max-width: 960px;
-  }
-</style>
+<style lang="scss" scoped></style>

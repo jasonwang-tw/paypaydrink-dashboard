@@ -124,8 +124,16 @@
               立即加入 <span class="text-sub-500">配配飲</span>
             </div>
             <span class="mb-5 block">客製屬於您的飲品</span>
-            <img class="my-auto inline-block mb-10 w-32" src="../../src/assets/images/M.png" alt="" />
-            <img class="my-auto inline-block w-40" src="../../src/assets/images/downhand.svg" alt="" />
+            <img
+              class="my-auto inline-block mb-10 w-32"
+              src="../../src/assets/images/M.png"
+              alt=""
+            />
+            <img
+              class="my-auto inline-block w-40"
+              src="../../src/assets/images/downhand.svg"
+              alt=""
+            />
           </div>
         </div>
       </div>
