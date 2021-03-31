@@ -22,13 +22,13 @@
           <i class="pay-cart text-xl text-main-100"></i>
           <!-- miniCartList -->
           <div
-            class="shopCartList absolute bg-white border border-sup2-500 p-5 mt-2.5 -ml-6 rounded-lg duration-200"
+            class="shopCartList absolute bg-white border border-sup2-500 p-5 mt-2.5 -ml-6 rounded-3xl duration-200"
             :class="{ listHidden: miniCartHidden }"
           >
             <ul class="list-none pl-0 text-main-500">
               <li v-for="i in 4" class="">
                 <router-link to="/" class="flex mb-5 no-underline">
-                  <div class="productImg bg-white rounded-lg overflow-hidden mr-5 flex-shrink-0">
+                  <div class="productImg bg-white rounded-3xl overflow-hidden mr-5 flex-shrink-0">
                     <img src="../../src/assets/images/product.jpg" alt="" />
                   </div>
                   <div class="productInfo flex justify-between">
@@ -58,7 +58,7 @@
           <i class="pay-notice text-xl text-main-100"></i>
           <!-- noticeList -->
           <div
-            class="noticeList absolute bg-white border border-sup2-500 p-5 mt-2.5 -ml-6 rounded-lg duration-200"
+            class="noticeList absolute bg-white border border-sup2-500 p-5 mt-2.5 -ml-6 rounded-3xl duration-200"
             :class="{ listHidden: miniNoticeHidden }"
           >
             <ul class="list-none pl-0 text-main-500">

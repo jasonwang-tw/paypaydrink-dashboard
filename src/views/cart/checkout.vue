@@ -2,7 +2,7 @@
   <div id="checkout">
     <div class="customContainer xl:mx-auto my-20 text-main-500">
       <buyList />
-      <div class="border rounded-xl p-5 border-sup3-400 my-10">
+      <div class="border rounded-3xl p-5 border-sup3-400 my-10">
         <div class="flex items-center">
           <h3 class="mb-0">領取方式</h3>
           <div class="flex ml-5">
@@ -25,7 +25,7 @@
           <div class="font-normal text-lg mr-5">選擇領取店鋪</div>
           <div class="btn-border-light-blue-sm">選擇店鋪</div>
         </div>
-        <div class="flex items-center justify-between bg-sup3-300 p-5 rounded-lg mt-5">
+        <div class="flex items-center justify-between bg-sup3-300 p-5 rounded-3xl mt-5">
           <div>
             <div class="font-normal text-lg mb-2">配配飲一號店</div>
             <ul class="pl-0 list-none flex shopPosition">
@@ -40,7 +40,7 @@
           <a href="/" target="_blank" class="btn-border-light-blue-sm">查看位置</a>
         </div>
       </div>
-      <div class="border rounded-xl p-5 border-sup3-400">
+      <div class="border rounded-3xl p-5 border-sup3-400">
         <div class="flex items-center">
           <h3 class="mb-0">付款方式</h3>
           <div class="flex ml-5">

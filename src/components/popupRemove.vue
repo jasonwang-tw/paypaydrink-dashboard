@@ -28,7 +28,5 @@
 </script>
 
 <style lang="scss" scoped>
-  .popupContent {
-    width: 500px;
-  }
+  
 </style>

@@ -12,17 +12,26 @@
           <div class="col-span-8">飲品</div>
           <div class="col-span-2 flex justify-center">剩餘數量</div>
         </div>
-        <ul class="list-none pl-0 rounded-xl overflow-hidden mt-5">
-          <li class="grid grid-cols-12 mb-5 pb-5 border-b border-sup2-500" v-for="(i, index) in 5">
+        <ul class="list-none pl-0 rounded-3xl overflow-hidden mt-5">
+          <li
+            class="grid grid-cols-12 mb-5 p-5 border rounded-3xl border-sup2-500"
+            v-for="(i, index) in 5"
+          >
             <div class="col-span-8">
-              <div class="flex items-center">
-                <div class="userimg rounded-lg overflow-hidden mr-3">
+              <div class="flex">
+                <div class="drinkImg rounded-3xl overflow-hidden mr-5 flex-shrink-0">
                   <img src="../../src/assets/images/product.jpg" alt="" />
                 </div>
-                <div class="drinkinfo">
-                  <div class="userName font-normal  mb-2">東方不敗</div>
-                  <div class=" text-sm mb-1">內含配料<span>粉圓、布丁、紅豆</span></div>
-                  <div class=" text-sm">規格<span>冷飲、中杯、三分糖、微冰</span></div>
+                <div>
+                  <h5 class="mb-2">東方不敗</h5>
+                  <div class="flex">
+                    <span class="drinkBefore text-sup3-500 flex-shrink-0">內含配料</span>
+                    <span>粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆</span>
+                  </div>
+                  <div class="flex">
+                    <span class="drinkBefore text-sup3-500">規格</span>
+                    <span>冷飲、中杯、三分糖、微冰</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -121,13 +130,12 @@
 </script>
 
 <style lang="scss" scoped>
-  .popupContent {
-    min-width: 500px;
+  .drinkImg {
+    width: 80px;
+    height: 80px;
   }
-
-  .userimg {
-    width: 60px;
-    height: 60px;
+  .drinkBefore {
+    width: 80px;
   }
   .popup {
     opacity: 0;

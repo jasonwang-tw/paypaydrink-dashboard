@@ -20,7 +20,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .popupContent {
     width: 500px;
     max-height: 80%;

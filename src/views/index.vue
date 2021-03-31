@@ -16,7 +16,7 @@
             <router-link
               :to="item.link"
               :style="'background-image: url(' + item.bg + ');'"
-              class="no-underline rounded-lg text-2xl font-bold flex justify-center items-center text-white"
+              class="no-underline rounded-3xl text-2xl font-bold flex justify-center items-center text-white"
               >{{ item.name }}</router-link
             >
           </li>

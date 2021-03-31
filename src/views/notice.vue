@@ -12,7 +12,7 @@
           class="pl-0 list-none text-main-500 hover:opacity-70 duration-200"
           v-for="(i, index) in 10"
         >
-          <li class="p-5 bg-sup3-300 rounded-xl cursor-pointer mb-5" @click="notice = !notice">
+          <li class="p-5 bg-sup3-300 rounded-3xl cursor-pointer mb-5" @click="notice = !notice">
             <div class="font-bold text-lg mb-3">密碼重設完成</div>
             <p class="noticeText text-sup1-900">
               訂單<span class="mx-2 text-sub-500">200718NQDUVMMW</span

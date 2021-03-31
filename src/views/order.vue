@@ -23,7 +23,7 @@
           </ul>
           <ul class="order-status list-none pl-0">
             <li
-              class="border p-5 rounded-lg border-sup3-400 mb-5"
+              class="border p-5 rounded-3xl border-sup3-400 mb-5"
               v-for="(item, index) in orderStort"
             >
               <div class="flex justify-between items-center">
@@ -166,7 +166,7 @@
                 {{ orderItem.number }}
               </div>
               <div
-                class="p-5 border rounded-xl border-sup3-400 mb-5"
+                class="p-5 border rounded-3xl border-sup3-400 mb-5"
                 v-for="(shopItem, index) in orderItem.shop"
                 :key="index"
               >
@@ -192,7 +192,7 @@
                   v-for="(i, index) in shopItem.drink"
                 >
                   <div class="flex w-full">
-                    <div class="drinkImg rounded-lg overflow-hidden mr-3 flex-shrink-0">
+                    <div class="drinkImg rounded-3xl overflow-hidden mr-3 flex-shrink-0">
                       <img src="../assets/images/product.jpg" alt="" />
                     </div>
                     <div class="w-full">
@@ -384,12 +384,12 @@
     }
   }
   .userImg {
-    width: 60px;
-    height: 60px;
-  }
-  .drinkImg {
     width: 80px;
     height: 80px;
+  }
+  .drinkImg {
+    width: 100px;
+    height: 100px;
   }
   .drinkBefore {
     width: 80px;

@@ -8,7 +8,7 @@
             to="/products/page"
             class="no-underline border border-sup2-500 block rounded-3xl overflow-hidden drinkHover"
           >
-            <div class="drinkImg -mt-1">
+            <div class="drinkMainImg -mt-1">
               <img :src="item.imgSrc" alt="" />
             </div>
             <div class="drinkInfo text-left p-5">
@@ -142,7 +142,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  .drinkImg {
+  .drinkMainImg {
     height: 255px;
     img {
       width: 100%;

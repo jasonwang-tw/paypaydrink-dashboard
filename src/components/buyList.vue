@@ -24,7 +24,7 @@
         </div> -->
     <div class="flex items-center justify-between">
       <div class="flex">
-        <div class="drinkImg rounded-lg overflow-hidden mr-3 flex-shrink-0">
+        <div class="drinkImg rounded-3xl overflow-hidden mr-3 flex-shrink-0">
           <img src="../assets/images/product.jpg" alt="" />
         </div>
         <div>

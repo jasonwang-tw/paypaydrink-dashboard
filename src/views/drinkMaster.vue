@@ -12,11 +12,11 @@
           <div class="col-span-8">飲品</div>
           <div class="col-span-2 flex justify-center">剩餘數量</div>
         </div>
-        <ul class="list-none pl-0 rounded-xl overflow-hidden mt-5">
+        <ul class="list-none pl-0 rounded-3xl overflow-hidden mt-5">
           <li class="grid grid-cols-12 mb-10" v-for="(i, index) in 5">
             <div class="col-span-8">
               <div class="flex items-center">
-                <div class="userimg rounded-lg overflow-hidden mr-3">
+                <div class="userimg rounded-3xl overflow-hidden mr-3">
                   <img src="../../src/assets/images/product.jpg" alt="" />
                 </div>
                 <div class="drinkinfo">

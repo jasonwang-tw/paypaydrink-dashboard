@@ -29,8 +29,8 @@
             <img src="../../assets/images/drinkCup100.svg" alt="" srcset="" class="inline-block" />
           </div>
         </div>
-        <div class="progress bg-sup3-400 w-full block h-2.5 rounded-xl mt-5">
-          <div class="progressBar bg-main-500 h-full block w-36 rounded-xl">
+        <div class="progress bg-sup3-400 w-full block h-2.5 rounded-3xl mt-5">
+          <div class="progressBar bg-main-500 h-full block w-36 rounded-3xl">
             <div class="barValue">
               <i class="pay-arrow_top text-sup3-500 text-xs"></i>
               <div class="font-normal text-lg">30ml</div>
@@ -41,7 +41,7 @@
           目前食材費<big class="ml-5 font-normal text-sub-500">$180</big>
         </div>
       </div>
-      <div class="p-5 bg-sup3-300 rounded-xl setArea">
+      <div class="p-5 bg-sup3-300 rounded-3xl setArea">
         <h4>選擇茶底</h4>
         <span class="text-red-500">*請至少選擇一種茶底</span>
         <div class="flex mt-5 mb-3">
@@ -65,7 +65,7 @@
         </div>
         <div class="btn-border-light-blue inline-block">增加茶底</div>
       </div>
-      <div class="p-5 bg-sup3-300 rounded-xl setArea">
+      <div class="p-5 bg-sup3-300 rounded-3xl setArea">
         <h4>添加配料</h4>
         <div class="flex mt-5 mb-3">
           <div class="titleType">配料種類</div>
@@ -88,7 +88,7 @@
         </div>
         <div class="btn-border-light-blue inline-block">增加配料</div>
       </div>
-      <div class="p-5 bg-sup3-300 rounded-xl setArea">
+      <div class="p-5 bg-sup3-300 rounded-3xl setArea">
         <h4>編輯配方資訊</h4>
         <div class="mb-3">
           <input type="text" name="" id="" placeholder="配方名稱" />
@@ -111,7 +111,7 @@
         </div>
         <small class="text-red-500 mt-3 inline-block">*食材費用加欲收取費用等於平台販售金額</small>
       </div>
-      <div class="p-5 bg-sup3-300 rounded-xl setArea">
+      <div class="p-5 bg-sup3-300 rounded-3xl setArea">
         <h4>客製選項</h4>
         <div class="flex items-center drinkSet">
           <div class="mr-5 font-normal">溫度</div>
@@ -166,8 +166,8 @@
           </div>
         </div>
       </div>
-      <div class="btn-dark-blue inline-block text-center mr-5">儲存配方</div>
-      <div class="btn-remove inline-block text-center">取消</div>
+      <div class="btn-remove inline-block text-center mr-5">取消</div>
+      <div class="btn-dark-blue inline-block text-center">儲存配方</div>
     </div>
   </div>
 </template>

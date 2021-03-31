@@ -10,7 +10,7 @@
           <h3 class="text-main-500 mb-0">我的錢包</h3>
         </div>
         <hr />
-        <div class="p-5 bg-sup3-300 rounded-xl w-full mb-5">
+        <div class="p-5 bg-sup3-300 rounded-3xl w-full mb-5">
           <div>錢包餘額</div>
           <div class="flex items-center justify-between">
             <div class="mr-10 text-2xl font-normal text-sub-500">NT$204,751</div>
@@ -31,7 +31,7 @@
         </ul>
         <ul class="list-none pl-0">
           <li
-            class="bg-sup3-300 p-5 rounded-xl mb-5 flex justify-between items-center"
+            class="bg-sup3-300 p-5 rounded-3xl mb-5 flex justify-between items-center"
             v-for="(item, index) in walletFilter"
           >
             <div>{{ item.date }}<br />{{ item.time }}</div>

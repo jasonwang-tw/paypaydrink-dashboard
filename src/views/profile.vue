@@ -92,7 +92,7 @@
         :class="{ phonePopup: phone }"
       >
         <h3>變更手機號碼</h3>
-        <div class="p-5 bg-sup3-300 rounded-xl mb-5 text-sup1-900">
+        <div class="p-5 bg-sup3-300 rounded-3xl mb-5 text-sup1-900">
           請確認您的手機號碼是否輸入正確，我們將傳送驗證簡訊，
           請輸入收到簡訊裡的驗證碼以利完成變更。
         </div>

@@ -44,11 +44,11 @@
         <div class="drinkOrder">操作</div>
       </div>
       <div
-        class="flex items-center justify-between p-5 rounded-xl border border-sup3-400 mb-5"
+        class="flex items-center justify-between p-5 rounded-3xl border border-sup3-400 mb-5"
         v-for="(i, index) in 5"
       >
         <div class="drinkInfo flex items-center">
-          <div class="drinkImg rounded-lg overflow-hidden mr-5 flex-shrink-0">
+          <div class="drinkImg rounded-3xl overflow-hidden mr-5 flex-shrink-0">
             <img src="../../assets/images/product.jpg" alt="" />
           </div>
           <div>

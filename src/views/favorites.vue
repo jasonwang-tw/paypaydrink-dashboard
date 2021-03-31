@@ -29,10 +29,10 @@
               </div>
             </div>
             <ul class="drinkList list-none pl-0 duration-200 listClose h-full">
-              <li class="bg-sup3-300 p-5 mt-3 rounded-xl overflow-hidden" v-for="(i, index) in 5">
+              <li class="bg-sup3-300 p-5 mt-3 rounded-3xl overflow-hidden" v-for="(i, index) in 5">
                 <div class="flex items-center justify-between">
                   <div class="flex items-center mr-3">
-                    <div class="userimg rounded-lg overflow-hidden mr-3 flex-shrink-0">
+                    <div class="userimg rounded-3xl overflow-hidden mr-3 flex-shrink-0">
                       <img src="../../src/assets/images/product.jpg" alt="" />
                     </div>
                     <div class="drinkinfo">

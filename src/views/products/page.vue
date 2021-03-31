@@ -14,9 +14,9 @@
             <splide-slide
               v-for="(item, index) in drinkTop"
               :key="index"
-              class="imgContent overflow-hidden rounded-xl"
+              class="imgContent overflow-hidden rounded-3xl"
             >
-              <div class="w-full h-full rounded-xl bg-sup3-300">
+              <div class="w-full h-full rounded-3xl bg-sup3-300">
                 <img :src="item.imgSrc" alt="" />
               </div>
             </splide-slide>
@@ -31,7 +31,7 @@
           </ul>
           <div class="flex items-center my-3">
             <div class="text-2xl mr-10 font-normal text-sub-500">$60</div>
-            <div class="flex items-center text-sup1-900 bg-sup3-300 px-5 py-2.5 rounded-xl">
+            <div class="flex items-center text-sup1-900 bg-sup3-300 px-5 py-2.5 rounded-3xl">
               <i class="pay-click_outline text-sup1-100 mr-2"></i>
               <span>飲品優惠，低消100折$30</span>
             </div>
@@ -142,7 +142,7 @@
             </div>
           </div>
           <ul class="comment pl-0 list-none">
-            <li class="flex border rounded-xl p-5 border-sup2-500 mb-5" v-for="(c, index) in 5">
+            <li class="flex border rounded-3xl p-5 border-sup2-500 mb-5" v-for="(c, index) in 5">
               <div class="userImg rounded-full overflow-hidden flex-shrink-0 mr-3">
                 <img src="../../assets/images/how.jpg" alt="" />
               </div>
@@ -276,8 +276,8 @@
     overflow: hidden;
     background-color: var(--color-sup3-linght-bg);
   }
-  #secondary {
-  }
+  // #secondary {
+  // }
   .buySelect {
     width: 100px;
   }

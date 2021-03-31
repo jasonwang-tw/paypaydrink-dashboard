@@ -15,7 +15,7 @@
         </div>
         <hr />
         <ul class="pl-0 list-none grid gap-3 grid-cols-2 mb-10 text-main-500">
-          <li class="bg-sup3-300 p-5 rounded-xl relative" v-for="(c, index) in cardInfo">
+          <li class="bg-sup3-300 p-5 rounded-3xl relative" v-for="(c, index) in cardInfo">
             <div class="h-24">
               <div v-if="c.default === true">
                 <div class="inline-block btn-dark-blue-sm-nohover text-sm">預設</div>
@@ -63,7 +63,7 @@
         <hr />
         <ul class="list-none pl-0 text-main-500">
           <li
-            class="flex items-center justify-between mb-5 bg-sup3-300 p-5 rounded-xl"
+            class="flex items-center justify-between mb-5 bg-sup3-300 p-5 rounded-3xl"
             v-for="(b, index) in bankAccount"
           >
             <div class="">
@@ -119,7 +119,7 @@
         <h4>新增信用卡</h4>
       </template>
       <template v-slot:content>
-        <div class="bg-sup3-300 p-3 mb-5 rounded-lg">
+        <div class="bg-sup3-300 p-3 mb-5 rounded-3xl">
           <span class="text-sup1-900"
             >當你進行信用卡驗證時，我們會先向發卡銀行授權$1元，<br />並在5天內退還給你</span
           >
