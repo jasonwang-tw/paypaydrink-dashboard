@@ -22,13 +22,13 @@
           <i class="pay-cart text-xl text-main-100"></i>
           <!-- miniCartList -->
           <div
-            class="shopCartList absolute bg-white border border-sup2-500 p-5 mt-2.5 -ml-6 rounded-3xl duration-200"
+            class="shopCartList w-80 absolute bg-white border border-sup2-500 p-5 rounded-3xl duration-200 left-1/2 transform -translate-x-1/2 xl:mt-0 xl:-ml-6 xl:left-auto xl:translate-x-0"
             :class="{ listHidden: miniCartHidden }"
           >
             <ul class="list-none pl-0 text-main-500">
               <li v-for="i in 4" class="">
                 <router-link to="/" class="flex mb-5 no-underline">
-                  <div class="productImg bg-white rounded-3xl overflow-hidden mr-5 flex-shrink-0">
+                  <div class="productImg bg-white rounded-xl overflow-hidden mr-5 flex-shrink-0">
                     <img src="../../src/assets/images/product.jpg" alt="" />
                   </div>
                   <div class="productInfo flex justify-between">
@@ -58,7 +58,7 @@
           <i class="pay-notice text-xl text-main-100"></i>
           <!-- noticeList -->
           <div
-            class="noticeList absolute bg-white border border-sup2-500 p-5 mt-2.5 -ml-6 rounded-3xl duration-200"
+            class="noticeList w-80 absolute bg-white border border-sup2-500 p-5 rounded-3xl duration-200 left-1/2 transform -translate-x-1/2 xl:mt-0 xl:-ml-6 xl:left-auto xl:translate-x-0"
             :class="{ listHidden: miniNoticeHidden }"
           >
             <ul class="list-none pl-0 text-main-500">
@@ -95,7 +95,7 @@
       ></div>
       <!-- sidebarNav -->
       <div
-        class="sidebarNav h-full fixed bg-white shadow-lg right-0 top-0 duration-200 flex"
+        class="sidebarNav w-60 -right-60 h-full fixed bg-white shadow-lg top-0 duration-200 flex lg:w-80 lg:-right-80"
         :class="{ mobileNav: mobileStatus }"
       >
         <div class="flex flex-wrap content-between pt-10 px-10">
@@ -195,10 +195,10 @@
     transform: translate(7px, 5px);
     background-color: var(--color-sub);
   }
-  .shopCartList,
-  .noticeList {
-    width: 300px;
-  }
+  // .shopCartList,
+  // .noticeList {
+  //   width: 300px;
+  // }
   .listHidden {
     opacity: 0;
     visibility: hidden;
@@ -226,10 +226,10 @@
   .nav-right-items {
     padding: 0 1.5rem;
   }
-  .sidebarNav {
-    width: 300px;
-    right: -300px;
-  }
+  // .sidebarNav {
+  //   width: 300px;
+  //   right: -300px;
+  // }
   .mobileNav {
     right: 0;
   }

@@ -1,17 +1,19 @@
 <template>
   <div id="home">
     <topmenu />
-    <div class="container mx-auto">
-      <div class="mainArea py-10">
-        <div class="flex items-center justify-center my-10">
-          <div class="waiter mr-5">
+    <div class="mx-auto">
+      <div class="mainArea py-0 lg:py-10">
+        <div class="text-center items-center justify-center mt-5 mb-10 flex flex-wrap md:flex-nowrap lg:my-10">
+          <div class="waiter w-full md:w-auto text-center mb-5 flex justify-center">
             <img src="../../src/assets/images/waiter.png" alt="" />
           </div>
-          <div class="hello text-4xl font-bold text-main-500">
+          <div class="hello text-2xl font-bold text-main-500 md:text-4xl md:text-left">
             您好 HowHow <br />請問今天想喝點什麼?
           </div>
         </div>
-        <ul class="mainDrink list-none grid grid-cols-4 gap-5">
+        <ul
+          class="mainDrink container mx-auto list-none grid grid-cols-1 gap-5 px-10 md:grid-cols-2 lg:grid-cols-4"
+        >
           <li v-for="(item, index) in mainDrink" class="duration-200">
             <router-link
               :to="item.link"
@@ -113,9 +115,9 @@
 </script>
 
 <style lang="scss" scoped>
-  .hello {
-    line-height: 3rem;
-  }
+  // .hello {
+  //   line-height: 3rem;
+  // }
   .mainArea {
     background-image: url(../assets/images/mainBg.png);
     background-repeat: no-repeat;

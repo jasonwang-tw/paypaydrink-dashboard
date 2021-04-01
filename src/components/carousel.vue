@@ -48,7 +48,7 @@
           pauseOnHover: false,
           resetProgress: false,
           focus: 'center',
-          fixedWidth: '400px',
+          fixedWidth: 400,
           // arrows      : 'slider',
           breakpoints: {
             '1440': {
@@ -56,18 +56,19 @@
               perPage: 3,
               gap: '2rem'
             },
-            '900': {
-              width: 600,
+            '768': {
+              width: 768,
               perPage: 2,
               gap: '2rem'
             },
-            '600': {
-              width: 400,
-              perPage: 1,
-              gap: '2rem'
-            },
             '480': {
-              width: 360,
+              width: 480,
+              perPage: 1,
+              gap: '1rem'
+            },
+            '375': {
+              width: 375,
+              fixedWidth: 300,
               perPage: 1,
               gap: '1rem'
             }
