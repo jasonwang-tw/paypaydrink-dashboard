@@ -4,7 +4,7 @@
     <div class="mx-auto">
       <div class="mainArea py-0 lg:py-10">
         <div class="text-center items-center justify-center mt-5 mb-10 flex flex-wrap md:flex-nowrap lg:my-10">
-          <div class="waiter w-full md:w-auto text-center mb-5 flex justify-center">
+          <div class="waiter w-1/2 md:w-auto text-center mb-5 flex justify-center">
             <img src="../../src/assets/images/waiter.png" alt="" />
           </div>
           <div class="hello text-2xl font-bold text-main-500 md:text-4xl md:text-left">

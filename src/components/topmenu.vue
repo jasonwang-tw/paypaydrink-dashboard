@@ -1,28 +1,36 @@
 <template>
   <div class="header py-3 px-5 border-b border-sup2-500 top-0 sticky z-20 bg-white">
     <div class="container m-auto flex justify-between">
-      <div class="nav-left flex items-center">
+      <div class="nav-left flex items-center w-full">
         <div class="logo mr-5">
           <router-link to="/">
             <img src="../assets/images/logo.svg" alt="" />
           </router-link>
         </div>
         <div class="searchBar flex items-center">
-          <i class="pay-search text-xl mr-5 text-main-100"></i>
-          <input class="" type="text" placeholder="今天想喝什麼呢?" />
+          <i
+            class="pay-search text-xl mr-5 text-main-100"
+            @click="searchBarSatus = !searchBarSatus"
+          ></i>
+          <input
+            class="absolute top-full left-0 -mt-5 invisible opacity-0 duration-200 md:visible md:opacity-100 md:relative md:mt-0"
+            :class="{ searchBarShow: searchBarSatus }"
+            type="text"
+            placeholder="今天想喝什麼呢?"
+          />
         </div>
       </div>
-      <div class="nav-right flex items-center">
+      <div class="nav-right flex items-center w-full justify-end">
         <!-- miniCart -->
         <div
-          class="nav-right-items shopCart"
+          class="nav-right-items shopCart px-5"
           @mouseenter="miniCartHidden = false"
           @mouseleave="miniCartHidden = true"
         >
           <i class="pay-cart text-xl text-main-100"></i>
           <!-- miniCartList -->
           <div
-            class="shopCartList w-80 absolute bg-white border border-sup2-500 p-5 rounded-3xl duration-200 left-1/2 transform -translate-x-1/2 xl:mt-0 xl:-ml-6 xl:left-auto xl:translate-x-0"
+            class="shopCartList w-80 fixed bg-white border border-sup2-500 p-5 rounded-3xl duration-200 left-1/2 top-1/2 transform  -translate-y-1/2 -translate-x-1/2 xl:mt-2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
             :class="{ listHidden: miniCartHidden }"
           >
             <ul class="list-none pl-0 text-main-500">
@@ -51,14 +59,14 @@
         </div>
         <!-- notice -->
         <div
-          class="nav-right-items notice border-l border-r border-sup2-500"
+          class="nav-right-items notice border-l border-r border-sup2-500 px-5"
           @mouseenter="miniNoticeHidden = false"
           @mouseleave="miniNoticeHidden = true"
         >
           <i class="pay-notice text-xl text-main-100"></i>
           <!-- noticeList -->
           <div
-            class="noticeList w-80 absolute bg-white border border-sup2-500 p-5 rounded-3xl duration-200 left-1/2 transform -translate-x-1/2 xl:mt-0 xl:-ml-6 xl:left-auto xl:translate-x-0"
+            class="noticeList w-80 fixed bg-white border border-sup2-500 p-5 rounded-3xl duration-200 left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 xl:mt-2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
             :class="{ listHidden: miniNoticeHidden }"
           >
             <ul class="list-none pl-0 text-main-500">
@@ -83,7 +91,7 @@
             >
           </div>
         </div>
-        <div class="nav-right-items menuBtn cursor-pointer" @click="menuhBtn">
+        <div class="nav-right-items menuBtn cursor-pointer px-5" @click="menuhBtn">
           <i class="pay-menu text-main-100"></i>
         </div>
       </div>
@@ -98,7 +106,7 @@
         class="sidebarNav w-60 -right-60 h-full fixed bg-white shadow-lg top-0 duration-200 flex lg:w-80 lg:-right-80"
         :class="{ mobileNav: mobileStatus }"
       >
-        <div class="flex flex-wrap content-between pt-10 px-10">
+        <div class="flex flex-wrap content-between pt-10 px-10 overflow-y-auto">
           <div class="sidebarNavTop">
             <router-link to="/profile" class="account flex items-center no-underline">
               <div class="userImg overflow-hidden rounded-full bg-white mr-5">
@@ -120,7 +128,7 @@
             </ul>
           </div>
           <div class="sidebarNavBottom text-main-500 text-center">
-            <div class="text-2xl font-medium mb-2">
+            <div class="text-xl font-medium mb-2 mt-10 xl:text-2xl xl:mt-0">
               立即加入 <span class="text-sub-500">配配飲</span>
             </div>
             <span class="mb-5 block">客製屬於您的飲品</span>
@@ -177,23 +185,29 @@
         mobileStatus: false,
         miniCartHidden: true,
         miniNoticeHidden: true,
-        maskOff: true
+        maskOff: true,
+        searchBarSatus: false
       }
     }
   }
 </script>
 
 <style scoped lang="scss">
-  .shopCart:before {
-    content: '99';
-    color: white;
-    border-radius: 99px;
-    padding: 5px 5px;
-    line-height: 0.5rem;
-    font-size: 0.5rem;
-    display: inline-block;
-    transform: translate(7px, 5px);
-    background-color: var(--color-sub);
+  .shopCart {
+    position: relative;
+    &:before {
+      content: '99';
+      color: white;
+      border-radius: 99px;
+      padding: 5px 5px;
+      line-height: 0.5rem;
+      font-size: 0.5rem;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transform: translate(7px, 5px);
+      background-color: var(--color-sub);
+    }
   }
   // .shopCartList,
   // .noticeList {
@@ -224,7 +238,7 @@
     }
   }
   .nav-right-items {
-    padding: 0 1.5rem;
+    // padding: 0 1.5rem;
   }
   // .sidebarNav {
   //   width: 300px;
@@ -250,6 +264,16 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+  }
+  @media (max-width: 768px) {
+    .searchBarShow {
+      border-left: 0px;
+      border-right: 0px;
+      margin-top: 0;
+      opacity: 1 !important;
+      visibility: visible !important;
+      border-radius: 0px !important;
     }
   }
 </style>
