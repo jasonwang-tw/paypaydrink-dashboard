@@ -1,11 +1,11 @@
 <template>
   <div id="drinkMaster">
     <topmenu />
-    <div class="customContainer grid grid-cols-12 gap-10 mx-auto my-20">
-      <div class="profileMenu col-span-4 px-10">
+    <div class="customContainer grid grid-cols-1 md:grid-cols-12 md:gap-10 mx-auto my-20">
+      <div class="profileMenu col-span-1 md:col-span-4 md:px-10">
         <profileMenu />
       </div>
-      <div class="mainInfo col-span-8">
+      <div class="mainInfo col-span-1 md:col-span-8">
         <h3 class="text-main-500">配方主</h3>
         <hr />
         <div class="grid grid-cols-12 text-main-500">

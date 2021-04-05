@@ -1,12 +1,6 @@
 <template>
   <div id="order" class="text-main-500">
-    <topmenu />
-    <div class="customContainer grid grid-cols-12 gap-10 mx-auto my-20">
-      <div class="profileMenu col-span-4 px-10">
-        <profileMenu />
-      </div>
       <!-- 訂單 -->
-      <div class="mainInfo col-span-8">
         <h3 class="text-main-500">訂單</h3>
         <hr />
         <!-- 訂單列表 -->
@@ -173,7 +167,7 @@
                 <div class="flex items-center justify-between">
                   <div class="flex items-center">
                     <div class="userImg rounded-full overflow-hidden mr-5">
-                      <img src="../assets/images/how.jpg" alt="" />
+                      <img src="../../assets/images/how.jpg" alt="" />
                     </div>
                     <div>
                       <h5 class="mb-2">{{ shopItem.shopName }}</h5>
@@ -193,7 +187,7 @@
                 >
                   <div class="flex w-full">
                     <div class="drinkImg rounded-3xl overflow-hidden mr-3 flex-shrink-0">
-                      <img src="../assets/images/product.jpg" alt="" />
+                      <img src="../../assets/images/product.jpg" alt="" />
                     </div>
                     <div class="w-full">
                       <div class="flex items-center mb-2 justify-between">
@@ -240,8 +234,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
     <!-- 取消訂單 -->
     <popup :class="{ popupHidden : removeOrder}">
       <template v-slot:title>
@@ -263,7 +255,7 @@
         <h4>領取碼</h4>
       </template>
       <template v-slot:content>
-        <img src="../../src/assets/images/qr.png" alt="" class="mx-auto block mb-5">
+        <img src="../../../src/assets/images/qr.png" alt="" class="mx-auto block mb-5">
         <div class="flex items-center justify-center">
           <h5><i class="pay-list text-sup3-500 mr-2 text-xl"></i><strong>訂單</strong>
           <span class="ml-2 text-sup1-900">001</span></h5>
@@ -294,26 +286,19 @@
       </div>
       </template>
     </popup>
-    <footerBar />
   </div>
 </template>
 
 <script>
-  import topmenu from '@/components/topmenu.vue'
-  import footerBar from '@/components/footerBar.vue'
-  import profileMenu from '@/components/profileMenu.vue'
   import pageNav from '@/components/pageNav.vue'
   import popup from '@/components/popup.vue'
-  import order from '../../static/resource/order'
-  import orderDetails from '../../static/resource/orderDetails'
+  import order from '../../../static/resource/order'
+  import orderDetails from '../../../static/resource/orderDetails'
 
 
   export default {
     name: 'order',
     components: {
-      topmenu,
-      footerBar,
-      profileMenu,
       pageNav,
       popup
     },

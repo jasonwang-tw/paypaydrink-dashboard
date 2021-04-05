@@ -4,7 +4,7 @@
       <div class="flex items-center justify-between">
         <h2>飲料鋪</h2>
         <div class="flex">
-          <div class="btn-border-light-blue mr-3">讀取自配方</div>
+          <div class="btn-border-light-blue mr-3" @click="kiosk = flase">讀取自配方</div>
           <router-link to="/free_drink/shop_edit" class="btn-border-light-blue mr-3"
             >編輯飲料鋪</router-link
           >
@@ -75,6 +75,30 @@
       </div>
       <pageNav class="pt-5" />
     </div>
+    <popup :class="{ popupHidden: kiosk }">
+      <template v-slot:title>
+        <h4>請輸入邀請碼</h4>
+        <div class="bg-sup3-300 p-3 mb-3 rounded-xl"><span class="text-sup1-900">輸入邀請碼已便開通點餐機配方功能</span></div>
+      </template>
+      <template v-slot:content>
+        <input type="text" name="" id="" placeholder="請輸入邀請碼" />
+        <!-- <div class="mb-10">
+          <div><img src="../../../src/assets/images/qr.png" alt="" class="block mx-auto" /></div>
+          <div class="my-5">
+            <h4 class="orderNumber">
+              訂單編號<span class="font-normal text-sup1-900 ml-5">TOREWQ20201206001</span>
+            </h4>
+            <p>請於12小時內至指定店鋪，出示QRCODE掃描領取飲品。<br />祝您用餐愉快</p>
+          </div>
+        </div> -->
+      </template>
+      <template v-slot:btn>
+        <div class="functionBtn flex justify-center mt-10">
+          <div class="btn btn-remove mr-3" @click="kiosk = true">取消</div>
+          <div class="btn btn-dark-blue">確認</div>
+        </div>
+      </template>
+    </popup>
   </div>
 </template>
 
@@ -90,7 +114,7 @@
     },
     data() {
       return {
-        // selected: ''
+        kiosk: true
       }
     }
   }

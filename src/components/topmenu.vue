@@ -108,7 +108,7 @@
       >
         <div class="flex flex-wrap content-between pt-10 px-10 overflow-y-auto">
           <div class="sidebarNavTop">
-            <router-link to="/profile" class="account flex items-center no-underline">
+            <router-link to="/account/profile" class="account flex items-center no-underline">
               <div class="userImg overflow-hidden rounded-full bg-white mr-5">
                 <img src="../../src/assets/images/how.jpg" alt="" />
               </div>

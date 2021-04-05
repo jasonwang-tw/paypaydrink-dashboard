@@ -1,118 +1,110 @@
 <template>
   <div id="bankCard" class="text-main-500">
-    <topmenu />
-    <div class="customContainer grid grid-cols-12 gap-10 mx-auto my-20">
-      <div class="profileMenu col-span-4 px-10">
-        <profileMenu />
-      </div>
-      <div class="mainInfo col-span-8">
-        <div class="flex justify-between items-center">
-          <h3 class="text-main-500 mb-0">信用卡</h3>
-          <div class="btn-border-light-blue flex items-center" @click="card = !card">
-            <i class="pay-add mr-3"></i>
-            <div>增加信用卡</div>
-          </div>
-        </div>
-        <hr />
-        <ul class="pl-0 list-none grid gap-3 grid-cols-2 mb-10 text-main-500">
-          <li class="bg-sup3-300 p-5 rounded-3xl relative" v-for="(c, index) in cardInfo">
-            <div class="h-24">
-              <div v-if="c.default === true">
-                <div class="inline-block btn-dark-blue-sm-nohover text-sm">預設</div>
-              </div>
-              <div class="absolute top-0 right-0 p-5">
-                <div v-if="c.type === 'visa'">
-                  <img src="../../src/assets/images/visa.svg" alt="" />
-                </div>
-                <div v-else-if="c.type === 'jcb'">
-                  <img src="../../src/assets/images/jcb.svg" alt="" />
-                </div>
-                <div v-else-if="c.type === 'master'">
-                  <img src="../../src/assets/images/master.svg" alt="" />
-                </div>
-              </div>
-            </div>
-            <div class="flex justify-between items-center">
-              <div class="text-xl font-medium">**** {{ c.lastNumber }}</div>
-              <div class="flex">
-                <div v-if="c.default === false">
-                  <div
-                    class="duration-200 cursor-pointer hover:text-sup1-500 mr-3"
-                    @click="cahngeDefaultCI(), [(c.default = true)]"
-                  >
-                    設定為預設
-                  </div>
-                </div>
-                <div
-                  class="duration-200 cursor-pointer text-red-500 hover:text-red-700"
-                  @click=";[(del = !del)], [(delTitle = '信用卡')]"
-                >
-                  刪除
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <div class="flex justify-between items-center">
-          <h3 class="text-main-500 mb-0">銀行帳號</h3>
-          <div class="btn-border-light-blue flex items-center" @click="bank = !bank">
-            <i class="pay-add mr-3"></i>
-            <div>增加銀行帳號</div>
-          </div>
-        </div>
-        <hr />
-        <ul class="list-none pl-0 text-main-500">
-          <li
-            class="flex items-center justify-between mb-5 bg-sup3-300 p-5 rounded-3xl"
-            v-for="(b, index) in bankAccount"
-          >
-            <div class="">
-              <div class="flex items-start mb-5">
-                <div>
-                  <div class="font-medium mb-2">{{ b.bankName }}</div>
-                  <div class="text-xl font-medium">**** {{ b.lastNumber }}</div>
-                </div>
-                <div v-if="b.verification === true">
-                  <div class="text-sup1-100 mx-3">已審核</div>
-                </div>
-                <div v-else-if="b.verification === false">
-                  <div class="text-sub-500 mx-3">審核中</div>
-                </div>
-                <div v-if="b.default === true">
-                  <div class="btn-dark-blue-sm-nohover text-sm">預設</div>
-                </div>
-              </div>
-              <div class="flex">
-                <div class="mr-5">
-                  <small class="text-sup1-900 mr-3">戶名</small>
-                  <b>{{ b.accountName }}</b>
-                </div>
-                <div>
-                  <small class="text-sup1-900 mr-3">所屬</small>
-                  <b>{{ b.city }} / {{ b.branch }}</b>
-                </div>
-              </div>
-            </div>
-            <div class="flex">
-              <div v-if="b.default === false && b.verification === true">
-                <div
-                  class="duration-200 cursor-pointer hover:text-sup1-500 mr-3"
-                  @click="cahngeDefaultBA(), [(b.default = true)]"
-                >
-                  設定為預設
-                </div>
-              </div>
-              <div
-                class="duration-200 cursor-pointer text-red-500 hover:text-red-700"
-                @click=";[(del = !del)], [(delTitle = '帳戶')]"
-              >
-                刪除
-              </div>
-            </div>
-          </li>
-        </ul>
+    <div class="flex justify-between items-center">
+      <h3 class="text-main-500 mb-0">信用卡</h3>
+      <div class="btn-border-light-blue flex items-center" @click="card = !card">
+        <i class="pay-add mr-3"></i>
+        <div>增加信用卡</div>
       </div>
     </div>
+    <hr />
+    <ul class="pl-0 list-none grid gap-3 grid-cols-2 mb-10 text-main-500">
+      <li class="bg-sup3-300 p-5 rounded-3xl relative" v-for="(c, index) in cardInfo">
+        <div class="h-24">
+          <div v-if="c.default === true">
+            <div class="inline-block btn-dark-blue-sm-nohover text-sm">預設</div>
+          </div>
+          <div class="absolute top-0 right-0 p-5">
+            <div v-if="c.type === 'visa'">
+              <img src="../../../src/assets/images/visa.svg" alt="" />
+            </div>
+            <div v-else-if="c.type === 'jcb'">
+              <img src="../../../src/assets/images/jcb.svg" alt="" />
+            </div>
+            <div v-else-if="c.type === 'master'">
+              <img src="../../../src/assets/images/master.svg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-between items-center">
+          <div class="text-xl font-medium">**** {{ c.lastNumber }}</div>
+          <div class="flex">
+            <div v-if="c.default === false">
+              <div
+                class="duration-200 cursor-pointer hover:text-sup1-500 mr-3"
+                @click="cahngeDefaultCI(), [(c.default = true)]"
+              >
+                設定為預設
+              </div>
+            </div>
+            <div
+              class="duration-200 cursor-pointer text-red-500 hover:text-red-700"
+              @click=";[(del = !del)], [(delTitle = '信用卡')]"
+            >
+              刪除
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="flex justify-between items-center">
+      <h3 class="text-main-500 mb-0">銀行帳號</h3>
+      <div class="btn-border-light-blue flex items-center" @click="bank = !bank">
+        <i class="pay-add mr-3"></i>
+        <div>增加銀行帳號</div>
+      </div>
+    </div>
+    <hr />
+    <ul class="list-none pl-0 text-main-500">
+      <li
+        class="flex items-center justify-between mb-5 bg-sup3-300 p-5 rounded-3xl"
+        v-for="(b, index) in bankAccount"
+      >
+        <div class="">
+          <div class="flex items-start mb-5">
+            <div>
+              <div class="font-medium mb-2">{{ b.bankName }}</div>
+              <div class="text-xl font-medium">**** {{ b.lastNumber }}</div>
+            </div>
+            <div v-if="b.verification === true">
+              <div class="text-sup1-100 mx-3">已審核</div>
+            </div>
+            <div v-else-if="b.verification === false">
+              <div class="text-sub-500 mx-3">審核中</div>
+            </div>
+            <div v-if="b.default === true">
+              <div class="btn-dark-blue-sm-nohover text-sm">預設</div>
+            </div>
+          </div>
+          <div class="flex">
+            <div class="mr-5">
+              <small class="text-sup1-900 mr-3">戶名</small>
+              <b>{{ b.accountName }}</b>
+            </div>
+            <div>
+              <small class="text-sup1-900 mr-3">所屬</small>
+              <b>{{ b.city }} / {{ b.branch }}</b>
+            </div>
+          </div>
+        </div>
+        <div class="flex">
+          <div v-if="b.default === false && b.verification === true">
+            <div
+              class="duration-200 cursor-pointer hover:text-sup1-500 mr-3"
+              @click="cahngeDefaultBA(), [(b.default = true)]"
+            >
+              設定為預設
+            </div>
+          </div>
+          <div
+            class="duration-200 cursor-pointer text-red-500 hover:text-red-700"
+            @click=";[(del = !del)], [(delTitle = '帳戶')]"
+          >
+            刪除
+          </div>
+        </div>
+      </li>
+    </ul>
     <!-- 新增信用卡 -->
     <popup :class="{ popup: card }">
       <template v-slot:title>
@@ -203,23 +195,16 @@
         </div>
       </template>
     </popup>
-    <footerBar />
   </div>
 </template>
 
 <script>
-  import topmenu from '@/components/topmenu.vue'
-  import footerBar from '@/components/footerBar.vue'
-  import profileMenu from '@/components/profileMenu.vue'
   import popup from '@/components/popup.vue'
-  import taiwan from '../../static/resource/CityCountyData'
+  import taiwan from '../../../static/resource/CityCountyData'
 
   export default {
     name: 'bank',
     components: {
-      topmenu,
-      footerBar,
-      profileMenu,
       popup
     },
     data() {

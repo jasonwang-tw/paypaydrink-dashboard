@@ -2,13 +2,13 @@
   <div id="slideshow">
     <splide :options="options">
       <splide-slide v-for="(item, index) in star" class="mb-20">
-        <div class="flex">
-          <div class="starImg rounded-full overflow-hidden flex-shrink-0 mr-5">
+        <div class="flex flex-wrap justify-center md:flex-nowrap">
+          <div class="starImg rounded-full overflow-hidden flex-shrink-0 mb-5 md:mr-5 md:mb-0">
             <img :src="item.imgSrc" alt="" />
           </div>
-          <div class="starInfo text-left">
+          <div class="starInfo md:text-left">
             <h5 class="starName mb-0">{{ item.name }}</h5>
-            <div class="starSpeak my-2">{{ item.speak }}</div>
+            <div class="starSpeak my-5">{{ item.speak }}</div>
             <a class="starPush btn-border-light-blue inline-block" :href="item.pushLink"
               >名人推薦</a
             >
@@ -33,7 +33,7 @@
       return {
         options: {
           // rewind: true,
-          width: 1300,
+          width: 1440,
           gap: '3rem',
           perPage: 3,
           perMove: 1,
@@ -42,28 +42,50 @@
           pauseOnHover: false,
           resetProgress: false,
           focus: 'center',
-          fixedWidth: '400px',
+          fixedWidth: '420px',
           // arrows      : 'slider',
           breakpoints: {
-            '1440': {
-              width: 900,
+            '1280': {
+              width: 1160,
               perPage: 3,
-              gap: '2rem'
+              fixedWidth: 500,
+              gap: '3rem'
             },
-            '900': {
-              width: 600,
+            '1024': {
+              width: 960,
+              fixedWidth: 500,
               perPage: 2,
-              gap: '2rem'
+              gap: '3rem'
             },
-            '600': {
-              width: 400,
+            '768': {
+              width: 720,
+              fixedWidth: 680,
               perPage: 1,
               gap: '2rem'
             },
             '480': {
-              width: 360,
+              width: 440,
+              fixedWidth: 280,
+              perPage: 1,
+              gap: '3rem'
+            },
+            '414': {
+              width: 414,
+              fixedWidth: 300,
               perPage: 1,
               gap: '1rem'
+            },
+            '375': {
+              width: 335,
+              fixedWidth: 240,
+              perPage: 1,
+              gap: '3rem'
+            },
+            '320': {
+              width: 280,
+              fixedWidth: 200,
+              perPage: 1,
+              gap: '3rem'
             }
           }
         },

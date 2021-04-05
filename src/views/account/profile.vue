@@ -1,70 +1,61 @@
 <template>
   <div id="profile" class="text-main-500">
-    <topmenu />
-    <div class="profileContainer grid grid-cols-12 gap-10 mx-auto my-20">
-      <div class="profileMenu col-span-4 px-10">
-        <profileMenu />
+    <h3 class="text-main-500">個人資料</h3>
+    <hr />
+    <div class="profileImg flex items-center no-underline my-10">
+      <div class="userImg overflow-hidden rounded-full bg-white mr-10 flex-shrink-0">
+        <img src="../../../src/assets/images/how.jpg" alt="" />
       </div>
-      <div class="mainInfo col-span-8">
-        <h3 class="text-main-500">個人資料</h3>
-        <hr />
-        <div class="profileImg flex items-center no-underline my-10">
-          <div class="userImg overflow-hidden rounded-full bg-white mr-10 flex-shrink-0">
-            <img src="../../src/assets/images/how.jpg" alt="" />
-          </div>
-          <div>
-            <div class="btn-border-light-blue relative w-40">
-              <i class="pay-upload mr-3"></i>
-              <span class="">上傳大頭貼</span>
-              <input type="file" class="top-0 left-0 h-full w-full absolute opacity-0" />
-            </div>
-            <small class="text-sup1-100">檔案限制最大500kb ，格式為.JPEG, .PNG</small>
-          </div>
+      <div>
+        <div class="btn-border-light-blue relative w-40">
+          <i class="pay-upload mr-3"></i>
+          <span class="">上傳大頭貼</span>
+          <input type="file" class="top-0 left-0 h-full w-full absolute opacity-0" />
         </div>
-        <form action="" class="profileForm">
-          <div class="flex items-center my-5">
-            <label for="" class="flex-shrink-0 mr-5">帳號</label>
-            <div class="text-main-500">Dimeiisgreat@gmail.com</div>
-          </div>
-          <div class="flex items-center my-5">
-            <label for="" class="flex-shrink-0 mr-5">密碼</label>
-            <div class="flex items-center">
-              <div class="text-main-500 mr-5">*******</div>
-              <div class="btn-border-light-blue" @click="popupFixed(), editPassword()">變更</div>
-            </div>
-          </div>
-          <div class="flex items-center my-5">
-            <label for="" class="flex-shrink-0 mr-5">手機</label>
-            <div class="flex items-center">
-              <div class="text-main-500 mr-5">0987-576-789</div>
-              <div class="btn-border-light-blue " @click="popupFixed(), editPhone()">變更</div>
-            </div>
-          </div>
-          <div class="flex items-center my-5">
-            <label for="" class="flex-shrink-0 mr-5">暱稱</label>
-            <input type="text" value="滴妹好棒棒" class="text-main-500" />
-          </div>
-          <div class="flex items-center my-5">
-            <label for="" class="flex-shrink-0 mr-5">性別</label>
-            <div class="flex items-center">
-              <input type="radio" name="gender" id="man" class="mr-3" checked />
-              <label for="man" class="mr-5">男生</label>
-              <input type="radio" name="gender" id="woman" class="mr-3" />
-              <label for="woman">女生</label>
-            </div>
-          </div>
-          <div class="flex items-center my-5">
-            <label for="" class="flex-shrink-0 mr-5">生日</label>
-            <input type="date" />
-          </div>
-          <div class="flex items-center my-5">
-            <label for="" class="flex-shrink-0 mr-5"></label>
-            <div><button type="submit" class="btn-dark-blue">儲存</button></div>
-          </div>
-        </form>
+        <small class="text-sup1-100">檔案限制最大500kb ，格式為.JPEG, .PNG</small>
       </div>
     </div>
-    <footerBar />
+    <form action="" class="profileForm">
+      <div class="flex items-center my-5">
+        <label for="" class="flex-shrink-0 mr-5">帳號</label>
+        <div class="text-main-500">Dimeiisgreat@gmail.com</div>
+      </div>
+      <div class="flex items-center my-5">
+        <label for="" class="flex-shrink-0 mr-5">密碼</label>
+        <div class="flex items-center">
+          <div class="text-main-500 mr-5">*******</div>
+          <div class="btn-border-light-blue" @click="popupFixed(), editPassword()">變更</div>
+        </div>
+      </div>
+      <div class="flex items-center my-5">
+        <label for="" class="flex-shrink-0 mr-5">手機</label>
+        <div class="flex items-center">
+          <div class="text-main-500 mr-5">0987-576-789</div>
+          <div class="btn-border-light-blue " @click="popupFixed(), editPhone()">變更</div>
+        </div>
+      </div>
+      <div class="flex items-center my-5">
+        <label for="" class="flex-shrink-0 mr-5">暱稱</label>
+        <input type="text" value="滴妹好棒棒" class="text-main-500" />
+      </div>
+      <div class="flex items-center my-5">
+        <label for="" class="flex-shrink-0 mr-5">性別</label>
+        <div class="flex items-center">
+          <input type="radio" name="gender" id="man" class="mr-3" checked />
+          <label for="man" class="mr-5">男生</label>
+          <input type="radio" name="gender" id="woman" class="mr-3" />
+          <label for="woman">女生</label>
+        </div>
+      </div>
+      <div class="flex items-center my-5">
+        <label for="" class="flex-shrink-0 mr-5">生日</label>
+        <input type="date" />
+      </div>
+      <div class="flex items-center my-5">
+        <label for="" class="flex-shrink-0 mr-5"></label>
+        <div><button type="submit" class="btn-dark-blue">儲存</button></div>
+      </div>
+    </form>
     <!-- changePassword -->
     <div
       class="fixed top-0 left-0 bg-opacity-50 bg-gray-900 h-full w-full z-20 flex items-center justify-center duration-200"
@@ -123,17 +114,9 @@
 </template>
 
 <script>
-  import topmenu from '@/components/topmenu.vue'
-  import footerBar from '@/components/footerBar.vue'
-  import profileMenu from '@/components/profileMenu.vue'
-
   export default {
     name: 'profile',
-    components: {
-      topmenu,
-      footerBar,
-      profileMenu
-    },
+    components: {},
     methods: {
       popupFixed: function() {
         this.popupStatus = !this.popupStatus

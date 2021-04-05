@@ -12,7 +12,7 @@
           </div>
         </div>
         <ul
-          class="mainDrink container mx-auto list-none grid grid-cols-1 gap-5 px-10 md:grid-cols-2 lg:grid-cols-4"
+          class="mainDrink container mx-auto list-none grid grid-cols-1 gap-5 px-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
           <li v-for="(item, index) in mainDrink" class="duration-200">
             <router-link

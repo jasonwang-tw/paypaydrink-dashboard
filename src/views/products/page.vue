@@ -23,7 +23,11 @@
           </splide>
         </div>
         <div class="text-main-500 pt-10">
-          <h1 class="mb-8">東方不敗</h1>
+          <h1>東方不敗</h1>
+          <div class="text-sup1-900 mb-8">
+            <span class="">配方編號</span>
+            <span class="ml-3">3345678</span>
+          </div>
           <ul class="drinkInfo pl-0 list-none flex text-sub-500 text-lg font-normal">
             <li><i class="pay-start"></i> {{ info.rating }}</li>
             <li>{{ info.people }} 人評價</li>
@@ -31,7 +35,7 @@
           </ul>
           <div class="flex items-center my-3">
             <div class="text-2xl mr-10 font-normal text-sub-500">$60</div>
-            <div class="flex items-center text-sup1-900 bg-sup3-300 px-5 py-2.5 rounded-3xl">
+            <div class="flex items-center text-sup1-900 bg-sup3-300 px-5 py-2.5 rounded-xl">
               <i class="pay-click_outline text-sup1-100 mr-2"></i>
               <span>飲品優惠，低消100折$30</span>
             </div>

@@ -51,24 +51,46 @@
           fixedWidth: 400,
           // arrows      : 'slider',
           breakpoints: {
-            '1440': {
-              width: 900,
-              perPage: 3,
+            '1280': {
+              width: 1280,
+              perPage: 4,
+              fixedWidth: 400,
+              gap: '2rem'
+            },
+            '1024': {
+              width: 1024,
+              fixedWidth: 400,
+              perPage: 2,
               gap: '2rem'
             },
             '768': {
               width: 768,
-              perPage: 2,
+              fixedWidth: 400,
+              perPage: 1,
               gap: '2rem'
             },
             '480': {
               width: 480,
+              fixedWidth: 420,
+              perPage: 1,
+              gap: '1rem'
+            },
+            '414': {
+              width: 414,
+              fixedWidth: 300,
               perPage: 1,
               gap: '1rem'
             },
             '375': {
               width: 375,
-              fixedWidth: 300,
+              fixedWidth: 280,
+              perPage: 1,
+              gap: '1rem'
+            },
+            '320': {
+              width: 320,
+              fixedWidth: 240,
+              autoWidth: false,
               perPage: 1,
               gap: '1rem'
             }

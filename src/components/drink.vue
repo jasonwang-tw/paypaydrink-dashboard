@@ -54,26 +54,48 @@
           pauseOnHover: false,
           resetProgress: false,
           // focus: 'center',
-          // fixedWidth: 325,
+          fixedWidth: 255,
           // arrows      : 'slider',
           breakpoints: {
-            '1440': {
-              width: 900,
+            '1280': {
+              width: 1240,
+              fixedWidth: 255,
               perPage: 3,
               gap: '2rem'
             },
-            '900': {
-              width: 600,
-              perPage: 2,
+            '1024': {
+              width: 960,
+              fixedWidth: 255,
+              perPage: 3,
               gap: '2rem'
             },
-            '600': {
-              width: 400,
+            '768': {
+              width: 720,
+              fixedWidth: 255,
               perPage: 1,
               gap: '2rem'
             },
             '480': {
-              width: 360,
+              width: 440,
+              fixedWidth: 255,
+              perPage: 1,
+              gap: '1rem'
+            },
+            '414': {
+              width: 374,
+              fixedWidth: 255,
+              perPage: 1,
+              gap: '1rem'
+            },
+            '375': {
+              width: 320,
+              fixedWidth: 260,
+              perPage: 1,
+              gap: '1rem'
+            },
+            '320': {
+              width: 260,
+              fixedWidth: 260,
               perPage: 1,
               gap: '1rem'
             }

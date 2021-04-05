@@ -10,34 +10,6 @@ const routes = [
     component: index,
   },
   {
-    path: '/profile',
-    component: () => import('../views/profile.vue'),
-  },
-  {
-    path: '/favorites',
-    component: () => import('../views/favorites.vue'),
-  },
-  {
-    path: '/stock',
-    component: () => import('../views/stock.vue'),
-  },
-  {
-    path: '/order',
-    component: () => import('../views/order.vue'),
-  },
-  {
-    path: '/wallet',
-    component: () => import('../views/wallet.vue'),
-  },
-  {
-    path: '/bank_creditCard',
-    component: () => import('../views/bank_creditCard.vue'),
-  },
-  {
-    path: '/notice',
-    component: () => import('../views/notice.vue'),
-  },
-  {
     path: '/drinkShop',
     component: () => import('../views/drinkShop.vue'),
   },
@@ -57,6 +29,41 @@ const routes = [
       {
         path: 'page',
         component: () => import('../views/products/page.vue'),
+      },
+    ],
+  },
+  {
+    path: '/account',
+    component: () => import('../views/account.vue'),
+    redirect: '/account/profile',
+    children: [
+      {
+        path: 'profile',
+        component: () => import('../views/account/profile.vue'),
+      },
+      {
+        path: 'favorites',
+        component: () => import('../views/account/favorites.vue'),
+      },
+      {
+        path: 'stock',
+        component: () => import('../views/account/stock.vue'),
+      },
+      {
+        path: 'order',
+        component: () => import('../views/account/order.vue'),
+      },
+      {
+        path: 'wallet',
+        component: () => import('../views/account/wallet.vue'),
+      },
+      {
+        path: 'bank_creditCard',
+        component: () => import('../views/account/bank_creditCard.vue'),
+      },
+      {
+        path: 'notice',
+        component: () => import('../views/account/notice.vue'),
       },
     ],
   },
@@ -96,7 +103,7 @@ const routes = [
   },
   {
     path: '/notice',
-    component: () => import('../views/notice.vue'),
+    component: () => import('../views/account/notice.vue'),
   },
 ];
 
