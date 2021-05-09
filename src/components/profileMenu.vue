@@ -1,10 +1,10 @@
 <template>
-  <div id="profileMenu" class="">
-    <ul class="pl-0 list-none flex overflow-x-scroll md:block md:overflow-x-auto">
+  <div id="profileMenu" class="fixed z-10 w-full px-5 md:w-auto md:px-0 md:relative bg-lightblue-bg md:bg-white">
+    <ul class="flex pl-0 overflow-x-scroll list-none md:block md:overflow-x-auto">
       <li v-for="(i, key, index) in userMenu" class="flex-shrink-0">
         <router-link
           :to="i.link"
-          class="no-underline text-main-500 duration-200 hover:text-sup1-100 my-2.5 px-4 py-2.5 md:px-5 block rounded-lg overflow-hidden"
+          class="no-underline text-main-500 duration-200 hover:text-blue-900 mx-2 md:my-2.5 px-2 py-2.5 md:px-4 block md:rounded-lg overflow-hidden"
           >{{ i.name }}</router-link
         >
       </li>
@@ -54,16 +54,27 @@
 
 <style lang="scss">
   #profileMenu {
-    position: sticky;
-    top: 100px;
-    .userImg {
-      width: 80px;
-      height: 80px;
+    .router-link-exact-active {
+      color: var(--color-blue-100);
+      background-color: var(--color-lightblue-bg);
+      position: relative;
     }
   }
-  #profileMenu {
-    .router-link-exact-active {
-      background-color: var(--color-sup3-linght-bg);
+  @media (max-width: 768px) {
+    #profileMenu {
+      top: 63px;
+      .router-link-exact-active {
+        &:after {
+          content: ' ';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: var(--color-blue-100);
+          border-radius: 20%;
+        }
+      }
     }
   }
 </style>

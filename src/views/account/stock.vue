@@ -4,35 +4,35 @@
     <hr />
     <div class="grid grid-cols-12 px-5">
       <div class="col-span-8">飲品</div>
-      <div class="col-span-2 flex justify-center">剩餘數量</div>
+      <div class="justify-center hidden col-span-2 md:flex">剩餘數量</div>
     </div>
-    <ul class="list-none pl-0 rounded-3xl overflow-hidden mt-5">
+    <ul class="pl-0 mt-5 overflow-hidden list-none rounded-3xl">
       <li
-        class="grid grid-cols-12 mb-5 p-5 border rounded-3xl border-sup2-500"
+        class="grid grid-cols-12 p-5 mb-5 border rounded-3xl border-lightblue-high"
         v-for="(i, index) in 1"
       >
-        <div class="col-span-8">
+        <div class="col-span-12 mb-5 md:col-span-8">
           <div class="flex">
-            <div class="drinkImg rounded-3xl overflow-hidden mr-5 flex-shrink-0">
+            <div class="flex-shrink-0 mr-5 overflow-hidden drinkImg rounded-3xl">
               <img src="../../../src/assets/images/product.jpg" alt="" />
             </div>
             <div>
               <h5 class="mb-2">東方不敗</h5>
-              <div class="flex">
-                <span class="drinkBefore text-sup3-500 flex-shrink-0">內含配料</span>
+              <div class="text-sm md:flex">
+                <span class="flex-shrink-0 block drinkBefore text-lightblue-500">內含配料</span>
                 <span>粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆</span>
               </div>
-              <div class="flex">
-                <span class="drinkBefore text-sup3-500">規格</span>
+              <div class="text-sm md:flex">
+                <span class="block mt-3 md:mt-0 drinkBefore text-lightblue-500">規格</span>
                 <span>冷飲、中杯、三分糖、微冰</span>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-span-2 flex items-center justify-center">
-          <div>10</div>
+        <div class="flex items-center col-span-6 md:justify-center md:col-span-2">
+          <div><span class="mr-5 text-lightblue-500 md:hidden">剩餘數量</span>10</div>
         </div>
-        <div class="col-span-2 flex items-center justify-end">
+        <div class="flex items-center justify-end col-span-6 md:col-span-2">
           <div class="btnGroup">
             <div class="btn-dark-blue" @click="popupExchange = false">兌換</div>
           </div>
@@ -69,10 +69,10 @@
         </div>
         <h4>選擇店鋪</h4>
         <div v-if="selectShop.length > 0">
-          <ul class="shopResult mb-10 pl-0 max-h-80 overflow-y-auto">
+          <ul class="pl-0 mb-10 overflow-y-auto shopResult max-h-80">
             <li
               v-for="(shop, index) in selectShop"
-              class="flex items-center justify-between p-5 mb-5 bg-sup3-300 rounded-3xl"
+              class="flex items-center justify-between p-5 mb-5 bg-lightblue-bg rounded-3xl"
               @click=""
             >
               <input
@@ -83,20 +83,20 @@
                 v-model="clickShop"
                 class="w-5 h-5 mr-5"
               />
-              <label class="shopInfo w-full text-left text-main-500" :for="shop.name">
+              <label class="w-full text-left shopInfo text-main-500" :for="shop.name">
                 <div class="flex">
-                  <h5 class="shopName mb-0 mr-3">
+                  <h5 class="mb-0 mr-3 shopName">
                     {{ shop.name }}
                   </h5>
                   <a
                     :href="shop.mapLink"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="btn-border-light-blue-sm text-sm"
+                    class="text-sm btn-border-light-blue-sm"
                     >查看位置</a
                   >
                 </div>
-                <ul class="block mt-2 pl-0">
+                <ul class="block pl-0 mt-2">
                   <li>
                     <i class="pay-pin"></i>
                     {{ shop.postition }}
@@ -115,12 +115,12 @@
           </ul>
         </div>
         <div v-else="selectShop.length == 0">
-          <h5 class="text-sup3-500 mb-10">此地區目前沒有店鋪</h5>
+          <h5 class="mb-10 text-lightblue-500">此地區目前沒有店鋪</h5>
         </div>
       </template>
       <template v-slot:btn>
-        <div class="functionBtn flex justify-center">
-          <div class="btn btn-remove mr-3" @click="popupExchange = true">取消</div>
+        <div class="flex justify-center functionBtn">
+          <div class="mr-3 btn btn-remove" @click="popupExchange = true">取消</div>
           <div class="btn btn-dark-blue" @click=";(popupExchange = true), (clickDrink = false)">
             下一步
           </div>
@@ -139,8 +139,8 @@
         </div>
       </template>
       <template v-slot:btn>
-        <div class="functionBtn flex justify-center">
-          <div class="btn btn-remove mr-3" @click="clickDrink = true">取消</div>
+        <div class="flex justify-center functionBtn">
+          <div class="mr-3 btn btn-remove" @click="clickDrink = true">取消</div>
           <div class="btn btn-dark-blue" @click=";(clickDrink = true), (qrcode = false)">
             確認
           </div>
@@ -156,14 +156,14 @@
           <div><img src="../../../src/assets/images/qr.png" alt="" class="block mx-auto" /></div>
           <div class="my-5">
             <h4 class="orderNumber">
-              訂單編號<span class="font-normal text-sup1-900 ml-5">TOREWQ20201206001</span>
+              訂單編號<span class="ml-5 font-normal text-blue-900">TOREWQ20201206001</span>
             </h4>
             <p>請於12小時內至指定店鋪，出示QRCODE掃描領取飲品。<br />祝您用餐愉快</p>
           </div>
         </div>
       </template>
       <template v-slot:btn>
-        <div class="functionBtn flex justify-center">
+        <div class="flex justify-center functionBtn">
           <div class="btn btn-dark-blue" @click="qrcode = true">確認</div>
         </div>
       </template>

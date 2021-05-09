@@ -1,5 +1,5 @@
 <template>
-  <div id="buyList" class="border rounded-3xl p-5 border-sup3-400">
+  <div id="buyList" class="border rounded-3xl p-5 border-lightblue-placeholder">
     <div class="flex items-center justify-between">
       <div class="flex items-center">
         <div class="userImg rounded-full overflow-hidden mr-5">
@@ -30,10 +30,12 @@
         <div>
           <h5 class="mb-2">東方不敗</h5>
           <div class="flex">
-            <span class="drinkBefore text-sup3-500 flex-shrink-0">內含配料 </span
+            <span class="drinkBefore text-lightblue-500 flex-shrink-0">內含配料 </span
             >粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆
           </div>
-          <div><span class="drinkBefore text-sup3-500">規格 </span>冷飲、中杯、三分糖、微冰</div>
+          <div>
+            <span class="drinkBefore text-lightblue-500">規格 </span>冷飲、中杯、三分糖、微冰
+          </div>
         </div>
       </div>
       <div class="flex items-center ml-5">
@@ -42,7 +44,7 @@
             <option :value="s" v-for="(s, index) in 99">{{ s }}</option>
           </select>
         </div>
-        <div class="price text-sub-500 font-normal">$60</div>
+        <div class="price text-subyellow-500 font-normal">$60</div>
         <div class="text-red-500 hover:text-red-700 cursor-pointer duration-200 flex-shrink-0">
           刪除
         </div>

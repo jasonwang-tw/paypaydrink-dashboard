@@ -2,53 +2,53 @@
   <div id="favorites" class="text-main-500">
     <h3 class="">收藏清單</h3>
     <hr />
-    <ul class="list-none pl-0" v-for="(i, index) in 3">
-      <li class="border-b mb-5 border-sup3-400">
-        <div class="flex items-center mb-5 justify-between">
+    <ul class="pl-0 list-none" v-for="(i, index) in 3">
+      <li class="mb-5 border-b border-lightblue-placeholder">
+        <div class="flex items-center justify-between mb-5">
           <div class="flex items-center">
-            <div class="userimg rounded-full overflow-hidden mr-3">
+            <div class="mr-3 overflow-hidden rounded-full userimg">
               <img src="../../../src/assets/images/how.jpg" alt="" />
             </div>
             <div class="drinkinfo">
-              <div class="userName text-xl font-normal mb-2 ">howhow</div>
+              <div class="mb-2 text-lg font-normal md:text-xl userName">howhow</div>
               <router-link
                 to="/drinkShop"
-                class="allDrink no-underline btn-border-light-blue-sm text-sm inline-block"
+                class="inline-block text-sm no-underline allDrink btn-border-light-blue-sm"
                 >查看全部配方</router-link
               >
             </div>
           </div>
-          <div class="text-sup3-500 text-lg cursor-pointer" @click="listToggleBtn">
-            <i class="pay-toggle p-5"></i>
+          <div class="text-lg cursor-pointer text-lightblue-500" @click="listToggleBtn">
+            <i class="p-5 pay-toggle"></i>
           </div>
         </div>
-        <ul class="drinkList list-none pl-0 duration-200 listClose h-full">
-          <li class="bg-sup3-300 p-5 mt-3 rounded-3xl overflow-hidden" v-for="(i, index) in 5">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center mr-3">
-                <div class="userimg rounded-3xl overflow-hidden mr-3 flex-shrink-0">
+        <ul class="h-full pl-0 list-none duration-200 drinkList listClose">
+          <li class="p-5 mt-3 overflow-hidden bg-lightblue-bg rounded-3xl" v-for="(i, index) in 5">
+            <div class="items-center justify-between md:flex">
+              <div class="flex mr-3">
+                <div class="flex-shrink-0 mr-3 overflow-hidden userimg rounded-2xl">
                   <img src="../../../src/assets/images/product.jpg" alt="" />
                 </div>
                 <div class="drinkinfo">
-                  <div class="userName font-normal mb-2">東方不敗</div>
-                  <div class="text-sm flex">
-                    <span class="flex-shrink-0">內含配料</span
+                  <h5 class="mb-2 userName">東方不敗</h5>
+                  <div class="flex text-sm">
+                    <span class="flex-shrink-0 text-lightblue-500">內含配料</span
                     ><span class="ml-3">粉圓、布丁、紅豆粉圓</span>
                   </div>
                 </div>
               </div>
-              <div class="btnGroup flex flex-shrink-0">
-                <div class="buyAgain mr-5">
+              <div class="flex justify-center flex-shrink-0 mt-5 btnGroup">
+                <div class="mr-5 buyAgain">
                   <router-link
                     to="/products/page"
-                    class="text-sup1-100 no-underline duration-200 hover:text-sup1-500"
+                    class="text-blue-100 no-underline duration-200 hover:text-blue-500"
                   >
                     再次訂購
                   </router-link>
                 </div>
                 <div
-                  class="delfavorit text-red-500 cursor-pointer duration-200 hover:text-red-700"
-                  @click="removeBtn"
+                  class="text-red-500 duration-200 cursor-pointer delfavorit hover:text-red-700"
+                  @click="del = !del"
                 >
                   取消收藏
                 </div>
@@ -59,33 +59,44 @@
       </li>
     </ul>
     <pageNav />
-    <popupRemove :class="{ popup: popupRemove }" title="刪除收藏" :remove="removeBtn" />
+
+    <popup :class="{ popup: del }">
+      <template v-slot:title>
+        <h4>刪除收藏</h4>
+      </template>
+      <template v-slot:content>
+        <p class="mb-10">此操作無法撤消，確定要執行嗎?</p>
+      </template>
+      <template v-slot:btn>
+        <div class="flex justify-center functionBtn">
+          <div class="mr-3 btn btn-remove" @click="del = !del">取消</div>
+          <div class="btn btn-dark-blue">確認</div>
+        </div>
+      </template>
+    </popup>
   </div>
 </template>
 
 <script>
   import pageNav from '@/components/pageNav.vue'
-  import popupRemove from '@/components/popupRemove.vue'
+  import popup from '@/components/popup.vue'
 
   export default {
     name: 'favorites',
     components: {
       pageNav,
-      popupRemove
+      popup
     },
     methods: {
       listToggleBtn: function(e) {
         let i = e.target.parentNode.parentNode.nextSibling
         i.classList.toggle('listClose')
       },
-      removeBtn: function() {
-        this.popupRemove = !this.popupRemove
-      }
     },
     data() {
       return {
         drinkToggle: true,
-        popupRemove: true
+        del: true
       }
     }
   }
@@ -93,8 +104,8 @@
 
 <style lang="scss" scoped>
   .userimg {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
   }
   .drinkList {
     li:last-child {
@@ -111,5 +122,6 @@
     transform: translateY(-5%);
     opacity: 0;
     height: 0px;
+    overflow: hidden;
   }
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div id="account" class="text-main-500">
     <topmenu />
-    <div class="customContainer grid grid-cols-1 md:grid-cols-12 md:gap-10 mx-auto mb-20 md:my-20">
-      <div class="profileMenu col-span-1 md:col-span-4 md:px-10">
+    <div class="grid grid-cols-1 mx-auto mb-20 customContainer md:grid-cols-12 md:gap-10 md:my-20">
+      <div class="col-span-1 profileMenu md:col-span-4">
         <profileMenu />
       </div>
-      <div class="mainInfo p-5 col-span-1 md:col-span-8">
+      <div class="col-span-1 p-5 md:p-0 mainInfo md:col-span-8">
         <router-view></router-view>
       </div>
     </div>
@@ -31,4 +31,10 @@
   }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  @media (max-width: 768px) {
+    .mainInfo {
+      margin-top: 44px;
+    }
+  }
+</style>

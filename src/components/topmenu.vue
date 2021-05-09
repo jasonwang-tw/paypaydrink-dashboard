@@ -1,5 +1,5 @@
 <template>
-  <div class="header py-3 px-5 border-b border-sup2-500 top-0 sticky z-20 bg-white">
+  <div class="header py-3 px-5 border-b border-lightblue-high top-0 sticky z-20 bg-white">
     <div class="container m-auto flex justify-between">
       <div class="nav-left flex items-center w-full">
         <div class="logo mr-5">
@@ -30,7 +30,7 @@
           <i class="pay-cart text-xl text-main-100"></i>
           <!-- miniCartList -->
           <div
-            class="shopCartList w-80 fixed bg-white border border-sup2-500 p-5 rounded-3xl duration-200 left-1/2 top-1/2 transform  -translate-y-1/2 -translate-x-1/2 xl:mt-2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
+            class="shopCartList w-80 fixed bg-white border border-lightblue-high p-5 rounded-3xl duration-200 left-1/2 top-1/2 transform  -translate-y-1/2 -translate-x-1/2 xl:mt-2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
             :class="{ listHidden: miniCartHidden }"
           >
             <ul class="list-none pl-0 text-main-500">
@@ -44,14 +44,14 @@
                       <div class="etc mr-5">
                         productNameproductNameproductName
                       </div>
-                      <span class="text-sub-500">$ 99</span>
+                      <span class="text-subyellow-500">$ 99</span>
                     </div>
                     <span class="flex-shrink-0">x 91</span>
                   </div>
                 </router-link>
               </li>
             </ul>
-            <p class="text-sup3-500 text-center">還有其他 5 個項目</p>
+            <p class="text-lightblue-500 text-center">還有其他 5 個項目</p>
             <router-link to="/cart" class="btn-dark-blue block text-center mt-5"
               >查看購物車</router-link
             >
@@ -59,14 +59,14 @@
         </div>
         <!-- notice -->
         <div
-          class="nav-right-items notice border-l border-r border-sup2-500 px-5"
+          class="nav-right-items notice border-l border-r border-lightblue-high px-5"
           @mouseenter="miniNoticeHidden = false"
           @mouseleave="miniNoticeHidden = true"
         >
           <i class="pay-notice text-xl text-main-100"></i>
           <!-- noticeList -->
           <div
-            class="noticeList w-80 fixed bg-white border border-sup2-500 p-5 rounded-3xl duration-200 left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 xl:mt-2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
+            class="noticeList w-80 fixed bg-white border border-lightblue-high p-5 rounded-3xl duration-200 left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 xl:mt-2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
             :class="{ listHidden: miniNoticeHidden }"
           >
             <ul class="list-none pl-0 text-main-500">
@@ -76,16 +76,16 @@
                     <div class="etc">
                       付款已確認
                     </div>
-                    <div class="etc text-sup1-900">
-                      訂單<span class="text-sub-500">200718NQDUVMMW</span
+                    <div class="etc text-blue-900">
+                      訂單<span class="text-subyellow-500">200718NQDUVMMW</span
                       >的付款已確認，店鋪備料中，請依照訂單
                     </div>
-                    <small class="text-sup3-500">2021-01-22 12:00</small>
+                    <small class="text-lightblue-500">2021-01-22 12:00</small>
                   </div>
                 </router-link>
               </li>
             </ul>
-            <p class="text-sup3-500 text-center">還有其他 5 個項目</p>
+            <p class="text-lightblue-500 text-center">還有其他 5 個項目</p>
             <router-link to="/" class="btn-dark-blue block text-center mt-5"
               >查看全部通知</router-link
             >
@@ -114,22 +114,22 @@
               </div>
               <div>
                 <div class="userName text-main-500 -mb-1">howhow</div>
-                <small class="text-sub-500">帳戶資訊</small>
+                <small class="text-subyellow-500">帳戶資訊</small>
               </div>
             </router-link>
             <div class="payCoin mt-5 border-b pb-5">
               <small>PayPayPoint</small><br />
-              <span class="text-sub-500 font-bold">999,999</span>
+              <span class="text-subyellow-500 font-bold">999,999</span>
             </div>
             <ul class="list-none pl-0 mt-5">
-              <li v-for="(item, index) in mainPage" class="text-main-500 mb-5 hover:text-sup1-100">
+              <li v-for="(item, index) in mainPage" class="text-main-500 mb-5 hover:text-blue-100">
                 <router-link :to="item.link" class="no-underline">{{ item.name }}</router-link>
               </li>
             </ul>
           </div>
           <div class="sidebarNavBottom text-main-500 text-center">
             <div class="text-xl font-medium mb-2 mt-10 xl:text-2xl xl:mt-0">
-              立即加入 <span class="text-sub-500">配配飲</span>
+              立即加入 <span class="text-subyellow-500">配配飲</span>
             </div>
             <span class="mb-5 block">客製屬於您的飲品</span>
             <img
@@ -206,7 +206,7 @@
       left: 0;
       bottom: 0;
       transform: translate(7px, 5px);
-      background-color: var(--color-sub);
+      background-color: var(--color-subyellow);
     }
   }
   // .shopCartList,
@@ -226,7 +226,7 @@
     position: absolute;
     border-radius: 20px;
     transform: translate(-5px, 2px);
-    background-color: var(--color-sub);
+    background-color: var(--color-subyellow);
   }
   .userImg {
     width: 50px;

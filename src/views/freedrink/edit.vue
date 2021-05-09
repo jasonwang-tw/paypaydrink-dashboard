@@ -4,14 +4,14 @@
       <div class="mb-5 relative">
         <router-link
           to="/free_drink/portal"
-          class="absolute no-underline flex items-center hover:text-sup1-500 duration-200"
+          class="absolute no-underline flex items-center hover:text-blue-500 duration-200"
         >
           <i class="pay-left text-2xl"></i>
           返回
         </router-link>
         <h2 class="mb-0 mx-auto text-center">新增配方</h2>
       </div>
-      <div class="text-center text-sup1-900">
+      <div class="text-center text-blue-900">
         配配飲將依據所添加的茶底&配料酌收食材費，將會在購買飲品付款時收取。
       </div>
       <div class="drinkProgress py-10">
@@ -29,19 +29,19 @@
             <img src="../../assets/images/drinkCup100.svg" alt="" srcset="" class="inline-block" />
           </div>
         </div>
-        <div class="progress bg-sup3-400 w-full block h-2.5 rounded-3xl mt-5">
+        <div class="progress bg-lightblue-placeholder w-full block h-2.5 rounded-3xl mt-5">
           <div class="progressBar bg-main-500 h-full block w-36 rounded-3xl">
             <div class="barValue">
-              <i class="pay-arrow_top text-sup3-500 text-xs"></i>
+              <i class="pay-arrow_top text-lightblue-500 text-xs"></i>
               <div class="font-normal text-lg">30ml</div>
             </div>
           </div>
         </div>
         <div class="flex items-center justify-center mt-24">
-          目前食材費<big class="ml-5 font-normal text-sub-500">$180</big>
+          目前食材費<big class="ml-5 font-normal text-subyellow-500">$180</big>
         </div>
       </div>
-      <div class="p-5 bg-sup3-300 rounded-3xl setArea">
+      <div class="p-5 bg-lightblue-bg rounded-3xl setArea">
         <h4>選擇茶底</h4>
         <span class="text-red-500">*請至少選擇一種茶底</span>
         <div class="flex mt-5 mb-3">
@@ -60,12 +60,12 @@
               <option value="">10ml</option>
             </select>
           </div>
-          <div class="text-sub-500 font-normal">$60</div>
+          <div class="text-subyellow-500 font-normal">$60</div>
           <div class="text-red-500 duration-200 hover:text-red-700 cursor-pointer">刪除</div>
         </div>
         <div class="btn-border-light-blue inline-block">增加茶底</div>
       </div>
-      <div class="p-5 bg-sup3-300 rounded-3xl setArea">
+      <div class="p-5 bg-lightblue-bg rounded-3xl setArea">
         <h4>添加配料</h4>
         <div class="flex mt-5 mb-3">
           <div class="titleType">配料種類</div>
@@ -83,12 +83,12 @@
               <option value="">10ml</option>
             </select>
           </div>
-          <div class="text-sub-500 font-normal">$60</div>
+          <div class="text-subyellow-500 font-normal">$60</div>
           <div class="text-red-500 duration-200 hover:text-red-700 cursor-pointer">刪除</div>
         </div>
         <div class="btn-border-light-blue inline-block">增加配料</div>
       </div>
-      <div class="p-5 bg-sup3-300 rounded-3xl setArea">
+      <div class="p-5 bg-lightblue-bg rounded-3xl setArea">
         <h4>編輯配方資訊</h4>
         <div class="mb-3">
           <input type="text" name="" id="" placeholder="配方名稱" />
@@ -111,7 +111,7 @@
         </div>
         <small class="text-red-500 mt-3 inline-block">*食材費用加欲收取費用等於平台販售金額</small>
       </div>
-      <div class="p-5 bg-sup3-300 rounded-3xl setArea">
+      <div class="p-5 bg-lightblue-bg rounded-3xl setArea">
         <h4>客製選項</h4>
         <div class="flex items-center drinkSet">
           <div class="mr-5 font-normal">溫度</div>
@@ -314,7 +314,7 @@
       height: 20px;
       margin-right: 0.5rem;
       background-color: #fff;
-      border: 1px solid var(--color-sup3);
+      border: 1px solid var(--color-lightblue);
       border-radius: 0.25rem;
     }
     span {

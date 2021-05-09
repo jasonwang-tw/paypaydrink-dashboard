@@ -1,18 +1,18 @@
 <template>
   <div id="bankCard" class="text-main-500">
-    <div class="flex justify-between items-center">
-      <h3 class="text-main-500 mb-0">信用卡</h3>
-      <div class="btn-border-light-blue flex items-center" @click="card = !card">
-        <i class="pay-add mr-3"></i>
+    <div class="flex items-center justify-between">
+      <h3 class="mb-0 text-main-500">信用卡</h3>
+      <div class="flex items-center btn-border-light-blue" @click="card = !card">
+        <i class="mr-3 pay-add"></i>
         <div>增加信用卡</div>
       </div>
     </div>
     <hr />
-    <ul class="pl-0 list-none grid gap-3 grid-cols-2 mb-10 text-main-500">
-      <li class="bg-sup3-300 p-5 rounded-3xl relative" v-for="(c, index) in cardInfo">
+    <ul class="grid gap-3 pl-0 mb-10 list-none md:grid-cols-2 text-main-500">
+      <li class="relative p-5 bg-lightblue-bg rounded-3xl" v-for="(c, index) in cardInfo">
         <div class="h-24">
           <div v-if="c.default === true">
-            <div class="inline-block btn-dark-blue-sm-nohover text-sm">預設</div>
+            <div class="inline-block text-sm btn-dark-blue-sm-nohover">預設</div>
           </div>
           <div class="absolute top-0 right-0 p-5">
             <div v-if="c.type === 'visa'">
@@ -26,19 +26,19 @@
             </div>
           </div>
         </div>
-        <div class="flex justify-between items-center">
+        <div class="flex items-center justify-between">
           <div class="text-xl font-medium">**** {{ c.lastNumber }}</div>
           <div class="flex">
             <div v-if="c.default === false">
               <div
-                class="duration-200 cursor-pointer hover:text-sup1-500 mr-3"
+                class="mr-3 duration-200 cursor-pointer hover:text-blue-500"
                 @click="cahngeDefaultCI(), [(c.default = true)]"
               >
                 設定為預設
               </div>
             </div>
             <div
-              class="duration-200 cursor-pointer text-red-500 hover:text-red-700"
+              class="text-red-500 duration-200 cursor-pointer hover:text-red-700"
               @click=";[(del = !del)], [(delTitle = '信用卡')]"
             >
               刪除
@@ -47,57 +47,57 @@
         </div>
       </li>
     </ul>
-    <div class="flex justify-between items-center">
-      <h3 class="text-main-500 mb-0">銀行帳號</h3>
-      <div class="btn-border-light-blue flex items-center" @click="bank = !bank">
-        <i class="pay-add mr-3"></i>
+    <div class="flex items-center justify-between">
+      <h3 class="mb-0 text-main-500">銀行帳號</h3>
+      <div class="flex items-center btn-border-light-blue" @click="bank = !bank">
+        <i class="mr-3 pay-add"></i>
         <div>增加銀行帳號</div>
       </div>
     </div>
     <hr />
-    <ul class="list-none pl-0 text-main-500">
+    <ul class="pl-0 list-none text-main-500">
       <li
-        class="flex items-center justify-between mb-5 bg-sup3-300 p-5 rounded-3xl"
+        class="items-center justify-between p-5 mb-5 md:flex bg-lightblue-bg rounded-3xl"
         v-for="(b, index) in bankAccount"
       >
         <div class="">
           <div class="flex items-start mb-5">
             <div>
-              <div class="font-medium mb-2">{{ b.bankName }}</div>
+              <div class="mb-2 font-medium">{{ b.bankName }}</div>
               <div class="text-xl font-medium">**** {{ b.lastNumber }}</div>
             </div>
             <div v-if="b.verification === true">
-              <div class="text-sup1-100 mx-3">已審核</div>
+              <div class="mx-3 text-blue-100">已審核</div>
             </div>
             <div v-else-if="b.verification === false">
-              <div class="text-sub-500 mx-3">審核中</div>
+              <div class="mx-3 text-subyellow-500">審核中</div>
             </div>
             <div v-if="b.default === true">
-              <div class="btn-dark-blue-sm-nohover text-sm">預設</div>
+              <div class="text-sm btn-dark-blue-sm-nohover">預設</div>
             </div>
           </div>
           <div class="flex">
             <div class="mr-5">
-              <small class="text-sup1-900 mr-3">戶名</small>
+              <small class="mr-3 text-blue-900">戶名</small>
               <b>{{ b.accountName }}</b>
             </div>
             <div>
-              <small class="text-sup1-900 mr-3">所屬</small>
+              <small class="mr-3 text-blue-900">所屬</small>
               <b>{{ b.city }} / {{ b.branch }}</b>
             </div>
           </div>
         </div>
-        <div class="flex">
+        <div class="flex pt-4 mt-4 border-t border-lightblue-high">
           <div v-if="b.default === false && b.verification === true">
             <div
-              class="duration-200 cursor-pointer hover:text-sup1-500 mr-3"
+              class="mr-3 duration-200 cursor-pointer hover:text-blue-500"
               @click="cahngeDefaultBA(), [(b.default = true)]"
             >
               設定為預設
             </div>
           </div>
           <div
-            class="duration-200 cursor-pointer text-red-500 hover:text-red-700"
+            class="text-red-500 duration-200 cursor-pointer hover:text-red-700"
             @click=";[(del = !del)], [(delTitle = '帳戶')]"
           >
             刪除
@@ -111,9 +111,9 @@
         <h4>新增信用卡</h4>
       </template>
       <template v-slot:content>
-        <div class="bg-sup3-300 p-3 mb-5 rounded-3xl">
-          <span class="text-sup1-900"
-            >當你進行信用卡驗證時，我們會先向發卡銀行授權$1元，<br />並在5天內退還給你</span
+        <div class="p-3 mb-5 bg-lightblue-bg rounded-3xl">
+          <span class="text-blue-900"
+            >當你進行信用卡驗證時，我們會先向發卡銀行授權$1元，並在5天內退還給你</span
           >
         </div>
         <input type="text" name="" id="" placeholder="持有者姓名" class="mb-3" />
@@ -124,8 +124,8 @@
         </div>
       </template>
       <template v-slot:btn>
-        <div class="functionBtn flex justify-center">
-          <div class="btn btn-remove mr-3" @click="card = !card">取消</div>
+        <div class="flex justify-center functionBtn">
+          <div class="mr-3 btn btn-remove" @click="card = !card">取消</div>
           <div class="btn btn-dark-blue">確認</div>
         </div>
       </template>
@@ -138,9 +138,9 @@
       <template v-slot:content>
         <input type="text" name="" id="" placeholder="姓名" class="mb-3" />
         <input type="text" name="" id="" placeholder="身分證字號" class="mb-3" />
-        <label for="" class="mb-3 block text-left">生日/公司核准設立日期</label>
+        <label for="" class="block mb-3 text-left">生日/公司核准設立日期</label>
         <input type="date" name="" id="" placeholder="姓名" class="mb-3" />
-        <label for="" class="mb-3 block text-left">戶籍地址/公司地址</label>
+        <label for="" class="block mb-3 text-left">戶籍地址/公司地址</label>
         <div class="flex mb-3">
           <select name="city" id="" class="mr-3" v-model="selcetCity">
             <option :value="i.CityName" v-for="(i, index) in taiwan">{{ i.CityName }}</option>
@@ -152,19 +152,19 @@
         <input type="text" name="" id="" placeholder="郵遞區號" class="mb-3" />
         <input type="text" name="" id="" placeholder="詳細地址" class="" />
         <h4 class="my-3">輸入帳戶資訊</h4>
-        <label for="" class="mb-3 block text-left">選擇銀行</label>
+        <label for="" class="block mb-3 text-left">選擇銀行</label>
         <select class="mb-3" name="" id="">
           <option value="" v-for="(bank, index) in bankList" :value="bank">{{ bank }}</option>
         </select>
         <div class="flex mb-3">
           <div class="w-full mr-3">
-            <label for="" class="mb-3 block text-left">選擇銀行縣市</label>
+            <label for="" class="block mb-3 text-left">選擇銀行縣市</label>
             <select name="" id="">
               <option :value="t.CityName" v-for="(t, index) in taiwan">{{ t.CityName }}</option>
             </select>
           </div>
           <div class="w-full">
-            <label for="" class="mb-3 block text-left">選擇分行</label>
+            <label for="" class="block mb-3 text-left">選擇分行</label>
             <select name="" id="">
               <option value="" v-for="(b, index) in bankBranch" :value="b">{{ b }}</option>
             </select>
@@ -174,8 +174,8 @@
         <input type="text" name="" id="" placeholder="請輸入帳戶號碼" />
       </template>
       <template v-slot:btn>
-        <div class="functionBtn flex justify-center mt-10">
-          <div class="btn btn-remove mr-3" @click="bank = !bank">取消</div>
+        <div class="flex justify-center mt-10 functionBtn">
+          <div class="mr-3 btn btn-remove" @click="bank = !bank">取消</div>
           <div class="btn btn-dark-blue">送出</div>
         </div>
       </template>
@@ -189,8 +189,8 @@
         <p class="mb-10">此操作無法撤消，確定要執行嗎?</p>
       </template>
       <template v-slot:btn>
-        <div class="functionBtn flex justify-center">
-          <div class="btn btn-remove mr-3" @click="del = !del">取消</div>
+        <div class="flex justify-center functionBtn">
+          <div class="mr-3 btn btn-remove" @click="del = !del">取消</div>
           <div class="btn btn-dark-blue">確認</div>
         </div>
       </template>

@@ -16,7 +16,7 @@
       <li
         v-for="(shop, index) in shopList"
         :key="index"
-        class="block sm:flex items-center justify-between border-b border-sup2-500 mb-5"
+        class="block sm:flex items-center justify-between border-b border-lightblue-high mb-5"
       >
         <div class="shopInfo text-left text-main-500">
           <div class="shopName text-2xl font-bold">
@@ -48,7 +48,7 @@
         </div>
       </li>
     </ul>
-    <!-- <select name="" id="" class="border px-4 py-2 border-sup3-500 rounded-md text-main-500">
+    <!-- <select name="" id="" class="border px-4 py-2 border-lightblue-500 rounded-md text-main-500">
       <option v-for="(items, index) of info.data.retVal" :key="index">{{items.sna}}</option>
     </select> -->
   </div>

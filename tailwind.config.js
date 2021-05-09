@@ -16,25 +16,23 @@ module.exports = {
         100: 'var(--color-main-100)',
         500: 'var(--color-main-500)',
       },
-      sub: {
-        100: 'var(--color-sub-hover)',
-        500: 'var(--color-sub)',
+      subyellow: {
+        100: 'var(--color-subyellow-hover)',
+        500: 'var(--color-subyellow)',
       },
       line: {
         100: 'var(--color-line)',
       },
-      sup1: {
-        100: 'var(--color-sup1-100)',
-        500: 'var(--color-sup1-500)',
-        900: 'var(--color-sup1-900)',
+      blue: {
+        100: 'var(--color-blue-100)',
+        500: 'var(--color-blue-500)',
+        900: 'var(--color-blue-900)',
       },
-      sup2: {
-        500: 'var(--color-sup2)',
-      },
-      sup3: {
-        300: 'var(--color-sup3-linght-bg)',
-        400: 'var(--color-sup3-placeholder)',
-        500: 'var(--color-sup3)',
+      lightblue: {
+        bg: 'var(--color-lightblue-bg)',
+        placeholder: 'var(--color-lightblue-placeholder)',
+        high: 'var(--color-lightblue-high)',
+        500: 'var(--color-lightblue)',
       },
       transparent: 'transparent',
       current: 'currentColor',

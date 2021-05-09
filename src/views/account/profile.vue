@@ -2,17 +2,21 @@
   <div id="profile" class="text-main-500">
     <h3 class="text-main-500">個人資料</h3>
     <hr />
-    <div class="profileImg flex items-center no-underline my-10">
-      <div class="userImg overflow-hidden rounded-full bg-white mr-10 flex-shrink-0">
-        <img src="../../../src/assets/images/how.jpg" alt="" />
-      </div>
-      <div>
-        <div class="btn-border-light-blue relative w-40">
-          <i class="pay-upload mr-3"></i>
-          <span class="">上傳大頭貼</span>
-          <input type="file" class="top-0 left-0 h-full w-full absolute opacity-0" />
+    <div
+      class="flex flex-wrap items-center justify-center my-10 no-underline md:justify-start profileImg"
+    >
+      <div class="flex-shrink-0 mx-5 md:mx-0 md:mr-10">
+        <div class="overflow-hidden bg-white rounded-full userImg">
+          <img src="../../../src/assets/images/how.jpg" alt="" />
         </div>
-        <small class="text-sup1-100">檔案限制最大500kb ，格式為.JPEG, .PNG</small>
+      </div>
+      <div class="mt-5">
+        <div class="relative w-40 mx-auto md:mx-0 btn-border-light-blue">
+          <i class="mr-3 pay-upload"></i>
+          <span class="">上傳大頭貼</span>
+          <input type="file" class="absolute top-0 left-0 w-full h-full opacity-0" />
+        </div>
+        <small class="text-blue-100">檔案限制最大500kb ，格式為.JPEG, .PNG</small>
       </div>
     </div>
     <form action="" class="profileForm">
@@ -23,15 +27,15 @@
       <div class="flex items-center my-5">
         <label for="" class="flex-shrink-0 mr-5">密碼</label>
         <div class="flex items-center">
-          <div class="text-main-500 mr-5">*******</div>
-          <div class="btn-border-light-blue" @click="popupFixed(), editPassword()">變更</div>
+          <div class="mr-5 text-main-500">*******</div>
+          <div class="btn-border-light-blue" @click="password = false">變更</div>
         </div>
       </div>
       <div class="flex items-center my-5">
         <label for="" class="flex-shrink-0 mr-5">手機</label>
         <div class="flex items-center">
-          <div class="text-main-500 mr-5">0987-576-789</div>
-          <div class="btn-border-light-blue " @click="popupFixed(), editPhone()">變更</div>
+          <div class="mr-5 text-main-500">0987-576-789</div>
+          <div class="btn-border-light-blue " @click="phone = false">變更</div>
         </div>
       </div>
       <div class="flex items-center my-5">
@@ -57,86 +61,75 @@
       </div>
     </form>
     <!-- changePassword -->
-    <div
-      class="fixed top-0 left-0 bg-opacity-50 bg-gray-900 h-full w-full z-20 flex items-center justify-center duration-200"
-      :class="{ popup: popupStatus }"
-    >
-      <!-- editPassword -->
-      <div
-        id="editPassword"
-        class="bg-white rounded-3xl text-center p-5 shadow-xl"
-        :class="{ passwordPopup: password }"
-      >
-        <h3>變更密碼</h3>
+    <popup :class="{ popup: password }">
+      <template v-slot:title>
+        <h4>變更密碼</h4>
+      </template>
+      <template v-slot:content>
         <div class="inputBar"><input type="text" placeholder="輸入原密碼" /></div>
         <div class="inputBar"><input type="text" placeholder="輸入新密碼" /></div>
         <div class="inputBar"><input type="text" placeholder="再次輸入新密碼" /></div>
-        <div class="functionBtn flex justify-center pt-5">
-          <div class="btn btn-remove mr-3" @click="popupFixed(), editPassword()">取消</div>
-          <div class="btn btn-dark-blue" @click="editPassword(), complatemag()">確認變更</div>
+      </template>
+      <template v-slot:btn>
+        <div class="flex justify-center functionBtn">
+          <div class="mr-3 btn btn-remove" @click="password = true">取消</div>
+          <div class="btn btn-dark-blue" @click=";(password = true), (complate_msg = false)">
+            確認
+          </div>
         </div>
-      </div>
-      <!-- editPhone -->
-      <div
-        id="editPhone"
-        class="bg-white rounded-3xl text-center p-5 shadow-xl"
-        :class="{ phonePopup: phone }"
-      >
-        <h3>變更手機號碼</h3>
-        <div class="p-5 bg-sup3-300 rounded-3xl mb-5 text-sup1-900">
-          請確認您的手機號碼是否輸入正確，我們將傳送驗證簡訊，
-          請輸入收到簡訊裡的驗證碼以利完成變更。
+      </template>
+    </popup>
+    <!-- editPhone -->
+    <popup :class="{ popup: phone }">
+      <template v-slot:title>
+        <h4>變更手機號碼</h4>
+      </template>
+      <template v-slot:content>
+        <div class="p-5 mb-5 text-blue-900 bg-lightblue-bg rounded-3xl">
+          請確認您的手機號碼是否輸入正確，我們將傳送驗證簡訊，請輸入收到簡訊裡的驗證碼以利完成變更。
         </div>
         <div class="inputBar"><input type="text" placeholder="輸入手機號碼" /></div>
-        <div class="flex items-center mb-10">
+        <div class="flex items-center mb-5">
           <input type="text" placeholder="輸入驗證碼" class="mr-5" />
           <div class="flex-shrink-0 btn-border-light-blue">發送驗證碼</div>
         </div>
-        <div class="functionBtn flex justify-center">
-          <div class="btn btn-remove mr-3" @click="popupFixed(), editPhone()">取消</div>
-          <div class="btn btn-dark-blue" @click="editPhone(), complatemag()">確認變更</div>
+      </template>
+      <template v-slot:btn>
+        <div class="flex justify-center functionBtn">
+          <div class="mr-3 btn btn-remove" @click="phone = true">取消</div>
+          <div class="btn btn-dark-blue" @click=";(phone = true), (complate_msg = false)">確認</div>
         </div>
-      </div>
-      <!-- change Complate -->
-      <div
-        id="complateMsg"
-        class="bg-white rounded-3xl text-center p-5 shadow-xl"
-        :class="{ msgPopup: mag }"
-      >
-        <h3>變更完成</h3>
-        <div class="w-full mb-10"></div>
-        <div class="functionBtn flex justify-center">
-          <div class="btn btn-dark-blue" @click="popupFixed(), complatemag()">確認</div>
+      </template>
+    </popup>
+    <!-- change Complate -->
+    <popup :class="{ popup: complate_msg }">
+      <template v-slot:title>
+        <h4>變更完成</h4>
+      </template>
+      <template v-slot:content> </template>
+      <template v-slot:btn>
+        <div class="flex justify-center functionBtn">
+          <div class="btn btn-dark-blue" @click="complate_msg = true">確認</div>
         </div>
-      </div>
-    </div>
+      </template>
+    </popup>
   </div>
 </template>
 
 <script>
+  import popup from '@/components/popup.vue'
+
   export default {
     name: 'profile',
-    components: {},
-    methods: {
-      popupFixed: function() {
-        this.popupStatus = !this.popupStatus
-      },
-      editPassword: function() {
-        this.password = !this.password
-      },
-      editPhone: function() {
-        this.phone = !this.phone
-      },
-      complatemag: function() {
-        this.mag = !this.mag
-      }
+    components: {
+      popup
     },
+    methods: {},
     data() {
       return {
-        popupStatus: true,
         password: true,
         phone: true,
-        mag: true
+        complate_msg: true
       }
     }
   }
@@ -155,7 +148,7 @@
   .profileForm {
     label {
       width: 50px;
-      color: var(--color-sub);
+      color: var(--color-subyellow);
       &[for='man'],
       &[for='woman'] {
         color: var(--color-main-500);
@@ -166,29 +159,15 @@
       height: 20px;
     }
   }
-  #editPassword,
-  #editPhone,
-  #complateMsg {
-    width: 100%;
-    max-width: 540px;
-    .inputBar {
-      display: block;
-      margin-bottom: 1rem;
-    }
+
+  .inputBar {
+    display: block;
+    margin-bottom: 1rem;
   }
-  // .functionBtn {
-  //   .btn {
-  //     width: 150px;
-  //   }
-  // }
+
   // control
   .popup {
     opacity: 0;
     visibility: hidden;
-  }
-  .passwordPopup,
-  .phonePopup,
-  .msgPopup {
-    display: none;
   }
 </style>

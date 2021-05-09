@@ -1,7 +1,7 @@
 <template>
   <div id="portal" class="text-main-500">
     <topmenu />
-    <div class="shopBg bg-sup3-300 h-60"></div>
+    <div class="shopBg bg-lightblue-bg h-60"></div>
     <div class="container mx-auto mb-20 -mt-16">
       <div class="customContainer mx-auto text-center">
         <div class="userImg rounded-full overflow-hidden mx-auto flex-shrink-0">
@@ -96,7 +96,7 @@
       margin-right: 1.5rem;
       padding-right: 1.5rem;
       span {
-        color: var(--color-sub);
+        color: var(--color-subyellow);
         margin-right: 0.5rem;
       }
     }

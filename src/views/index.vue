@@ -3,7 +3,9 @@
     <topmenu />
     <div class="mx-auto">
       <div class="mainArea py-0 lg:py-10">
-        <div class="text-center items-center justify-center mt-5 mb-10 flex flex-wrap md:flex-nowrap lg:my-10">
+        <div
+          class="text-center items-center justify-center mt-5 mb-10 flex flex-wrap md:flex-nowrap lg:my-10"
+        >
           <div class="waiter w-1/2 md:w-auto text-center mb-5 flex justify-center">
             <img src="../../src/assets/images/waiter.png" alt="" />
           </div>
@@ -26,21 +28,21 @@
       </div>
       <div class="saleBanner py-16 text-center text-main-500">
         <h2 class="text-4xl">優惠活動</h2>
-        <span class="mb-10 block text-sub-500">快揪好友，省錢趁現在！</span>
+        <span class="mb-10 block text-subyellow-500">快揪好友，省錢趁現在！</span>
         <div class="flex justify-center">
           <carousel />
         </div>
       </div>
       <div class="starman py-16 text-center text-main-500">
         <h2 class="text-4xl">名人堂</h2>
-        <span class="mb-10 block text-sub-500">瞧瞧名人都喝啥</span>
+        <span class="mb-10 block text-subyellow-500">瞧瞧名人都喝啥</span>
         <div class="flex justify-center">
           <starman />
         </div>
       </div>
       <div class="top10 py-16 text-center text-main-500">
         <h2 class="text-4xl">熱銷排行TOP10</h2>
-        <span class="mb-10 block text-sub-500">銷售排行看這邊</span>
+        <span class="mb-10 block text-subyellow-500">銷售排行看這邊</span>
         <div class="flex justify-center">
           <drink>
             <template v-slot:topNumber="props">

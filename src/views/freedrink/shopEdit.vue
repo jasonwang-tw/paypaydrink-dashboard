@@ -4,18 +4,20 @@
       <div class="mb-5 relative">
         <router-link
           to="/free_drink/portal"
-          class="absolute no-underline flex items-center hover:text-sup1-500 duration-200"
+          class="absolute no-underline flex items-center hover:text-blue-500 duration-200"
         >
           <i class="pay-left text-2xl"></i>
           返回
         </router-link>
         <h2 class="mb-0 mx-auto text-center">編輯飲料鋪</h2>
       </div>
-      <div class="text-center text-sup1-900">
+      <div class="text-center text-blue-900">
         開始裝飾您的飲料鋪吧
       </div>
       <div class="my-5">
-        <div class="bg-sup3-300 h-60 rounded-3xl relative mb-3 flex items-center justify-center">
+        <div
+          class="bg-lightblue-bg h-60 rounded-3xl relative mb-3 flex items-center justify-center"
+        >
           <div class="btn-border-light-blue">
             設定封面照片
           </div>
@@ -92,7 +94,7 @@
       height: 20px;
       margin-right: 0.5rem;
       background-color: #fff;
-      border: 1px solid var(--color-sup3);
+      border: 1px solid var(--color-lightblue);
       border-radius: 0.25rem;
     }
     // span {

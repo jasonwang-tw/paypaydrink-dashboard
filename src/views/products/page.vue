@@ -16,7 +16,7 @@
               :key="index"
               class="imgContent overflow-hidden rounded-3xl"
             >
-              <div class="w-full h-full rounded-3xl bg-sup3-300">
+              <div class="w-full h-full rounded-3xl bg-lightblue-bg">
                 <img :src="item.imgSrc" alt="" />
               </div>
             </splide-slide>
@@ -24,25 +24,25 @@
         </div>
         <div class="text-main-500 pt-10">
           <h1>東方不敗</h1>
-          <div class="text-sup1-900 mb-8">
+          <div class="text-blue-900 mb-8">
             <span class="">配方編號</span>
             <span class="ml-3">3345678</span>
           </div>
-          <ul class="drinkInfo pl-0 list-none flex text-sub-500 text-lg font-normal">
+          <ul class="drinkInfo pl-0 list-none flex text-subyellow-500 text-lg font-normal">
             <li><i class="pay-start"></i> {{ info.rating }}</li>
             <li>{{ info.people }} 人評價</li>
             <li>已出售 {{ info.buy }}</li>
           </ul>
           <div class="flex items-center my-3">
-            <div class="text-2xl mr-10 font-normal text-sub-500">$60</div>
-            <div class="flex items-center text-sup1-900 bg-sup3-300 px-5 py-2.5 rounded-xl">
-              <i class="pay-click_outline text-sup1-100 mr-2"></i>
+            <div class="text-2xl mr-10 font-normal text-subyellow-500">$60</div>
+            <div class="flex items-center text-blue-900 bg-lightblue-bg px-5 py-2.5 rounded-xl">
+              <i class="pay-click_outline text-blue-100 mr-2"></i>
               <span>飲品優惠，低消100折$30</span>
             </div>
           </div>
           <div>
             <span class="">內含配料</span>
-            <span class="ml-3 text-sub-500">粉圓、布丁、紅豆</span>
+            <span class="ml-3 text-subyellow-500">粉圓、布丁、紅豆</span>
           </div>
           <hr />
           <div class="mb-3 flex items-center drinkDetail" v-for="(i, index) in detail">
@@ -55,7 +55,7 @@
                 :name="i.nameValue"
                 :value="i.text[index]"
               />
-              <label :for="value" class="block btn-border-light-blue-sup3-sm">{{
+              <label :for="value" class="block btn-border-light-blue-lightblue-sm">{{
                 i.text[index]
               }}</label>
             </div>
@@ -88,11 +88,11 @@
             <div>
               <div class="text-xl font-normal mb-5">HowHow</div>
               <div>
-                <i class="pay-users storeIcon text-sub-500 mr-2"></i>
+                <i class="pay-users storeIcon text-subyellow-500 mr-2"></i>
                 <span>1,385 關注</span>
               </div>
               <div>
-                <i class="pay-drink storeIcon text-sub-500 mr-2"></i>
+                <i class="pay-drink storeIcon text-subyellow-500 mr-2"></i>
                 <span>已上架 134 種配方</span>
               </div>
               <div class="flex mt-3">
@@ -120,7 +120,7 @@
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center">
               <h3 class="mb-0">評價</h3>
-              <div class="ratingStar flex items-center text-sub-500 ml-5">
+              <div class="ratingStar flex items-center text-subyellow-500 ml-5">
                 <div class="text-xl mr-2">
                   <i class="pay-start"></i>
                   <span class="font-normal">4.5</span>
@@ -138,7 +138,7 @@
                 />
                 <label
                   :for="comment.value[index]"
-                  class="btn-border-light-blue-sup3-sm inline-block"
+                  class="btn-border-light-blue-lightblue-sm inline-block"
                 >
                   <i class="pay-start mr-2"></i>{{ star }}
                 </label>
@@ -146,20 +146,23 @@
             </div>
           </div>
           <ul class="comment pl-0 list-none">
-            <li class="flex border rounded-3xl p-5 border-sup2-500 mb-5" v-for="(c, index) in 5">
+            <li
+              class="flex border rounded-3xl p-5 border-lightblue-high mb-5"
+              v-for="(c, index) in 5"
+            >
               <div class="userImg rounded-full overflow-hidden flex-shrink-0 mr-3">
                 <img src="../../assets/images/how.jpg" alt="" />
               </div>
               <div>
                 <div class="username font-normal">Howhow</div>
-                <div class="userRating text-sub-500"><i class="pay-start mr-2"></i>3</div>
-                <div class="commentText text-sup1-900">
+                <div class="userRating text-subyellow-500"><i class="pay-start mr-2"></i>3</div>
+                <div class="commentText text-blue-900">
                   <p>
                     特製的紅茶搭配契作的柳營鮮乳，口感滑順、奶香醇厚。
                     可選擇搭配紅茶：伯爵紅茶、台灣靛紅。特製的台灣純綠搭配契作的柳營鮮乳，口感滑順、奶香醇厚。
                   </p>
                 </div>
-                <small class="text-sup3-500">2020-07-18 17:59</small>
+                <small class="text-lightblue-500">2020-07-18 17:59</small>
               </div>
             </li>
           </ul>
@@ -278,7 +281,7 @@
     border-radius: 2rem;
     margin-bottom: 2rem;
     overflow: hidden;
-    background-color: var(--color-sup3-linght-bg);
+    background-color: var(--color-lightblue-light-bg);
   }
   // #secondary {
   // }
@@ -295,7 +298,7 @@
     li {
       margin-right: 1rem;
       padding-right: 1rem;
-      border-right: 1px solid var(--color-sup2);
+      border-right: 1px solid var(--color-lightblue-high);
     }
     li:last-child {
       border: none;
@@ -358,6 +361,6 @@
     }
   }
   .splide--nav > .splide__track > .splide__list > .splide__slide.is-active {
-    border-color: var(--color-sub);
+    border-color: var(--color-subyellow);
   }
 </style>
