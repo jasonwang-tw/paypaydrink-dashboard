@@ -1,173 +1,173 @@
 <template>
   <div id="drinkPage">
-    <div class="customContainer mx-auto my-20">
-      <div class="grid grid-cols-2 gap-10">
-        <div>
-          <splide :options="primaryOptions" ref="primary" id="primary">
-            <splide-slide v-for="(item, index) in drinkTop" :key="index">
-              <div class="imgMain w-full h-full">
-                <img :src="item.imgSrc" alt="" />
-              </div>
-            </splide-slide>
-          </splide>
-          <splide :options="secondaryOptions" ref="secondary" id="secondary">
-            <splide-slide
-              v-for="(item, index) in drinkTop"
-              :key="index"
-              class="imgContent overflow-hidden rounded-3xl"
-            >
-              <div class="w-full h-full rounded-3xl bg-lightblue-bg">
-                <img :src="item.imgSrc" alt="" />
-              </div>
-            </splide-slide>
-          </splide>
-        </div>
-        <div class="text-main-500 pt-10">
-          <h1>東方不敗</h1>
-          <div class="text-blue-900 mb-8">
-            <span class="">配方編號</span>
-            <span class="ml-3">3345678</span>
-          </div>
-          <ul class="drinkInfo pl-0 list-none flex text-subyellow-500 text-lg font-normal">
-            <li><i class="pay-start"></i> {{ info.rating }}</li>
-            <li>{{ info.people }} 人評價</li>
-            <li>已出售 {{ info.buy }}</li>
-          </ul>
-          <div class="flex items-center my-3">
-            <div class="text-2xl mr-10 font-normal text-subyellow-500">$60</div>
-            <div class="flex items-center text-blue-900 bg-lightblue-bg px-5 py-2.5 rounded-xl">
-              <i class="pay-click_outline text-blue-100 mr-2"></i>
-              <span>飲品優惠，低消100折$30</span>
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
+      <div class="col-span-1">
+        <splide :options="primaryOptions" ref="primary" id="primary">
+          <splide-slide v-for="(item, index) in drinkTop" :key="index">
+            <div class="w-full h-full imgMain">
+              <img :src="item.imgSrc" alt="" />
             </div>
+          </splide-slide>
+        </splide>
+        <splide :options="secondaryOptions" ref="secondary" id="secondary">
+          <splide-slide
+            v-for="(item, index) in drinkTop"
+            :key="index"
+            class="overflow-hidden imgContent rounded-3xl"
+          >
+            <div class="w-full h-full rounded-3xl bg-lightblue-bg">
+              <img :src="item.imgSrc" alt="" />
+            </div>
+          </splide-slide>
+        </splide>
+      </div>
+      <div class="pt-10 text-main-500">
+        <h1>東方不敗</h1>
+        <div class="mb-8 text-blue-900">
+          <span class="">配方編號</span>
+          <span class="ml-3">3345678</span>
+        </div>
+        <ul class="flex pl-0 text-lg font-normal list-none drinkInfo text-subyellow-500">
+          <li><i class="pay-start"></i> {{ info.rating }}</li>
+          <li>{{ info.people }} 人評價</li>
+          <li>已出售 {{ info.buy }}</li>
+        </ul>
+        <div class="flex items-center my-3">
+          <div class="mr-10 text-2xl font-normal text-subyellow-500">$60</div>
+          <div class="flex items-center text-blue-900 bg-lightblue-bg px-5 py-2.5 rounded-xl">
+            <i class="mr-2 text-blue-100 pay-click_outline"></i>
+            <span>飲品優惠，低消100折$30</span>
+          </div>
+        </div>
+        <div>
+          <span class="">內含配料</span>
+          <span class="ml-3 text-subyellow-500">粉圓、布丁、紅豆</span>
+        </div>
+        <hr />
+        <div class="flex items-center mb-3 drinkDetail" v-for="(i, index) in detail">
+          <span class="mr-3">{{ i.name }}</span>
+          <div class="mr-3" v-for="(value, index) in i.value">
+            <input
+              :id="value"
+              class="hidden drinkbtn"
+              type="radio"
+              :name="i.nameValue"
+              :value="i.text[index]"
+            />
+            <label :for="value" class="block btn-border-light-blue-lightblue-sm">{{
+              i.text[index]
+            }}</label>
+          </div>
+        </div>
+        <hr />
+        <div class="flex items-center justify-between">
+          <div class="flex items-center cursor-pointer">
+            <i class="mr-2 pay-love_outline"></i>
+            <div>收藏</div>
+          </div>
+          <div class="flex items-center">
+            <div>數量</div>
+            <div class="mx-5">
+              <select name="" id="" class="buySelect">
+                <option :value="index" v-for="(n, index) in 99">{{ index + 1 }}</option>
+              </select>
+            </div>
+            <div class="btn-dark-blue">加入購物車</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-20" />
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-12">
+      <div class="col-span-1 md:col-span-4">
+        <div class="flex masterStore text-main-500">
+          <div class="flex-shrink-0 mr-5 overflow-hidden rounded-full userImg">
+            <img src="../../assets/images/how.jpg" alt="" />
           </div>
           <div>
-            <span class="">內含配料</span>
-            <span class="ml-3 text-subyellow-500">粉圓、布丁、紅豆</span>
-          </div>
-          <hr />
-          <div class="mb-3 flex items-center drinkDetail" v-for="(i, index) in detail">
-            <span class="mr-3">{{ i.name }}</span>
-            <div class="mr-3" v-for="(value, index) in i.value">
-              <input
-                :id="value"
-                class="hidden drinkbtn"
-                type="radio"
-                :name="i.nameValue"
-                :value="i.text[index]"
-              />
-              <label :for="value" class="block btn-border-light-blue-lightblue-sm">{{
-                i.text[index]
-              }}</label>
+            <div class="mb-5 text-xl font-normal">HowHow</div>
+            <div>
+              <i class="mr-2 pay-users storeIcon text-subyellow-500"></i>
+              <span>1,385 關注</span>
             </div>
-          </div>
-          <hr />
-          <div class="flex justify-between items-center">
-            <div class="flex items-center cursor-pointer">
-              <i class="pay-love_outline mr-2"></i>
-              <div>收藏</div>
+            <div>
+              <i class="mr-2 pay-drink storeIcon text-subyellow-500"></i>
+              <span>已上架 134 種配方</span>
             </div>
-            <div class="flex items-center">
-              <div>數量</div>
-              <div class="mx-5">
-                <select name="" id="" class="buySelect">
-                  <option :value="index" v-for="(n, index) in 99">{{ index + 1 }}</option>
-                </select>
+            <div class="flex mt-3">
+              <div
+                class="mr-3 text-sm text-red-400 duration-200 border border-red-400 cursor-pointer btn-sm hover:border-red-700 hover:text-red-700"
+              >
+                關注
               </div>
-              <div class="btn-dark-blue">加入購物車</div>
+              <router-link to="/drinkShop" class="text-sm btn-border-light-blue-sm"
+                >查看全部配方</router-link
+              >
             </div>
           </div>
         </div>
       </div>
-      <hr class="my-20" />
-      <div class="grid grid-cols-12 gap-10">
-        <div class="col-span-4">
-          <div class="masterStore flex text-main-500">
-            <div class="userImg rounded-full overflow-hidden flex-shrink-0 mr-5">
+      <div class="col-span-1 md:col-span-8 text-main-500">
+        <h3>飲品介紹</h3>
+        <div class="drinkContent">
+          <p>
+            特製的紅茶搭配契作的柳營鮮乳，口感滑順、奶香醇厚。
+            可選擇搭配紅茶：伯爵紅茶、台灣靛紅。特製的台灣純綠搭配契作的柳營鮮乳，口感滑順、奶香醇厚。
+          </p>
+        </div>
+        <hr class="my-10" />
+        <div class="items-center justify-between mb-4 md:flex">
+          <div class="flex items-center">
+            <h3 class="mb-0">評價</h3>
+            <div class="flex items-center ml-5 ratingStar text-subyellow-500">
+              <div class="mr-2 text-xl">
+                <i class="pay-start"></i>
+                <span class="font-normal">4.5</span>
+              </div>
+              <span>/ 5</span>
+            </div>
+          </div>
+          <div
+            class="flex items-center mt-3 overflow-x-scroll md:mt-0 ratingfilter md:overflow-x-auto"
+          >
+            <div v-for="(star, index) in comment.text" :key="index" class="flex-shrink-0">
+              <input
+                type="radio"
+                name="comment"
+                :id="comment.value[index]"
+                class="hidden ratingBtn"
+              />
+              <label
+                :for="comment.value[index]"
+                class="inline-block btn-border-light-blue-lightblue-sm"
+              >
+                <i class="mr-2 pay-start"></i>{{ star }}
+              </label>
+            </div>
+          </div>
+        </div>
+        <ul class="pl-0 list-none comment">
+          <li
+            class="flex p-5 mb-5 border rounded-3xl border-lightblue-high"
+            v-for="(c, index) in 5"
+          >
+            <div class="flex-shrink-0 mr-3 overflow-hidden rounded-full userImg">
               <img src="../../assets/images/how.jpg" alt="" />
             </div>
             <div>
-              <div class="text-xl font-normal mb-5">HowHow</div>
-              <div>
-                <i class="pay-users storeIcon text-subyellow-500 mr-2"></i>
-                <span>1,385 關注</span>
+              <div class="font-normal username">Howhow</div>
+              <div class="userRating text-subyellow-500"><i class="mr-2 pay-start"></i>3</div>
+              <div class="text-blue-900 commentText">
+                <p>
+                  特製的紅茶搭配契作的柳營鮮乳，口感滑順、奶香醇厚。
+                  可選擇搭配紅茶：伯爵紅茶、台灣靛紅。特製的台灣純綠搭配契作的柳營鮮乳，口感滑順、奶香醇厚。
+                </p>
               </div>
-              <div>
-                <i class="pay-drink storeIcon text-subyellow-500 mr-2"></i>
-                <span>已上架 134 種配方</span>
-              </div>
-              <div class="flex mt-3">
-                <div
-                  class="btn-sm border border-red-400 text-red-400 mr-3 cursor-pointer hover:border-red-700 hover:text-red-700 duration-200"
-                >
-                  關注
-                </div>
-                <router-link to="/drinkShop" class="btn-border-light-blue-sm"
-                  >查看全部配方</router-link
-                >
-              </div>
+              <small class="text-lightblue-500">2020-07-18 17:59</small>
             </div>
-          </div>
-        </div>
-        <div class="col-span-8 text-main-500">
-          <h3>飲品介紹</h3>
-          <div class="drinkContent">
-            <p>
-              特製的紅茶搭配契作的柳營鮮乳，口感滑順、奶香醇厚。
-              可選擇搭配紅茶：伯爵紅茶、台灣靛紅。特製的台灣純綠搭配契作的柳營鮮乳，口感滑順、奶香醇厚。
-            </p>
-          </div>
-          <hr class="my-10" />
-          <div class="flex items-center justify-between mb-4">
-            <div class="flex items-center">
-              <h3 class="mb-0">評價</h3>
-              <div class="ratingStar flex items-center text-subyellow-500 ml-5">
-                <div class="text-xl mr-2">
-                  <i class="pay-start"></i>
-                  <span class="font-normal">4.5</span>
-                </div>
-                <span>/ 5</span>
-              </div>
-            </div>
-            <div class="ratingfilter flex items-center">
-              <div v-for="(star, index) in comment.text" :key="index">
-                <input
-                  type="radio"
-                  name="comment"
-                  :id="comment.value[index]"
-                  class="hidden ratingBtn"
-                />
-                <label
-                  :for="comment.value[index]"
-                  class="btn-border-light-blue-lightblue-sm inline-block"
-                >
-                  <i class="pay-start mr-2"></i>{{ star }}
-                </label>
-              </div>
-            </div>
-          </div>
-          <ul class="comment pl-0 list-none">
-            <li
-              class="flex border rounded-3xl p-5 border-lightblue-high mb-5"
-              v-for="(c, index) in 5"
-            >
-              <div class="userImg rounded-full overflow-hidden flex-shrink-0 mr-3">
-                <img src="../../assets/images/how.jpg" alt="" />
-              </div>
-              <div>
-                <div class="username font-normal">Howhow</div>
-                <div class="userRating text-subyellow-500"><i class="pay-start mr-2"></i>3</div>
-                <div class="commentText text-blue-900">
-                  <p>
-                    特製的紅茶搭配契作的柳營鮮乳，口感滑順、奶香醇厚。
-                    可選擇搭配紅茶：伯爵紅茶、台灣靛紅。特製的台灣純綠搭配契作的柳營鮮乳，口感滑順、奶香醇厚。
-                  </p>
-                </div>
-                <small class="text-lightblue-500">2020-07-18 17:59</small>
-              </div>
-            </li>
-          </ul>
-          <pageNav />
-        </div>
+          </li>
+        </ul>
+        <pageNav />
       </div>
     </div>
   </div>

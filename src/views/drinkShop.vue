@@ -3,17 +3,17 @@
     <topmenu />
     <div class="shopBg bg-lightblue-bg h-60"></div>
     <div class="container mx-auto mb-20 -mt-16">
-      <div class="customContainer mx-auto text-center">
-        <div class="userImg rounded-full overflow-hidden mx-auto flex-shrink-0">
+      <div class="mx-auto text-center customContainer">
+        <div class="flex-shrink-0 mx-auto overflow-hidden rounded-full userImg">
           <img src="../../src/assets/images/how.jpg" alt="" />
         </div>
         <div class="flex-grow mt-3">
           <h4 class="mb-0">HowHow</h4>
           <div class="flex items-center justify-center mt-3">
-            <ul class="masterInfo flex pl-0 list-none">
-              <li>
+            <ul class="flex pl-0 list-none masterInfo">
+              <!-- <li>
                 <span><i class="pay-start"></i></span>4.5
-              </li>
+              </li> -->
               <li><span>關注</span>3,547</li>
               <li><span>配方</span>47</li>
               <li><span>售出飲品</span>4,998杯</li>
@@ -22,7 +22,7 @@
           </div>
         </div>
       </div>
-      <div class="customContainer mx-auto px-10 mt-5 mb-10">
+      <div class="px-10 mx-auto mt-5 mb-10 customContainer">
         <h5>關於飲料鋪</h5>
         <hr />
         <div>

@@ -1,47 +1,52 @@
 <template>
-  <div class="header py-3 px-5 border-b border-lightblue-high top-0 sticky z-20 bg-white">
-    <div class="container m-auto flex justify-between">
-      <div class="nav-left flex items-center w-full">
-        <div class="logo mr-5">
+  <div class="sticky top-0 z-20 px-5 py-3 bg-white border-b header border-lightblue-high">
+    <div class="container flex justify-between m-auto">
+      <div class="flex items-center w-full nav-left">
+        <div class="mr-5 logo">
           <router-link to="/">
             <img src="../assets/images/logo.svg" alt="" />
           </router-link>
         </div>
-        <div class="searchBar flex items-center">
+        <div class="flex items-center searchBar">
           <i
-            class="pay-search text-xl mr-5 text-main-100"
+            class="mr-5 text-xl pay-search text-main-100"
             @click="searchBarSatus = !searchBarSatus"
           ></i>
           <input
-            class="absolute top-full left-0 -mt-5 invisible opacity-0 duration-200 md:visible md:opacity-100 md:relative md:mt-0"
+            class="absolute left-0 invisible -mt-5 duration-200 opacity-0 top-full md:visible md:opacity-100 md:relative md:mt-0"
             :class="{ searchBarShow: searchBarSatus }"
             type="text"
             placeholder="今天想喝什麼呢?"
           />
         </div>
       </div>
-      <div class="nav-right flex items-center w-full justify-end">
+      <div class="flex items-center justify-end w-full nav-right">
         <!-- miniCart -->
         <div
-          class="nav-right-items shopCart px-5"
+          class="px-5 nav-right-items"
           @mouseenter="miniCartHidden = false"
           @mouseleave="miniCartHidden = true"
         >
-          <i class="pay-cart text-xl text-main-100"></i>
+          <div
+            class="shopCart"
+            @touchstart=";(miniCartHidden = !miniCartHidden), (miniNoticeHidden = true)"
+          >
+            <i class="text-xl pay-cart text-main-100"></i>
+          </div>
           <!-- miniCartList -->
           <div
-            class="shopCartList w-80 fixed bg-white border border-lightblue-high p-5 rounded-3xl duration-200 left-1/2 top-1/2 transform  -translate-y-1/2 -translate-x-1/2 xl:mt-2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
+            class="fixed p-5 duration-200 transform -translate-x-1/2 -translate-y-1/2 bg-white border shopCartList w-80 border-lightblue-high rounded-3xl left-1/2 top-1/2 xl:mt-2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
             :class="{ listHidden: miniCartHidden }"
           >
-            <ul class="list-none pl-0 text-main-500">
-              <li v-for="i in 4" class="">
+            <ul class="pl-0 list-none text-main-500">
+              <li v-for="i in 3" class="">
                 <router-link to="/" class="flex mb-5 no-underline">
-                  <div class="productImg bg-white rounded-xl overflow-hidden mr-5 flex-shrink-0">
+                  <div class="flex-shrink-0 mr-5 overflow-hidden bg-white productImg rounded-xl">
                     <img src="../../src/assets/images/product.jpg" alt="" />
                   </div>
-                  <div class="productInfo flex justify-between">
+                  <div class="flex justify-between productInfo">
                     <div class="overflow-hidden">
-                      <div class="etc mr-5">
+                      <div class="mr-5 etc">
                         productNameproductNameproductName
                       </div>
                       <span class="text-subyellow-500">$ 99</span>
@@ -51,32 +56,35 @@
                 </router-link>
               </li>
             </ul>
-            <p class="text-lightblue-500 text-center">還有其他 5 個項目</p>
-            <router-link to="/cart" class="btn-dark-blue block text-center mt-5"
+            <p class="text-center text-lightblue-500">還有其他 5 個項目</p>
+            <router-link to="/cart" class="block mt-5 text-center btn-dark-blue"
               >查看購物車</router-link
             >
           </div>
         </div>
         <!-- notice -->
         <div
-          class="nav-right-items notice border-l border-r border-lightblue-high px-5"
+          class="px-5 border-l border-r nav-right-items notice border-lightblue-high"
           @mouseenter="miniNoticeHidden = false"
           @mouseleave="miniNoticeHidden = true"
         >
-          <i class="pay-notice text-xl text-main-100"></i>
+          <i
+            class="text-xl pay-notice text-main-100"
+            @touchstart=";(miniNoticeHidden = !miniNoticeHidden), (miniCartHidden = true)"
+          ></i>
           <!-- noticeList -->
           <div
-            class="noticeList w-80 fixed bg-white border border-lightblue-high p-5 rounded-3xl duration-200 left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 xl:mt-2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
+            class="fixed p-5 duration-200 transform -translate-x-1/2 -translate-y-1/2 bg-white border noticeList w-80 border-lightblue-high rounded-3xl left-1/2 top-1/2 xl:mt-2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
             :class="{ listHidden: miniNoticeHidden }"
           >
-            <ul class="list-none pl-0 text-main-500">
-              <li v-for="i in 4" class="">
+            <ul class="pl-0 list-none text-main-500">
+              <li v-for="i in 3" class="">
                 <router-link to="/" class="flex mb-5 no-underline">
                   <div class="msgInfo">
                     <div class="etc">
                       付款已確認
                     </div>
-                    <div class="etc text-blue-900">
+                    <div class="text-blue-900 etc">
                       訂單<span class="text-subyellow-500">200718NQDUVMMW</span
                       >的付款已確認，店鋪備料中，請依照訂單
                     </div>
@@ -85,60 +93,60 @@
                 </router-link>
               </li>
             </ul>
-            <p class="text-lightblue-500 text-center">還有其他 5 個項目</p>
-            <router-link to="/" class="btn-dark-blue block text-center mt-5"
+            <p class="text-center text-lightblue-500">還有其他 5 個項目</p>
+            <router-link to="/" class="block mt-5 text-center btn-dark-blue"
               >查看全部通知</router-link
             >
           </div>
         </div>
-        <div class="nav-right-items menuBtn cursor-pointer px-5" @click="menuhBtn">
+        <div class="px-5 cursor-pointer nav-right-items menuBtn" @click="menuhBtn">
           <i class="pay-menu text-main-100"></i>
         </div>
       </div>
       <!-- mask -->
       <div
-        class="fixed top-0 left-0 w-full h-full bg-gray-900 opacity-50 duration-200"
+        class="fixed top-0 left-0 w-full h-full duration-200 bg-gray-900 opacity-50"
         :class="{ mask: maskOff }"
         @click="menuhBtn"
       ></div>
       <!-- sidebarNav -->
       <div
-        class="sidebarNav w-60 -right-60 h-full fixed bg-white shadow-lg top-0 duration-200 flex lg:w-80 lg:-right-80"
+        class="fixed top-0 flex h-full duration-200 bg-white shadow-lg sidebarNav w-60 -right-60 lg:w-80 lg:-right-80"
         :class="{ mobileNav: mobileStatus }"
       >
-        <div class="flex flex-wrap content-between pt-10 px-10 overflow-y-auto">
+        <div class="flex flex-wrap content-between px-10 pt-10 overflow-y-auto">
           <div class="sidebarNavTop">
-            <router-link to="/account/profile" class="account flex items-center no-underline">
-              <div class="userImg overflow-hidden rounded-full bg-white mr-5">
+            <router-link to="/account/profile" class="flex items-center no-underline account">
+              <div class="mr-5 overflow-hidden bg-white rounded-full userImg">
                 <img src="../../src/assets/images/how.jpg" alt="" />
               </div>
               <div>
-                <div class="userName text-main-500 -mb-1">howhow</div>
+                <div class="-mb-1 userName text-main-500">howhow</div>
                 <small class="text-subyellow-500">帳戶資訊</small>
               </div>
             </router-link>
-            <div class="payCoin mt-5 border-b pb-5">
+            <div class="pb-5 mt-5 border-b payCoin">
               <small>PayPayPoint</small><br />
-              <span class="text-subyellow-500 font-bold">999,999</span>
+              <span class="font-bold text-subyellow-500">999,999</span>
             </div>
-            <ul class="list-none pl-0 mt-5">
-              <li v-for="(item, index) in mainPage" class="text-main-500 mb-5 hover:text-blue-100">
+            <ul class="pl-0 mt-5 list-none">
+              <li v-for="(item, index) in mainPage" class="mb-5 text-main-500 hover:text-blue-100">
                 <router-link :to="item.link" class="no-underline">{{ item.name }}</router-link>
               </li>
             </ul>
           </div>
-          <div class="sidebarNavBottom text-main-500 text-center">
-            <div class="text-xl font-medium mb-2 mt-10 xl:text-2xl xl:mt-0">
+          <div class="text-center sidebarNavBottom text-main-500">
+            <div class="mt-10 mb-2 text-xl font-medium xl:text-2xl xl:mt-0">
               立即加入 <span class="text-subyellow-500">配配飲</span>
             </div>
-            <span class="mb-5 block">客製屬於您的飲品</span>
+            <span class="block mb-5">客製屬於您的飲品</span>
             <img
-              class="my-auto inline-block mb-10 w-32"
+              class="inline-block w-32 my-auto mb-10"
               src="../../src/assets/images/M.png"
               alt=""
             />
             <img
-              class="my-auto inline-block w-40"
+              class="inline-block w-40 my-auto"
               src="../../src/assets/images/downhand.svg"
               alt=""
             />
@@ -205,7 +213,7 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      transform: translate(7px, 5px);
+      transform: translate(-13px, 5px);
       background-color: var(--color-subyellow);
     }
   }

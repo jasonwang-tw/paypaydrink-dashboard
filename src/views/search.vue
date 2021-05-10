@@ -1,8 +1,8 @@
 <template>
   <div id="search" class="text-main-500">
     <topmenu />
-    <div class="container mx-auto my-20">
-      <h2 class="mb-10">搜尋 "<span>紅茶</span>"</h2>
+    <div class="container px-5 mx-auto mt-10 mb-20 md:my-20 md:px-0">
+      <h2 class="mb-10 text-2xl md:text-3xl">搜尋 "<span>紅茶</span>"</h2>
       <productGrid />
       <pageNav />
     </div>

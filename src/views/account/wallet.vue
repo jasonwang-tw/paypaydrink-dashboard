@@ -51,7 +51,8 @@
           </div>
         </div>
         <div class="col-span-1 mb-3 md:col-span-4">
-          <span class="text-sm text-lightblue-500">訂單編號</span><br />
+          <span class="text-sm text-lightblue-500">{{ item.orderType }}</span
+          ><br />
           <span class="">{{ item.orderNumber }}</span>
         </div>
         <div class="col-span-1 text-lg text-right md:col-span-2 md:text-center text-subyellow-500">
@@ -77,8 +78,7 @@
           </select>
           <input type="text" name="" id="" placeholder="請輸入提款金額" />
           <div class="flex pt-3">
-            <span class="w-32">提款手續費</span
-            ><span class="text-subyellow-500">$15</span>
+            <span class="w-32">提款手續費</span><span class="text-subyellow-500">$15</span>
           </div>
         </div>
       </template>
@@ -110,6 +110,7 @@
           {
             date: '2021-1-30',
             time: '00:20',
+            orderType: '銷售編號',
             orderNumber: 'TW20110130',
             sum: '150',
             status: '配方收入'
@@ -117,6 +118,7 @@
           {
             date: '2021-1-22',
             time: '10:20',
+            orderType: '提款編號',
             orderNumber: 'TW20110130',
             sum: '150',
             status: '提領中'
@@ -124,6 +126,7 @@
           {
             date: '2021-1-25',
             time: '13:30',
+            orderType: '提款編號',
             orderNumber: 'TW20110130',
             sum: '200',
             status: '已提款'

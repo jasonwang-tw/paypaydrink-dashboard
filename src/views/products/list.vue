@@ -1,23 +1,21 @@
 <template>
   <div id="drinkList">
-    <div class="my-20">
-      <div class="flex justify-center mb-10">
-        <div class="contentCard">
-          <h2 class="text-main-500">大家常喝</h2>
-          <drink :indexClass="['']" />
-        </div>
+    <div class="flex justify-center mb-10">
+      <div class="contentCard">
+        <h2 class="text-2xl md:text-3xl text-main-500">大家常喝</h2>
+        <drink :indexClass="['']" />
       </div>
-      <div class="flex justify-center mb-10">
-        <div class="contentCard">
-          <h2 class="text-main-500">珍珠奶茶控必點</h2>
-          <drink :indexClass="['']" />
-        </div>
+    </div>
+    <div class="flex justify-center mb-10">
+      <div class="contentCard">
+        <h2 class="text-2xl md:text-3xl text-main-500">珍珠奶茶控必點</h2>
+        <drink :indexClass="['']" />
       </div>
-      <div class="flex justify-center mb-10">
-        <div class="contentCard">
-          <h2 class="text-main-500">餐後解膩</h2>
-          <drink :indexClass="['']" />
-        </div>
+    </div>
+    <div class="flex justify-center mb-10">
+      <div class="contentCard">
+        <h2 class="text-2xl md:text-3xl text-main-500">餐後解膩</h2>
+        <drink :indexClass="['']" />
       </div>
     </div>
   </div>

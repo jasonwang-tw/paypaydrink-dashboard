@@ -1,14 +1,12 @@
 <template>
   <div id="cartView">
-    <div class="customContainer mx-auto my-20 text-main-500">
-      <h2>購物內容</h2>
-      <buyList />
-      <countResult />
-      <div class="text-right">
-        <router-link to="/cart/checkout" class="btn-dark-blue inline-block w-40 text-center"
-          >下一步</router-link
-        >
-      </div>
+    <h2 class="text-2xl md:text-3xl">購物內容</h2>
+    <buyList />
+    <countResult />
+    <div class="text-right">
+      <router-link to="/cart/checkout" class="inline-block w-40 text-center btn-dark-blue"
+        >下一步</router-link
+      >
     </div>
   </div>
 </template>

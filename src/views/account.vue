@@ -6,7 +6,7 @@
         <profileMenu />
       </div>
       <div class="col-span-1 p-5 md:p-0 mainInfo md:col-span-8">
-        <router-view></router-view>
+        <router-view />
       </div>
     </div>
     <footerBar />
