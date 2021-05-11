@@ -33,7 +33,7 @@
             <span class="flex-shrink-0 block drinkBefore text-lightblue-500">內含配料 </span
             >粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆
           </div>
-          <div class="text-sm">
+          <div class="mt-3 text-sm md:mt-0">
             <span class="drinkBefore text-lightblue-500">規格 </span>冷飲、中杯、三分糖、微冰
           </div>
         </div>
@@ -76,11 +76,9 @@
     width: 80px;
     display: inline-block;
   }
-  // .qty {
-  //   width: 100px;
-  // }
-  // .price {
-  //   text-align: center;
-  //   width: 150px;
-  // }
+  @media (max-width: 768px) {
+    .drinkBefore {
+      width: 100%;
+    }
+  }
 </style>

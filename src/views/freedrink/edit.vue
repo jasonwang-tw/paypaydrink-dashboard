@@ -1,5 +1,5 @@
 <template>
-  <div id="portal">
+  <div id="edit_drink">
     <div class="relative mb-5">
       <router-link
         to="/free_drink/portal"
@@ -43,47 +43,59 @@
     <div class="p-5 bg-lightblue-bg rounded-3xl setArea">
       <h4>選擇茶底</h4>
       <span class="text-red-500">*請至少選擇一種茶底</span>
-      <div class="flex mt-5 mb-3">
-        <div class="titleType">茶底種類</div>
-        <div>食材費</div>
+      <div class="grid grid-cols-12 mt-5 mb-3">
+        <div class="md:col-span-8 col-span-full">茶底種類</div>
+        <div class="hidden col-span-2 text-center md:block">食材費</div>
       </div>
-      <div class="flex items-center justify-between mb-3 selectBar">
-        <div>
-          <select name="" id="">
+      <div class="grid items-center grid-cols-12 mb-8">
+        <div class="grid grid-cols-12 gap-3 mb-3 col-span-full md:col-span-8 md:mb-0">
+          <select name="" id="" class="col-span-6 md:col-span-4">
             <option value="">果汁</option>
           </select>
-          <select name="" id="">
+          <select name="" id="" class="col-span-6 md:col-span-4">
             <option value="">柳橙汁</option>
           </select>
-          <select name="" id="">
+          <select name="" id="" class="col-span-full md:col-span-4">
             <option value="">10ml</option>
           </select>
         </div>
-        <div class="font-normal text-subyellow-500">$60</div>
-        <div class="text-red-500 duration-200 cursor-pointer hover:text-red-700">刪除</div>
+        <div class="col-span-6 text-xl font-normal md:text-center md:col-span-2 text-subyellow-500">
+          $60
+        </div>
+        <div
+          class="col-span-6 text-right text-red-500 duration-200 cursor-pointer md:col-span-2 text-rightmd:col-span-4 md:text-center hover:text-red-700"
+        >
+          刪除
+        </div>
       </div>
       <div class="inline-block btn-border-light-blue">增加茶底</div>
     </div>
     <div class="p-5 bg-lightblue-bg rounded-3xl setArea">
       <h4>添加配料</h4>
-      <div class="flex mt-5 mb-3">
-        <div class="titleType">配料種類</div>
-        <div>食材費</div>
+      <div class="grid grid-cols-12 mt-5 mb-3">
+        <div class="md:col-span-8 col-span-full">配料種類</div>
+        <div class="hidden col-span-2 text-center md:block">食材費</div>
       </div>
-      <div class="flex items-center justify-between mb-3 selectBar">
-        <div>
-          <select name="" id="">
+      <div class="grid items-center grid-cols-12 mb-8">
+        <div class="grid grid-cols-12 gap-3 mb-3 col-span-full md:col-span-8 md:mb-0">
+          <select name="" id="" class="col-span-6 md:col-span-4">
             <option value="">加工食品</option>
           </select>
-          <select name="" id="">
+          <select name="" id="" class="col-span-6 md:col-span-4">
             <option value="">布丁</option>
           </select>
-          <select name="" id="">
+          <select name="" id="" class="col-span-full md:col-span-4">
             <option value="">10ml</option>
           </select>
         </div>
-        <div class="font-normal text-subyellow-500">$60</div>
-        <div class="text-red-500 duration-200 cursor-pointer hover:text-red-700">刪除</div>
+        <div class="col-span-6 text-xl font-normal md:text-center md:col-span-2 text-subyellow-500">
+          $60
+        </div>
+        <div
+          class="col-span-6 text-right text-red-500 duration-200 cursor-pointer md:col-span-2 text-rightmd:col-span-4 md:text-center hover:text-red-700"
+        >
+          刪除
+        </div>
       </div>
       <div class="inline-block btn-border-light-blue">增加配料</div>
     </div>
@@ -101,67 +113,35 @@
         <textarea name="" id="" cols="30" rows="5" placeholder="配方介紹"></textarea>
       </div>
       <div class="mt-5 mb-3">設定販售金額</div>
-      <div class="flex items-center drinkTotal">
-        <div class="flex items-center"><big class="mr-5 font-normal">180</big>+</div>
-        <div><input type="text" name="" id="" placeholder="請輸入您要收取的費用" /></div>
-        <div>
-          <span class="flex items-center">=<big class="ml-5 font-normal">60</big></span>
+      <div class="grid grid-cols-12 drinkTotal">
+        <div class="flex items-center col-span-3 md:col-span-1">
+          <big class="font-normal">180</big><span class="mx-3">+</span>
+        </div>
+        <div class="col-span-9 md:col-span-3">
+          <input type="text" name="" id="" placeholder="請輸入您要收取的費用" />
+        </div>
+        <div class="flex items-center md:col-span-3">
+          <span class="hidden mx-3 md:inline-block">=</span
+          ><span class="mr-3 md:hidden">Total.</span><big class="font-normal">600</big>
         </div>
       </div>
       <small class="inline-block mt-3 text-red-500">*食材費用加欲收取費用等於平台販售金額</small>
     </div>
     <div class="p-5 bg-lightblue-bg rounded-3xl setArea">
       <h4>客製選項</h4>
-      <div class="flex items-center drinkSet">
-        <div class="mr-5 font-normal">溫度</div>
-        <div v-for="(h, index) in heat" :key="index" class="flex items-center">
-          <input
-            type="checkbox"
-            name="heat"
-            :id="h.value"
-            :value="h.value"
-            v-model="drinkSeting.heat"
-          />
-          <label :for="h.value"></label><span>{{ h.name }}</span>
-        </div>
-      </div>
-      <div class="flex items-center drinkSet">
-        <div class="mr-5 font-normal">容量</div>
-        <div v-for="(c, index) in cup" :key="index" class="flex items-center">
-          <input
-            type="checkbox"
-            name="cup"
-            :id="c.value"
-            :value="c.value"
-            v-model="drinkSeting.cup"
-          />
-          <label :for="c.value"></label><span>{{ c.name }}</span>
-        </div>
-      </div>
-      <div class="flex items-center drinkSet">
-        <div class="mr-5 font-normal">冰塊</div>
-        <div v-for="(i, index) in ice" :key="index" class="flex items-center">
-          <input
-            type="checkbox"
-            name="cup"
-            :id="i.value"
-            :value="i.value"
-            v-model="drinkSeting.ice"
-          />
-          <label :for="i.value"></label><span>{{ i.name }}</span>
-        </div>
-      </div>
-      <div class="flex items-center drinkSet">
-        <div class="mr-5 font-normal">甜度</div>
-        <div v-for="(s, index) in sugar" :key="index" class="flex items-center">
-          <input
-            type="checkbox"
-            name="cup"
-            :id="s.value"
-            :value="s.value"
-            v-model="drinkSeting.sugar"
-          />
-          <label :for="s.value"></label><span>{{ s.name }}</span>
+      <div class="flex mb-3 drinkSet" v-for="(i, index) in drinkset" :key="index">
+        <div class="flex-shrink-0 mr-5 font-normal">{{ i.title }}</div>
+        <div class="flex flex-wrap">
+          <div v-for="(h, index) in i.selsct" :key="index" class="flex items-center">
+            <input
+              type="checkbox"
+              name="heat"
+              :id="h.value"
+              :value="h.value"
+              v-model="i.drinkSeting"
+            />
+            <label :for="h.value"></label><span>{{ h.name }}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -172,76 +152,88 @@
 
 <script>
   export default {
-    name: 'portal',
+    name: 'edit_drink',
     computed: {},
     data() {
       return {
-        heat: [
+        drinkset: [
           {
-            name: '冰',
-            value: 'cool'
+            title: '溫度',
+            selsct: [
+              {
+                name: '冰',
+                value: 'cool'
+              },
+              {
+                name: '溫',
+                value: 'warm'
+              },
+              {
+                name: '熱',
+                value: 'hot'
+              }
+            ],
+            drinkSeting: []
           },
           {
-            name: '溫',
-            value: 'warm'
+            title: '容量',
+            selsct: [
+              {
+                name: '大杯',
+                value: 'large'
+              },
+              {
+                name: '中杯',
+                value: 'normal'
+              }
+            ],
+            drinkSeting: []
           },
           {
-            name: '熱',
-            value: 'hot'
+            title: '冰塊',
+            selsct: [
+              {
+                name: '去冰',
+                value: 'ice_no'
+              },
+              {
+                name: '微冰',
+                value: 'ice3'
+              },
+              {
+                name: '少冰',
+                value: 'ice5'
+              },
+              {
+                name: '正常',
+                value: 'ice10'
+              }
+            ],
+            drinkSeting: []
+          },
+          {
+            title: '甜度',
+            selsct: [
+              {
+                name: '無糖',
+                value: 'sugar_no'
+              },
+              {
+                name: '微糖',
+                value: 'sugar3'
+              },
+              {
+                name: '半糖',
+                value: 'sugar5'
+              },
+              {
+                name: '正常',
+                value: 'sugar10'
+              }
+            ],
+            drinkSeting: []
           }
-        ],
-        cup: [
-          {
-            name: '大杯',
-            value: 'large'
-          },
-          {
-            name: '中杯',
-            value: 'normal'
-          }
-        ],
-        ice: [
-          {
-            name: '去冰',
-            value: 'ice_no'
-          },
-          {
-            name: '微冰',
-            value: 'ice3'
-          },
-          {
-            name: '少冰',
-            value: 'ice5'
-          },
-          {
-            name: '正常',
-            value: 'ice10'
-          }
-        ],
-        sugar: [
-          {
-            name: '無糖',
-            value: 'sugar_no'
-          },
-          {
-            name: '微糖',
-            value: 'sugar3'
-          },
-          {
-            name: '半糖',
-            value: 'sugar5'
-          },
-          {
-            name: '正常',
-            value: 'sugar10'
-          }
-        ],
-        drinkSeting: {
-          heat: [],
-          cup: [],
-          ice: [],
-          sugar: []
-        }
+        ]
       }
     }
   }
@@ -281,23 +273,22 @@
   .setArea {
     margin-bottom: 2rem;
   }
-  .selectBar {
-    select {
-      flex-shrink: 0;
-      margin-right: 1rem;
-    }
-    select:first-child {
-      width: 200px;
-    }
-    select:nth-child(2) {
-      width: 200px;
-    }
-    select:nth-child(3) {
-      width: 200px;
-    }
-  }
+  // .selectBar {
+  //   select {
+  //     flex-shrink: 0;
+  //     margin-right: 1rem;
+  //   }
+  //   select:first-child {
+  //     width: 200px;
+  //   }
+  //   select:nth-child(2) {
+  //     width: 200px;
+  //   }
+  //   select:nth-child(3) {
+  //     width: 200px;
+  //   }
+  // }
   .drinkSet {
-    margin-bottom: 1rem;
     input {
       display: none;
       &:checked + label {
@@ -321,11 +312,16 @@
   }
   .drinkTotal {
     > div {
-      margin-right: 2rem;
+      // margin-right: 2rem;
     }
   }
-  .titleType {
-    width: 600px;
-    margin-right: 9rem;
+  // .titleType {
+  //   width: 600px;
+  //   margin-right: 9rem;
+  // }
+  @media (max-width: 768px) {
+    .drinkProgress {
+      width: auto;
+    }
   }
 </style>

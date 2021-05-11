@@ -2,7 +2,7 @@
   <div id="portal" class="text-main-500">
     <div class="items-center justify-between md:flex">
       <h2 class="text-2xl md:text-3xl">飲料鋪</h2>
-      <div class="flex overflow-x-scroll">
+      <div class="flex overflow-x-scroll md:overflow-auto">
         <div class="flex-shrink-0 mr-3 text-sm btn-border-light-blue" @click="kiosk = flase">
           讀取自配方
         </div>

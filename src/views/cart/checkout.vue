@@ -3,8 +3,8 @@
     <buyList />
     <div class="p-5 my-10 border rounded-3xl border-lightblue-placeholder">
       <div class="items-center md:flex">
-        <h3 class="mb-0 text-xl md:text-2xl">領取方式</h3>
-        <div class="flex ml-5">
+        <h3 class="text-xl md:mb-0 md:text-2xl">領取方式</h3>
+        <div class="flex md:ml-5">
           <div>
             <input type="radio" class="hidden" name="method" id="receive" />
             <label for="receive" class="btn-border-light-blue-sm">直接領取</label>
@@ -21,28 +21,28 @@
       </div>
       <hr />
       <div class="flex items-center">
-        <div class="mr-5 text-lg font-normal">選擇領取店鋪</div>
+        <div class="mr-5 text-lg font-semibold">選擇領取店鋪</div>
         <div class="btn-border-light-blue-sm">選擇店鋪</div>
       </div>
-      <div class="flex items-center justify-between p-5 mt-5 bg-lightblue-bg rounded-3xl">
-        <div>
+      <div class="items-center justify-between pt-3 mt-5 border-t md:border-none border-lightblue-high md:p-5 md:flex md:bg-lightblue-bg md:rounded-3xl">
+        <div class="mb-5 md:mb-0">
           <div class="mb-2 text-lg font-normal">配配飲一號店</div>
-          <ul class="flex pl-0 list-none shopPosition">
-            <li>
-              <i class="pay-pin text-subyellow-500"></i>
+          <ul class="grid grid-cols-12 pl-0 list-none shopPosition">
+            <li class="col-span-12 md:col-span-6">
+              <i class=" pay-pin text-subyellow-500"></i>
               台北市大安區仁愛路四段345巷6弄78號
             </li>
-            <li><i class="pay-tel text-subyellow-500"></i>02-2456-7891</li>
-            <li><i class="pay-clock text-subyellow-500"></i>24H 全年無休</li>
+            <li class="col-span-6 md:col-span-3"><i class="pay-tel text-subyellow-500"></i>02-2456-7891</li>
+            <li class="col-span-6 md:col-span-3"><i class=" pay-clock text-subyellow-500"></i>24H 全年無休</li>
           </ul>
         </div>
-        <a href="/" target="_blank" class="btn-border-light-blue-sm">查看位置</a>
+        <a href="/" target="_blank" class="flex-shrink-0 btn-border-light-blue-sm">查看位置</a>
       </div>
     </div>
     <div class="p-5 border rounded-3xl border-lightblue-placeholder">
       <div class="items-center md:flex">
-        <h3 class="mb-0 text-xl md:text-2xl">付款方式</h3>
-        <div class="flex ml-5">
+        <h3 class="text-xl md:mb-0 md:text-2xl">付款方式</h3>
+        <div class="flex md:ml-5">
           <div>
             <input type="radio" class="hidden" name="pay" id="creditCard" />
             <label for="creditCard" class="btn-border-light-blue-sm">信用卡</label>
@@ -55,7 +55,7 @@
       </div>
       <hr />
       <div class="flex">
-        <div class="mr-5 text-lg font-normal">選擇信用卡</div>
+        <div class="mr-5 text-lg font-semibold">選擇信用卡</div>
         <div>
           <div class="mb-5">
             <div><input type="radio" name="card" id="" /><span>**** 4893</span></div>
@@ -65,12 +65,16 @@
         </div>
       </div>
     </div>
-    <div class="flex justify-between">
+    <div class="justify-between md:flex">
       <div>
-        <div class="flex items-center my-10">
-          <div>請輸入折扣碼</div>
-          <div class="mx-5"><input type="text" name="" id="" value="PAYPATDRINK" /></div>
-          <div class="btn-dark-blue">使用</div>
+        <div class="items-center my-10 md:flex">
+          <div class="mb-3">請輸入折扣碼</div>
+          <div class="flex">
+            <div class="flex-grow mr-5 md:mx-5">
+              <input type="text" name="" id="" value="PAYPATDRINK" />
+            </div>
+            <div class="btn-dark-blue">使用</div>
+          </div>
         </div>
       </div>
       <div class="text-right">

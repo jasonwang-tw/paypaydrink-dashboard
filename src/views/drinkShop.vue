@@ -1,5 +1,5 @@
 <template>
-  <div id="portal" class="text-main-500">
+  <div id="drink_shop" class="text-main-500">
     <topmenu />
     <div class="shopBg bg-lightblue-bg h-60"></div>
     <div class="container mx-auto mb-20 -mt-16">
@@ -67,7 +67,7 @@
   import productGrid from '@/components/productGrid.vue'
 
   export default {
-    name: 'portal',
+    name: 'drink_shop',
     components: {
       topmenu,
       footerBar,
