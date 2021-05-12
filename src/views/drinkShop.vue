@@ -25,7 +25,7 @@
                 >4,998杯
               </li>
             </ul>
-            <div class="mt-5 btn-border-remove">關注</div>
+            <div class="md:mt-0 mt-5 md:ml-10 btn-border-remove">關注</div>
           </div>
         </div>
       </div>
