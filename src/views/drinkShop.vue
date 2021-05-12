@@ -9,20 +9,27 @@
         </div>
         <div class="flex-grow mt-3">
           <h4 class="mb-0">HowHow</h4>
-          <div class="flex items-center justify-center mt-3">
-            <ul class="flex pl-0 list-none masterInfo">
+          <div class="items-center justify-center px-5 mt-3 md:flex">
+            <ul class="flex justify-center pl-0 list-none masterInfo">
               <!-- <li>
                 <span><i class="pay-start"></i></span>4.5
               </li> -->
-              <li><span>關注</span>3,547</li>
-              <li><span>配方</span>47</li>
-              <li><span>售出飲品</span>4,998杯</li>
+              <li class="text-center">
+                <span class="block md:mr-3 md:inline-block text-subyellow-500">關注</span>3,547
+              </li>
+              <li class="mx-10 text-center">
+                <span class="block md:mr-3 md:inline-block text-subyellow-500">配方</span>47
+              </li>
+              <li class="text-center">
+                <span class="block md:mr-3 md:inline-block text-subyellow-500">售出飲品</span
+                >4,998杯
+              </li>
             </ul>
-            <div class="btn-border-remove">關注</div>
+            <div class="mt-5 btn-border-remove">關注</div>
           </div>
         </div>
       </div>
-      <div class="px-10 mx-auto mt-5 mb-10 customContainer">
+      <div class="px-5 mx-auto mt-5 mb-10 customContainer">
         <h5>關於飲料鋪</h5>
         <hr />
         <div>
@@ -44,14 +51,13 @@
       </div>
       <div class="flex justify-center">
         <div>
-          <h3>熱銷配方</h3>
+          <h3 class="mb-0">熱銷配方</h3>
           <drink />
         </div>
       </div>
-      <div class="mt-10">
+      <div class="mx-5 mt-10">
         <h3>全部配方</h3>
         <productGrid />
-        <productGrid class="mt-10" />
       </div>
       <pageNav class="pt-5" />
     </div>
@@ -91,16 +97,16 @@
     width: 120px;
     height: 120px;
   }
-  .masterInfo {
-    li {
-      margin-right: 1.5rem;
-      padding-right: 1.5rem;
-      span {
-        color: var(--color-subyellow);
-        margin-right: 0.5rem;
-      }
-    }
-  }
+  // .masterInfo {
+  //   li {
+  //     margin-right: 1.5rem;
+  //     padding-right: 1.5rem;
+  //     span {
+  //       color: var(--color-subyellow);
+  //       margin-right: 0.5rem;
+  //     }
+  //   }
+  // }
   .drinkImg {
     width: 100px;
     height: 100px;

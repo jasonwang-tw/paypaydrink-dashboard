@@ -3,14 +3,15 @@
     <splide :options="options">
       <splide-slide v-for="(item, index) in star" class="mb-20">
         <div class="flex flex-wrap justify-center md:flex-nowrap">
-          <div class="starImg rounded-full overflow-hidden flex-shrink-0 mb-5 md:mr-5 md:mb-0">
+          <div class="flex-shrink-0 mb-5 overflow-hidden rounded-full starImg md:mr-5 md:mb-0">
             <img :src="item.imgSrc" alt="" />
           </div>
           <div class="starInfo md:text-left">
-            <h5 class="starName mb-0">{{ item.name }}</h5>
-            <div class="starSpeak my-5">{{ item.speak }}</div>
-            <a class="starPush btn-border-light-blue inline-block" :href="item.pushLink"
-              >名人推薦</a
+            <h5 class="mb-0 starName">{{ item.name }}</h5>
+            <div class="my-5 starSpeak">{{ item.speak }}</div>
+            
+            <router-link class="inline-block starPush btn-border-light-blue" to="/drinkShop"
+              >名人推薦</router-link
             >
           </div>
         </div>

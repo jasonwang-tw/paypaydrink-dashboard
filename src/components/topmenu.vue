@@ -94,7 +94,7 @@
               </li>
             </ul>
             <p class="text-center text-lightblue-500">還有其他 5 個項目</p>
-            <router-link to="/" class="block mt-5 text-center btn-dark-blue"
+            <router-link to="/account/notice" class="block mt-5 text-center btn-dark-blue"
               >查看全部通知</router-link
             >
           </div>
