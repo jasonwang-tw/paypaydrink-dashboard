@@ -238,7 +238,7 @@
             imgSrc: require('../../assets/images/active1.jpg')
           }
         ],
-        test: true,
+        // test: true,
         detail: [
           {
             name: '溫度',
