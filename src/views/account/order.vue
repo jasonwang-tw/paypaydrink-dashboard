@@ -321,7 +321,11 @@
             <input
               type="radio"
               name="rating"
+<<<<<<< HEAD
               v-model="index = current_rating"
+=======
+              v-model="(index = current_rating)"
+>>>>>>> bf492aa5a2a537b6eb2f579d994b100ee43c0993
               :value="i.value"
               :id="i.value"
               class="hidden rating_input"
