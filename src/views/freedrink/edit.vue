@@ -100,7 +100,16 @@
       <div class="inline-block btn-border-light-blue">增加配料</div>
     </div>
     <div class="p-5 bg-lightblue-bg rounded-3xl setArea">
-      <h4>編輯配方資訊</h4>
+      <h4>配方資訊</h4>
+      <div class="mb-3">
+        <div
+          class="relative flex items-center justify-center w-24 h-24 overflow-hidden bg-white border border-lightblue-high btn"
+        >
+          <i class="text-4xl pay-plus text-lightblue-high"></i>
+          <input type="file" name="" id="" class="absolute left-0 w-full h-full opacity-0" multiple />
+        </div>
+        <div class="mt-3 text-sm text-red-500">每張圖片限制最大200kb，格式為.JPEG, .PNG</div>
+      </div>
       <div class="mb-3">
         <input type="text" name="" id="" placeholder="配方名稱" />
       </div>
@@ -125,7 +134,7 @@
           ><span class="mr-3 md:hidden">Total.</span><big class="font-normal">600</big>
         </div>
       </div>
-      <small class="inline-block mt-3 text-red-500">*食材費用加欲收取費用等於平台販售金額</small>
+      <div class="inline-block mt-3 text-sm text-red-500">*食材費用加欲收取費用等於平台販售金額</div>
     </div>
     <div class="p-5 bg-lightblue-bg rounded-3xl setArea">
       <h4>客製選項</h4>
@@ -145,7 +154,6 @@
         </div>
       </div>
     </div>
-    <div class="inline-block mr-5 text-center btn-remove">取消</div>
     <div class="inline-block text-center btn-dark-blue">儲存配方</div>
   </div>
 </template>

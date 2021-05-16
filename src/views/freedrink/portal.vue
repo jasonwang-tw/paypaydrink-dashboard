@@ -83,30 +83,40 @@
       </div>
     </div>
     <pageNav class="" />
-    <!-- 分隔 -->
+    <!-- 自配方彈窗 -->
     <popup :class="{ popupHidden: kiosk }">
       <template v-slot:title>
         <h4>請輸入邀請碼</h4>
+      </template>
+      <template v-slot:content>
         <div class="p-3 mb-3 bg-lightblue-bg rounded-xl">
           <span class="text-blue-900">輸入邀請碼已便開通點餐機配方功能</span>
         </div>
-      </template>
-      <template v-slot:content>
         <input type="text" name="" id="" placeholder="請輸入邀請碼" />
-        <!-- <div class="mb-10">
-          <div><img src="../../../src/assets/images/qr.png" alt="" class="block mx-auto" /></div>
-          <div class="my-5">
-            <h4 class="orderNumber">
-              訂單編號<span class="ml-5 font-normal text-blue-900">TOREWQ20201206001</span>
-            </h4>
-            <p>請於12小時內至指定店鋪，出示QRCODE掃描領取飲品。<br />祝您用餐愉快</p>
-          </div>
-        </div> -->
       </template>
       <template v-slot:btn>
         <div class="flex justify-center mt-10 functionBtn">
           <div class="mr-3 btn btn-remove" @click="kiosk = true">取消</div>
-          <div class="btn btn-dark-blue">確認</div>
+          <div class="btn btn-dark-blue" @click=";(kiosk = true), (kiosk_QR = false)">確認</div>
+        </div>
+      </template>
+    </popup>
+    <!-- 邀請碼驗證通過 -->
+    <popup :class="{ popupHidden: kiosk_QR }">
+      <template v-slot:title>
+        <h4>開通完成</h4>
+      </template>
+      <template v-slot:content>
+        <div class="mb-5">
+          <div><img src="../../../src/assets/images/qr.png" alt="" class="block mx-auto" /></div>
+          <div class="my-5">
+            <p>請至點餐機台前出示此QRCdoe，<br />供機台掃描開啟自配方功能。</p>
+          </div>
+        </div>
+      </template>
+      <template v-slot:btn>
+        <div class="flex justify-center functionBtn">
+          <div class="btn btn-dark-blue" @click="kiosk_QR = true">確認</div>
         </div>
       </template>
     </popup>
@@ -125,7 +135,8 @@
     },
     data() {
       return {
-        kiosk: true
+        kiosk: true,
+        kiosk_QR: true
       }
     }
   }
