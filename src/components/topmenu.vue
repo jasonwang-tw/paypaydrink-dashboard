@@ -1,5 +1,7 @@
 <template>
-  <div class="sticky top-0 z-20 px-5 py-3 bg-white border-b header border-lightblue-high">
+  <div
+    class="sticky top-0 z-20 px-5 py-3 bg-white border-b header border-lightblue-high text-main-500"
+  >
     <div class="container flex justify-between m-auto">
       <div class="flex items-center w-full nav-left">
         <div class="mr-5 logo">
@@ -38,7 +40,7 @@
             class="fixed p-5 duration-200 transform -translate-x-1/2 -translate-y-1/2 bg-white border shopCartList w-80 border-lightblue-high rounded-3xl left-1/2 top-1/2 xl:mt-2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
             :class="{ listHidden: miniCartHidden }"
           >
-            <ul class="pl-0 list-none text-main-500">
+            <ul class="pl-0 list-none">
               <li v-for="i in 3" class="">
                 <router-link to="/" class="flex mb-5 no-underline">
                   <div class="flex-shrink-0 mr-5 overflow-hidden bg-white productImg rounded-xl">
@@ -77,7 +79,7 @@
             class="fixed p-5 duration-200 transform -translate-x-1/2 -translate-y-1/2 bg-white border noticeList w-80 border-lightblue-high rounded-3xl left-1/2 top-1/2 xl:mt-2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
             :class="{ listHidden: miniNoticeHidden }"
           >
-            <ul class="pl-0 list-none text-main-500">
+            <ul class="pl-0 list-none">
               <li v-for="i in 3" class="">
                 <router-link to="/" class="flex mb-5 no-underline">
                   <div class="msgInfo">
@@ -121,21 +123,28 @@
                 <img src="../../src/assets/images/how.jpg" alt="" />
               </div>
               <div>
-                <div class="-mb-1 userName text-main-500">howhow</div>
-                <small class="text-subyellow-500">帳戶資訊</small>
+                <div class="-mb-1 userName">howhow</div>
+                <span class="text-subyellow-500 text-sm">帳戶資訊</span>
               </div>
             </router-link>
-            <div class="pb-5 mt-5 border-b payCoin">
-              <small>PayPayPoint</small><br />
-              <span class="font-bold text-subyellow-500">999,999</span>
+            <div class="flex items-center py-5 border-b border-lightblue-high">
+              <div
+                class="w-8 h-8 bg-subyellow-100 rounded-full flex items-center justify-center text-white mr-3 font-semibold"
+              >
+                P
+              </div>
+              <div class="payCoin">
+                <span class="text-sm block">PayPoint</span>
+                <span class="font-semibold text-subyellow-100">999,999</span>
+              </div>
             </div>
             <ul class="pl-0 mt-5 list-none">
-              <li v-for="(item, index) in mainPage" class="mb-5 text-main-500 hover:text-blue-100">
+              <li v-for="(item, index) in mainPage" class="mb-5 hover:text-blue-100">
                 <router-link :to="item.link" class="no-underline">{{ item.name }}</router-link>
               </li>
             </ul>
           </div>
-          <div class="text-center sidebarNavBottom text-main-500">
+          <div class="text-center sidebarNavBottom">
             <div class="mt-10 mb-2 text-xl font-medium xl:text-2xl xl:mt-0">
               立即加入 <span class="text-subyellow-500">配配飲</span>
             </div>
