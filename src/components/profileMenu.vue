@@ -1,5 +1,8 @@
 <template>
-  <div id="profileMenu" class="fixed z-10 w-full px-5 md:w-auto md:px-0 md:relative bg-lightblue-bg md:bg-white">
+  <div
+    id="profileMenu"
+    class="fixed z-10 w-full px-5 md:w-auto md:px-0 md:sticky bg-lightblue-bg md:bg-white md:top-20"
+  >
     <ul class="flex pl-0 overflow-x-scroll list-none md:block md:overflow-x-auto">
       <li v-for="(i, key, index) in userMenu" class="flex-shrink-0">
         <router-link
@@ -57,13 +60,13 @@
     .router-link-exact-active {
       color: var(--color-blue-100);
       background-color: var(--color-lightblue-bg);
-      position: relative;
     }
   }
   @media (max-width: 768px) {
     #profileMenu {
       top: 63px;
       .router-link-exact-active {
+        position: relative;
         &:after {
           content: ' ';
           position: absolute;

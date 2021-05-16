@@ -87,7 +87,7 @@
             </div>
           </div>
         </div>
-        <div class="flex pt-4 mt-4 border-t border-lightblue-high">
+        <div class="flex pt-4 mt-4 border-t md:border-none md:mt-0 md:pt-0 border-lightblue-high">
           <div v-if="b.default === false && b.verification === true">
             <div
               class="mr-3 duration-200 cursor-pointer hover:text-blue-500"

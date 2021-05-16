@@ -174,7 +174,6 @@
 <script>
   import topmenu from '@/components/topmenu.vue'
   import footerBar from '@/components/footerBar.vue'
-  import profileMenu from '@/components/profileMenu.vue'
   import pageNav from '@/components/pageNav.vue'
   import shopPosition from '@/components/shopPosition.vue'
   import popup from '@/components/popup.vue'
@@ -185,7 +184,6 @@
     components: {
       topmenu,
       footerBar,
-      profileMenu,
       pageNav,
       popup,
       shopPosition

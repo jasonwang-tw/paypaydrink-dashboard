@@ -2,7 +2,7 @@
   <div id="account" class="text-main-500">
     <topmenu />
     <div class="grid grid-cols-1 mx-auto mb-20 customContainer md:grid-cols-12 md:gap-10 md:my-20">
-      <div class="col-span-1 profileMenu md:col-span-4">
+      <div class="col-span-1 md:col-span-4">
         <profileMenu />
       </div>
       <div class="col-span-1 p-5 md:p-0 mainInfo md:col-span-8">

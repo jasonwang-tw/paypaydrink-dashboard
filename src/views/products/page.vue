@@ -27,13 +27,13 @@
           <span class="">配方編號</span>
           <span class="ml-3">3345678</span>
         </div>
-        <ul class="flex pl-0 text-lg font-normal list-none drinkInfo text-subyellow-500">
+        <ul class="flex pl-0 text-lg list-none drinkInfo text-subyellow-500">
           <li><i class="pay-start"></i> {{ info.rating }}</li>
           <li>{{ info.people }} 人評價</li>
           <li>已出售 {{ info.buy }}</li>
         </ul>
         <div class="flex items-center my-3">
-          <div class="mr-10 text-2xl font-normal text-subyellow-500">$60</div>
+          <div class="mr-10 text-2xl font-semibold text-subyellow-500">$60</div>
           <div class="flex items-center text-blue-900 bg-lightblue-bg px-5 py-2.5 rounded-xl">
             <i class="mr-2 text-blue-100 pay-click_outline"></i>
             <span>飲品優惠，低消100折$30</span>
@@ -46,24 +46,31 @@
         <hr />
         <div class="flex items-center mb-3 drinkDetail" v-for="(i, index) in detail">
           <span class="mr-3">{{ i.name }}</span>
-          <div class="mr-3" v-for="(value, index) in i.value">
+          <div class="mr-3" v-for="(value, v_index) in i.value" :key="v_index">
             <input
               :id="value"
               class="hidden drinkbtn"
               type="radio"
+              v-model="i.current_detail"
               :name="i.nameValue"
-              :value="i.text[index]"
+              :value="value"
             />
             <label :for="value" class="block btn-border-light-blue-lightblue-sm">{{
-              i.text[index]
+              i.text[v_index]
             }}</label>
           </div>
         </div>
         <hr />
         <div class="flex items-center justify-between">
-          <div class="flex items-center cursor-pointer">
-            <i class="mr-2 pay-love_outline"></i>
-            <div>收藏</div>
+          <div class="cursor-pointer" @click="favorites = !favorites">
+            <div v-if="favorites === true" class="flex items-center text-red-500">
+              <i class="mr-2 pay-love"></i>
+              <div>已收藏</div>
+            </div>
+            <div v-if="favorites === false" class="flex items-center">
+              <i class="mr-2 pay-love_outline"></i>
+              <div>收藏</div>
+            </div>
           </div>
           <div class="flex items-center">
             <div>數量</div>
@@ -130,43 +137,45 @@
           <div
             class="flex items-center mt-3 overflow-x-scroll md:mt-0 ratingfilter md:overflow-x-auto"
           >
-            <div v-for="(star, index) in comment.text" :key="index" class="flex-shrink-0">
+            <div v-for="(star, index) in comment" :key="index" class="flex-shrink-0">
               <input
                 type="radio"
                 name="comment"
-                :id="comment.value[index]"
+                v-model="index = current_filter"
+                :value="star.value"
+                :id="star.value"
                 class="hidden ratingBtn"
               />
               <label
-                :for="comment.value[index]"
-                class="inline-block btn-border-light-blue-lightblue-sm"
+                :for="star.value"
+                class="inline-block border cursor-pointer btn-sm border-lightblue-high text-lightblue-500 hover:border-subyellow-500 hover:text-subyellow-500"
               >
-                <i class="mr-2 pay-start"></i>{{ star }}
+                <i class="mr-2 pay-start"></i>{{ star.text }}
               </label>
             </div>
           </div>
         </div>
-        <ul class="pl-0 list-none comment">
-          <li
+        <div class="comment">
+          <div
             class="flex p-5 mb-5 border rounded-3xl border-lightblue-high"
-            v-for="(c, index) in 5"
+            v-for="(cu, index) in filter_comment"
+            :key="index"
           >
             <div class="flex-shrink-0 mr-3 overflow-hidden rounded-full userImg">
-              <img src="../../assets/images/how.jpg" alt="" />
+              <img :src="cu.photo" alt="" />
             </div>
             <div>
-              <div class="font-normal username">Howhow</div>
-              <div class="userRating text-subyellow-500"><i class="mr-2 pay-start"></i>3</div>
-              <div class="text-blue-900 commentText">
-                <p>
-                  特製的紅茶搭配契作的柳營鮮乳，口感滑順、奶香醇厚。
-                  可選擇搭配紅茶：伯爵紅茶、台灣靛紅。特製的台灣純綠搭配契作的柳營鮮乳，口感滑順、奶香醇厚。
-                </p>
+              <div class="font-normal username">{{ cu.name }}</div>
+              <div class="userRating text-subyellow-500">
+                <i class="mr-2 pay-start" v-for="(item, index) in cu.rating_text" :key="index"></i>
               </div>
-              <small class="text-lightblue-500">2020-07-18 17:59</small>
+              <div class="text-blue-900 commentText">
+                <p>{{ cu.text }}</p>
+              </div>
+              <small class="text-lightblue-500">{{ cu.date }}</small>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
         <pageNav />
       </div>
     </div>
@@ -217,10 +226,54 @@
           people: '4',
           buy: '554'
         },
-        comment: {
-          text: ['全部', '1', '2', '3', '4', '5'],
-          value: ['rating_all', 'rating_1', 'rating_2', 'rating_3', 'rating_4', 'rating_5']
-        },
+        favorites: false,
+        comment: [
+          {
+            text: '全部',
+            value: 'rating_all'
+          },
+          {
+            text: 1,
+            value: 'rating_1'
+          },
+          {
+            text: 2,
+            value: 'rating_2'
+          },
+          {
+            text: 3,
+            value: 'rating_3'
+          },
+          {
+            text: 4,
+            value: 'rating_4'
+          },
+          {
+            text: 5,
+            value: 'rating_5'
+          }
+        ],
+        current_filter: 'rating_all',
+        comment_user: [
+          {
+            name: 'Howhow',
+            photo: require('../../assets/images/how.jpg'),
+            text:
+              '特製的紅茶搭配契作的柳營鮮乳，口感滑順、奶香醇厚。 可選擇搭配紅茶：伯爵紅茶、台灣靛紅。特製的台灣純綠搭配契作的柳營鮮乳，口感滑順、奶香醇厚。',
+            rating_text: 1,
+            rating: 'rating_1',
+            date: '2020-07-18 17:59'
+          },
+          {
+            name: 'Howhow',
+            photo: require('../../assets/images/how.jpg'),
+            text:
+              '特製的紅茶搭配契作的柳營鮮乳，口感滑順、奶香醇厚。 可選擇搭配紅茶：伯爵紅茶、台灣靛紅。特製的台灣純綠搭配契作的柳營鮮乳，口感滑順、奶香醇厚。',
+            rating_text: 2,
+            rating: 'rating_2',
+            date: '2020-07-18 17:59'
+          }
+        ],
         drinkTop: [
           {
             imgSrc: require('../../assets/images/tea1.png')
@@ -238,37 +291,47 @@
             imgSrc: require('../../assets/images/active1.jpg')
           }
         ],
-        // test: true,
         detail: [
           {
             name: '溫度',
             nameValue: 'temp',
             text: ['冷飲', '常溫', '熱飲'],
-            value: ['cool', 'warm', 'hot']
+            value: ['cool', 'warm', 'hot'],
+            current_detail: 'cool'
           },
           {
             name: '容量',
             nameValue: 'size',
             text: ['中杯', '大杯'],
-            value: ['normal', 'big']
+            value: ['normal', 'big'],
+            current_detail: 'normal'
           },
           {
             name: '甜度',
             nameValue: 'sugar',
             text: ['無糖', '三分', '半分', '正常'],
-            value: ['zero ', 'third', 'five', 'ten']
+            value: ['zero', 'third', 'five', 'ten'],
+            current_detail: 'zero'
           },
           {
             name: '冰塊',
             nameValue: 'ice',
             text: ['去冰', '微冰', '少冰', '正常'],
-            value: ['no ', 'little', 'half', 'all']
+            value: ['no', 'little', 'half', 'all'],
+            current_detail: 'no'
           }
         ]
       }
     },
-    methods: {
-      isActive: function() {}
+    methods: {},
+    computed: {
+      filter_comment() {
+        if (this.current_filter === 'rating_all') {
+          return this.comment_user
+        } else {
+          return this.comment_user.filter(result => result.rating == this.current_filter)
+        }
+      }
     },
     mounted: function() {
       this.$refs.primary.sync(this.$refs.secondary.splide)
@@ -288,11 +351,15 @@
   .buySelect {
     width: 100px;
   }
-  .drinkbtn:checked + label,
-  .ratingBtn:checked + label {
+  .drinkbtn:checked + label {
     color: white;
     border-color: var(--color-main-500);
     background-color: var(--color-main-500);
+  }
+  .ratingBtn:checked + label {
+    color: white;
+    border-color: var(--color-subyellow);
+    background-color: var(--color-subyellow);
   }
   .drinkInfo {
     li {
@@ -326,13 +393,13 @@
       height: 80px;
     }
   }
-  .ratingfilter {
-    .avtice {
-      color: white;
-      border-color: var(--color-main-500);
-      background-color: var(--color-main-500);
-    }
-  }
+  // .ratingfilter {
+  //   .avtice {
+  //     color: white;
+  //     border-color: var(--color-subyellow);
+  //     background-color: var(--color-subyellow);
+  //   }
+  // }
   .ratingStar {
     letter-spacing: 0.1rem;
   }

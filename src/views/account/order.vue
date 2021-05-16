@@ -195,9 +195,14 @@
                 </div>
                 <div class="w-full">
                   <div class="flex items-center justify-between mb-3">
-                    <h5 class="mb-0 mr-5">{{ i.name }}</h5>
-                    <div class="text-sm btn-border-remove-sm" @click="ratingView = false">
-                      我要評價
+                    <h5 class="mb-0">{{ i.name }}</h5>
+                    <div v-if="i.ratingStatus === true">
+                      <div class="text-sm btn-border-remove-sm" @click="ratingView = false">
+                        我要評價
+                      </div>
+                    </div>
+                    <div v-else>
+                      <div class="text-sm text-red-500">已評價</div>
                     </div>
                   </div>
                   <div class="md:flex">
