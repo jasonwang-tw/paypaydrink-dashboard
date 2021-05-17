@@ -65,7 +65,7 @@
         <h4>刪除收藏</h4>
       </template>
       <template v-slot:content>
-        <p class="mb-10">此操作無法撤消，確定要執行嗎?</p>
+        <p class="mb-5">此操作無法撤消，確定要執行嗎?</p>
       </template>
       <template v-slot:btn>
         <div class="flex justify-center functionBtn">
