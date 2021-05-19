@@ -1,6 +1,6 @@
 <template>
-  <div id="buyList" class="p-5 border rounded-3xl border-lightblue-placeholder">
-    <div class="items-center justify-between md:flex">
+  <div id="buyList" class="">
+    <div class="items-center justify-between md:flex mb-5">
       <div class="flex items-center">
         <div class="mr-5 overflow-hidden rounded-full userImg">
           <img src="../assets/images/how.jpg" alt="" />
@@ -14,15 +14,9 @@
       </div>
       <div>飲品優惠，低消100折$30</div>
     </div>
-    <hr />
-    <!-- <div class="flex justify-between">
-          <div>飲品</div>
-          <div class="flex">
-            <div>數量</div>
-            <div>單價</div>
-          </div>
-        </div> -->
-    <div class="grid items-center grid-cols-12">
+    <div
+      class="grid items-center grid-cols-12 md:ml-24 p-5 border rounded-3xl border-lightblue-placeholder"
+    >
       <div class="flex col-span-12 mb-5 md:col-span-8 md:mb-0">
         <div class="flex-shrink-0 mr-3 overflow-hidden drinkImg rounded-3xl">
           <img src="../assets/images/product.jpg" alt="" />
@@ -48,17 +42,43 @@
       </div>
       <div
         class="col-span-2 text-center text-red-500 duration-200 cursor-pointer md:col-span-1 hover:text-red-700"
+        @click="del = false"
       >
         刪除
       </div>
     </div>
+    <!-- 刪除 -->
+    <popup :class="{ popupHidden: del }">
+      <template v-slot:title>
+        <h4>刪除{{ contentName }}</h4>
+      </template>
+      <template v-slot:content>
+        <p class="mb-5">此操作無法撤消，確定要執行嗎?</p>
+      </template>
+      <template v-slot:btn>
+        <div class="flex justify-center functionBtn">
+          <div class="mr-3 btn btn-remove" @click="del = true">取消</div>
+          <div class="btn btn-dark-blue">確認</div>
+        </div>
+      </template>
+    </popup>
   </div>
 </template>
 
 <script>
+  import popup from '@/components/popup.vue'
+
   export default {
     props: {
       selected: Number
+    },
+    components: {
+      popup
+    },
+    data() {
+      return {
+        del: true
+      }
     }
   }
 </script>
@@ -75,6 +95,10 @@
   .drinkBefore {
     width: 80px;
     display: inline-block;
+  }
+  .popupHidden {
+    opacity: 0;
+    visibility: hidden;
   }
   @media (max-width: 768px) {
     .drinkBefore {

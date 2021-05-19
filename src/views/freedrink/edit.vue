@@ -64,6 +64,7 @@
         </div>
         <div
           class="col-span-6 text-right text-red-500 duration-200 cursor-pointer md:col-span-2 text-rightmd:col-span-4 md:text-center hover:text-red-700"
+          @click=";(del = false), (contentName = '茶底')"
         >
           刪除
         </div>
@@ -93,6 +94,7 @@
         </div>
         <div
           class="col-span-6 text-right text-red-500 duration-200 cursor-pointer md:col-span-2 text-rightmd:col-span-4 md:text-center hover:text-red-700"
+          @click=";(del = false), (contentName = '配料')"
         >
           刪除
         </div>
@@ -106,7 +108,13 @@
           class="relative flex items-center justify-center w-24 h-24 overflow-hidden bg-white border border-lightblue-high btn"
         >
           <i class="text-4xl pay-plus text-lightblue-high"></i>
-          <input type="file" name="" id="" class="absolute left-0 w-full h-full opacity-0" multiple />
+          <input
+            type="file"
+            name=""
+            id=""
+            class="absolute left-0 w-full h-full opacity-0"
+            multiple
+          />
         </div>
         <div class="mt-3 text-sm text-red-500">每張圖片限制最大200kb，格式為.JPEG, .PNG</div>
       </div>
@@ -134,7 +142,9 @@
           ><span class="mr-3 md:hidden">Total.</span><big class="font-normal">600</big>
         </div>
       </div>
-      <div class="inline-block mt-3 text-sm text-red-500">*食材費用加欲收取費用等於平台販售金額</div>
+      <div class="inline-block mt-3 text-sm text-red-500">
+        *食材費用加欲收取費用等於平台販售金額
+      </div>
     </div>
     <div class="p-5 bg-lightblue-bg rounded-3xl setArea">
       <h4>客製選項</h4>
@@ -155,15 +165,36 @@
       </div>
     </div>
     <div class="inline-block text-center btn-dark-blue">儲存配方</div>
+    <!-- 刪除 -->
+    <popup :class="{ popupHidden: del }">
+      <template v-slot:title>
+        <h4>刪除{{ contentName }}</h4>
+      </template>
+      <template v-slot:content>
+        <p class="mb-5">此操作無法撤消，確定要執行嗎?</p>
+      </template>
+      <template v-slot:btn>
+        <div class="flex justify-center functionBtn">
+          <div class="mr-3 btn btn-remove" @click="del = true">取消</div>
+          <div class="btn btn-dark-blue">確認</div>
+        </div>
+      </template>
+    </popup>
   </div>
 </template>
 
 <script>
+  import popup from '@/components/popup.vue'
+
   export default {
     name: 'edit_drink',
-    computed: {},
+    components: {
+      popup
+    },
     data() {
       return {
+        del: true,
+        contentName: '',
         drinkset: [
           {
             title: '溫度',
@@ -243,7 +274,8 @@
           }
         ]
       }
-    }
+    },
+    computed: {}
   }
 </script>
 
@@ -281,21 +313,6 @@
   .setArea {
     margin-bottom: 2rem;
   }
-  // .selectBar {
-  //   select {
-  //     flex-shrink: 0;
-  //     margin-right: 1rem;
-  //   }
-  //   select:first-child {
-  //     width: 200px;
-  //   }
-  //   select:nth-child(2) {
-  //     width: 200px;
-  //   }
-  //   select:nth-child(3) {
-  //     width: 200px;
-  //   }
-  // }
   .drinkSet {
     input {
       display: none;
@@ -318,15 +335,10 @@
       width: 50px;
     }
   }
-  .drinkTotal {
-    > div {
-      // margin-right: 2rem;
-    }
+  .popupHidden {
+    opacity: 0;
+    visibility: hidden;
   }
-  // .titleType {
-  //   width: 600px;
-  //   margin-right: 9rem;
-  // }
   @media (max-width: 768px) {
     .drinkProgress {
       width: auto;
