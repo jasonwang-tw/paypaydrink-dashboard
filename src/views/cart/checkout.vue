@@ -21,28 +21,35 @@
       <hr />
       <div class="flex items-center">
         <div class="mr-5 text-lg font-semibold">選擇領取店鋪</div>
-        <div class="btn-border-light-blue-sm">選擇店鋪</div>
+        <div class="btn-border-light-blue-sm" @click="popupShop = false">選擇店鋪</div>
       </div>
-      <div
-        class="items-center justify-between pt-3 mt-5 border-t md:border-none border-lightblue-high md:p-5 md:flex md:bg-lightblue-bg md:rounded-3xl"
-      >
-        <div class="mb-5 md:mb-0">
-          <div class="mb-2 text-lg font-normal">配配飲一號店</div>
-          <ul class="grid grid-cols-12 pl-0 list-none shopPosition">
-            <li class="col-span-12 md:col-span-6">
-              <i class=" pay-pin text-subyellow-500"></i>
-              台北市大安區仁愛路四段345巷6弄78號
-            </li>
-            <li class="col-span-6 md:col-span-3">
-              <i class="pay-tel text-subyellow-500"></i>02-2456-7891
-            </li>
-            <li class="col-span-6 md:col-span-3">
-              <i class=" pay-clock text-subyellow-500"></i>24H 全年無休
-            </li>
-          </ul>
+      <template v-if="getShop === ''">
+        <h4 class="my-5 text-lightblue-500">請選擇領取店鋪</h4>
+      </template>
+      <template v-else>
+        <div
+          class="items-center justify-between pt-3 mt-5 border-t md:border-none border-lightblue-high md:p-5 md:flex md:bg-lightblue-bg md:rounded-3xl"
+        >
+          <div class="mb-5 md:mb-0 flex-grow">
+            <div class="mb-2 text-lg font-normal">{{ getShop.name }}</div>
+            <ul class="grid grid-cols-12 pl-0 list-none shopPosition">
+              <li class="col-span-12 md:col-span-12">
+                <i class=" pay-pin text-subyellow-500"></i>
+                {{ getShop.postition }}
+              </li>
+              <li class="col-span-6 md:col-span-3">
+                <i class="pay-tel text-subyellow-500"></i>{{ getShop.tel }}
+              </li>
+              <li class="col-span-6 md:col-span-3">
+                <i class=" pay-clock text-subyellow-500"></i>{{ getShop.openTime }}
+              </li>
+            </ul>
+          </div>
+          <a :href="getShop.mapLink" target="_blank" class="flex-shrink-0 btn-border-light-blue-sm"
+            >查看位置</a
+          >
         </div>
-        <a href="/" target="_blank" class="flex-shrink-0 btn-border-light-blue-sm">查看位置</a>
-      </div>
+      </template>
     </div>
     <div class="p-5 border rounded-3xl border-lightblue-placeholder">
       <div class="items-center md:flex">
@@ -101,21 +108,44 @@
       </div>
     </div>
     <div class="text-right">
-      <div class="inline-block w-40 text-center btn-dark-blue">付款</div>
+      <router-link :to="complateLink" class="inline-block w-40 text-center btn-dark-blue"
+        >付款</router-link
+      >
     </div>
+    <!-- 選擇領取店鋪 -->
+    <popup :class="{ popupHidden: popupShop }">
+      <template v-slot:title>
+        <h4>選擇領取店鋪</h4>
+      </template>
+      <template v-slot:content>
+        <!-- 店鋪元件 -->
+        <selectShop @PassData="passShop" />
+      </template>
+      <template v-slot:btn>
+        <div class="flex justify-center functionBtn">
+          <div class="btn btn-dark-blue" @click="popupShop = true">確認</div>
+        </div>
+      </template>
+    </popup>
   </div>
 </template>
 
 <script>
   import countResult from '@/components/countResult.vue'
+  import selectShop from '@/components/selectShop.vue'
+  import popup from '@/components/popup.vue'
 
   export default {
     name: 'checkout',
     components: {
-      countResult
+      countResult,
+      selectShop,
+      popup
     },
     data() {
       return {
+        getShop: '',
+        popupShop: true,
         getType: [
           {
             type: '直接領取',
@@ -152,8 +182,29 @@
             lastNumber: 4898
           }
         ],
-        cardDefault: 4897
+        cardDefault: 4897,
+        complateLink: ''
       }
+    },
+    methods: {
+      passShop(e) {
+        this.getShop = e
+      },
+      orderTo() {
+        if (this.getDefault === 'receive') {
+          this.complateLink = '/cart/complate/'
+        } else if (this.getDefault === 'sendCup') {
+          this.complateLink = '/cart/complateStock/'
+        } else if (this.getDefault === 'gifts') {
+          this.complateLink = '/cart/complaterGifts/'
+        }
+      }
+    },
+    watch: {
+      getDefault: 'orderTo'
+    },
+    mounted() {
+      this.orderTo()
     }
   }
 </script>
@@ -171,5 +222,9 @@
     color: white;
     border-color: var(--color-main-500);
     background-color: var(--color-main-500);
+  }
+  .popupHidden {
+    opacity: 0;
+    visibility: hidden;
   }
 </style>

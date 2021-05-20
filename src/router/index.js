@@ -10,12 +10,16 @@ const routes = [
     component: index,
   },
   {
-    path: '/drinkShop',
+    path: '/drinkShop', 
     component: () => import('../views/drinkShop.vue'),
   },
   {
     path: '/search',
     component: () => import('../views/search.vue'),
+  },
+  {
+    path: '/shopPosition',
+    component: () => import('../views/shopPosition.vue'),
   },
   {
     path: '/products',
@@ -79,6 +83,18 @@ const routes = [
       {
         path: 'checkout',
         component: () => import('../views/cart/checkout.vue'),
+      },
+      {
+        path: 'complate',
+        component: () => import('../views/cart/complate.vue'),
+      },
+      {
+        path: 'complaterGifts',
+        component: () => import('../views/cart/complaterGifts.vue'),
+      },
+      {
+        path: 'complateStock',
+        component: () => import('../views/cart/complateStock.vue'),
       },
     ],
   },

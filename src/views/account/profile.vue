@@ -45,10 +45,14 @@
       <div class="flex items-center my-5">
         <label for="" class="flex-shrink-0 mr-5">性別</label>
         <div class="flex items-center">
-          <input type="radio" name="gender" id="man" class="mr-3" checked />
-          <label for="man" class="mr-5">男生</label>
-          <input type="radio" name="gender" id="woman" class="mr-3" />
-          <label for="woman">女生</label>
+          <div class="flex items-center mr-5">
+            <input type="radio" name="gender" id="man" class="round hidden" />
+            <label for="man" class="round mr-3"><i class="pay-click"></i></label><span>男生</span>
+          </div>
+          <div class="flex items-center">
+            <input type="radio" name="gender" id="woman" class="round hidden" />
+            <label for="woman" class="round mr-3"><i class="pay-click"></i></label><span>女生</span>
+          </div>
         </div>
       </div>
       <div class="flex items-center my-5">

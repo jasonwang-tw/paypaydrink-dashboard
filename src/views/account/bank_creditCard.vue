@@ -276,7 +276,7 @@
       }
     },
     methods: {
-      area: function() {
+      area() {
         this.taiwan.forEach(fd => {
           if (fd.CityName == this.selcetCity) {
             this.fileterArea = fd.AreaList

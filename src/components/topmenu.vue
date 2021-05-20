@@ -31,7 +31,7 @@
         >
           <div
             class="shopCart"
-            @touchstart=";(miniCartHidden = !miniCartHidden), (miniNoticeHidden = true)"
+            @click=";(miniCartHidden = !miniCartHidden), (miniNoticeHidden = true)"
           >
             <i class="text-xl pay-cart text-main-100"></i>
           </div>
@@ -72,7 +72,7 @@
         >
           <i
             class="text-xl pay-notice text-main-100"
-            @touchstart=";(miniNoticeHidden = !miniNoticeHidden), (miniCartHidden = true)"
+            @click=";(miniNoticeHidden = !miniNoticeHidden), (miniCartHidden = true)"
           ></i>
           <!-- noticeList -->
           <div
@@ -183,7 +183,7 @@
             name: '飲料鋪'
           },
           {
-            link: '/',
+            link: '/shopPosition',
             name: '附近的店鋪'
           },
           {

@@ -50,7 +50,7 @@
     <!-- 刪除 -->
     <popup :class="{ popupHidden: del }">
       <template v-slot:title>
-        <h4>刪除{{ contentName }}</h4>
+        <h4>刪除飲品</h4>
       </template>
       <template v-slot:content>
         <p class="mb-5">此操作無法撤消，確定要執行嗎?</p>
