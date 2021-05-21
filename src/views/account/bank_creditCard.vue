@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between">
       <h3 class="mb-0 text-main-500">信用卡</h3>
       <div class="flex items-center btn-border-light-blue" @click="card = !card">
-        <i class="mr-3 pay-add"></i>
+        <i class="mr-3 pay-plus"></i>
         <div>增加信用卡</div>
       </div>
     </div>
@@ -50,7 +50,7 @@
     <div class="flex items-center justify-between">
       <h3 class="mb-0 text-main-500">銀行帳號</h3>
       <div class="flex items-center btn-border-light-blue" @click="bank = !bank">
-        <i class="mr-3 pay-add"></i>
+        <i class="mr-3 pay-plus"></i>
         <div>增加銀行帳號</div>
       </div>
     </div>

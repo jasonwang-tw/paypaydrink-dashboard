@@ -335,7 +335,7 @@
             >
           </div>
         </div>
-        <textarea name="" id="" cols="30" rows="10" class="max-h-28"></textarea>
+        <textarea name="" id="" cols="30" rows="10" class="max-h-28 h-28"></textarea>
       </template>
       <template v-slot:btn>
         <div class="flex justify-center mt-5 functionBtn">

@@ -128,6 +128,9 @@
   .line {
     @apply border-lightblue-high;
   }
+  .coin-icon {
+    @apply w-8 h-8 bg-subyellow-100 rounded-full flex items-center justify-center text-white mr-3 font-semibold;
+  }
   .center {
     left: 50%;
     top: 50%;

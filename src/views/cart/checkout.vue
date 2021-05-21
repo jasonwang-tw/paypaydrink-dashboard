@@ -1,6 +1,9 @@
 <template>
   <div id="checkout">
-    <h2 class="text-2xl md:text-3xl">結帳</h2>
+    <router-link to="/cart/view" class="absolute no-underline mt-2 hover:text-blue-900"
+      ><i class="pay-left"></i>上一步</router-link
+    >
+    <h2 class="text-2xl md:text-3xl text-center">結帳</h2>
     <div class="p-5 my-10 border rounded-3xl border-lightblue-placeholder">
       <div class="items-center md:flex">
         <h3 class="text-xl md:mb-0 md:text-2xl">領取方式</h3>
@@ -18,37 +21,50 @@
           </div>
         </div>
       </div>
-      <hr />
-      <div class="flex items-center">
-        <div class="mr-5 text-lg font-semibold">選擇領取店鋪</div>
-        <div class="btn-border-light-blue-sm" @click="popupShop = false">選擇店鋪</div>
-      </div>
-      <template v-if="getShop === ''">
-        <h4 class="my-5 text-lightblue-500">請選擇領取店鋪</h4>
-      </template>
-      <template v-else>
-        <div
-          class="items-center justify-between pt-3 mt-5 border-t md:border-none border-lightblue-high md:p-5 md:flex md:bg-lightblue-bg md:rounded-3xl"
-        >
-          <div class="mb-5 md:mb-0 flex-grow">
-            <div class="mb-2 text-lg font-normal">{{ getShop.name }}</div>
-            <ul class="grid grid-cols-12 pl-0 list-none shopPosition">
-              <li class="col-span-12 md:col-span-12">
-                <i class=" pay-pin text-subyellow-500"></i>
-                {{ getShop.postition }}
-              </li>
-              <li class="col-span-6 md:col-span-3">
-                <i class="pay-tel text-subyellow-500"></i>{{ getShop.tel }}
-              </li>
-              <li class="col-span-6 md:col-span-3">
-                <i class=" pay-clock text-subyellow-500"></i>{{ getShop.openTime }}
-              </li>
-            </ul>
-          </div>
-          <a :href="getShop.mapLink" target="_blank" class="flex-shrink-0 btn-border-light-blue-sm"
-            >查看位置</a
-          >
+      <template v-if="getDefault === 'receive'">
+        <hr />
+        <div class="flex items-center">
+          <div class="mr-5 text-lg font-semibold">選擇領取店鋪</div>
+          <div class="btn-border-light-blue-sm" @click="popupShop = false">選擇店鋪</div>
         </div>
+        <template v-if="getShop === ''">
+          <h4 class="my-5 text-lightblue-500">請選擇領取店鋪</h4>
+        </template>
+        <template v-else>
+          <div
+            class="items-center justify-between pt-3 mt-5 border-t md:border-none border-lightblue-high md:p-5 md:flex md:bg-lightblue-bg md:rounded-3xl"
+          >
+            <div class="mb-5 md:mb-0 flex-grow">
+              <div class="mb-2 text-lg font-normal">{{ getShop.name }}</div>
+              <ul class="grid grid-cols-12 pl-0 list-none shopPosition">
+                <li class="col-span-12 md:col-span-12">
+                  <i class=" pay-pin text-subyellow-500"></i>
+                  {{ getShop.postition }}
+                </li>
+                <li class="col-span-6 md:col-span-3">
+                  <i class="pay-tel text-subyellow-500"></i>{{ getShop.tel }}
+                </li>
+                <li class="col-span-6 md:col-span-3">
+                  <i class=" pay-clock text-subyellow-500"></i>{{ getShop.openTime }}
+                </li>
+              </ul>
+            </div>
+            <div class="flex items-center">
+              <a
+                :href="getShop.mapLink"
+                target="_blank"
+                class="flex-shrink-0 btn-border-light-blue-sm mr-5"
+                >查看位置</a
+              >
+              <div
+                class="text-red-500 hover:text-red-700 duration-200 cursor-pointer"
+                @click="getShop = ''"
+              >
+                刪除
+              </div>
+            </div>
+          </div>
+        </template>
       </template>
     </div>
     <div class="p-5 border rounded-3xl border-lightblue-placeholder">
@@ -69,27 +85,56 @@
         </div>
       </div>
       <hr />
-      <div class="flex">
-        <div class="mr-5 text-lg font-semibold">選擇信用卡</div>
-        <div>
-          <div class="mb-5">
-            <div class="flex items-center mb-3" v-for="(c, index) in cardNumber" :key="index">
-              <input
-                type="radio"
-                name="card"
-                :id="'card_' + c.id"
-                :value="c.id"
-                v-model="cardDefault"
-                class="round hidden"
-              /><label class="round mr-3" :for="'card_' + c.id"><i class="pay-click"></i></label>
-              <div>
-                <span class="tracking-widest mr-3">****</span><b>{{ c.lastNumber }}</b>
+      <template v-if="payOutDefault === 'card'">
+        <div class="flex">
+          <div class="mr-5 text-lg font-semibold">選擇信用卡</div>
+          <div>
+            <div class="mb-5">
+              <div class="flex items-center mb-3" v-for="(c, index) in cardNumber" :key="index">
+                <input
+                  type="radio"
+                  name="card"
+                  :id="'card_' + c.id"
+                  :value="c.id"
+                  v-model="cardDefault"
+                  class="round hidden"
+                /><label class="round mr-3" :for="'card_' + c.id"><i class="pay-click"></i></label>
+                <div>
+                  <span class="tracking-widest mr-3">****</span><b>{{ c.lastNumber }}</b>
+                </div>
               </div>
             </div>
+            <router-link to="/account/bank_creditCard" class="btn-border-light-blue-sm inline-block"
+              ><i class="mr-3 pay-plus"></i>增加信用卡</router-link
+            >
           </div>
-          <div class="btn-border-light-blue-sm inline-block">增加信用卡</div>
         </div>
-      </div>
+      </template>
+      <template v-else-if="payOutDefault === 'payPoint'">
+        <div class="flex mb-5 items-center">
+          <div class="mr-10 font-semibold">以PayPayPoint支付</div>
+          <div class="text-subyellow-100 flex items-center">
+            <span class="mr-3">目前點數</span>
+            <div class="coin-icon">
+              P
+            </div>
+            {{ payPoint }}
+          </div>
+        </div>
+        <div class="flex">
+          <div class="mr-3">
+            <input
+              type="text"
+              name=""
+              id=""
+              value=""
+              v-model="usePoint"
+              placeholder="請輸入欲支付點數"
+            />
+          </div>
+          <div class="flex-shrink-0 btn-light-blue" @click="usePoint = payPoint">全部使用</div>
+        </div>
+      </template>
     </div>
     <div class="justify-between md:flex">
       <div>
@@ -119,7 +164,7 @@
       </template>
       <template v-slot:content>
         <!-- 店鋪元件 -->
-        <selectShop @PassData="passShop" />
+        <selectShop @PassData="passShop" :clickShop="getShop" />
       </template>
       <template v-slot:btn>
         <div class="flex justify-center functionBtn">
@@ -144,8 +189,11 @@
     },
     data() {
       return {
+        mainStep_2: true,
         getShop: '',
         popupShop: true,
+        payPoint: 289,
+        usePoint: '',
         getType: [
           {
             type: '直接領取',
@@ -203,13 +251,16 @@
     watch: {
       getDefault: 'orderTo'
     },
+    created() {
+      this.$emit('stepData', this.mainStep_2)
+    },
     mounted() {
       this.orderTo()
     }
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .shopPosition {
     i {
       margin-right: 0.5rem;
@@ -222,6 +273,9 @@
     color: white;
     border-color: var(--color-main-500);
     background-color: var(--color-main-500);
+  }
+  .checkOutinBar {
+    width: 50%;
   }
   .popupHidden {
     opacity: 0;

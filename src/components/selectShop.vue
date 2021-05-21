@@ -74,6 +74,7 @@
   export default {
     name: 'selectShop',
     components: {},
+    props: { clickShop: '' },
     data() {
       return {
         taiwan,

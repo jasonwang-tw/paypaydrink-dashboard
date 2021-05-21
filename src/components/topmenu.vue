@@ -128,14 +128,10 @@
               </div>
             </router-link>
             <div class="flex items-center py-5 border-b border-lightblue-high">
-              <div
-                class="w-8 h-8 bg-subyellow-100 rounded-full flex items-center justify-center text-white mr-3 font-semibold"
-              >
-                P
-              </div>
-              <div class="payCoin">
-                <span class="text-sm block">PayPoint</span>
-                <span class="font-semibold text-subyellow-100">999,999</span>
+              <div class="coin-icon">P</div>
+              <div class="payCoin text-subyellow-100">
+                <span class="text-sm block">目前點數</span>
+                <span class="font-semibold ">999,999</span>
               </div>
             </div>
             <ul class="pl-0 mt-5 list-none">
