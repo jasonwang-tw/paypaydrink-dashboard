@@ -1,6 +1,6 @@
 <template>
   <div id="checkout">
-    <router-link to="/cart/view" class="absolute no-underline mt-2 hover:text-blue-900"
+    <router-link to="/cart/view" class="absolute no-underline mt-1.5 hover:text-blue-900"
       ><i class="pay-left"></i>上一步</router-link
     >
     <h2 class="text-2xl md:text-3xl text-center">結帳</h2>
@@ -114,7 +114,7 @@
         <div class="flex mb-5 items-center">
           <div class="mr-10 font-semibold">以PayPayPoint支付</div>
           <div class="text-subyellow-100 flex items-center">
-            <span class="mr-3">目前點數</span>
+            <span class="mr-3 hidden md:block">目前點數</span>
             <div class="coin-icon">
               P
             </div>
@@ -144,7 +144,7 @@
             <div class="flex-grow mr-5 md:mx-5">
               <input type="text" name="" id="" value="PAYPATDRINK" />
             </div>
-            <div class="btn-dark-blue">使用</div>
+            <div class="btn-dark-blue flex-shrink-0">使用</div>
           </div>
         </div>
       </div>
@@ -189,7 +189,6 @@
     },
     data() {
       return {
-        mainStep_2: true,
         getShop: '',
         popupShop: true,
         payPoint: 289,
@@ -249,14 +248,13 @@
       }
     },
     watch: {
-      getDefault: 'orderTo'
+      getDefault: {
+        handler: 'orderTo',
+        immediate: true
+      }
     },
-    created() {
-      this.$emit('stepData', this.mainStep_2)
-    },
-    mounted() {
-      this.orderTo()
-    }
+    created() {},
+    mounted() {}
   }
 </script>
 

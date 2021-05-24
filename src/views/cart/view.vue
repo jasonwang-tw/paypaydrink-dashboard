@@ -1,6 +1,6 @@
 <template>
   <div id="cartView">
-    <h2 class="text-2xl md:text-3xl">購物內容</h2>
+    <h2 class="text-2xl md:text-3xl text-center">購物內容</h2>
     <hr />
     <buyList />
     <countResult />

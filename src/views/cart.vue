@@ -55,22 +55,25 @@
     },
     methods: {},
     watch: {
-      $route(to, from) {
-        if (to !== from) {
-          if (this.$route.path === '/cart/view') {
-            this.mainStep_2 = ''
-            this.mainStep_3 = ''
-            this.widthBar = '0%'
-          } else if (this.$route.path === '/cart/checkout') {
-            this.mainStep_2 = true
-            this.mainStep_3 = ''
-            this.widthBar = '50%'
-          } else {
-            this.mainStep_2 = true
-            this.mainStep_3 = true
-            this.widthBar = '100%'
+      $route: {
+        handler(to, from) {
+          if (to !== from) {
+            if (this.$route.path === '/cart/view') {
+              this.mainStep_2 = ''
+              this.mainStep_3 = ''
+              this.widthBar = '0%'
+            } else if (this.$route.path === '/cart/checkout') {
+              this.mainStep_2 = true
+              this.mainStep_3 = ''
+              this.widthBar = '50%'
+            } else {
+              this.mainStep_2 = true
+              this.mainStep_3 = true
+              this.widthBar = '100%'
+            }
           }
-        }
+        },
+        immediate: true
       }
     }
   }
@@ -78,7 +81,7 @@
 
 <style lang="scss" scoped>
   .checkOutProgress {
-    width: calc(100% - 90px);
+    width: calc(100% - 80px);
   }
 
   .stepPoint {

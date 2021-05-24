@@ -15,7 +15,9 @@
       <div>飲品優惠，低消100折$30</div>
     </div>
     <div
-      class="grid items-center grid-cols-12 md:ml-24 p-5 border rounded-3xl border-lightblue-placeholder"
+      class="grid items-center grid-cols-12 md:ml-24 p-5 border rounded-3xl border-lightblue-placeholder mb-5"
+      v-for="(b, index) in 3"
+      :key="index"
     >
       <div class="flex col-span-12 mb-5 md:col-span-8 md:mb-0">
         <div class="flex-shrink-0 mr-3 overflow-hidden drinkImg rounded-3xl">

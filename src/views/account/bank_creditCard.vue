@@ -295,12 +295,13 @@
       }
     },
     watch: {
-      selcetCity: 'area'
+      selcetCity: {
+        handler: 'area',
+        immediate: true
+      }
     },
     computed: {},
-    mounted() {
-      this.area()
-    }
+    mounted() {}
   }
 </script>
 

@@ -3,8 +3,8 @@
     <h3 class="">收藏清單</h3>
     <hr />
     <ul class="pl-0 list-none" v-for="(i, index) in 3">
-      <li class="mb-5 border-b border-lightblue-placeholder">
-        <div class="flex items-center justify-between mb-5">
+      <li class="border border-lightblue-high p-5 rounded-3xl mb-5">
+        <div class="flex items-center justify-between">
           <div class="flex items-center">
             <div class="mr-3 overflow-hidden rounded-full userimg">
               <img src="../../../src/assets/images/how.jpg" alt="" />
@@ -23,7 +23,7 @@
           </div>
         </div>
         <ul class="h-full pl-0 list-none duration-200 drinkList listClose">
-          <li class="p-5 mt-3 overflow-hidden bg-lightblue-bg rounded-3xl" v-for="(i, index) in 5">
+          <li class="p-5 mt-3 overflow-hidden bg-lightblue-bg rounded-3xl" v-for="(i, index) in 3">
             <div class="items-center justify-between md:flex">
               <div class="flex mr-3">
                 <div class="flex-shrink-0 mr-3 overflow-hidden userimg rounded-2xl">
@@ -91,7 +91,7 @@
       listToggleBtn: function(e) {
         let i = e.target.parentNode.parentNode.nextSibling
         i.classList.toggle('listClose')
-      },
+      }
     },
     data() {
       return {
