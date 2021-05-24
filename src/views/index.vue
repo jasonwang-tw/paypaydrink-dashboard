@@ -25,7 +25,7 @@
         </ul>
       </div>
       <div class="py-16 text-center saleBanner text-main-500">
-        <h2 class="text-2xl md:text-3xl">優惠活動</h2>
+        <h2 class="text-2xl md:text-3xl">最新消息</h2>
         <span class="block mb-10 text-subyellow-500">快揪好友，省錢趁現在！</span>
         <div class="flex justify-center">
           <carousel />

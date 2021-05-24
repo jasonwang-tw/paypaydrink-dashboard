@@ -46,7 +46,7 @@
           type: 'loop',
           autoplay: true,
           pauseOnHover: false,
-          resetProgress: false,
+          // resetProgress: false,
           focus: 'center',
           fixedWidth: 400,
           // arrows      : 'slider',

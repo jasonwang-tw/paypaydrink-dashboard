@@ -6,8 +6,15 @@
           <img :src="s.shopPhoto" alt="" />
         </div>
         <div>
-          <h5 class="mb-2">{{ s.shopManager }}</h5>
-          <router-link :to="s.shopLink" class="block text-sm btn-border-light-blue-sm"
+          <div class="flex items-center mb-2">
+            <h5 class="mb-0 mr-3">{{ s.shopManager }}</h5>
+            <template v-if="s.certification === true">
+              <div class="flex items-center">
+                <i class="pay-click_round text-blue-100"></i>
+              </div>
+            </template>
+          </div>
+          <router-link :to="s.shopLink" class="inline-block text-sm btn-border-light-blue-sm"
             >查看全部配方</router-link
           >
         </div>
@@ -83,8 +90,26 @@
         del: true,
         cart: [
           {
+            shopPhoto: require('../assets/images/logo_photo.jpg'),
+            shopManager: '配配飲官方',
+            certification: true,
+            shopLink: '/drinkShop',
+            sale: '飲品優惠，低消100折$30',
+            drinkList: [
+              {
+                photo: require('../assets/images/product.jpg'),
+                name: '東方不敗',
+                content: '粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓、布丁、紅豆粉圓',
+                specification: '冷飲、中杯、三分糖、微冰',
+                quantity: 10,
+                price: 60
+              }
+            ]
+          },
+          {
             shopPhoto: require('../assets/images/how.jpg'),
-            shopManager: '滴妹好棒棒',
+            shopManager: '九丈貓',
+            certification: true,
             shopLink: '/drinkShop',
             sale: '飲品優惠，低消100折$30',
             drinkList: [
@@ -109,6 +134,7 @@
           {
             shopPhoto: require('../assets/images/how.jpg'),
             shopManager: '滴妹好棒棒',
+            certification: false,
             shopLink: '/drinkShop',
             sale: '飲品優惠，低消100折$30',
             drinkList: [

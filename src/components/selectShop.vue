@@ -30,7 +30,9 @@
             v-model="clickShop"
             class="round hidden"
           />
-          <label class="round flex-shrink-0 mr-5" :for="shop.name"><i class="pay-click"></i></label>
+          <label class="round flex-shrink-0 mr-5" :for="shop.name"
+            ><i class="pay-click text-xs"></i
+          ></label>
           <div v-if="shop.name" class="w-full text-left shopInfo text-main-500">
             <div class="flex">
               <h5 class="mb-0 mr-3 shopName">

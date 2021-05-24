@@ -98,7 +98,7 @@
                   :value="c.id"
                   v-model="cardDefault"
                   class="round hidden"
-                /><label class="round mr-3" :for="'card_' + c.id"><i class="pay-click"></i></label>
+                /><label class="round mr-3" :for="'card_' + c.id"><i class="pay-click text-xs"></i></label>
                 <div>
                   <span class="tracking-widest mr-3">****</span><b>{{ c.lastNumber }}</b>
                 </div>

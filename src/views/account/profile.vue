@@ -47,11 +47,11 @@
         <div class="flex items-center">
           <div class="flex items-center mr-5">
             <input type="radio" name="gender" id="man" class="round hidden" />
-            <label for="man" class="round mr-3"><i class="pay-click"></i></label><span>男生</span>
+            <label for="man" class="round mr-3"><i class="pay-click text-xs"></i></label><span>男生</span>
           </div>
           <div class="flex items-center">
             <input type="radio" name="gender" id="woman" class="round hidden" />
-            <label for="woman" class="round mr-3"><i class="pay-click"></i></label><span>女生</span>
+            <label for="woman" class="round mr-3"><i class="pay-click text-xs"></i></label><span>女生</span>
           </div>
         </div>
       </div>

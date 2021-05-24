@@ -35,7 +35,7 @@
         <div class="flex items-center my-3">
           <div class="mr-10 text-2xl font-semibold text-subyellow-500">$60</div>
           <div class="flex items-center text-blue-900 bg-lightblue-bg px-5 py-2.5 rounded-xl">
-            <i class="mr-2 text-blue-100 pay-click_outline"></i>
+            <i class="mr-2 text-blue-100 pay-click_outline text-xl"></i>
             <span>飲品優惠，低消100折$30</span>
           </div>
         </div>

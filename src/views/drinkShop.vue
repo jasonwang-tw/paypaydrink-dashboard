@@ -8,7 +8,7 @@
           <img src="../../src/assets/images/how.jpg" alt="" />
         </div>
         <div class="flex-grow mt-3">
-          <h4 class="mb-0">HowHow</h4>
+          <h4 class="mb-0">HowHow<i class="pay-click_round text-blue-100 ml-3"></i></h4>
           <div class="items-center justify-center px-5 mt-3 md:flex">
             <ul class="flex justify-center pl-0 list-none masterInfo">
               <!-- <li>
