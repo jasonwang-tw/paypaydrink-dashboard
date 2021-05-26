@@ -24,35 +24,37 @@
           </li>
         </ul>
       </div>
-      <div class="py-16 text-center saleBanner text-main-500">
-        <h2 class="text-2xl md:text-3xl">最新消息</h2>
-        <span class="block mb-10 text-subyellow-500">快揪好友，省錢趁現在！</span>
-        <div class="flex justify-center">
-          <carousel />
+      <div class="secondBlock">
+        <div class="py-16 text-center saleBanner text-main-500">
+          <h2 class="text-2xl md:text-3xl">最新消息</h2>
+          <span class="block mb-10 text-subyellow-500">快揪好友，省錢趁現在！</span>
+          <div class="flex justify-center">
+            <carousel />
+          </div>
         </div>
-      </div>
-      <div class="py-16 text-center starman text-main-500">
-        <h2 class="text-2xl md:text-3xl">名人堂</h2>
-        <span class="block mb-10 text-subyellow-500">瞧瞧名人都喝啥</span>
-        <div class="flex justify-center">
-          <starman />
+        <div class="py-16 text-center starman text-main-500">
+          <h2 class="text-2xl md:text-3xl">名人堂</h2>
+          <span class="block mb-10 text-subyellow-500">瞧瞧名人都喝啥</span>
+          <div class="flex justify-center">
+            <starman />
+          </div>
         </div>
-      </div>
-      <div class="py-16 text-center top10 text-main-500">
-        <h2 class="text-2xl md:text-3xl">熱銷排行TOP10</h2>
-        <span class="block mb-10 text-subyellow-500">銷售排行看這邊</span>
-        <div class="flex justify-center">
-          <drink>
-            <template v-slot:topNumber="props">
-              <div class="absolute text-center text-white indexNumber">
-                {{ props.index + 1 }}
-              </div>
-            </template>
-          </drink>
+        <div class="py-16 text-center top10 text-main-500">
+          <h2 class="text-2xl md:text-3xl">熱銷排行TOP10</h2>
+          <span class="block mb-10 text-subyellow-500">銷售排行看這邊</span>
+          <div class="flex justify-center">
+            <drink>
+              <template v-slot:topNumber="props">
+                <div class="absolute text-center text-white indexNumber">
+                  {{ props.index + 1 }}
+                </div>
+              </template>
+            </drink>
+          </div>
         </div>
-      </div>
-      <div class="mb-20 text-center">
-        <router-link to="/products" class="btn-light-blue">查看更多飲品</router-link>
+        <div class="mb-20 text-center">
+          <router-link to="/products" class="btn-light-blue">查看更多飲品</router-link>
+        </div>
       </div>
     </div>
     <footerBar />
@@ -146,5 +148,8 @@
     background-image: url(../assets/images/indexNumber.png);
     transform: translate(20px, 0px);
     z-index: 1000;
+  }
+  .secondBlock {
+    background-image: url(../assets/images/magicBg.png);
   }
 </style>

@@ -1,64 +1,79 @@
 <template>
   <div id="shopPosition" class="text-main-500">
     <topmenu />
-    <div class="container px-5 mx-auto mt-10 mb-20 md:my-20 md:px-0">
-      <form action="" method="post">
-        <select name="" id="" class="w-80 mr-0 md:mr-5 mb-5 md:mb-0" @change="cityToArea">
-          <option
-            :value="itemt.CityName"
-            v-for="(itemt, index) in taiwan"
-            :key="index"
-            :data="index"
-          >
-            {{ itemt.CityName }}
-          </option>
-        </select>
-        <select name="" id="" class="w-80">
-          <option v-for="(items, index) of taiwan[0].AreaList" :key="index">
-            {{ items.AreaName }}
-          </option>
-        </select>
-      </form>
-      <ul class="shopResult mx-auto my-10 max-w-4xl p-10">
-        <li
-          v-for="(shop, index) in shopList"
-          :key="index"
-          class="block sm:flex items-center justify-between border-b border-lightblue-high mb-5"
-        >
-          <div class="shopInfo text-left text-main-500">
-            <div class="shopName text-2xl font-bold">
-              {{ shop.name }}
-            </div>
-            <ul class="block lg:flex mt-2 pb-5 pl-0">
-              <li>
-                <i class="pay-pin"></i>
-                {{ shop.postition }}
-              </li>
-              <li>
-                <i class="pay-tel"></i>
-                {{ shop.tel }}
-              </li>
-              <li>
-                <i class="pay-clock"></i>
-                {{ shop.openTime }}
-              </li>
-            </ul>
+    <div class="grid grid-cols-1 mx-auto mb-20 customContainer md:grid-cols-12 md:gap-10 md:my-20">
+      <div class="col-span-1 md:col-span-4">
+        <div class="md:sticky top-20">
+          <div class="mb-5">
+            <label for="" class="block mb-3">選擇城市</label>
+            <select name="city" id="" v-model="selcetCity">
+              <option :value="i.CityName" v-for="(i, index) in taiwan" :key="i.CityName">{{
+                i.CityName
+              }}</option>
+            </select>
           </div>
-          <div class="shopLink">
-            <a
-              :href="shop.mapLink"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-border-light-blue inline-block mb-5 sm:mb-0"
-              >查看位置</a
+          <div class="">
+            <label for="" class="block mb-3">選擇地區</label>
+            <select name="area" id="" v-model="selcetArea">
+              <option :value="i.AreaName" v-for="(i, index) in fileterArea" :key="i.AreaName">{{
+                i.AreaName
+              }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-1 p-5 md:p-0 mainInfo md:col-span-8">
+        <h3 class="text-main-500">附近的店鋪</h3>
+        <hr />
+        <div v-if="selectShop.length > 0">
+          <ul class="pl-0 mb-10 shopResult">
+            <li
+              v-for="(shop, index) in selectShop"
+              class="flex items-center justify-between p-5 mb-5 border border-lightblue-high rounded-3xl"
             >
-          </div>
-        </li>
-      </ul>
+              <div
+                v-if="shop.name"
+                class="w-full text-left shopInfo text-main-500 flex justify-between items-center"
+              >
+                <div>
+                  <h5 class="mb-0 mr-3 shopName">
+                    {{ shop.name }}
+                  </h5>
+
+                  <ul class="block pl-0 mt-2">
+                    <li>
+                      <i class="pay-pin"></i>
+                      {{ shop.postition }}
+                    </li>
+                    <li>
+                      <i class="pay-tel"></i>
+                      {{ shop.tel }}
+                    </li>
+                    <li>
+                      <i class="pay-clock"></i>
+                      {{ shop.openTime }}
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <a
+                    :href="shop.mapLink"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-sm btn-border-light-blue-sm"
+                    >查看位置</a
+                  >
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div v-else="selectShop.length == 0">
+          <h5 class="mb-10 text-lightblue-500">此地區目前沒有店鋪</h5>
+        </div>
+      </div>
     </div>
-    <!-- <select name="" id="" class="border px-4 py-2 border-lightblue-500 rounded-md text-main-500">
-      <option v-for="(items, index) of info.data.retVal" :key="index">{{items.sna}}</option>
-    </select> -->
+
     <footerBar />
   </div>
 </template>
@@ -77,50 +92,92 @@
     data() {
       return {
         taiwan,
-        // info: null,
+        selcetCity: '臺北市',
+        selcetArea: '中正區',
+        fileterArea: '',
         shopList: [
           {
-            name: '配配飲 一號店',
-            postition: '台北市大安區仁愛路四段345巷6弄78號',
-            tel: '02-2456-7891',
-            openTime: '24H 全年無休',
-            mapLink: 'http://google.com.tw'
-          },
-          {
-            name: '配配飲 一號店',
-            postition: '台北市大安區仁愛路四段345巷6弄78號',
-            tel: '02-2456-7891',
-            openTime: '24H 全年無休',
-            mapLink: 'http://google.com.tw'
-          },
-          {
-            name: '配配飲 一號店',
-            postition: '台北市大安區仁愛路四段345巷6弄78號',
-            tel: '02-2456-7891',
-            openTime: '24H 全年無休',
-            mapLink: 'http://google.com.tw'
+            city: '臺北市',
+            area: [
+              {
+                name: '大安區',
+                shop: [
+                  {
+                    name: '配配飲 大安店',
+                    postition: '台北市大安區仁愛路四段345巷6弄78號',
+                    tel: '02-2456-7891',
+                    openTime: '24H 全年無休',
+                    mapLink: 'http://google.com.tw'
+                  }
+                ]
+              },
+              {
+                name: '大安區',
+                shop: [
+                  {
+                    name: '配配飲 南港店',
+                    postition: '台北市南港區',
+                    tel: '02-2456-7891',
+                    openTime: '24H 全年無休',
+                    mapLink: 'http://google.com.tw'
+                  }
+                ]
+              },
+              {
+                name: '中正區',
+                shop: [
+                  {
+                    name: '配配飲 中正店',
+                    postition: '台北市中正區',
+                    tel: '02-2456-7891',
+                    openTime: '24H 全年無休',
+                    mapLink: 'http://google.com.tw'
+                  }
+                ]
+              }
+            ]
           }
         ]
       }
     },
     methods: {
-      //方法
-      cityToArea() {
-        var city = event.target.data
-        console.log(city)
+      area() {
+        this.taiwan.forEach(fd => {
+          if (fd.CityName === this.selcetCity) {
+            this.fileterArea = fd.AreaList
+            this.selcetArea = fd.AreaList[0].AreaName
+          }
+        })
       }
     },
-    mounted: {
-      //架好的
-      // axios
-      //   .get('https://api.kcg.gov.tw/api/service/Get/b4dd9c40-9027-4125-8666-06bef1756092')
-      //   .then(response => (this.info = response.data))
-      //   .catch(function(error) { // 請求失敗處理
-      //         console.log(error);
-      // });
-    }
+    watch: {
+      selcetCity: {
+        handler: 'area',
+        immediate: true
+      }
+    },
+    computed: {
+      selectShop() {
+        let shop = []
+
+        this.shopList.forEach(sf => {
+          if (sf.city == this.selcetCity) {
+            sf.area.forEach(sfArea => {
+              if (sfArea.name == this.selcetArea) {
+                sfArea.shop.forEach(sfShop => {
+                  shop.push(sfShop)
+                })
+              }
+            })
+          }
+        })
+        return shop
+      }
+    },
+    mounted() {}
   }
 </script>
+
 <style lang="scss" scoped>
   .shopInfo li {
     display: flex;

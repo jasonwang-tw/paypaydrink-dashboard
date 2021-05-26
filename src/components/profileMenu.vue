@@ -64,7 +64,7 @@
   }
   @media (max-width: 768px) {
     #profileMenu {
-      top: 63px;
+      // top: 63px;
       .router-link-exact-active {
         position: relative;
         &:after {

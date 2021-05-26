@@ -84,8 +84,6 @@
         selcetArea: '中正區',
         fileterArea: '',
         clickShop: '',
-        clickDrink: true,
-        qrcode: true,
         shopList: [
           {
             city: '臺北市',
@@ -134,8 +132,9 @@
     methods: {
       area() {
         this.taiwan.forEach(fd => {
-          if (fd.CityName == this.selcetCity) {
+          if (fd.CityName === this.selcetCity) {
             this.fileterArea = fd.AreaList
+            this.selcetArea = fd.AreaList[0].AreaName
           }
         })
       },
@@ -144,7 +143,10 @@
       }
     },
     watch: {
-      selcetCity: 'area',
+      selcetCity: {
+        handler: 'area',
+        immediate: true
+      },
       clickShop: 'clickShopPass'
     },
     computed: {
@@ -165,9 +167,7 @@
         return shop
       }
     },
-    mounted() {
-      this.area()
-    }
+    mounted() {}
   }
 </script>
 

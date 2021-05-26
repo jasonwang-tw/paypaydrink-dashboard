@@ -6,7 +6,7 @@
         <div class="pt-5">
           <router-link
             to="/products/page"
-            class="no-underline border border-lightblue-high block rounded-3xl overflow-hidden drinkHover"
+            class="no-underline border border-lightblue-high block rounded-3xl overflow-hidden drinkHover bg-white"
           >
             <div class="drinkMainImg -mt-1">
               <img :src="item.imgSrc" alt="" />
