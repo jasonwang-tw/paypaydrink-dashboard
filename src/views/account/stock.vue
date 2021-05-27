@@ -29,12 +29,12 @@
             </div>
           </div>
         </div>
-        <div class="flex items-center col-span-6 md:justify-center md:col-span-2">
+        <div class="flex items-center col-span-12 justify-center md:col-span-2 my-5 md:my-0">
           <div><span class="mr-5 text-lightblue-500 md:hidden">剩餘數量</span>10</div>
         </div>
-        <div class="flex items-center justify-end col-span-6 md:col-span-2">
-          <div class="btnGroup">
-            <div class="btn-dark-blue" @click="popupExchange = false">兌換</div>
+        <div class="flex items-center md:justify-end col-span-12 md:col-span-2 justify-center">
+          <div class="btnGroup w-full md:w-auto">
+            <div class="btn-dark-blue text-center" @click="popupExchange = false">兌換</div>
           </div>
         </div>
       </li>

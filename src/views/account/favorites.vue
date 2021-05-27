@@ -19,11 +19,14 @@
             </div>
           </div>
           <div class="text-lg cursor-pointer text-lightblue-500" @click="listToggleBtn">
-            <i class="p-5 pay-toggle"></i>
+            <i class="py-5 px-2 pay-toggle"></i>
           </div>
         </div>
         <ul class="h-full pl-0 list-none duration-200 drinkList listClose">
-          <li class="p-5 mt-3 overflow-hidden bg-lightblue-bg rounded-3xl" v-for="(i, index) in 3">
+          <li
+            class="mt-5 pt-5 border-t border-lightblue-high overflow-hidde"
+            v-for="(i, index) in 3"
+          >
             <div class="items-center justify-between md:flex">
               <div class="flex mr-3">
                 <div class="flex-shrink-0 mr-3 overflow-hidden userimg rounded-2xl">
@@ -31,13 +34,15 @@
                 </div>
                 <div class="drinkinfo">
                   <h5 class="mb-2 userName">東方不敗</h5>
-                  <div class="flex text-sm">
+                  <div class="md:flex text-sm">
                     <span class="flex-shrink-0 text-lightblue-500">內含配料</span
-                    ><span class="ml-3">粉圓、布丁、紅豆粉圓</span>
+                    ><span class="md:ml-3 mt-3 md:mt-0 block md:inline-block"
+                      >粉圓、布丁、紅豆粉圓</span
+                    >
                   </div>
                 </div>
               </div>
-              <div class="flex justify-center flex-shrink-0 mt-5 btnGroup">
+              <div class="flex justify-center flex-shrink-0 mt-5 btnGroup md:mt-0">
                 <div class="mr-5 buyAgain">
                   <router-link
                     to="/products/page"
@@ -109,7 +114,7 @@
   }
   .drinkList {
     li:last-child {
-      margin-bottom: 1rem;
+      // margin-bottom: 1rem;
     }
   }
   // status change

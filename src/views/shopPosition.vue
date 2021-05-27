@@ -2,7 +2,7 @@
   <div id="shopPosition" class="text-main-500">
     <topmenu />
     <div class="grid grid-cols-1 mx-auto mb-20 customContainer md:grid-cols-12 md:gap-10 md:my-20">
-      <div class="col-span-1 md:col-span-4">
+      <div class="col-span-1 md:col-span-4 p-5">
         <div class="md:sticky top-20">
           <div class="mb-5">
             <label for="" class="block mb-3">選擇城市</label>

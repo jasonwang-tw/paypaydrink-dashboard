@@ -44,7 +44,7 @@
           <span class="ml-3 text-subyellow-500">粉圓、布丁、紅豆</span>
         </div>
         <hr />
-        <div class="flex items-center mb-3 drinkDetail" v-for="(i, index) in detail">
+        <div class="flex items-center mb-3 drinkDetail" v-for="(i, index) in filter_detail">
           <span class="mr-3">{{ i.name }}</span>
           <div class="mr-3" v-for="(value, v_index) in i.value" :key="v_index">
             <input
@@ -351,9 +351,16 @@
         } else {
           return this.comment_user.filter(result => result.rating == this.current_filter)
         }
+      },
+      filter_detail() {
+        if (this.detail[0].current_detail === 'cool') {
+          return this.detail
+        } else {
+          return this.detail.filter(d_data => d_data.name !== '冰塊')
+        }
       }
     },
-    mounted: function() {
+    mounted() {
       this.$refs.primary.sync(this.$refs.secondary.splide)
     }
   }
