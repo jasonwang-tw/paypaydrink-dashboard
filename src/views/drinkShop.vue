@@ -25,7 +25,23 @@
                 >4,998杯
               </li>
             </ul>
-            <div class="md:mt-0 mt-5 md:ml-10 btn-border-remove">關注</div>
+            <div
+              @click="like = !like"
+              class="text-sm cursor-pointer duration-200 md:mt-0 mt-5 md:ml-10"
+            >
+              <div
+                v-if="like === true"
+                class="text-white btn-sm border-red-400 bg-red-400 border hover:border-red-700 hover:bg-red-700"
+              >
+                已關注
+              </div>
+              <div
+                v-if="like === false"
+                class="text-red-400 border border-red-400 btn-sm hover:border-red-700 hover:text-red-700"
+              >
+                關注
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -86,7 +102,7 @@
     // },
     data() {
       return {
-        // selected: ''
+        like: false
       }
     }
   }

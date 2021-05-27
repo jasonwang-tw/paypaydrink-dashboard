@@ -1,7 +1,7 @@
 <template>
   <div id="products">
     <topmenu />
-    <div class="px-5 mx-auto mt-10 mb-20 md:my-20 customContainer text-main-500">
+    <div class="text-main-500">
       <router-view />
     </div>
     <footerBar />

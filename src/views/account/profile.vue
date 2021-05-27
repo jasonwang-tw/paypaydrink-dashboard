@@ -147,7 +147,7 @@
     }
   }
   .profileContainer {
-    max-width: 960px;
+    max-width: 980px;
   }
   .profileForm {
     label {

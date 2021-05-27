@@ -1,5 +1,5 @@
 <template>
-  <div id="drinkPage">
+  <div id="drinkPage" class="mx-auto mb-20 md:my-20 customContainer">
     <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
       <div class="col-span-1">
         <splide :options="primaryOptions" ref="primary" id="primary">
@@ -9,7 +9,7 @@
             </div>
           </splide-slide>
         </splide>
-        <splide :options="secondaryOptions" ref="secondary" id="secondary">
+        <splide :options="secondaryOptions" ref="secondary" id="secondary" class="px-5">
           <splide-slide
             v-for="(item, index) in drinkTop"
             :key="index"
@@ -21,13 +21,13 @@
           </splide-slide>
         </splide>
       </div>
-      <div class="pt-10 text-main-500">
-        <h1>東方不敗</h1>
+      <div class="md:pt-10 px-5">
+        <h1 class="text-2xl md:text-3xl">東方不敗</h1>
         <div class="mb-8 text-blue-900">
           <span class="">配方編號</span>
           <span class="ml-3">3345678</span>
         </div>
-        <ul class="flex pl-0 text-lg list-none drinkInfo text-subyellow-500">
+        <ul class="flex pl-0 md:text-lg list-none drinkInfo text-subyellow-500">
           <li><i class="pay-start"></i> {{ info.rating }}</li>
           <li>{{ info.people }} 人評價</li>
           <li>已出售 {{ info.buy }}</li>
@@ -61,8 +61,11 @@
           </div>
         </div>
         <hr />
-        <div class="flex items-center justify-between">
-          <div class="cursor-pointer" @click="favorites = !favorites">
+        <div class="flex items-center justify-center md:justify-between flex-wrap">
+          <div
+            class="cursor-pointer md:mb-0 mb-5"
+            @click=";(favorites = !favorites), (like = !message.like)"
+          >
             <div v-if="favorites === true" class="flex items-center text-red-500">
               <i class="mr-2 pay-love"></i>
               <div>已收藏</div>
@@ -84,10 +87,12 @@
         </div>
       </div>
     </div>
-    <hr class="my-20" />
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-12">
+    <div class="px-5">
+      <hr class="md:my-20 my-10" />
+    </div>
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-12 px-5">
       <div class="col-span-1 md:col-span-4">
-        <div class="flex masterStore text-main-500">
+        <div class="flex masterStore">
           <div class="flex-shrink-0 mr-5 overflow-hidden rounded-full userImg">
             <img src="../../assets/images/how.jpg" alt="" />
           </div>
@@ -101,11 +106,20 @@
               <i class="mr-2 pay-drink storeIcon text-subyellow-500"></i>
               <span>已上架 134 種配方</span>
             </div>
-            <div class="flex mt-3">
-              <div
-                class="mr-3 text-sm text-red-400 duration-200 border border-red-400 cursor-pointer btn-sm hover:border-red-700 hover:text-red-700"
-              >
-                關注
+            <div class="flex mt-3 justify-between">
+              <div @click="like = !like" class="text-sm mr-3 cursor-pointer duration-200">
+                <div
+                  v-if="like === true"
+                  class="text-white btn-sm border-red-400 bg-red-400 border hover:border-red-700 hover:bg-red-700"
+                >
+                  已關注
+                </div>
+                <div
+                  v-if="like === false"
+                  class="text-red-400 border border-red-400 btn-sm hover:border-red-700 hover:text-red-700"
+                >
+                  關注
+                </div>
               </div>
               <router-link to="/drinkShop" class="text-sm btn-border-light-blue-sm"
                 >查看全部配方</router-link
@@ -114,7 +128,7 @@
           </div>
         </div>
       </div>
-      <div class="col-span-1 md:col-span-8 text-main-500">
+      <div class="col-span-1 md:col-span-8">
         <h3>飲品介紹</h3>
         <div class="drinkContent">
           <p>
@@ -202,7 +216,12 @@
           fixedHeight: 450,
           pagination: false,
           arrows: true,
-          cover: true
+          cover: true,
+          breakpoints: {
+            '480': {
+              fixedHeight: 250
+            }
+          }
         },
         secondaryOptions: {
           width: '100%',
@@ -221,12 +240,13 @@
             // }
           }
         },
+        favorites: false,
+        like: false,
         info: {
           rating: '4.5',
           people: '4',
           buy: '554'
         },
-        favorites: false,
         comment: [
           {
             text: '全部',

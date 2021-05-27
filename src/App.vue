@@ -6,7 +6,7 @@
 
 <style lang="scss">
   .customContainer {
-    max-width: 960px;
+    max-width: 980px;
   }
   @media (max-width: 768px) {
     

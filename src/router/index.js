@@ -10,7 +10,7 @@ const routes = [
     component: index,
   },
   {
-    path: '/drinkShop', 
+    path: '/drinkShop',
     component: () => import('../views/drinkShop.vue'),
   },
   {
@@ -20,6 +20,14 @@ const routes = [
   {
     path: '/shopPosition',
     component: () => import('../views/shopPosition.vue'),
+  },
+  {
+    path: '/terms',
+    component: () => import('../views/terms.vue'),
+  },
+  {
+    path: '/help',
+    component: () => import('../views/helpCenter.vue'),
   },
   {
     path: '/products',
@@ -118,8 +126,19 @@ const routes = [
     ],
   },
   {
-    path: '/notice',
-    component: () => import('../views/account/notice.vue'),
+    path: '/helpCenter',
+    component: () => import('../views/helpCenter.vue'),
+    redirect: '/helpCenter/page1',
+    children: [
+      {
+        path: 'page1',
+        component: () => import('../views/help/page1.vue'),
+      },
+      {
+        path: 'page2',
+        component: () => import('../views/help/page2.vue'),
+      },
+    ],
   },
 ];
 

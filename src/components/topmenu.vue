@@ -183,11 +183,11 @@
             name: '附近的店鋪'
           },
           {
-            link: '/',
+            link: '/terms',
             name: '使用條款'
           },
           {
-            link: '/',
+            link: '/helpCenter',
             name: '幫助中心'
           },
           {
