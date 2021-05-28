@@ -33,7 +33,7 @@
             >
               <div
                 v-if="shop.name"
-                class="w-full text-left shopInfo text-main-500 flex justify-between items-center"
+                class="w-full text-left shopInfo text-main-500 md:flex justify-between items-center"
               >
                 <div>
                   <h5 class="mb-0 mr-3 shopName">
@@ -60,7 +60,7 @@
                     :href="shop.mapLink"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-sm btn-border-light-blue-sm"
+                    class="text-sm btn-border-light-blue-sm mt-5 block text-center md:inline-block"
                     >查看位置</a
                   >
                 </div>
@@ -181,11 +181,11 @@
 <style lang="scss" scoped>
   .shopInfo li {
     display: flex;
-    align-items: center;
     margin-right: 20px;
     i {
       color: #f39519;
       margin-right: 10px;
+      margin-top: 4px;
     }
   }
 </style>

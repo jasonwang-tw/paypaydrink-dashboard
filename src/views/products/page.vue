@@ -170,25 +170,34 @@
           </div>
         </div>
         <div class="comment">
-          <div
-            class="flex p-5 mb-5 border rounded-3xl border-lightblue-high"
-            v-for="(cu, index) in filter_comment"
-            :key="index"
-          >
-            <div class="flex-shrink-0 mr-3 overflow-hidden rounded-full userImg">
-              <img :src="cu.photo" alt="" />
-            </div>
-            <div>
-              <div class="font-normal username">{{ cu.name }}</div>
-              <div class="userRating text-subyellow-500">
-                <i class="mr-2 pay-start" v-for="(item, index) in cu.rating_text" :key="index"></i>
-              </div>
-              <div class="text-blue-900 commentText">
-                <p>{{ cu.text }}</p>
-              </div>
-              <small class="text-lightblue-500">{{ cu.date }}</small>
-            </div>
+          <div v-if="filter_comment.length === 0">
+            <h5 class="text-lightblue-500 text-center my-10">此篩選目前沒任何評價</h5>
           </div>
+          <template v-else>
+            <div
+              class="flex p-5 mb-5 border rounded-3xl border-lightblue-high"
+              v-for="(cu, index) in filter_comment"
+              :key="index"
+            >
+              <div class="flex-shrink-0 mr-3 overflow-hidden rounded-full userImg">
+                <img :src="cu.photo" alt="" />
+              </div>
+              <div>
+                <div class="font-normal username">{{ cu.name }}</div>
+                <div class="userRating text-subyellow-500">
+                  <i
+                    class="mr-2 pay-start"
+                    v-for="(item, index) in cu.rating_text"
+                    :key="index"
+                  ></i>
+                </div>
+                <div class="text-blue-900 commentText">
+                  <p>{{ cu.text }}</p>
+                </div>
+                <small class="text-lightblue-500">{{ cu.date }}</small>
+              </div>
+            </div>
+          </template>
         </div>
         <pageNav />
       </div>

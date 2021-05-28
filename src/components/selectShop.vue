@@ -34,17 +34,19 @@
             ><i class="pay-click text-xs"></i
           ></label>
           <div v-if="shop.name" class="w-full text-left shopInfo text-main-500">
-            <div class="flex">
-              <h5 class="mb-0 mr-3 shopName">
+            <div class="flex flex-wrap mb-2">
+              <h5 class="mb-2 mr-3 shopName">
                 {{ shop.name }}
               </h5>
-              <a
-                :href="shop.mapLink"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-sm btn-border-light-blue-sm"
-                >查看位置</a
-              >
+              <div>
+                <a
+                  :href="shop.mapLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sm btn-border-light-blue-sm inline-block md:block"
+                  >查看位置</a
+                >
+              </div>
             </div>
             <ul class="block pl-0 mt-2">
               <li>
@@ -116,7 +118,7 @@
                 name: '中正區',
                 shop: [
                   {
-                    name: '配配飲 中正店',
+                    name: '配配飲 中正店配配飲',
                     postition: '台北市中正區',
                     tel: '02-2456-7891',
                     openTime: '24H 全年無休',
@@ -174,11 +176,11 @@
 <style lang="scss" scoped>
   .shopInfo li {
     display: flex;
-    align-items: center;
     margin-right: 20px;
     i {
       color: #f39519;
       margin-right: 10px;
+      margin-top: 4px;
     }
   }
 </style>
