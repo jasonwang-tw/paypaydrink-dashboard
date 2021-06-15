@@ -11,14 +11,20 @@
             <div class="drinkMainImg -mt-1">
               <img :src="item.imgSrc" alt="" />
             </div>
-            <div class="drinkInfo text-left p-5">
-              <div class="drinkName text-xl font-normal text-main-500">{{ item.name }}</div>
-              <div class="drinkPrice text-xl text-subyellow-500 my-2">{{ item.price }}</div>
-              <div class="flex justify-between">
+            <div class="drinkInfo text-left p-2 sm:p-5">
+              <div class="drinkName text-md sm:text-xl font-normal text-main-500">
+                {{ item.name }}
+              </div>
+              <div class="drinkPrice text-md sm:text-xl text-subyellow-500 my-2">
+                $ {{ item.price }}
+              </div>
+              <div class="flex justify-between text-sm sm:text-lg">
                 <div class="rating text-subyellow-500">
                   <i class="pay-start mr-2"></i>{{ item.rating }}
                 </div>
-                <div class="sold">{{ item.sold }}</div>
+                <div class="sold">
+                  <span class="text-subyellow-500 mr-2">售出 </span>{{ item.sold }}
+                </div>
               </div>
             </div>
           </router-link>
@@ -77,25 +83,25 @@
             },
             '480': {
               width: 440,
-              fixedWidth: 255,
+              fixedWidth: 150,
               perPage: 1,
               gap: '1rem'
             },
             '414': {
               width: 374,
-              fixedWidth: 255,
+              fixedWidth: 150,
               perPage: 1,
               gap: '1rem'
             },
             '375': {
               width: 320,
-              fixedWidth: 260,
+              fixedWidth: 150,
               perPage: 1,
               gap: '1rem'
             },
             '320': {
               width: 260,
-              fixedWidth: 260,
+              fixedWidth: 150,
               perPage: 1,
               gap: '1rem'
             }
@@ -163,7 +169,7 @@
     }
   }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
   .drinkMainImg {
     height: 255px;
     img {
@@ -176,12 +182,17 @@
     // margin-top: -1rem;
     transform: translateY(-1rem);
   }
-  .drinkPrice:before {
-    content: '$';
+  .splide__pagination {
+    top: calc(100% + 10px);
   }
-  .sold:before {
-    margin-right: 10px;
-    color: var(--color-subyellow);
-    content: '已售出';
+  @media (max-width: 480px) {
+    .drinkMainImg {
+      height: 150px;
+    }
+    .splide__arrow {
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: .75rem;
+    }
   }
 </style>

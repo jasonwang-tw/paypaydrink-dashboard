@@ -2,19 +2,19 @@
   <div id="drinkList" class="px-5 mx-auto mt-10 mb-20 md:my-20">
     <div class="flex justify-center mb-10">
       <div class="contentCard">
-        <h2 class="text-2xl md:text-3xl text-main-500">大家常喝</h2>
+        <h2 class="text-2xl md:text-3xl text-main-500 mb-0 sm:mb-5">大家常喝</h2>
         <drink :indexClass="['']" />
       </div>
     </div>
     <div class="flex justify-center mb-10">
       <div class="contentCard">
-        <h2 class="text-2xl md:text-3xl text-main-500">珍珠奶茶控必點</h2>
+        <h2 class="text-2xl md:text-3xl text-main-500 mb-0 sm:mb-5">珍珠奶茶控必點</h2>
         <drink :indexClass="['']" />
       </div>
     </div>
     <div class="flex justify-center mb-10">
       <div class="contentCard">
-        <h2 class="text-2xl md:text-3xl text-main-500">餐後解膩</h2>
+        <h2 class="text-2xl md:text-3xl text-main-500 mb-0 sm:mb-5">餐後解膩</h2>
         <drink :indexClass="['']" />
       </div>
     </div>
