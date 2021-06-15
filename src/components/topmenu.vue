@@ -24,14 +24,12 @@
       </div>
       <div class="flex items-center justify-end w-full nav-right">
         <!-- miniCart -->
-        <div
-          class="px-5 nav-right-items"
-          @mouseenter="miniCartHidden = false"
-          @mouseleave="miniCartHidden = true"
-        >
+        <div class="px-5 nav-right-items">
           <div
             class="shopCart"
-            @click=";(miniCartHidden = !miniCartHidden), (miniNoticeHidden = true)"
+            @touchstart="miniCartHidden = !miniCartHidden"
+            @mouseenter="miniCartHidden = false"
+            @mouseleave="miniCartHidden = true"
           >
             <i class="text-xl pay-cart text-main-100"></i>
           </div>
@@ -65,14 +63,12 @@
           </div>
         </div>
         <!-- notice -->
-        <div
-          class="px-5 border-l border-r nav-right-items notice border-lightblue-high"
-          @mouseenter="miniNoticeHidden = false"
-          @mouseleave="miniNoticeHidden = true"
-        >
+        <div class="px-5 border-l border-r nav-right-items notice border-lightblue-high">
           <i
             class="text-xl pay-notice text-main-100"
-            @click=";(miniNoticeHidden = !miniNoticeHidden), (miniCartHidden = true)"
+            @touchstart="miniNoticeHidden = !miniNoticeHidden"
+            @mouseenter="miniNoticeHidden = false"
+            @mouseleave="miniNoticeHidden = true"
           ></i>
           <!-- noticeList -->
           <div
@@ -205,7 +201,7 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
   .shopCart {
     position: relative;
     &:before {
@@ -250,9 +246,9 @@
       object-fit: cover;
     }
   }
-  .nav-right-items {
-    // padding: 0 1.5rem;
-  }
+  // .nav-right-items {
+  // padding: 0 1.5rem;
+  // }
   // .sidebarNav {
   //   width: 300px;
   //   right: -300px;
