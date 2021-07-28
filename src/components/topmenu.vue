@@ -24,18 +24,20 @@
       </div>
       <div class="flex items-center justify-end w-full nav-right">
         <!-- miniCart -->
-        <div class="px-5 nav-right-items">
+        <div
+          class="px-5 nav-right-items"
+          @mouseenter="miniCartHidden = false"
+          @mouseleave="miniCartHidden = true"
+        >
           <div
             class="shopCart"
-            @touchstart="miniCartHidden = !miniCartHidden"
-            @mouseenter="miniCartHidden = false"
-            @mouseleave="miniCartHidden = true"
+            @touchstart=";(miniCartHidden = !miniCartHidden), (miniNoticeHidden = true)"
           >
             <i class="text-xl pay-cart text-main-100"></i>
           </div>
           <!-- miniCartList -->
           <div
-            class="fixed p-5 duration-200 transform -translate-x-1/2 -translate-y-1/2 bg-white border shopCartList w-80 border-lightblue-high rounded-3xl left-1/2 top-1/2 xl:mt-2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
+            class="fixed p-5 duration-200 transform -translate-x-1/2 -translate-y-1/2 bg-white border shopCartList w-80 border-lightblue-high rounded-3xl left-1/2 top-1/2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
             :class="{ listHidden: miniCartHidden }"
           >
             <ul class="pl-0 list-none">
@@ -63,16 +65,18 @@
           </div>
         </div>
         <!-- notice -->
-        <div class="px-5 border-l border-r nav-right-items notice border-lightblue-high">
+        <div
+          class="px-5 border-l border-r nav-right-items notice border-lightblue-high"
+          @mouseenter="miniNoticeHidden = false"
+          @mouseleave="miniNoticeHidden = true"
+        >
           <i
             class="text-xl pay-notice text-main-100"
-            @touchstart="miniNoticeHidden = !miniNoticeHidden"
-            @mouseenter="miniNoticeHidden = false"
-            @mouseleave="miniNoticeHidden = true"
+            @touchstart=";(miniNoticeHidden = !miniNoticeHidden), (miniCartHidden = true)"
           ></i>
           <!-- noticeList -->
           <div
-            class="fixed p-5 duration-200 transform -translate-x-1/2 -translate-y-1/2 bg-white border noticeList w-80 border-lightblue-high rounded-3xl left-1/2 top-1/2 xl:mt-2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
+            class="fixed p-5 duration-200 transform -translate-x-1/2 -translate-y-1/2 bg-white border noticeList w-80 border-lightblue-high rounded-3xl left-1/2 top-1/2 xl:-ml-6 xl:left-auto xl:translate-x-0 xl:absolute xl:-translate-y-0 xl:top-auto"
             :class="{ listHidden: miniNoticeHidden }"
           >
             <ul class="pl-0 list-none">
@@ -213,7 +217,7 @@
       font-size: 0.5rem;
       position: absolute;
       left: 0;
-      bottom: 0;
+      top: -10px;
       transform: translate(-13px, 5px);
       background-color: var(--color-subyellow);
     }
