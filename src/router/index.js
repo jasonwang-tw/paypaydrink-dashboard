@@ -77,6 +77,10 @@ const routes = [
         path: 'notice',
         component: () => import('../views/account/notice.vue'),
       },
+      {
+        path: 'coupon',
+        component: () => import('../views/account/coupon.vue'),
+      },
     ],
   },
   {

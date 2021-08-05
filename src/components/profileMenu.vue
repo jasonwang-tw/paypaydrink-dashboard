@@ -34,6 +34,10 @@
             link: '/account/stock'
           },
           {
+            name: '優惠卷',
+            link: '/account/coupon'
+          },
+          {
             name: '訂單',
             link: '/account/order'
           },
