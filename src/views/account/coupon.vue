@@ -17,24 +17,22 @@
           ><span class="mr-3">使用期限</span>{{ c.data }}</span
         >
         <hr class="my-3" />
-        <div class="flex flex-wrap content-between">
-          <p class="noticeText text-blue-900 text-sm">
-            {{ c.text }}
-          </p>
-          <div class="flex items-center justify-between mt-5 w-full">
-            <router-link to="/helpCenter/page1" class="text-subyellow-500 text-sm no-underline"
-              ><i class="pay-help mr-3"></i>使用說明</router-link
-            >
-            <template v-if="c.type === 'Check' && !c.use">
-              <div class="text-sm"><i class="pay-warn mr-3"></i>於結帳時使用</div>
-            </template>
-            <template v-else-if="!c.use">
-              <div @click="notice = !notice" class="btn-dark-blue text-sm">使用兌換卷</div>
-            </template>
-            <template v-else>
-              <div class="text-red-500 text-sm py-2">已兌換</div>
-            </template>
-          </div>
+        <p class="noticeText text-blue-900 text-sm">
+          {{ c.text }}
+        </p>
+        <div class="flex items-center justify-between mt-5 w-full">
+          <router-link to="/helpCenter/page1" class="text-subyellow-500 text-sm no-underline"
+            ><i class="pay-help mr-3"></i>使用說明</router-link
+          >
+          <template v-if="c.type === 'Check' && !c.use">
+            <div class="text-sm"><i class="pay-warn mr-3"></i>於結帳時使用</div>
+          </template>
+          <template v-else-if="!c.use">
+            <div @click="notice = !notice" class="btn-dark-blue text-sm">使用兌換卷</div>
+          </template>
+          <template v-else>
+            <div class="text-red-500 text-sm py-2">已兌換</div>
+          </template>
         </div>
       </li>
     </ul>
