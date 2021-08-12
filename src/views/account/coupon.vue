@@ -4,21 +4,37 @@
     <hr />
     <ul class="pl-0 list-none text-main-500 grid grid-cols-1 gap-5 sm:grid-cols-2">
       <li class="p-5 bg-lightblue-bg rounded-3xl mb-5" v-for="(c, index) in coupon">
-        <div class="font-bold text-lg">{{ c.name }}</div>
-        <span class="text-lightblue-500 text-sm mb-3 inline-block"
-          ><span class="mr-3">使用期限</span>{{ c.data }}</span
-        >
-        <p class="noticeText text-blue-900">
-          {{ c.text }}
-        </p>
-        <div class="flex items-center justify-between mt-5">
-          <router-link to="/helpCenter/page1" class="text-subyellow-500">使用說明</router-link>
-          <template v-if="!c.use">
-            <div @click="notice = !notice" class="btn-dark-blue">使用兌換卷</div>
+        <div class="flex justify-between">
+          <div class="font-bold text-lg">{{ c.name }}</div>
+          <template v-if="c.type === 'Free'">
+            <div class="btn-sm bg-blue-100 text-sm text-white">{{ c.type }}</div>
           </template>
           <template v-else>
-            <div class="btn text-red-500">已兌換</div>
+            <div class="btn-sm bg-subyellow-100 text-sm text-white">{{ c.type }}</div>
           </template>
+        </div>
+        <span class="text-lightblue-500 text-sm inline-block"
+          ><span class="mr-3">使用期限</span>{{ c.data }}</span
+        >
+        <hr class="my-3" />
+        <div class="flex flex-wrap content-between">
+          <p class="noticeText text-blue-900 text-sm">
+            {{ c.text }}
+          </p>
+          <div class="flex items-center justify-between mt-5 w-full">
+            <router-link to="/helpCenter/page1" class="text-subyellow-500 text-sm no-underline"
+              ><i class="pay-help mr-3"></i>使用說明</router-link
+            >
+            <template v-if="c.type === 'Check' && !c.use">
+              <div class="text-sm"><i class="pay-warn mr-3"></i>於結帳時使用</div>
+            </template>
+            <template v-else-if="!c.use">
+              <div @click="notice = !notice" class="btn-dark-blue text-sm">使用兌換卷</div>
+            </template>
+            <template v-else>
+              <div class="text-red-500 text-sm py-2">已兌換</div>
+            </template>
+          </div>
         </div>
       </li>
     </ul>
@@ -59,14 +75,30 @@
         coupon: [
           {
             name: '飲品兌換卷',
+            type: 'Free',
             data: '2020-07-18 17:59',
             text: '憑此兌換卷可兌換XX',
             use: false
           },
           {
             name: '飲品兌換卷',
+            type: 'Free',
             data: '2020-07-30 17:59',
             text: '憑此兌換卷可兌換XX',
+            use: true
+          },
+          {
+            name: '飲品折價卷',
+            type: 'Check',
+            data: '2020-07-18 17:59',
+            text: '結帳時折抵總金額 $5',
+            use: false
+          },
+          {
+            name: '飲品折價卷',
+            type: 'Check',
+            data: '2020-07-30 17:59',
+            text: '結帳時折抵單價 $100 飲品 乙杯',
             use: true
           }
         ]
