@@ -67,7 +67,7 @@
         </template>
       </template>
     </div>
-    <div class="p-5 border rounded-3xl border-lightblue-placeholder">
+    <div class="p-5 mb-10 border rounded-3xl border-lightblue-placeholder">
       <div class="items-center md:flex">
         <h3 class="text-xl md:mb-0 md:text-2xl">付款方式</h3>
         <div class="flex md:ml-5">
@@ -98,7 +98,9 @@
                   :value="c.id"
                   v-model="cardDefault"
                   class="round hidden"
-                /><label class="round mr-3" :for="'card_' + c.id"><i class="pay-click text-xs"></i></label>
+                /><label class="round mr-3" :for="'card_' + c.id"
+                  ><i class="pay-click text-xs"></i
+                ></label>
                 <div>
                   <span class="tracking-widest mr-3">****</span><b>{{ c.lastNumber }}</b>
                 </div>
@@ -136,23 +138,78 @@
         </div>
       </template>
     </div>
-    <div class="justify-between md:flex">
-      <div>
-        <div class="items-center my-10 md:flex">
-          <div class="mb-3 md:mb-0">請輸入折扣碼</div>
-          <div class="flex">
-            <div class="flex-grow mr-5 md:mx-5">
-              <input type="text" name="" id="" value="PAYPATDRINK" />
-            </div>
-            <div class="btn-dark-blue flex-shrink-0">使用</div>
+    <div class="p-5 border rounded-3xl border-lightblue-placeholder">
+      <div class="items-center md:flex">
+        <h3 class="text-xl md:mb-0 md:text-2xl">選擇優惠</h3>
+        <div class="flex md:ml-5">
+          <div
+            v-for="(t, index) in saleType"
+            :key="index"
+            class="mr-2.5"
+            @click=";(saleCodeEnter = ''), (useCoupon = '')"
+          >
+            <input
+              type="radio"
+              class="hidden"
+              v-model="saleDefault"
+              :value="t.id"
+              name="sale"
+              :id="'sale_' + t.id"
+            />
+            <label :for="'sale_' + t.id" class="btn-border-light-blue-sm">{{ t.type }}</label>
           </div>
         </div>
       </div>
-      <div class="text-right">
-        <countResult />
-      </div>
+      <template v-if="saleDefault === 'saleCode'">
+        <hr />
+        <div class="md:flex">
+          <div class="mb-3 md:mb-0">
+            <div class="mt-2">請輸入折扣碼</div>
+          </div>
+          <div class="flex">
+            <div class="flex-grow mr-3 md:mx-3">
+              <input type="text" name="" id="" value="" v-model="saleCodeEnter" />
+              <div class="text-sm text-red-500 mt-2">
+                <i class="pay-warn mr-3"></i> 錯誤訊息提示
+              </div>
+            </div>
+            <div class="flex-shrink-0">
+              <div class="btn-dark-blue">使用</div>
+            </div>
+          </div>
+        </div>
+      </template>
+      <template v-if="saleDefault === 'ticket'">
+        <hr />
+        <div>
+          <div class="btn-border-light-blue-sm inline-block" @click="popupSale = !popupSale">
+            選擇優惠卷
+          </div>
+          <template v-if="useCoupon">
+            <div class="mt-5 p-5 bg-lightblue-bg rounded-3xl md:w-2/5 text-left">
+              <div class="font-bold text-lg">{{ useCoupon.name }}</div>
+              <span class="text-lightblue-500 text-sm inline-block"
+                ><span class="mr-3">使用期限</span>{{ useCoupon.data }}</span
+              >
+              <hr class="my-3" />
+              <p class="noticeText text-blue-900 text-sm">
+                {{ useCoupon.text }}
+              </p>
+              <div class="flex items-center justify-between mt-5 w-full">
+                <router-link to="/helpCenter/page1" class="text-subyellow-500 text-sm no-underline"
+                  ><i class="pay-help mr-3"></i>使用說明</router-link
+                >
+                <div>
+                  <div class="btn-remove text-sm" @click="useCoupon = ''">取消使用</div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </template>
     </div>
     <div class="text-right">
+      <countResult />
       <router-link :to="complateLink" class="inline-block w-40 text-center btn-dark-blue"
         >付款</router-link
       >
@@ -172,6 +229,52 @@
         </div>
       </template>
     </popup>
+    <!-- 選擇優惠卷 -->
+    <popup :class="{ popupHidden: popupSale }" class="w-1/2">
+      <template v-slot:title>
+        <h4>選擇優惠卷</h4>
+      </template>
+      <template v-slot:content>
+        <ul class="pl-0 list-none text-main-500 grid grid-cols-1 gap-5 sm:grid-cols-1">
+          <li
+            class="p-5 bg-lightblue-bg rounded-3xl mb-5 text-left"
+            v-for="(c, index) in ticketFilter"
+          >
+            <div class="font-bold text-lg">{{ c.name }}</div>
+            <span class="text-lightblue-500 text-sm inline-block"
+              ><span class="mr-3">使用期限</span>{{ c.data }}</span
+            >
+            <hr class="my-3" />
+            <p class="noticeText text-blue-900 text-sm">
+              {{ c.text }}
+            </p>
+            <div class="flex items-center justify-between mt-5 w-full">
+              <router-link to="/helpCenter/page1" class="text-subyellow-500 text-sm no-underline"
+                ><i class="pay-help mr-3"></i>使用說明</router-link
+              >
+              <div class="ticketUse">
+                <input
+                  type="radio"
+                  name="ticket"
+                  :id="c.sn"
+                  :value="c"
+                  v-model="useCoupon"
+                  class="hidden"
+                />
+                <label :for="c.sn" class="btn-dark-blue text-sm"
+                  ><i class="pay-click text-xs mr-3"></i>使用優惠</label
+                >
+              </div>
+            </div>
+          </li>
+        </ul>
+      </template>
+      <template v-slot:btn>
+        <div class="flex justify-center functionBtn">
+          <div class="btn btn-dark-blue" @click="popupSale = true">確認</div>
+        </div>
+      </template>
+    </popup>
   </div>
 </template>
 
@@ -179,6 +282,7 @@
   import countResult from '@/components/countResult.vue'
   import selectShop from '@/components/selectShop.vue'
   import popup from '@/components/popup.vue'
+  import coupon from '../../../static/resource/coupon'
 
   export default {
     name: 'checkout',
@@ -189,6 +293,9 @@
     },
     data() {
       return {
+        saleCodeEnter: '',
+        coupon,
+        useCoupon: '',
         getShop: '',
         popupShop: true,
         payPoint: 289,
@@ -230,7 +337,23 @@
           }
         ],
         cardDefault: 4897,
-        complateLink: ''
+        complateLink: '',
+        popupSale: true,
+        saleType: [
+          {
+            type: '無',
+            id: 'noCode'
+          },
+          {
+            type: '折扣碼',
+            id: 'saleCode'
+          },
+          {
+            type: '優惠卷',
+            id: 'ticket'
+          }
+        ],
+        saleDefault: 'noCode'
       }
     },
     methods: {
@@ -245,6 +368,11 @@
         } else if (this.getDefault === 'gifts') {
           this.complateLink = '/cart/complaterGifts/'
         }
+      }
+    },
+    computed: {
+      ticketFilter() {
+        return this.coupon.filter(cf => cf.type === 'Check' && !cf.use)
       }
     },
     watch: {
@@ -274,6 +402,15 @@
   }
   .checkOutinBar {
     width: 50%;
+  }
+  .ticketUse label i {
+    display: none;
+  }
+  .ticketUse input:checked + label {
+    background-color: var(--color-blue-100);
+    i {
+      display: inline-block;
+    }
   }
   .popupHidden {
     opacity: 0;

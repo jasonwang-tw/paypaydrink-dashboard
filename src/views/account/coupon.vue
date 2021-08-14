@@ -58,6 +58,7 @@
 </template>
 
 <script>
+  import coupon from '../../../static/resource/coupon'
   import pageNav from '@/components/pageNav.vue'
   import popup from '@/components/popup.vue'
 
@@ -70,36 +71,7 @@
     data() {
       return {
         notice: true,
-        coupon: [
-          {
-            name: '飲品兌換卷',
-            type: 'Free',
-            data: '2020-07-18 17:59',
-            text: '憑此兌換卷可兌換XX',
-            use: false
-          },
-          {
-            name: '飲品兌換卷',
-            type: 'Free',
-            data: '2020-07-30 17:59',
-            text: '憑此兌換卷可兌換XX',
-            use: true
-          },
-          {
-            name: '飲品折價卷',
-            type: 'Check',
-            data: '2020-07-18 17:59',
-            text: '結帳時折抵總金額 $5',
-            use: false
-          },
-          {
-            name: '飲品折價卷',
-            type: 'Check',
-            data: '2020-07-30 17:59',
-            text: '結帳時折抵單價 $100 飲品 乙杯',
-            use: true
-          }
-        ]
+        coupon
       }
     }
   }
